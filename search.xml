@@ -3,8 +3,7 @@
   <entry>
     <title>Archlinux学习笔记</title>
     <url>/WestRoute.github.io/2021/09/01/Archlinux/</url>
-    <content><![CDATA[<p>Hello world</p>
-]]></content>
+    <content><![CDATA[]]></content>
       <categories>
         <category>计算机/SC</category>
       </categories>
@@ -39,7 +38,205 @@
 </tr>
 </tbody></table>
 <span id="more"></span>
-<p>| :—– | :—– | :—-:|<br>|象人|2021/8/4|    5|<br>|切尔诺贝利|2021/8/5|4|<br>|左拉传|2021/8/6|5|<br>|狂人皮埃罗|2021/8/6|5|<br>|假面|2021/8/8|    5|<br>|后窗|2021/8/8|    5|<br>|回忆三部曲|2021/8/9|5|<br>|第九道门|2021/8/9|    4|<br>|蜘蛛巢城|2021/8/9|    4|<br>|游戏规则|2021/8/9|    5|<br>|薇塔与弗吉尼亚|2021/8/10|-|<br>|鱿鱼鲸|2021/8/11|-|<br>|弗里达|2021/8/12|-|<br>|邪不压正|2021/8/13|-|<br>|大人物拿破仑|2021/8/14|-|<br>|罗斯玛丽的婴儿|2021/8/15|-|<br>|超人归来|2021/8/16|-|<br>|一步之遥|2021/8/16|-|<br>|自杀小队2|2021/8/17|-|<br>|爱丽丝城市漫游记|2021/8/18|-|<br>|机械师|2021/8/18|-|<br>|末路狂花|2021/8/18|-|<br>|赌博默示录|2021/8/19|-|<br>|犹在镜中|2021/8/19|-|<br>|四百击|2021/8/20|-|<br>|异形|2021/8/21|-|<br>|畸形人|2021/8/22|-|<br>|战舰波将金号|2021/8/23|-|<br>|恐惧吞噬灵魂|2021/8/24|-|<br>|亚特兰大号|2021/8/25|-|<br>|阿基尔，上帝的愤怒|2021/8/26|-|<br>|现代启示录    |2021/8/27|-|<br>|体热|2021/8/28    |-|<br>|科学怪人的新娘|2021/8/29|-|<br>|初吻|2021/8/30    |-|<br>|西部世界|2021/8/30|-|<br>|东城梦魇|2021/8/30|-|<br>|不良少女莫妮卡|2021/8/31|-|    </p>
+<table>
+<thead>
+<tr>
+<th align="left">电影(41)</th>
+<th align="left">观看日期</th>
+<th align="center">评分(10)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">象人</td>
+<td align="left">2021/8/4</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="left">切尔诺贝利</td>
+<td align="left">2021/8/5</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left">左拉传</td>
+<td align="left">2021/8/6</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="left">狂人皮埃罗</td>
+<td align="left">2021/8/6</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="left">假面</td>
+<td align="left">2021/8/8</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="left">后窗</td>
+<td align="left">2021/8/8</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="left">回忆三部曲</td>
+<td align="left">2021/8/9</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="left">第九道门</td>
+<td align="left">2021/8/9</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left">蜘蛛巢城</td>
+<td align="left">2021/8/9</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left">游戏规则</td>
+<td align="left">2021/8/9</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="left">薇塔与弗吉尼亚</td>
+<td align="left">2021/8/10</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">鱿鱼鲸</td>
+<td align="left">2021/8/11</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">弗里达</td>
+<td align="left">2021/8/12</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">邪不压正</td>
+<td align="left">2021/8/13</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">大人物拿破仑</td>
+<td align="left">2021/8/14</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">罗斯玛丽的婴儿</td>
+<td align="left">2021/8/15</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">超人归来</td>
+<td align="left">2021/8/16</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">一步之遥</td>
+<td align="left">2021/8/16</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">自杀小队2</td>
+<td align="left">2021/8/17</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">爱丽丝城市漫游记</td>
+<td align="left">2021/8/18</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">机械师</td>
+<td align="left">2021/8/18</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">末路狂花</td>
+<td align="left">2021/8/18</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">赌博默示录</td>
+<td align="left">2021/8/19</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">犹在镜中</td>
+<td align="left">2021/8/19</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">四百击</td>
+<td align="left">2021/8/20</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">异形</td>
+<td align="left">2021/8/21</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">畸形人</td>
+<td align="left">2021/8/22</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">战舰波将金号</td>
+<td align="left">2021/8/23</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">恐惧吞噬灵魂</td>
+<td align="left">2021/8/24</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">亚特兰大号</td>
+<td align="left">2021/8/25</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">阿基尔，上帝的愤怒</td>
+<td align="left">2021/8/26</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">现代启示录</td>
+<td align="left">2021/8/27</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">体热</td>
+<td align="left">2021/8/28</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">科学怪人的新娘</td>
+<td align="left">2021/8/29</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">初吻</td>
+<td align="left">2021/8/30</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">西部世界</td>
+<td align="left">2021/8/30</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">东城梦魇</td>
+<td align="left">2021/8/30</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td align="left">不良少女莫妮卡</td>
+<td align="left">2021/8/31</td>
+<td align="center">-</td>
+</tr>
+</tbody></table>
 <h5 id="象人-畸形人："><a href="#象人-畸形人：" class="headerlink" title="象人/畸形人："></a>象人/畸形人：</h5><p>默片时期的演员要求表演动作夸张，演员出身马戏团的几率很大，所以早期经常会出现以马戏团的演员们为故事主角的电影，描写他们的背井离乡、贫穷、被人嘲弄的可怜样子。畸形人也是马戏团的一大成员。当故事中有人对这些异类们伸出慈爱的手的时候，这份温暖就穿过时间的河流，逆流而上，安慰了电脑前孤独的心灵。从那个迷信、贫穷又愚昧的时代开始人类真的逐渐走向幸福了吗？<br>我觉得仅仅是一部分人富裕了，人类整体并没有进步。</p>
 <h5 id="切尔诺贝利（HBO连续剧）："><a href="#切尔诺贝利（HBO连续剧）：" class="headerlink" title="切尔诺贝利（HBO连续剧）："></a>切尔诺贝利（HBO连续剧）：</h5><p>缓慢而恐惧。不过还是能闻到洗白的味道。美国竟然为苏联洗白，也是出于对伟大的牺牲表示尊敬吧。    </p>
 <h5 id="左拉传："><a href="#左拉传：" class="headerlink" title="左拉传："></a>左拉传：</h5><p> 人间的温暖。    </p>
@@ -280,7 +477,7 @@
       </tags>
   </entry>
   <entry>
-    <title>《哲学的故事</title>
+    <title>《哲学的故事》笔记</title>
     <url>/WestRoute.github.io/2021/09/01/%E5%93%B2%E5%AD%A6%E7%9A%84%E6%95%85%E4%BA%8B/</url>
     <content><![CDATA[]]></content>
   </entry>

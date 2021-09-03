@@ -1987,6 +1987,16 @@ pre code {
   top: 0;
   width: 100%;
 }
+.hpbook {
+  float: left;
+  margin: 20px;
+  width: 25%;
+}
+.hpbookintro {
+  float: rigth;
+  margin: 20px;
+  width: 50%;
+}
 .post-gallery {
   display: flex;
   min-height: 200px;

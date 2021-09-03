@@ -13,18 +13,9 @@
       </tags>
   </entry>
   <entry>
-    <title>Archlinux学习笔记</title>
-    <url>/WestRoute.github.io/2021/09/01/Archlinux/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>计算机/SC</category>
-      </categories>
-  </entry>
-  <entry>
     <title>August 2021 Report</title>
     <url>/WestRoute.github.io/2021/09/01/August-2021-Report/</url>
-    <content><![CDATA[<p>#八月总结</p>
-<p>最后一年暑假，阅片41部，读书13本</p>
+    <content><![CDATA[<h1 id="八月总结"><a href="#八月总结" class="headerlink" title="八月总结"></a>八月总结</h1><p>最后一年暑假，阅片41部，读书13本</p>
 <span id="more"></span>
 <h3 id="影片"><a href="#影片" class="headerlink" title="影片"></a>影片</h3><table>
 <thead>
@@ -359,6 +350,14 @@
       <tags>
         <tag>2021</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Archlinux学习笔记</title>
+    <url>/WestRoute.github.io/2021/09/01/Archlinux/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>计算机/SC</category>
+      </categories>
   </entry>
   <entry>
     <title>C++基础学习笔记</title>

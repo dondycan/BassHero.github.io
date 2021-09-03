@@ -3,12 +3,9 @@
   <entry>
     <title>向思想的的引导者、创造者、翻译者、传播者、剽窃者致敬！</title>
     <url>/WestRoute.github.io/2021/09/04/top/</url>
-    <content><![CDATA[<p>本站创建于 2021-8-14 已有 </p>
-<script src="moment.js"></script>
-<script>
-    var a = moment([2021, 8, 14]);
-    document.write("<p>"+a.fromNow() +"</p>");
-</script>天]]></content>
+    <content><![CDATA[<div style="text-align: center;">
+    本站创建于 2021-8-14
+</div>]]></content>
   </entry>
   <entry>
     <title>《哲学的故事》笔记</title>

@@ -4,7 +4,9 @@
     <title>向思想的的引导者、创造者、翻译者、传播者、剽窃者致敬</title>
     <url>/WestRoute.github.io/2021/09/01/hello-world/</url>
     <content><![CDATA[<div style="text-align: center;color:#808080;">
+      <i class="fas fa-crow"></i>
   <span id="sitetime"></span>
+
 <script language=javascript>
     function siteTime(){
         window.setTimeout("siteTime()", 1000);
@@ -38,6 +40,7 @@
         var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
         var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
         var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+
         document.getElementById("sitetime").innerHTML=" 已运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
     }
     siteTime();

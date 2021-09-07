@@ -2007,6 +2007,35 @@ pre code {
   width: 50%;
   margin: 40px 0;
 }
+.progress-bar {
+  display: block;
+  margin: auto;
+/* 进度条的槽 */
+  width: 70%;
+/* 设置进度条的高度 */
+  height: 8px;
+/*进度条外层div的背景色，进度未达到的地方的颜色 */
+  background-color: #e4f9f7;
+  border-radius: 3px;
+}
+.progress-film {
+/* 进度部分 */
+/* 利用继承父元素宽度的百分比控制进度 */
+  width: 39%;
+  height: 100%;
+/* 内层背景色即进度达到的颜色 */
+  background-color: #5cd9d1;
+  border-radius: 3px;
+}
+.progress-book {
+/* 进度部分 */
+/* 利用继承父元素宽度的百分比控制进度 */
+  width: 28%;
+  height: 100%;
+/* 内层背景色即进度达到的颜色 */
+  background-color: #5cd9d1;
+  border-radius: 3px;
+}
 .post-gallery {
   display: flex;
   min-height: 200px;

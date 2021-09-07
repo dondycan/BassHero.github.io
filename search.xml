@@ -46,6 +46,25 @@
     siteTime();
 </script>
 </div>
+
+<br>
+
+<div style="text-align: center;"><font size="4";color="#808080";>已看：1180 | 已读： 140</font></div>
+<br>
+<div  style="text-align: center;">
+   电影进度
+  <div class="progress-bar" >
+                    <div class="progress-film">
+                    </div>
+                </div>
+                <br>
+    阅读进度
+  <div class="progress-bar">
+                    <div class="progress-book">
+                    </div>
+                </div>
+                <br>
+
 ]]></content>
   </entry>
   <entry>

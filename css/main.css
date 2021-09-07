@@ -2468,7 +2468,7 @@ ul.breadcrumb li:last-child {
 }
 .header-inner {
   background: var(--content-bg-color);
-  border-radius: initial;
+  border-radius: 12px 12px 12px 12px;
   box-shadow: initial;
   width: 240px;
   opacity: 1;
@@ -2503,7 +2503,7 @@ ul.breadcrumb li:last-child {
   }
 }
 .main-inner {
-  border-radius: initial;
+  border-radius: 12px 12px 12px 12px;
   box-sizing: border-box;
   width: calc(100% - 252px);
 }
@@ -2645,7 +2645,7 @@ ul.breadcrumb li:last-child {
 }
 .sidebar-inner {
   background: var(--content-bg-color);
-  border-radius: initial;
+  border-radius: 12px;
   box-shadow: initial;
   box-sizing: border-box;
   color: var(--text-color);
@@ -2729,7 +2729,7 @@ body {
   opacity: 0.9;
 }
 .header-inner {
-  background: rgba(255,255,255,0.9);
+  background: rgba(255,255,255,0.7) none repeat scroll !important;
 }
 .popup {
   opacity: 0.9;
@@ -2760,18 +2760,20 @@ body {
 }
 /* firefox */
 ::-moz-selection {
-  background: #00c4b6;
+  background: #00c4b6 none repeat scroll !important;
   color: #f7f7f7;
 }
 .headband {
   display: none;
   height: 20px;
   background: #00c4b6;
+  opacity: 1;
 }
 .site-meta {
   padding: 40px 10px;
   color: #fff;
   background: #00c4b6;
+  opacity: 1;
 }
 .site-subtitle {
   margin-top: 10px;

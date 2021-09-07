@@ -1147,6 +1147,7 @@ pre code {
 .header-inner {
   margin: 0 auto;
   width: calc(100% - 20px);
+  opacity: 1;
 }
 @media (min-width: 1200px) {
   .header-inner {
@@ -2470,6 +2471,7 @@ ul.breadcrumb li:last-child {
   border-radius: initial;
   box-shadow: initial;
   width: 240px;
+  opacity: 1;
 }
 @media (max-width: 991px) {
   .header-inner {
@@ -2712,6 +2714,22 @@ ul.breadcrumb li:last-child {
   .pagination {
     margin-bottom: 10px;
   }
+}
+body {
+  background: url("/WestRoute.github.io/images/background2.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.content-wrap {
+  opacity: 0.9;
+}
+.header-inner {
+  background: rgba(255,255,255,0.9);
+}
+.popup {
+  opacity: 0.9;
 }
 .post-body p a {
   color: #0593d3;

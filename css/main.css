@@ -1569,7 +1569,7 @@ pre code {
   font-size: 0.8125em;
 }
 .footer {
-  color: #999;
+  color: #171717;
   font-size: 0.875em;
   padding: 20px 0;
 }
@@ -1996,6 +1996,16 @@ pre code {
   float: rigth;
   margin: 20px;
   width: 50%;
+}
+.piechartr {
+  float: right;
+  width: 50%;
+  margin: 40px 0;
+}
+.piechartl {
+  float: left;
+  width: 50%;
+  margin: 40px 0;
 }
 .post-gallery {
   display: flex;

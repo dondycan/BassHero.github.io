@@ -3034,7 +3034,7 @@ div.center {
 }
 #company .card {
   width: 80%;
-  height: 40px;
+  height: 100px;
   font-size: 1.1em;
   padding: 10px 20px;
   border-radius: 4px;
@@ -3062,7 +3062,7 @@ div.center {
 #company .card .card-header {
   font-style: italic;
   overflow: hidden;
-  width: 236px;
+  width: 80%;
 }
 #company .card .card-header a {
   font-style: normal;
@@ -3080,7 +3080,7 @@ div.center {
   font-size: 14px;
   min-width: 0;
   text-overflow: ellipsis;
-  overflow: hidden;
+  overflow: visible;
   white-space: nowrap;
 }
 #company span.focus-links {

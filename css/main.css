@@ -2842,7 +2842,7 @@ body {
 #films .card {
   width: 43%;
   height: 60%;
-  background-color: #f4f4f4;
+  background-color: #eee;
   font-size: 12px;
   padding: 10px 20px;
   border-radius: 4px;
@@ -2942,7 +2942,7 @@ div.center {
 #links .card {
   width: 300px;
   font-size: 1.1em;
-  background-color: #f4f4f4;
+  background-color: #eee;
   padding: 10px 20px;
   border-radius: 4px;
   transition-duration: 0.15s;
@@ -3036,7 +3036,7 @@ div.center {
 #company .card {
   width: 80%;
   height: 100px;
-  background-color: #f4f4f4;
+  background-color: #eee;
   font-size: 1.1em;
   padding: 10px 20px;
   border-radius: 4px;

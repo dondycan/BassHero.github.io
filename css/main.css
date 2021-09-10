@@ -2023,10 +2023,13 @@ pre code {
   float: center;
   width: 70%;
   margin: 40px 0;
+  margin-left: 10rem;
+  margin-bottom: 1rem;
 }
 @media (max-width: 767px) {
   .piechartl {
     width: 90%;
+    margin-left: 0rem;
   }
 }
 .progress-bar {

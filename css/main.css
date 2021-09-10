@@ -2019,20 +2019,9 @@ pre code {
     margin-bottom: 1rem;
   }
 }
-.piechartr {
-  float: right;
-  width: 50%;
-  margin: 40px 0;
-}
-@media (max-width: 767px) {
-  .piechartr {
-    float: left;
-    width: 90%;
-  }
-}
 .piechartl {
-  float: left;
-  width: 50%;
+  float: center;
+  width: 70%;
   margin: 40px 0;
 }
 @media (max-width: 767px) {

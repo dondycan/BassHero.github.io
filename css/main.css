@@ -3049,6 +3049,11 @@ div.center {
   margin-bottom: 1rem;
   display: flex;
 }
+@media (max-width: 767px) {
+  #links .card {
+    width: 80%;
+  }
+}
 #links .card:nth-child(odd) {
   float: left;
 }

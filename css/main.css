@@ -17,10 +17,10 @@
   --btn-default-hover-bg: #00c4b6;
   --btn-default-hover-color: #fff;
   --btn-default-hover-border-color: #00c4b6;
-  --highlight-background: #f0f0f0;
-  --highlight-foreground: #444;
-  --highlight-gutter-background: #dedede;
-  --highlight-gutter-foreground: #555;
+  --highlight-background: #ebf8ff;
+  --highlight-foreground: #516d7b;
+  --highlight-gutter-background: #dbeaf1;
+  --highlight-gutter-foreground: #607a88;
 }
 html {
   line-height: 1.15; /* 1 */
@@ -359,97 +359,67 @@ td {
   top: -5px;
   transform: rotate(-45deg);
 }
-/*
+/* Base16 Atelier Lakeside Light - Theme */
+/* by Bram de Haan (http://atelierbram.github.io/syntax-highlighting/atelier-schemes/lakeside) */
+/* Original Base16 color scheme by Chris Kempson (https://github.com/chriskempson/base16) */
 
-Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
+/* Atelier-Lakeside Comment */
+.hljs-comment,
+.hljs-quote {
+  color: #5a7b8c;
+}
 
-*/
+/* Atelier-Lakeside Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-attribute,
+.hljs-tag,
+.hljs-name,
+.hljs-regexp,
+.hljs-link,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #d22d72;
+}
+
+/* Atelier-Lakeside Orange */
+.hljs-number,
+.hljs-meta,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params {
+  color: #935c25;
+}
+
+/* Atelier-Lakeside Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet {
+  color: #568c3b;
+}
+
+/* Atelier-Lakeside Blue */
+.hljs-title,
+.hljs-section {
+  color: #257fad;
+}
+
+/* Atelier-Lakeside Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #6b6bb8;
+}
 
 .hljs {
   display: block;
   overflow-x: auto;
+  background: #ebf8ff;
+  color: #516d7b;
   padding: 0.5em;
-  background: #F0F0F0;
 }
-
-
-/* Base color: saturation 0; */
-
-.hljs,
-.hljs-subst {
-  color: #444;
-}
-
-.hljs-comment {
-  color: #888888;
-}
-
-.hljs-keyword,
-.hljs-attribute,
-.hljs-selector-tag,
-.hljs-meta-keyword,
-.hljs-doctag,
-.hljs-name {
-  font-weight: bold;
-}
-
-
-/* User color: hue: 0 */
-
-.hljs-type,
-.hljs-string,
-.hljs-number,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-quote,
-.hljs-template-tag,
-.hljs-deletion {
-  color: #880000;
-}
-
-.hljs-title,
-.hljs-section {
-  color: #880000;
-  font-weight: bold;
-}
-
-.hljs-regexp,
-.hljs-symbol,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-link,
-.hljs-selector-attr,
-.hljs-selector-pseudo {
-  color: #BC6060;
-}
-
-
-/* Language color: hue: 90; */
-
-.hljs-literal {
-  color: #78A960;
-}
-
-.hljs-built_in,
-.hljs-bullet,
-.hljs-code,
-.hljs-addition {
-  color: #397300;
-}
-
-
-/* Meta color: hue: 200 */
-
-.hljs-meta {
-  color: #1f7199;
-}
-
-.hljs-meta-string {
-  color: #4d99bf;
-}
-
-
-/* Misc effects */
 
 .hljs-emphasis {
   font-style: italic;
@@ -1638,7 +1608,7 @@ pre code {
 }
 .languages {
   display: inline-block;
-  font-size: 1.125em;
+  font-size: 1.1em;
   position: relative;
 }
 .languages .lang-select-label span {
@@ -1812,7 +1782,7 @@ pre code {
   }
 }
 .posts-collapse .post-content .collection-title {
-  font-size: 1.125em;
+  font-size: 1.1em;
   position: relative;
 }
 .posts-collapse .post-content .collection-title::before {
@@ -1903,12 +1873,12 @@ pre code {
   width: 4px;
 }
 .post-body {
-  font-family: Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: M PLUS 1p, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   overflow-wrap: break-word;
 }
 @media (min-width: 1200px) {
   .post-body {
-    font-size: 1.125em;
+    font-size: 1.1em;
   }
 }
 @media (min-width: 992px) {
@@ -2124,7 +2094,7 @@ pre code {
   margin: 15px 0;
 }
 .posts-expand .post-header {
-  font-size: 1.125em;
+  font-size: 1.1em;
   margin-bottom: 10px;
   text-align: center;
 }
@@ -2165,7 +2135,7 @@ pre code {
 }
 .posts-expand .post-meta-container {
   color: #999;
-  font-family: Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: M PLUS 1p, Lato, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-size: 0.75em;
   margin-top: 3px;
 }

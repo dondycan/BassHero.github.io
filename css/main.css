@@ -2319,7 +2319,7 @@ pre code {
   text-align: center;
 }
 .category-all-page .category-all {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 .category-all-page .category-list {
   list-style: none;
@@ -2327,7 +2327,7 @@ pre code {
   padding: 0;
 }
 .category-all-page .category-list-item {
-  margin: 5px 10px;
+  margin: 10px 10px;
 }
 .category-all-page .category-list-count {
   color: #bbb;
@@ -2339,7 +2339,7 @@ pre code {
   content: ') ';
 }
 .category-all-page .category-list-child {
-  padding-left: 10px;
+  padding-left: 30px;
 }
 .event-list hr {
   background: #00c4b6;

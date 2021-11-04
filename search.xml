@@ -68,6 +68,489 @@
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
   </entry>
   <entry>
+    <title>航空航天概论02</title>
+    <url>/WestRoute.github.io/2021/11/04/%E8%88%AA%E7%A9%BA%E8%88%AA%E5%A4%A9%E6%A6%82%E8%AE%BA02/</url>
+    <content><![CDATA[<h3 id="第三章-飞行器的动力系统"><a href="#第三章-飞行器的动力系统" class="headerlink" title="第三章 飞行器的动力系统"></a>第三章 飞行器的动力系统</h3><p>发动机：活塞式发动机和喷气式发动机</p>
+<hr>
+<p>其他航空知识学习网站：<br><a href="https://pigeon-poppo.com/">https://pigeon-poppo.com/</a> </p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>杂文</category>
+        <category>读书笔记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>python05 爬虫</title>
+    <url>/WestRoute.github.io/2021/11/03/python05/</url>
+    <content><![CDATA[<p>爬虫：Webスクレイピング</p>
+<span id="more"></span>
+<h3 id="find-all-とselect"><a href="#find-all-とselect" class="headerlink" title="find_all()とselect()"></a>find_all()とselect()</h3><p>find_all(tag,keyword)<br>select(cssSelector)</p>
+<h2 id="object"><a href="#object" class="headerlink" title="object"></a>object</h2><p>BeautifulSoup<br>Tag:bs.div.h1<br>NavigableString:用来标识标签里的文字<br>Comment:</p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>［c/c++］递归统计文件</title>
+    <url>/WestRoute.github.io/2021/11/03/c%E9%80%92%E5%BD%92%E7%BB%9F%E8%AE%A1%E6%96%87%E4%BB%B6%E3%80%91/</url>
+    <content><![CDATA[<h3 id="C-统计文件大小"><a href="#C-统计文件大小" class="headerlink" title="C-统计文件大小"></a>C-统计文件大小</h3><p>方法：<br>&nbsp;&nbsp;&nbsp;&nbsp;1.将指针调到末尾，返回指针位置<br>&nbsp;&nbsp;&nbsp;&nbsp;2.一个bit一个bit地count<br>&nbsp;&nbsp;&nbsp;&nbsp;3.stat()［非标准函数库］<br>&nbsp;&nbsp;&nbsp;&nbsp;4.filelength()［Windows］<br>&nbsp;&nbsp;&nbsp;&nbsp;5.GetFileSize(),GetFileSizeEX()［Windows］</p>
+<span id="more"></span>
+<h3 id="C-统计文件大小-1"><a href="#C-统计文件大小-1" class="headerlink" title="C++统计文件大小"></a>C++统计文件大小</h3><figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cassert&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;filesystem&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> fs = std::filesystem;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  &#123;</span><br><span class="line">    std::ofstream file&#123;<span class="string">&quot;regular.txt&quot;</span>, std::ios::binary&#125;;</span><br><span class="line">    std::<span class="keyword">uint32_t</span> value = <span class="number">42</span>;</span><br><span class="line">    file.<span class="built_in">write</span>(<span class="keyword">reinterpret_cast</span>&lt;<span class="keyword">char</span>*&gt;(&amp;value), <span class="built_in"><span class="keyword">sizeof</span></span>(value));</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  std::<span class="keyword">uintmax_t</span> size = fs::<span class="built_in">file_size</span>(<span class="string">&quot;regular.txt&quot;</span>);</span><br><span class="line">  <span class="built_in">assert</span>(size == <span class="number">4</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>C</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>使用cookie验证用户末端</title>
+    <url>/WestRoute.github.io/2021/11/03/%E4%BD%BF%E7%94%A8cookie%E9%AA%8C%E8%AF%81%E7%94%A8%E6%88%B7%E6%9C%AB%E7%AB%AF%E3%80%91/</url>
+    <content><![CDATA[<blockquote><img src="/WestRoute.github.io/images/cookie-browser.gif"><footer><strong>応用情報 平成27年秋期 午後問1</strong></footer></blockquote>  
+<span id="more"></span>
+
+<p>ユーザは，メールソフトを用いてメールを受信し，メール内に記載されたURLからCookie発行機能にWebブラウザを用いてアクセスする。ユーザがアカウント名とパスワードを入力し認証が完了すると，ログイン用Cookieが発行される。Cookie発行機能のURLは，登録した会員一人一人にメールを送信する都度，異なるものが発行され，メールの送信から1時間だけ有効である。また，発行されたログイン用Cookieの有効期間は半年間とし，ログインするたびに有効期間がその日から半年間に更新される。<br>　会員がP-SNSにログインするときには，会員が入力するアカウント名とパスワードとともにログイン用Cookieがログイン機能へ送信される。ログイン機能では，送信されたログイン用Cookieがその会員に発行されたログイン用Cookieと異なる場合にはアクセスを拒否する。<br>　会員が利用端末を変更したい場合やCookieの有効期間が過ぎた場合には，Cookie発行メール送信機能に対して，Cookie発行機能のURLが記載されたメールの送信を要求する。その後，会員登録時と同様にログイン用Cookieを入手する。<br>　なお，P-SNSの通信は暗号化し，悪意をもった第三者が盗聴しても必要な情報を入手できないようにする。<br>　その後R君は，アカウントへの不正ログインの足掛かりとなった情報を全会員のマイページから削除するとともに，Cookieによる認証機能の導入を行った。</p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>web后端</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>python04 利用schedule模块 定时打开网站与开机时自动启动</title>
+    <url>/WestRoute.github.io/2021/11/03/python04/</url>
+    <content><![CDATA[<h3 id="schedule模块-下载"><a href="#schedule模块-下载" class="headerlink" title="schedule模块 下载"></a>schedule模块 下载</h3><figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="meta"><span class="meta-keyword">$pip</span> install schedule</span></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>python03 标准库</title>
+    <url>/WestRoute.github.io/2021/11/03/python03%E3%80%91/</url>
+    <content><![CDATA[<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>每月总结08 (2021/10)</title>
+    <url>/WestRoute.github.io/2021/11/02/MonthlyRe08%E3%80%91/</url>
+    <content><![CDATA[<p>38部电影，7本书</p>
+<span id="more"></span>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>compdate</th>
+<th>num</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>———–</td>
+<td>————</td>
+<td>——</td>
+</tr>
+<tr>
+<td>双峰</td>
+<td>2021/10/31</td>
+<td>1241</td>
+</tr>
+<tr>
+<td>爱情短片</td>
+<td>2021/10/31</td>
+<td>1240</td>
+</tr>
+<tr>
+<td>愤怒的葡萄</td>
+<td>2021/10/30</td>
+<td>1239</td>
+</tr>
+<tr>
+<td>蓝丝绒</td>
+<td>2021/10/29</td>
+<td>1238</td>
+</tr>
+<tr>
+<td>大幻影</td>
+<td>2021/10/28</td>
+<td>1237</td>
+</tr>
+<tr>
+<td>战地军魂</td>
+<td>2021/10/27</td>
+<td>1236</td>
+</tr>
+<tr>
+<td>影子部队</td>
+<td>2021/10/26</td>
+<td>1235</td>
+</tr>
+<tr>
+<td>维莉蒂安娜</td>
+<td>2021/10/25</td>
+<td>1234</td>
+</tr>
+<tr>
+<td>资产阶级的审慎魅力</td>
+<td>2021/10/25</td>
+<td>1233</td>
+</tr>
+<tr>
+<td>通往绞刑架的电梯</td>
+<td>2021/10/24</td>
+<td>1232</td>
+</tr>
+<tr>
+<td>瑞典女王</td>
+<td>2021/10/23</td>
+<td>1231</td>
+</tr>
+<tr>
+<td>落水狗</td>
+<td>2021/10/23</td>
+<td>1230</td>
+</tr>
+<tr>
+<td>伊万的童年</td>
+<td>2021/10/22</td>
+<td>1229</td>
+</tr>
+<tr>
+<td>冰血长津湖</td>
+<td>2021/10/21</td>
+<td>1228</td>
+</tr>
+<tr>
+<td>桂河大桥</td>
+<td>2021/10/21</td>
+<td>1227</td>
+</tr>
+<tr>
+<td>扒手</td>
+<td>2021/10/20</td>
+<td>1226</td>
+</tr>
+<tr>
+<td>扒手</td>
+<td>2021/10/20</td>
+<td>1225</td>
+</tr>
+<tr>
+<td>红气球</td>
+<td>2021/10/19</td>
+<td>1224</td>
+</tr>
+<tr>
+<td>你逃我也逃</td>
+<td>2021/10/18</td>
+<td>1223</td>
+</tr>
+<tr>
+<td>青木瓜之味</td>
+<td>2021/10/17</td>
+<td>1222</td>
+</tr>
+<tr>
+<td>雌雄大盗</td>
+<td>2021/10/17</td>
+<td>1221</td>
+</tr>
+<tr>
+<td>洞</td>
+<td>2021/10/17</td>
+<td>1220</td>
+</tr>
+<tr>
+<td>高地战</td>
+<td>2021/10/16</td>
+<td>1219</td>
+</tr>
+<tr>
+<td>紫色</td>
+<td>2021/10/16</td>
+<td>1218</td>
+</tr>
+<tr>
+<td>阿玛柯德</td>
+<td>2021/10/15</td>
+<td>1217</td>
+</tr>
+<tr>
+<td>海与毒药</td>
+<td>2021/10/15</td>
+<td>1216</td>
+</tr>
+<tr>
+<td>野草莓</td>
+<td>2021/10/15</td>
+<td>1215</td>
+</tr>
+<tr>
+<td>黄金三镖客</td>
+<td>2021/10/15</td>
+<td>1214</td>
+</tr>
+<tr>
+<td>自己去看</td>
+<td>2021/10/14</td>
+<td>1213</td>
+</tr>
+<tr>
+<td>夺魂索</td>
+<td>2021/10/13</td>
+<td>1212</td>
+</tr>
+<tr>
+<td>大独裁者</td>
+<td>2021/10/12</td>
+<td>1211</td>
+</tr>
+<tr>
+<td>莫扎特传</td>
+<td>2021/10/11</td>
+<td>1210</td>
+</tr>
+<tr>
+<td>佐杜洛夫斯基的沙丘</td>
+<td>2021/10/10</td>
+<td>1209</td>
+</tr>
+<tr>
+<td>邮差</td>
+<td>2021/10/5</td>
+<td>1208</td>
+</tr>
+<tr>
+<td>地球之夜</td>
+<td>2021/10/4</td>
+<td>1207</td>
+</tr>
+<tr>
+<td>重庆森林</td>
+<td>2021/10/3</td>
+<td>1206</td>
+</tr>
+<tr>
+<td>罗拉快跑</td>
+<td>2021/10/2</td>
+<td>1205</td>
+</tr>
+<tr>
+<td>英国病人</td>
+<td>2021/10/1</td>
+<td>1204</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>compdate</th>
+<th>num</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>———–</td>
+<td>————</td>
+<td>——</td>
+</tr>
+<tr>
+<td>Oxfords Birds of American</td>
+<td>2021/10/31</td>
+<td>164</td>
+</tr>
+<tr>
+<td>江户川乱步佳作集</td>
+<td>2021/10/31</td>
+<td>163</td>
+</tr>
+<tr>
+<td>索拉里斯星</td>
+<td>2021/10/31</td>
+<td>162</td>
+</tr>
+<tr>
+<td>癫狂与文明</td>
+<td>2021/10/31</td>
+<td>161</td>
+</tr>
+<tr>
+<td>巴巴罗萨</td>
+<td>2021/10/31</td>
+<td>160</td>
+</tr>
+<tr>
+<td>查拉图斯特拉如是说</td>
+<td>2021/10/31</td>
+<td>159</td>
+</tr>
+<tr>
+<td>阿特斯拉耸耸肩</td>
+<td>2021/10/31</td>
+<td>158</td>
+</tr>
+<tr>
+<td>中国生物多样性地理图集</td>
+<td>2021/10/31</td>
+<td>157</td>
+</tr>
+</tbody></table>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>每月总结</category>
+      </categories>
+      <tags>
+        <tag>2021</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python基础2</title>
+    <url>/WestRoute.github.io/2021/10/29/python02/</url>
+    <content><![CDATA[<h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><p>迭代器有两个基本的方法：<strong>iter()</strong> 和 **next()**。<br>字符串，列表或元组对象都可用于创建迭代器</p>
+<span id="more"></span>
+<p>可以使用常规for语句进行遍历(<strong>对象</strong>)：</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">list</span>=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line"><span class="attribute">it</span> = iter(list)    # 创建迭代器对象</span><br><span class="line"><span class="attribute">for</span> x in it:</span><br><span class="line">    <span class="attribute">print</span> (x, end=<span class="string">&quot; &quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>可以使用 next() 函数：</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">import sys         <span class="comment"># 引入 sys 模块</span></span><br><span class="line"> </span><br><span class="line">list=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">it = iter(list)    <span class="comment"># 创建迭代器对象</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">    try:</span><br><span class="line">        print (<span class="keyword">next</span>(it))</span><br><span class="line">    except StopIteration:</span><br><span class="line">        sys.<span class="keyword">exit</span>()</span><br></pre></td></tr></table></figure>
+<br>
+StopIteration 异常用于标识迭代的完成
+
+<h3 id="生成器（generator）"><a href="#生成器（generator）" class="headerlink" title="生成器（generator）"></a>生成器（generator）</h3><p>在调用生成器运行的过程中，每次遇到 yield 时函数会暂停并保存当前所有的运行信息，返回 yield 的值, 并在下一次执行 next() 方法时从当前位置继续运行。</p>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">import sys</span><br><span class="line"> </span><br><span class="line">def fibonacci(n): <span class="comment"># 生成器函数 - 斐波那契</span></span><br><span class="line">    a, b, counter = <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> True:</span><br><span class="line">        <span class="keyword">if</span> (counter &gt; n): </span><br><span class="line">            return</span><br><span class="line">        yield a</span><br><span class="line">        a, b = b, a + b</span><br><span class="line">        counter += <span class="number">1</span></span><br><span class="line">f = fibonacci(<span class="number">10</span>) <span class="comment"># f 是一个迭代器，由生成器返回生成</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">    try:</span><br><span class="line">        print (<span class="keyword">next</span>(f), end=<span class="string">&quot; &quot;</span>)</span><br><span class="line">    except StopIteration:</span><br><span class="line">        sys.<span class="keyword">exit</span>()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下：<br>0 1 1 2 3 5 8 13 21 34 55</p>
+<p><br><br>在 python 中，strings, tuples, 和 numbers 是不可更改的对象，而 list,dict 等则是可以修改的对象。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">change</span>(<span class="params">a</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">id</span>(a))   <span class="comment"># 指向的是同一个对象</span></span><br><span class="line">    a=<span class="number">10</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">id</span>(a))   <span class="comment"># 一个新对象</span></span><br><span class="line"> </span><br><span class="line">a=<span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line">change(a)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>输出结果如下：<br>2301180864816<br>2301180864816<br><strong>2301180865104</strong><br><strong>2301180864816</strong><br><br></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">changeme</span>(<span class="params"> mylist </span>):</span></span><br><span class="line">   <span class="string">&quot;修改传入的列表&quot;</span></span><br><span class="line">   mylist.append([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line">   <span class="built_in">print</span> (<span class="string">&quot;函数内取值: &quot;</span>, mylist)</span><br><span class="line">   <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#调用changeme函数</span></span><br><span class="line">mylist = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>]</span><br><span class="line">changeme( mylist )</span><br><span class="line"><span class="built_in">print</span> (<span class="string">&quot;函数外取值: &quot;</span>, mylist)</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：<br>函数内取值:  [10, 20, 30, [1, 2, 3, 4]]<br>函数外取值:  [10, 20, 30, [1, 2, 3, 4]]</p>
+<h3 id="函数传参"><a href="#函数传参" class="headerlink" title="函数传参"></a>函数传参</h3> <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="comment">#可写函数说明</span></span><br><span class="line">def printinfo( name, age = 35 ):</span><br><span class="line">   <span class="string">&quot;打印任何传入的字符串&quot;</span></span><br><span class="line">   <span class="builtin-name">print</span> (<span class="string">&quot;名字: &quot;</span>, name)</span><br><span class="line">   <span class="builtin-name">print</span> (<span class="string">&quot;年龄: &quot;</span>, age)</span><br><span class="line">   return</span><br><span class="line"> </span><br><span class="line"><span class="comment">#调用printinfo函数</span></span><br><span class="line">printinfo( <span class="attribute">age</span>=50, <span class="attribute">name</span>=<span class="string">&quot;runoob&quot;</span> )</span><br><span class="line"><span class="builtin-name">print</span> (<span class="string">&quot;------------------------&quot;</span>)</span><br><span class="line">printinfo( <span class="attribute">name</span>=<span class="string">&quot;runoob&quot;</span> )</span><br></pre></td></tr></table></figure>
+<br>
+加了星号 * 的参数会以元组(tuple)的形式导入，存放所有未命名的变量参数。
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="comment">#可写函数说明</span></span><br><span class="line">def printinfo( arg1, *vartuple ):</span><br><span class="line">   <span class="string">&quot;打印任何传入的参数&quot;</span></span><br><span class="line">   <span class="builtin-name">print</span> (<span class="string">&quot;输出: &quot;</span>)</span><br><span class="line">   <span class="builtin-name">print</span> (arg1)</span><br><span class="line">   <span class="builtin-name">print</span> (vartuple)</span><br><span class="line"> </span><br><span class="line"><span class="comment">#调用printinfo 函数</span></span><br><span class="line">printinfo( 70, 60, 50 )</span><br></pre></td></tr></table></figure>
+输出结果如下：
+70
+(60, 50)
+
+<p><br><br>加了两个星号 ** 的参数会以字典的形式导入。<br> / 用来指明函数形参必须使用指定位置参数，不能使用关键字参数的形式。</p>
+<h3 id="lambda-函数"><a href="#lambda-函数" class="headerlink" title="lambda 函数"></a>lambda 函数</h3><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sum</span> = lambda arg<span class="number">1</span>, arg<span class="number">2</span>: arg<span class="number">1</span> + arg<span class="number">2</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">#调用sum函数</span></span><br><span class="line"><span class="attribute">print</span> (<span class="string">&quot;相加后的值为 : &quot;</span>, sum( <span class="number">10</span>, <span class="number">20</span> ))</span><br><span class="line"><span class="attribute">print</span> (<span class="string">&quot;相加后的值为 : &quot;</span>, sum( <span class="number">20</span>, <span class="number">20</span> ))</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="模块-import"><a href="#模块-import" class="headerlink" title="模块 import"></a>模块 import</h3><p>每个模块都有一个__name__属性，当其值是’<strong>main</strong>‘时，表明该模块自身在运行，否则是被引入。<br>内置的函数 dir() 可以找到模块内定义的所有名称</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dir</span>(sys)  </span><br><span class="line">[<span class="string">&#x27;__displayhook__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>, <span class="string">&#x27;__excepthook__&#x27;</span>, <span class="string">&#x27;__loader__&#x27;</span>, <span class="string">&#x27;__name__&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;__package__&#x27;</span>, <span class="string">&#x27;__stderr__&#x27;</span>, <span class="string">&#x27;__stdin__&#x27;</span>, <span class="string">&#x27;__stdout__&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;_clear_type_cache&#x27;</span>, <span class="string">&#x27;_current_frames&#x27;</span>, <span class="string">&#x27;_debugmallocstats&#x27;</span>, <span class="string">&#x27;_getframe&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;_home&#x27;</span>, <span class="string">&#x27;_mercurial&#x27;</span>, <span class="string">&#x27;_xoptions&#x27;</span>, <span class="string">&#x27;abiflags&#x27;</span>, <span class="string">&#x27;api_version&#x27;</span>, <span class="string">&#x27;argv&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;base_exec_prefix&#x27;</span>, <span class="string">&#x27;base_prefix&#x27;</span>, <span class="string">&#x27;builtin_module_names&#x27;</span>, <span class="string">&#x27;byteorder&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;call_tracing&#x27;</span>, <span class="string">&#x27;callstats&#x27;</span>, <span class="string">&#x27;copyright&#x27;</span>, <span class="string">&#x27;displayhook&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;dont_write_bytecode&#x27;</span>, <span class="string">&#x27;exc_info&#x27;</span>, <span class="string">&#x27;excepthook&#x27;</span>, <span class="string">&#x27;exec_prefix&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;executable&#x27;</span>, <span class="string">&#x27;exit&#x27;</span>, <span class="string">&#x27;flags&#x27;</span>, <span class="string">&#x27;float_info&#x27;</span>, <span class="string">&#x27;float_repr_style&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;getcheckinterval&#x27;</span>, <span class="string">&#x27;getdefaultencoding&#x27;</span>, <span class="string">&#x27;getdlopenflags&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;getfilesystemencoding&#x27;</span>, <span class="string">&#x27;getobjects&#x27;</span>, <span class="string">&#x27;getprofile&#x27;</span>, <span class="string">&#x27;getrecursionlimit&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;getrefcount&#x27;</span>, <span class="string">&#x27;getsizeof&#x27;</span>, <span class="string">&#x27;getswitchinterval&#x27;</span>, <span class="string">&#x27;gettotalrefcount&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;gettrace&#x27;</span>, <span class="string">&#x27;hash_info&#x27;</span>, <span class="string">&#x27;hexversion&#x27;</span>, <span class="string">&#x27;implementation&#x27;</span>, <span class="string">&#x27;int_info&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;intern&#x27;</span>, <span class="string">&#x27;maxsize&#x27;</span>, <span class="string">&#x27;maxunicode&#x27;</span>, <span class="string">&#x27;meta_path&#x27;</span>, <span class="string">&#x27;modules&#x27;</span>, <span class="string">&#x27;path&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;path_hooks&#x27;</span>, <span class="string">&#x27;path_importer_cache&#x27;</span>, <span class="string">&#x27;platform&#x27;</span>, <span class="string">&#x27;prefix&#x27;</span>, <span class="string">&#x27;ps1&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;setcheckinterval&#x27;</span>, <span class="string">&#x27;setdlopenflags&#x27;</span>, <span class="string">&#x27;setprofile&#x27;</span>, <span class="string">&#x27;setrecursionlimit&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;setswitchinterval&#x27;</span>, <span class="string">&#x27;settrace&#x27;</span>, <span class="string">&#x27;stderr&#x27;</span>, <span class="string">&#x27;stdin&#x27;</span>, <span class="string">&#x27;stdout&#x27;</span>,</span><br><span class="line"> <span class="string">&#x27;thread_info&#x27;</span>, <span class="string">&#x27;version&#x27;</span>, <span class="string">&#x27;version_info&#x27;</span>, <span class="string">&#x27;warnoptions&#x27;</span>]</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+<p> <br><br></p>
+<h3 id="文件I-O"><a href="#文件I-O" class="headerlink" title="文件I/O"></a>文件I/O</h3><p>这里有两种方式输出一个平方与立方的表:</p>
+<figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">  &gt;&gt;&gt; for x in range(1, 11):</span><br><span class="line">...     print(repr(x).rjust(2), repr(x*x).rjust(3), end=&#x27; &#x27;)</span><br><span class="line">...     <span class="comment"># 注意前一行 &#x27;end&#x27; 的使用  </span></span><br><span class="line">...     print(repr(x*x*x).rjust(4))</span><br><span class="line">...</span><br><span class="line"><span class="number"> 1 </span> <span class="number"> 1 </span>   1</span><br><span class="line"><span class="number"> 2 </span> <span class="number"> 4 </span>   8</span><br><span class="line"><span class="number"> 3 </span> <span class="number"> 9 </span>  27</span><br><span class="line"><span class="number"> 4 </span><span class="number"> 16 </span>  64</span><br><span class="line"><span class="number"> 5 </span><span class="number"> 25 </span> 125</span><br><span class="line"><span class="number"> 6 </span><span class="number"> 36 </span> 216</span><br><span class="line"><span class="number"> 7 </span><span class="number"> 49 </span> 343</span><br><span class="line"><span class="number"> 8 </span><span class="number"> 64 </span> 512</span><br><span class="line"><span class="number"> 9 </span><span class="number"> 81 </span> 729</span><br><span class="line">10<span class="number"> 100 </span>1000</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; for x in range(1, 11):</span><br><span class="line">...     print(&#x27;&#123;0:2d&#125; &#123;1:3d&#125; &#123;2:4d&#125;&#x27;.format(x, x*x, x*x*x))</span><br><span class="line">...</span><br><span class="line"><span class="number"> 1 </span> <span class="number"> 1 </span>   1</span><br><span class="line"><span class="number"> 2 </span> <span class="number"> 4 </span>   8</span><br><span class="line"><span class="number"> 3 </span> <span class="number"> 9 </span>  27</span><br><span class="line"><span class="number"> 4 </span><span class="number"> 16 </span>  64</span><br><span class="line"><span class="number"> 5 </span><span class="number"> 25 </span> 125</span><br><span class="line"><span class="number"> 6 </span><span class="number"> 36 </span> 216</span><br><span class="line"><span class="number"> 7 </span><span class="number"> 49 </span> 343</span><br><span class="line"><span class="number"> 8 </span><span class="number"> 64 </span> 512</span><br><span class="line"><span class="number"> 9 </span><span class="number"> 81 </span> 729</span><br><span class="line">10<span class="number"> 100 </span>1000</span><br></pre></td></tr></table></figure>
+<p><br><br>读取键盘输入</p>
+<figure class="highlight hsp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">str</span> = <span class="keyword">input</span>(<span class="string">&quot;请输入：&quot;</span>)<span class="comment">;</span></span><br><span class="line"><span class="keyword">print</span> (<span class="string">&quot;你输入的内容是: &quot;</span>, <span class="keyword">str</span>)</span><br></pre></td></tr></table></figure>
+<br>
+打开读写文件
+<figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line"><span class="comment">#open(filename, mode)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&quot;/tmp/foo.txt&quot;</span>, <span class="string">&quot;w&quot;</span>)</span><br><span class="line">f.<span class="built_in">write</span>( <span class="string">&quot;Python 是一个非常好的语言。\n是的，的确非常好!!\n&quot;</span> )</span><br><span class="line"><span class="comment">#关闭打开的文件</span></span><br><span class="line">f.<span class="built_in">close</span>()</span><br></pre></td></tr></table></figure>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">f.<span class="keyword">read</span>(<span class="keyword">size</span>)</span><br><span class="line">str = f.readline()</span><br><span class="line">f.<span class="keyword">readlines</span>() 将返回该文件中包含的所有行。</span><br></pre></td></tr></table></figure>
+
+<p><strong>f.tell()</strong><br>f.tell() 返回文件对象当前所处的位置, 它是从文件开头开始算起的字节数。<br><br></p>
+<p><strong>f.seek()</strong><br>如果要改变文件当前的位置, 可以使用 f.seek(offset, from_what) 函数。<br>from_what 的值, 如果是 0 表示开头, 如果是 1 表示当前位置, 2 表示文件的结尾，例如：<br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seek(x,0) ： 从起始位置即文件首行首字符开始移动 x 个字符<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seek(x,1) ： 表示从当前位置往后移动x个字符<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;seek(-x,2)：表示从文件的结尾往前移动x个字符</p>
+<h3 id="pickle模块"><a href="#pickle模块" class="headerlink" title="pickle模块"></a>pickle模块</h3><p>python的pickle模块实现了基本的数据序列和反序列化。</p>
+<h3 id="OS-文件-目录方法"><a href="#OS-文件-目录方法" class="headerlink" title="OS 文件/目录方法"></a>OS 文件/目录方法</h3><h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">arg</span> <span class="keyword">in</span> sys.argv[<span class="number">1</span>:]:</span><br><span class="line">    try:</span><br><span class="line">        f = <span class="built_in">open</span>(<span class="built_in">arg</span>, <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">    except IOError:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;cannot open&#x27;</span>, <span class="built_in">arg</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">arg</span>, <span class="string">&#x27;has&#x27;</span>, <span class="built_in">len</span>(f.readlines()), <span class="string">&#x27;lines&#x27;</span>)</span><br><span class="line">        f.<span class="built_in">close</span>()</span><br></pre></td></tr></table></figure>
+
+<h3 id="namespace"><a href="#namespace" class="headerlink" title="namespace"></a>namespace</h3><blockquote><p>A namespace is a mapping from names to objects.Most namespaces are currently implemented as Python dictionaries。</p>
+</blockquote><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>python基础1</title>
+    <url>/WestRoute.github.io/2021/10/28/python01/</url>
+    <content><![CDATA[<p>Python 3 源码文件以 UTF-8 编码，所有字符串都是 unicode 字符串</p>
+<span id="more"></span>
+<h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;缩进不一致，会导致运行错误，反斜杠 \ 来实现多行语句</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">total</span> = <span class="string">item_one + \</span></span><br><span class="line"><span class="string">        item_two + \</span></span><br><span class="line"><span class="string">        item_three</span></span><br></pre></td></tr></table></figure>
+<p><br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;在 [], {}, 或 () 中的多行语句，不需要使用反斜杠 <br><br></p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">total</span> = [<span class="string">&#x27;item_one&#x27;</span>, <span class="string">&#x27;item_two&#x27;</span>, <span class="string">&#x27;item_three&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;item_four&#x27;</span>, <span class="string">&#x27;item_five&#x27;</span>]</span><br></pre></td></tr></table></figure>
+<p><br><br><br></p>
+<h3 id="变量和数据类型"><a href="#变量和数据类型" class="headerlink" title="变量和数据类型"></a>变量和数据类型</h3><p>Python3 中有六个标准的数据类型：</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>不可变数据（3 个）</strong>：Number（数字）、String（字符串）、Tuple（元组）；<br>&nbsp;&nbsp;&nbsp;&nbsp;<strong>可变数据（3 个）</strong>：List（列表）、Dictionary（字典）、Set（集合）。</p>
+<p>不需要声明数据类型，但可以用 isinstance 来判断：</p>
+<figure class="highlight python-repl"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt;</span> <span class="python">a = <span class="number">111</span></span></span><br><span class="line"><span class="meta">&gt;&gt;&gt;</span> <span class="python"><span class="built_in">isinstance</span>(a, <span class="built_in">int</span>)</span></span><br><span class="line">True</span><br></pre></td></tr></table></figure>
+<p><br><br><br>isinstance 和 type 的区别在于：</p>
+<p>type()不会认为子类是一种父类类型。<br>isinstance()会认为子类是一种父类类型。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>注意</strong>：Python3 中，bool 是 int 的子类，True 和 False 可以和数字相加， True==1、False==0 会返回 True，但可以通过 is 来判断类型。</p>
+<figure class="highlight python-repl"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt;</span> <span class="python"><span class="built_in">issubclass</span>(<span class="built_in">bool</span>, <span class="built_in">int</span>) </span></span><br><span class="line">True</span><br><span class="line"><span class="meta">&gt;&gt;&gt;</span> <span class="python"><span class="literal">True</span>==<span class="number">1</span></span></span><br><span class="line">True</span><br><span class="line"><span class="meta">&gt;&gt;&gt;</span> <span class="python"><span class="literal">False</span>==<span class="number">0</span></span></span><br><span class="line">True</span><br><span class="line"><span class="meta">&gt;&gt;&gt;</span> <span class="python"><span class="literal">True</span>+<span class="number">1</span></span></span><br><span class="line">2</span><br><span class="line"><span class="meta">&gt;&gt;&gt;</span> <span class="python"><span class="literal">False</span>+<span class="number">1</span></span></span><br><span class="line">1</span><br><span class="line"><span class="meta">&gt;&gt;&gt;</span> <span class="python"><span class="number">1</span> <span class="keyword">is</span> <span class="literal">True</span></span></span><br><span class="line">False</span><br><span class="line"><span class="meta">&gt;&gt;&gt;</span> <span class="python"><span class="number">0</span> <span class="keyword">is</span> <span class="literal">False</span></span></span><br><span class="line">False</span><br></pre></td></tr></table></figure>
+<p><br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;del语句删除单个或多个对象<br><br><br></p>
+<h4 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h4><p>运算</p>
+<figure class="highlight python-repl"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt;</span> <span class="python"><span class="number">2</span> / <span class="number">4</span>  <span class="comment"># 除法，得到一个浮点数</span></span></span><br><span class="line">0.5</span><br><span class="line"><span class="meta">&gt;&gt;&gt;</span> <span class="python"><span class="number">2</span> // <span class="number">4</span> <span class="comment"># 除法，得到一个整数</span></span></span><br><span class="line">0</span><br><span class="line"><span class="meta">&gt;&gt;&gt;</span> <span class="python"><span class="number">17</span> % <span class="number">3</span> <span class="comment"># 取余</span></span></span><br><span class="line">2</span><br><span class="line"><span class="meta">&gt;&gt;&gt;</span> <span class="python"><span class="number">2</span> ** <span class="number">5</span> <span class="comment"># 乘方</span></span></span><br><span class="line">32</span><br></pre></td></tr></table></figure>
+
+<h4 id="列表（List）"><a href="#列表（List）" class="headerlink" title="列表（List）"></a>列表（List）</h4><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">list = [<span class="string">&#x27;Google&#x27;</span>, <span class="string">&#x27;Runoob&#x27;</span>, 1997, 2000]</span><br><span class="line"> </span><br><span class="line"><span class="builtin-name">print</span> (<span class="string">&quot;原始列表 : &quot;</span>, list)</span><br><span class="line">del list[2]</span><br><span class="line"><span class="builtin-name">print</span> (<span class="string">&quot;删除第三个元素 : &quot;</span>, list)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="元组"><a href="#元组" class="headerlink" title="元组"></a>元组</h4><figure class="highlight python-repl"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt;</span> <span class="python">tup = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt;</span> <span class="python"><span class="built_in">print</span>(tup[<span class="number">0</span>])</span></span><br><span class="line">1</span><br><span class="line"><span class="meta">&gt;&gt;&gt;</span> <span class="python"><span class="built_in">print</span>(tup[<span class="number">1</span>:<span class="number">5</span>])</span></span><br><span class="line">(2, 3, 4, 5)</span><br><span class="line"><span class="meta">&gt;&gt;&gt;</span> <span class="python">tup[<span class="number">0</span>] = <span class="number">11</span>  <span class="comment"># 修改元组元素的操作是非法的</span></span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;</span><br><span class="line">TypeError: &#x27;tuple&#x27; object does not support item assignment</span><br><span class="line"><span class="meta">&gt;&gt;&gt;</span></span><br></pre></td></tr></table></figure>
+<p>虽然tuple的元素不可改变，但它可以包含可变的对象，比如list列表。</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">tup1</span> = ()    <span class="comment"># 空元组</span></span><br><span class="line"><span class="attr">tup2</span> = (<span class="number">20</span>,) <span class="comment"># 一个元素，需要在元素后添加逗号</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h4><p>set可以进行集合运算</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">a = <span class="built_in">set</span>(<span class="string">&#x27;abracadabra&#x27;</span>)</span><br><span class="line">b = <span class="built_in">set</span>(<span class="string">&#x27;alacazam&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(a - b)     <span class="comment"># a 和 b 的差集</span></span><br><span class="line"><span class="built_in">print</span>(a | b)     <span class="comment"># a 和 b 的并集</span></span><br><span class="line"><span class="built_in">print</span>(a &amp; b)     <span class="comment"># a 和 b 的交集</span></span><br><span class="line"><span class="built_in">print</span>(a ^ b)     <span class="comment"># a 和 b 中不同时存在的元素</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Dictionary（字典）"><a href="#Dictionary（字典）" class="headerlink" title="Dictionary（字典）"></a>Dictionary（字典）</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">dict</span> = &#123;&#125;</span><br><span class="line"><span class="built_in">dict</span>[<span class="string">&#x27;one&#x27;</span>] = <span class="string">&quot;1 - 菜鸟教程&quot;</span></span><br><span class="line"><span class="built_in">dict</span>[<span class="number">2</span>]     = <span class="string">&quot;2 - 菜鸟工具&quot;</span></span><br><span class="line"></span><br><span class="line">tinydict = &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;runoob&#x27;</span>,<span class="string">&#x27;code&#x27;</span>:<span class="number">1</span>, <span class="string">&#x27;site&#x27;</span>: <span class="string">&#x27;www.runoob.com&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> (<span class="built_in">dict</span>[<span class="string">&#x27;one&#x27;</span>])       <span class="comment"># 输出键为 &#x27;one&#x27; 的值</span></span><br><span class="line"><span class="built_in">print</span> (<span class="built_in">dict</span>[<span class="number">2</span>])           <span class="comment"># 输出键为 2 的值</span></span><br></pre></td></tr></table></figure>
+<p>另外，字典类型也有一些内置的函数，例如clear()、keys()、values()等。</p>
+<h3 id="条件控制"><a href="#条件控制" class="headerlink" title="条件控制"></a>条件控制</h3><figure class="highlight gcode"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> co<span class="symbol">ndition_1</span>:</span><br><span class="line">    stateme<span class="symbol">nt_block_1</span></span><br><span class="line">elif co<span class="symbol">ndition_2</span>:</span><br><span class="line">    stateme<span class="symbol">nt_block_2</span></span><br><span class="line">else:</span><br><span class="line">    stateme<span class="symbol">nt_block_3</span></span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<figure class="highlight gcode"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> 判断条件<span class="comment">(condition)</span>：</span><br><span class="line">    执行语句<span class="comment">(statements)</span>……</span><br></pre></td></tr></table></figure>
+
+<p><br>无限循环</p>
+<figure class="highlight axapta"><table><tr><td class="code"><pre><span class="line"><span class="built_in">var</span> = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> <span class="built_in">var</span> == <span class="number">1</span> :  <span class="meta"># 表达式永远为 true</span></span><br></pre></td></tr></table></figure>
+<br>
+**while 循环使用 else 语句**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expr 条件语句为 true 则执行 statement(s) 语句块，如果为 false，则执行 additional_statement(s)。
+<figure class="highlight axapta"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">count</span> = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">count</span> &lt; <span class="number">5</span>:</span><br><span class="line">   <span class="keyword">print</span> (<span class="keyword">count</span>, <span class="string">&quot; 小于 5&quot;</span>)</span><br><span class="line">   <span class="keyword">count</span> = <span class="keyword">count</span> + <span class="number">1</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">   <span class="keyword">print</span> (<span class="keyword">count</span>, <span class="string">&quot; 大于或等于 5&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><br>for语句</p>
+<figure class="highlight dts"><table><tr><td class="code"><pre><span class="line">for <span class="params">&lt;variable&gt;</span> in <span class="params">&lt;sequence&gt;</span>:</span><br><span class="line">    <span class="params">&lt;statements&gt;</span></span><br><span class="line"><span class="symbol">else:</span></span><br><span class="line">    <span class="params">&lt;statements&gt;</span></span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<figure class="highlight python-repl"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;languages = [&quot;C&quot;, &quot;C++&quot;, &quot;Perl&quot;, &quot;Python&quot;] </span><br><span class="line"><span class="meta">&gt;&gt;&gt;</span> <span class="python"><span class="keyword">for</span> x <span class="keyword">in</span> languages:</span></span><br><span class="line"><span class="meta">...</span> <span class="python">    <span class="built_in">print</span> (x)</span></span><br><span class="line"><span class="meta">...</span> </span><br><span class="line">C</span><br><span class="line">C++</span><br><span class="line">Perl</span><br><span class="line">Python</span><br><span class="line"><span class="meta">&gt;&gt;&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="range函数"><a href="#range函数" class="headerlink" title="range函数"></a>range函数</h3><figure class="highlight less"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="selector-tag">for</span> <span class="selector-tag">i</span> <span class="selector-tag">in</span> <span class="selector-tag">range</span>(<span class="number">5</span>):</span><br><span class="line">...     <span class="selector-tag">print</span>(i)</span><br></pre></td></tr></table></figure>
+<p>结果：0，1，2，3，4<br><br><br><br>也可以使用range指定区间的值：</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="selector-tag">for</span> <span class="selector-tag">i</span> <span class="selector-tag">in</span> <span class="selector-tag">range</span>(<span class="number">0</span>,<span class="number">10</span>):</span><br><span class="line">...     <span class="selector-tag">print</span>(i)</span><br></pre></td></tr></table></figure>
+<p><br><br>指定等差数列:</p>
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="selector-tag">for</span> <span class="selector-tag">i</span> <span class="selector-tag">in</span> <span class="selector-tag">range</span>(<span class="number">0</span>,<span class="number">10</span>,<span class="number">3</span>):</span><br><span class="line">...     <span class="selector-tag">print</span>(i)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight less"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="selector-tag">for</span> <span class="selector-tag">i</span> <span class="selector-tag">in</span> <span class="selector-tag">range</span>(-<span class="number">10</span>, -<span class="number">100</span>, -<span class="number">30</span>):</span><br><span class="line">...     <span class="selector-tag">print</span>(i)</span><br></pre></td></tr></table></figure>
+<p>结果：-10,-40,-70</p>
+<h3 id="break和continue"><a href="#break和continue" class="headerlink" title="break和continue"></a>break和continue</h3><figure class="highlight axapta"><table><tr><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="keyword">for</span> letter <span class="keyword">in</span> <span class="string">&#x27;Runoob&#x27;</span>:     <span class="meta"># 第一个实例</span></span><br><span class="line">   <span class="keyword">if</span> letter == <span class="string">&#x27;b&#x27;</span>:</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">   <span class="keyword">print</span> (<span class="string">&#x27;当前字母为 :&#x27;</span>, letter)</span><br><span class="line">  </span><br><span class="line"><span class="built_in">var</span> = <span class="number">10</span>                    <span class="meta"># 第二个实例</span></span><br><span class="line"><span class="keyword">while</span> <span class="built_in">var</span> &gt; <span class="number">0</span>:              </span><br><span class="line">   <span class="keyword">print</span> (<span class="string">&#x27;当前变量值为 :&#x27;</span>, <span class="built_in">var</span>)</span><br><span class="line">   <span class="built_in">var</span> = <span class="built_in">var</span> <span class="number">-1</span></span><br><span class="line">   <span class="keyword">if</span> <span class="built_in">var</span> == <span class="number">5</span>:</span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">print</span> (<span class="string">&quot;Good bye!&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<br>
+
+<h3 id="pass"><a href="#pass" class="headerlink" title="pass"></a>pass</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">pass</span>  <span class="comment"># 等待键盘中断 (Ctrl+C)</span></span><br></pre></td></tr></table></figure>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>动植物笔记</title>
+    <url>/WestRoute.github.io/2021/10/28/%E5%8A%A8%E6%A4%8D%E7%89%A9%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>1.中国生物多样性地理图集<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;中国物种信息服务CSIS<br>2.Oxfords Birds of American</p>
+<span id="more"></span>
+
+<h3 id="中国生物多样性地理图集"><a href="#中国生物多样性地理图集" class="headerlink" title="中国生物多样性地理图集"></a>中国生物多样性地理图集</h3><p>EX 灭绝     EW野外灭绝     RE地区灭绝<br>CR极危      EN濒危        VU易危       NT近危       LC无危<br>DD 数据缺乏   NA不予评价   NE未予评估<br><br><br><br><br>中国地形三大阶梯中，西南部物种最丰富<br>！！！！插入 中国物种估计数量<br>！！！！三峡物种<br>！！！！世界鸟类迁移图<br>！！！！中国陆地主要生境类型图</p>
+<h4 id="陆生脊椎动物"><a href="#陆生脊椎动物" class="headerlink" title="陆生脊椎动物"></a>陆生脊椎动物</h4><h5 id="陆生动物"><a href="#陆生动物" class="headerlink" title="陆生动物"></a>陆生动物</h5><p>赛加羚羊 EW<br>獐  VU<br>水獭 EN<br>羚牛 CR<br>巢鼠 LC<br>东北鼠兔 LC<br>猪獾  VU<br>雪豹  CR<br>花面狸 NT<br>白颊长臂猿 CR<br>川金丝猴  VU<br>盘羊  EN<br>褐长耳蝠 NT<br>长舌果蝠  VU<br>云南菊头蝠  EN  中国特有<br>喜马拉雅山旱獭  LC<br>豪猪  VU<br><br><br><br></p>
+<h5 id="鸟类"><a href="#鸟类" class="headerlink" title="鸟类"></a>鸟类</h5><p>鸡、雁、䴕、佛法僧、鸮、鸽、鹤、鹳、鹰隼、丘鹬、雀、莺、燕雀、鸦、鹟、麻雀<br><br><br><br>灰椋鸟 LC<br>橙胸鹟 LC<br>须浮鸥 Lc<br>棕头鸦雀 LC<br>灰鹡鸟  LC<br>大山雀  LC<br>北红尾鸲（qu）  LC<br>杂色山雀  LC<br>棕头鸥  LC<br>鸡形目鸟类共有63种，仅鹌鹑和日本鹌鹑与迁徙习性<br>翠鸟  LC<br>雪鸮（xiao） LC<br>猎隼（sun）  LC<br>翻石鹬（yu） LC<br>画眉 NT<br>远东树莺  LC<br>棕颈雪雀  LC<br>黄鹡（ji）鸰（ling）  LC<br>红嘴相思鸟  NT<br><br><br><br></p>
+<h5 id="陆生爬行"><a href="#陆生爬行" class="headerlink" title="陆生爬行"></a>陆生爬行</h5><p>福建绿叶青蛇 LC<br><br><br><br></p>
+<h4 id="陆生无脊椎动物"><a href="#陆生无脊椎动物" class="headerlink" title="陆生无脊椎动物"></a>陆生无脊椎动物</h4><p>窄斑凤尾蛱蝶  LC<br>宽带美凤蝶  LC<br><br><br><br></p>
+<h4 id="陆生植物"><a href="#陆生植物" class="headerlink" title="陆生植物"></a>陆生植物</h4><p>西伯利亚云杉  VU<br>宝兴牡丹 VU<br>天南星 NE<br><br><br><br></p>
+<h4 id="内陆水生动物"><a href="#内陆水生动物" class="headerlink" title="内陆水生动物"></a>内陆水生动物</h4><p>长须狮子鱼 NE</p>
+<h3 id="Oxfords-Birds-of-American"><a href="#Oxfords-Birds-of-American" class="headerlink" title="Oxfords Birds of American"></a>Oxfords Birds of American</h3><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>杂文</category>
+        <category>读书笔记</category>
+      </categories>
+  </entry>
+  <entry>
     <title>生活医学~NSAIDsによる蕁麻疹/血管浮腫~</title>
     <url>/WestRoute.github.io/2021/10/18/%E7%94%9F%E6%B4%BB%E5%8C%BB%E5%AD%A6/</url>
     <content><![CDATA[<h3 id="NSAIDsによる蕁麻疹-血管浮腫"><a href="#NSAIDsによる蕁麻疹-血管浮腫" class="headerlink" title="NSAIDsによる蕁麻疹/血管浮腫"></a>NSAIDsによる蕁麻疹/血管浮腫</h3><p><strong>Loxoprofen</strong>　　is a nonsteroidal NSAID in the propionic acid derivatives group, which also includes ibuprofen and naproxen among others. </p>
@@ -161,7 +644,7 @@
 <p><code>クリッピング</code><br>HTTPS:　HTTP＋STL<br><code>レインボー攻撃</code>ハッシュ→パスワード<br><code>ソルト</code>パスワードの味付け<br><code>APT攻撃</code>　国と国</p>
 <p><code>AES</code>:共通鍵　　<code>RSA</code>:公開鍵　　<code>SHA</code>:ハッシュ関数</p>
 <p>3ビット右シフト　1010 1011　→　1111 1010<br><code>ウォッチドッグタイマ(Watchdog Timer)</code>  あらかじめ設定された一定時間内にタイマがクリアされなかった場合，システム異常とみなしてシステムをリセット又は終了する。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">2の補数（4の場合）</span><br><span class="line"></span><br><span class="line">4の2進数表示は0100。この0100の0と1を入れ替えると1011となる。これに1を足すと1100となる。</span><br><span class="line">よって、1100が4の2の補数表示となる。</span><br></pre></td></tr></table></figure>
+<figure class="highlight dns"><table><tr><td class="code"><pre><span class="line"><span class="number">2</span>の補数（<span class="number">4</span>の場合）</span><br><span class="line"></span><br><span class="line"><span class="number">4</span>の<span class="number">2</span>進数表示は<span class="number">0100</span>。この<span class="number">0100の0と1</span>を入れ替えると<span class="number">1011</span>となる。これに<span class="number">1</span>を足すと<span class="number">1100</span>となる。</span><br><span class="line">よって、<span class="number">1100が4の2</span>の補数表示となる。</span><br></pre></td></tr></table></figure>
 
 <p><code>死の谷</code>　経費不足、結果出してない</p>
 <h3 id="マネジメント"><a href="#マネジメント" class="headerlink" title="マネジメント"></a>マネジメント</h3><p>売上原価:固定費+変動費<br>損益分岐点:売上高ー売上原価=売上総利益が0になる点<br>営業利益:売上総利益ー販売費及び一般管理費(販管費)<br>経常利益:営業利益+営業外収益ー営業外費用<br><code>サービスマネジメント</code>　サービス品質の向上<br><code>インシデント</code><br><code>SLA</code>　合意書<br><code>段階的取扱い/エスカレーション</code><br><code>ITIL対策</code>　サービス戦略　サービス設計　サービス移行　サービス運用　継続的サービス対策<br><code>CSF</code>　要因<br><code>KGI</code>　ゴール<br><code>KPI</code>　指標<br><code>マーケティングミックス</code>　<code>マーケティングリサーチ</code>　<code>マーチャンダイジング</code>陳列　<code>マスマーケティング</code>商品一種類<br><code>完全化保守</code>　<code>是正保守</code>　<code>適応保守</code>　<code>予防保守</code><br><code>かんばん</code>　<code>ブランニングポーカ</code>　<code>プロダクトバッグログ</code>　<br>固定比率=固定资产÷自己资本<br>流动比率=流动资产÷流动负债<br>自己资本比率=自己资本÷总资本<br>〇〇▲▲率 = ▲▲ ÷ 〇〇<br>バランスシート</p>
@@ -483,14 +966,91 @@
       </tags>
   </entry>
   <entry>
-    <title>C PrimerPlus(3) 函数与命名空间</title>
-    <url>/WestRoute.github.io/2021/09/22/c++03/</url>
-    <content><![CDATA[<h3 id="8-5显式具体化"><a href="#8-5显式具体化" class="headerlink" title="8.5显式具体化"></a>8.5显式具体化</h3><p>显式具体化：可以提供具体化函数定义。</p>
+    <title>C　PrimerPlus(6) 14私有继承与类模板</title>
+    <url>/WestRoute.github.io/2021/09/25/c++06classtemplate/</url>
+    <content><![CDATA[<h3 id="私有继承"><a href="#私有继承" class="headerlink" title="私有继承"></a>私有继承</h3><p>实现has-a关系的方法除了包含还有私有继承。<br>私有继承：基类的公有成员和保护成员都会成为派生类的私有成员</p>
 <span id="more"></span>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// non template function prototype</span><br><span class="line">void Swap(job&amp;,job&amp;);</span><br><span class="line"></span><br><span class="line">//template prototype</span><br><span class="line">template &lt;typename T&gt;</span><br><span class="line">void Swap(T &amp;,T &amp;);</span><br><span class="line"></span><br><span class="line">//explicit specialization for the job type</span><br><span class="line">//程序选择时，显式具体化优先于第二个模板生成</span><br><span class="line">template &lt;&gt; void Swap&lt;job&gt;(job &amp;,job &amp;);</span><br></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>CPrimerPlus</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>C　PrimerPlus(5) 13类继承与接口</title>
+    <url>/WestRoute.github.io/2021/09/24/c++05Inherit/</url>
+    <content><![CDATA[<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>接口与实现</p>
+<blockquote><p>使用公有继承时，类可以继承接口，可能还有实现（基类的纯虚函数提供接口，但不提供实现）\n<br>获得接口是is-a关系的组成部分。\n<br>而使用组合，类可以获得实现，但不能获得接口。不继承接口是has-a关系的组成部分。\n</p>
+</blockquote>
+<span id="more"></span>
+<br>
 
-<p>习题8.8：操作string，输入字符转成大写。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><strong>而使用组合，类可以获得实现，但不能获得接口。</strong>:组合通过object.function()引用。<br><br><br></p>
+<h3 id="派生类"><a href="#派生类" class="headerlink" title="派生类"></a>派生类</h3><figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="symbol">Circle</span> ：<span class="symbol">public</span> <span class="symbol">Ellipse</span></span><br></pre></td></tr></table></figure>
+<!--more-->
+<p>&nbsp;&nbsp;&nbsp;&nbsp;抽象类（ABC，abstract）必须包含一个纯虚函数（virtual）。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基类使用动态分配内存，并重新定义赋值和复制构造函数，派生类也是用new时必须为派生类定义显示的析构函数、复制构造函数和赋值构造函数。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;派生类</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="symbol">hasDMA</span> :<span class="symbol">public</span> <span class="symbol">baseDMA</span>&#123;</span><br><span class="line">    <span class="keyword">private</span>:</span><br><span class="line">       char* style;</span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;定义派生类独有的析构函数</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">baeDMA::~<span class="function"><span class="title">baseDMA</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">delete</span> []  label;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">hase DMA::~<span class="function"><span class="title">hasDMA</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">delete</span> [] style;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;当派生类想要生成基类的temp-copy时无法访问基类数据，派生类的复制构造函数必须<strong>调用</strong>基类的复制构造函数来处理共享的基类数据</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">hasDMA::<span class="built_in">hasDMA</span>(<span class="keyword">const</span> hasDMA &amp;hs): <span class="built_in">baseDMA</span>(hs)&#123;</span><br><span class="line">    style=<span class="keyword">new</span> <span class="keyword">char</span>[std::<span class="built_in">strlen</span>(hs.style)+<span class="number">1</span>];</span><br><span class="line">    std::<span class="built_in">strcpy</span>(style,hs.style);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;派生类赋值构造函数则是需要通过显式调用.</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//baseClass</span></span><br><span class="line">baseDMA &amp; baseDMA::<span class="keyword">operator</span>=(<span class="keyword">const</span> baseDMA &amp;rs)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>==&amp;rs) <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">delete</span> [] label;</span><br><span class="line">    label=<span class="keyword">new</span> <span class="keyword">char</span>[std::<span class="built_in">strlen</span>(hs.style)+<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">    std::<span class="built_in">strcpy</span>(label,rs.label);</span><br><span class="line">    rating=rs.rating;</span><br><span class="line">    <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//stance</span></span><br><span class="line">hasDMA &amp; hasDMA::<span class="keyword">operator</span>=(<span class="keyword">const</span> hasDMA &amp;hs)&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>==&amp;hs) <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">    baseDMA::<span class="keyword">operator</span>=(hs);</span><br><span class="line">    <span class="keyword">delete</span> [] label;</span><br><span class="line">    label=<span class="keyword">new</span> <span class="keyword">char</span>[std::<span class="built_in">strlen</span>(hs.style)+<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">    std::<span class="built_in">strcpy</span>(label,rs.label);</span><br><span class="line">    <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>dma.h</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> DMA_H_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DMA_H_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="comment">//  Base Class Using DMA</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">baseDMA</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">char</span> * label;</span><br><span class="line">    <span class="keyword">int</span> rating;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">baseDMA</span>(<span class="keyword">const</span> <span class="keyword">char</span> * l = <span class="string">&quot;null&quot;</span>, <span class="keyword">int</span> r = <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">baseDMA</span>(<span class="keyword">const</span> baseDMA &amp; rs);</span><br><span class="line">    <span class="keyword">virtual</span> ~<span class="built_in">baseDMA</span>();</span><br><span class="line">    baseDMA &amp; <span class="keyword">operator</span>=(<span class="keyword">const</span> baseDMA &amp; rs);</span><br><span class="line">    <span class="keyword">friend</span> std::ostream &amp; <span class="keyword">operator</span>&lt;&lt;(std::ostream &amp; os, </span><br><span class="line">                                     <span class="keyword">const</span> baseDMA &amp; rs);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// derived class without DMA</span></span><br><span class="line"><span class="comment">// no destructor needed</span></span><br><span class="line"><span class="comment">// uses implicit copy constructor</span></span><br><span class="line"><span class="comment">// uses implicit assignment operator</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">lacksDMA</span> :</span><span class="keyword">public</span> baseDMA</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="class"><span class="keyword">enum</span> &#123;</span> COL_LEN = <span class="number">40</span>&#125;;</span><br><span class="line">    <span class="keyword">char</span> color[COL_LEN];</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">lacksDMA</span>(<span class="keyword">const</span> <span class="keyword">char</span> * c = <span class="string">&quot;blank&quot;</span>, <span class="keyword">const</span> <span class="keyword">char</span> * l = <span class="string">&quot;null&quot;</span>,</span><br><span class="line">              <span class="keyword">int</span> r = <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">lacksDMA</span>(<span class="keyword">const</span> <span class="keyword">char</span> * c, <span class="keyword">const</span> baseDMA &amp; rs);</span><br><span class="line">    <span class="keyword">friend</span> std::ostream &amp; <span class="keyword">operator</span>&lt;&lt;(std::ostream &amp; os, </span><br><span class="line">                                     <span class="keyword">const</span> lacksDMA &amp; rs);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// derived class with DMA</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">hasDMA</span> :</span><span class="keyword">public</span> baseDMA</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">char</span> * style;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">hasDMA</span>(<span class="keyword">const</span> <span class="keyword">char</span> * s = <span class="string">&quot;none&quot;</span>, <span class="keyword">const</span> <span class="keyword">char</span> * l = <span class="string">&quot;null&quot;</span>,</span><br><span class="line">              <span class="keyword">int</span> r = <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">hasDMA</span>(<span class="keyword">const</span> <span class="keyword">char</span> * s, <span class="keyword">const</span> baseDMA &amp; rs);</span><br><span class="line">    <span class="built_in">hasDMA</span>(<span class="keyword">const</span> hasDMA &amp; hs);</span><br><span class="line">    ~<span class="built_in">hasDMA</span>();</span><br><span class="line">    hasDMA &amp; <span class="keyword">operator</span>=(<span class="keyword">const</span> hasDMA &amp; rs);  </span><br><span class="line">    <span class="keyword">friend</span> std::ostream &amp; <span class="keyword">operator</span>&lt;&lt;(std::ostream &amp; os, </span><br><span class="line">                                     <span class="keyword">const</span> hasDMA &amp; rs);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<p><br><br><br>dma.cpp</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;dma.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="comment">// baseDMA methods</span></span><br><span class="line">baseDMA::<span class="built_in">baseDMA</span>(<span class="keyword">const</span> <span class="keyword">char</span> * l, <span class="keyword">int</span> r)</span><br><span class="line">&#123;</span><br><span class="line">    label = <span class="keyword">new</span> <span class="keyword">char</span>[std::<span class="built_in">strlen</span>(l) + <span class="number">1</span>];</span><br><span class="line">    std::<span class="built_in">strcpy</span>(label, l);</span><br><span class="line">    rating = r;</span><br><span class="line">&#125;</span><br><span class="line">baseDMA::<span class="built_in">baseDMA</span>(<span class="keyword">const</span> baseDMA &amp; rs)</span><br><span class="line">&#123;</span><br><span class="line">    label = <span class="keyword">new</span> <span class="keyword">char</span>[std::<span class="built_in">strlen</span>(rs.label) + <span class="number">1</span>];</span><br><span class="line">    std::<span class="built_in">strcpy</span>(label, rs.label);</span><br><span class="line">    rating = rs.rating;</span><br><span class="line">&#125;</span><br><span class="line">baseDMA::~<span class="built_in">baseDMA</span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">delete</span> [] label;</span><br><span class="line">&#125;</span><br><span class="line">baseDMA &amp; baseDMA::<span class="keyword">operator</span>=(<span class="keyword">const</span> baseDMA &amp; rs)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span> == &amp;rs)</span><br><span class="line">        <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">delete</span> [] label;</span><br><span class="line">    label = <span class="keyword">new</span> <span class="keyword">char</span>[std::<span class="built_in">strlen</span>(rs.label) + <span class="number">1</span>];</span><br><span class="line">    std::<span class="built_in">strcpy</span>(label, rs.label);</span><br><span class="line">    rating = rs.rating;</span><br><span class="line">    <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">std::ostream &amp; <span class="keyword">operator</span>&lt;&lt;(std::ostream &amp; os, <span class="keyword">const</span> baseDMA &amp; rs)</span><br><span class="line">&#123;</span><br><span class="line">    os &lt;&lt; <span class="string">&quot;Label: &quot;</span> &lt;&lt; rs.label &lt;&lt; std::endl;</span><br><span class="line">    os &lt;&lt; <span class="string">&quot;Rating: &quot;</span> &lt;&lt; rs.rating &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> os;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// lacksDMA methods</span></span><br><span class="line">lacksDMA::<span class="built_in">lacksDMA</span>(<span class="keyword">const</span> <span class="keyword">char</span> * c, <span class="keyword">const</span> <span class="keyword">char</span> * l, <span class="keyword">int</span> r)</span><br><span class="line">    : <span class="built_in">baseDMA</span>(l, r)</span><br><span class="line">&#123;</span><br><span class="line">    std::<span class="built_in">strncpy</span>(color, c, <span class="number">39</span>);</span><br><span class="line">    color[<span class="number">39</span>] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line">lacksDMA::<span class="built_in">lacksDMA</span>(<span class="keyword">const</span> <span class="keyword">char</span> * c, <span class="keyword">const</span> baseDMA &amp; rs)</span><br><span class="line">    : <span class="built_in">baseDMA</span>(rs)</span><br><span class="line">&#123;</span><br><span class="line">    std::<span class="built_in">strncpy</span>(color, c, COL_LEN - <span class="number">1</span>);</span><br><span class="line">    color[COL_LEN - <span class="number">1</span>] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line">std::ostream &amp; <span class="keyword">operator</span>&lt;&lt;(std::ostream &amp; os, <span class="keyword">const</span> lacksDMA &amp; ls)</span><br><span class="line">&#123;</span><br><span class="line">    os &lt;&lt; (<span class="keyword">const</span> baseDMA &amp;) ls;</span><br><span class="line">    os &lt;&lt; <span class="string">&quot;Color: &quot;</span> &lt;&lt; ls.color &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> os;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// hasDMA methods</span></span><br><span class="line">hasDMA::<span class="built_in">hasDMA</span>(<span class="keyword">const</span> <span class="keyword">char</span> * s, <span class="keyword">const</span> <span class="keyword">char</span> * l, <span class="keyword">int</span> r)</span><br><span class="line">         : <span class="built_in">baseDMA</span>(l, r)</span><br><span class="line">&#123;</span><br><span class="line">    style = <span class="keyword">new</span> <span class="keyword">char</span>[std::<span class="built_in">strlen</span>(s) + <span class="number">1</span>];</span><br><span class="line">    std::<span class="built_in">strcpy</span>(style, s);</span><br><span class="line">&#125;</span><br><span class="line">hasDMA::<span class="built_in">hasDMA</span>(<span class="keyword">const</span> <span class="keyword">char</span> * s, <span class="keyword">const</span> baseDMA &amp; rs)</span><br><span class="line">         : <span class="built_in">baseDMA</span>(rs)</span><br><span class="line">&#123;</span><br><span class="line">    style = <span class="keyword">new</span> <span class="keyword">char</span>[std::<span class="built_in">strlen</span>(s) + <span class="number">1</span>];</span><br><span class="line">    std::<span class="built_in">strcpy</span>(style, s);</span><br><span class="line">&#125;</span><br><span class="line">hasDMA::<span class="built_in">hasDMA</span>(<span class="keyword">const</span> hasDMA &amp; hs)</span><br><span class="line">         : <span class="built_in">baseDMA</span>(hs)  <span class="comment">// invoke base class copy constructor</span></span><br><span class="line">&#123;</span><br><span class="line">    style = <span class="keyword">new</span> <span class="keyword">char</span>[std::<span class="built_in">strlen</span>(hs.style) + <span class="number">1</span>];</span><br><span class="line">    std::<span class="built_in">strcpy</span>(style, hs.style);</span><br><span class="line">&#125;</span><br><span class="line">hasDMA::~<span class="built_in">hasDMA</span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">delete</span> [] style;</span><br><span class="line">&#125;</span><br><span class="line">hasDMA &amp; hasDMA::<span class="keyword">operator</span>=(<span class="keyword">const</span> hasDMA &amp; hs)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span> == &amp;hs)</span><br><span class="line">        <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">    baseDMA::<span class="keyword">operator</span>=(hs);  <span class="comment">// copy base portion</span></span><br><span class="line">    <span class="keyword">delete</span> [] style;         <span class="comment">// prepare for new style</span></span><br><span class="line">    style = <span class="keyword">new</span> <span class="keyword">char</span>[std::<span class="built_in">strlen</span>(hs.style) + <span class="number">1</span>];</span><br><span class="line">    std::<span class="built_in">strcpy</span>(style, hs.style);</span><br><span class="line">    <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">std::ostream &amp; <span class="keyword">operator</span>&lt;&lt;(std::ostream &amp; os, <span class="keyword">const</span> hasDMA &amp; hs)</span><br><span class="line">&#123;</span><br><span class="line">    os &lt;&lt; (<span class="keyword">const</span> baseDMA &amp;) hs;</span><br><span class="line">    os &lt;&lt; <span class="string">&quot;Style: &quot;</span> &lt;&lt; hs.style &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span> os;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p><br><br></p>
+<h3 id="const的位置与用法"><a href="#const的位置与用法" class="headerlink" title="const的位置与用法"></a>const的位置与用法</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;保证参数不被修改</p>
+<figure class="highlight nim"><table><tr><td class="code"><pre><span class="line"><span class="type">Star</span>::star(<span class="keyword">const</span> <span class="built_in">char</span> *s)<span class="meta">&#123;...&#125;</span></span><br><span class="line">//即使时数组指针也无法修改</span><br></pre></td></tr></table></figure>
+<p><br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;保证调用对象不被修改</p>
+<figure class="highlight nim"><table><tr><td class="code"><pre><span class="line"><span class="built_in">void</span> <span class="type">Star</span>::show() <span class="keyword">const</span> <span class="meta">&#123;...&#125;</span></span><br><span class="line">//即this.的所有参数无法修改</span><br></pre></td></tr></table></figure>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;也可以放于返回值之前，意味着可以初始化返回对象中的变量，但无法修改返回对象的数据</p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>CPrimerPlus</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>C　PrimerPlus(4) 11使用类12类的动态内存</title>
+    <url>/WestRoute.github.io/2021/09/23/c++04objectAndClass/</url>
+    <content><![CDATA[<h3 id="重载运算符"><a href="#重载运算符" class="headerlink" title="重载运算符"></a>重载运算符</h3><figure class="highlight coq"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Time</span> <span class="keyword">Time</span>::operator+(const <span class="keyword">Time</span> &amp;t)const&#123;</span><br><span class="line">    <span class="keyword">Time</span> <span class="built_in">sum</span>;</span><br><span class="line">    <span class="built_in">sum</span>.minutes = minutes + t.minutes;</span><br><span class="line">    <span class="built_in">sum</span>.hours = hours + t.hours+su.minutes/<span class="number">60</span>;</span><br><span class="line">    <span class="built_in">sum</span>.minutes %= <span class="number">60</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<h3 id="友元函数"><a href="#友元函数" class="headerlink" title="友元函数"></a>友元函数</h3><p>通过让函数称为类的友元，可以赋予该函数与类的成员函数相同的访问权限<br>符号重载实现B<em>2.78， 友元的符号重载实现2.78</em>B<br>&nbsp;&nbsp;&nbsp;&nbsp;1.将友元函数的声明放入类声明中   2.不要再定义函数时加上friend</p>
+<figure class="highlight nim"><table><tr><td class="code"><pre><span class="line"><span class="type">Time</span> operator:(double m,<span class="keyword">const</span> <span class="type">Time</span> &amp;t)&#123;</span><br><span class="line">    <span class="type">Time</span> <span class="literal">result</span>;</span><br><span class="line">    long totalminutes = t.hours*m*<span class="number">60</span>  +  t.minutes*m</span><br><span class="line">    <span class="literal">result</span>.minutes = totalminutes%<span class="number">60</span>;</span><br><span class="line">    <span class="literal">result</span>.hours = totalminutes/<span class="number">60</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">result</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><br><br><br><br></p>
+<h3 id="类的动态内存"><a href="#类的动态内存" class="headerlink" title="类的动态内存"></a>类的动态内存</h3><p> &nbsp;&nbsp;&nbsp;&nbsp;<strong>类对象作为函数参数调用时，将会产生对象的副本，而这个个副本是调用类中的拷贝构造函数实现的，如果类中没有自定义拷贝构造，编译器会自动生成一个缺省的函数，该函数有以下特点：</strong><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1、对于基本类型的成员变量，按字节复制<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、对于类类型的成员变量，将自动调用相应类的拷贝函数来初始化<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3、指针只是简单的赋值，而不会自动分配内存<br><br><br> &nbsp;&nbsp;&nbsp;&nbsp;当退出该函数时，副本将调用析构函数，删除该指针，指针所指向内存也已被释放。将原始对象只保留一个指针值。当该类再次调用析构函数时会出现double free的错误。<br> 解决方法：<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1、自定义拷贝函数<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2、将对象作为引用传递</p>
+<p><br><br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;特殊成员函数：默认构造函数，默认析构函数，复制构造函数，赋值运算函数，地址运算函数<br><br></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;复制构造函数：创建一个新对象并将其初始化一个 <strong>现有对象</strong>，参数为指向类对象的常量。<strong>按值进行复制</strong></p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;NULL是表示空指针的C语言宏。</p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>CPrimerPlus</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>C PrimerPlus(3) 函数与命名空间</title>
+    <url>/WestRoute.github.io/2021/09/22/c++03funcAndNamespace/</url>
+    <content><![CDATA[<h3 id="8-5显式具体化"><a href="#8-5显式具体化" class="headerlink" title="8.5显式具体化"></a>8.5显式具体化</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;显式具体化：可以提供具体化函数定义。</p>
+<span id="more"></span>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// non template function prototype</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Swap</span><span class="params">(job&amp;,job&amp;)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//template prototype</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Swap</span><span class="params">(T &amp;,T &amp;)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//explicit specialization for the job type</span></span><br><span class="line"><span class="comment">//程序选择时，显式具体化优先于第二个模板生成</span></span><br><span class="line"><span class="keyword">template</span> &lt;&gt; <span class="keyword">void</span> Swap&lt;job&gt;(job &amp;,job &amp;);</span><br></pre></td></tr></table></figure>
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp;习题8.8：操作string，输入字符转成大写。</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h3 id="9-1内存模型和名称空间"><a href="#9-1内存模型和名称空间" class="headerlink" title="9.1内存模型和名称空间"></a>9.1内存模型和名称空间</h3><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
         <category>计算机</category>
@@ -499,19 +1059,19 @@
   </entry>
   <entry>
     <title>C PrimerPlus(2) string与char[]、char*</title>
-    <url>/WestRoute.github.io/2021/09/21/c++02/</url>
+    <url>/WestRoute.github.io/2021/09/21/c++02string/</url>
     <content><![CDATA[<h3 id="c语言"><a href="#c语言" class="headerlink" title="c语言"></a>c语言</h3><p>printf只能用char*型，所以需要转换成string型。<br><code>str.c_str()</code></p>
 <span id="more"></span>
-<h4 id="string-h-函数库"><a href="#string-h-函数库" class="headerlink" title="string.h 函数库"></a>string.h 函数库</h4><p><strong>连接文字符</strong><br>&nbsp;&nbsp;char *strcat(char *s, chat *a);<br>&nbsp;&nbsp;char *strncat(char *s, chat *a, int n);<br><strong>比较</strong><br>&nbsp;&nbsp;int strcmp(char *s, chat *t);<br>&nbsp;&nbsp;int strncmp(char *s, chat *t, int n);<br><strong>复制</strong><br>&nbsp;&nbsp;char *strcpy(char *d, chat *s);<br>&nbsp;&nbsp;char *strncpy(char *d, chat *s, int n);<br><strong>求长</strong><br>&nbsp;&nbsp;int strlen(chat *s);<br><strong>位置</strong><br>&nbsp;&nbsp;char *strchr(chat *s, int c);<br>&nbsp;&nbsp;char *strrchr(chat *s, int c);<br>&nbsp;&nbsp;char *strstr(chat *s, char *ss);    </p>
+<h4 id="string-h-函数库"><a href="#string-h-函数库" class="headerlink" title="string.h 函数库"></a>string.h 函数库</h4><p><strong>连接文字符</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;char *strcat(char *s, chat *a);<br>&nbsp;&nbsp;&nbsp;&nbsp;char *strncat(char *s, chat *a, int n);<br><strong>比较</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;int strcmp(char *s, chat *t);<br>&nbsp;&nbsp;&nbsp;&nbsp;int strncmp(char *s, chat *t, int n);<br><strong>复制</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;char *strcpy(char *d, chat *s);<br>&nbsp;&nbsp;&nbsp;&nbsp;char *strncpy(char *d, chat *s, int n);<br><strong>求长</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;int strlen(chat *s);<br><strong>位置</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;char *strchr(chat *s, int c);<br>&nbsp;&nbsp;&nbsp;&nbsp;char *strrchr(chat *s, int c);<br>&nbsp;&nbsp;&nbsp;&nbsp;char *strstr(chat *s, char *ss);    </p>
 <h3 id="C"><a href="#C" class="headerlink" title="C++"></a>C++</h3><p>方便程度：  char[] &gt; char* &gt; string</p>
-<h4 id="使用-char-注意-‘-0’"><a href="#使用-char-注意-‘-0’" class="headerlink" title="使用 char[] 注意 ‘\0’"></a>使用 char[] 注意 ‘\0’</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">char str1[] = &quot;DNA&quot;;</span><br><span class="line">char str2[] = &#123;&#x27;R&#x27;, &#x27;N&#x27;, &#x27;A&#x27;, &#x27;\0&#x27;&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="使用-char-注意-‘-0’"><a href="#使用-char-注意-‘-0’" class="headerlink" title="使用 char[] 注意 ‘\0’"></a>使用 char[] 注意 ‘\0’</h4><figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> str1[] = <span class="string">&quot;DNA&quot;</span>;</span><br><span class="line"><span class="keyword">char</span> str2[] = &#123;<span class="string">&#x27;R&#x27;</span>, <span class="string">&#x27;N&#x27;</span>, <span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;\0&#x27;</span>&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
-<h4 id="char-转换成-string"><a href="#char-转换成-string" class="headerlink" title="char[] 转换成 string"></a>char[] 转换成 string</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">int main(void) &#123;</span><br><span class="line">    char arr[] = &quot;CGTCAAACGG&quot;;</span><br><span class="line"></span><br><span class="line">    std::string dna_seq(arr, sizeof(arr) / sizeof(arr[0]));</span><br><span class="line"></span><br><span class="line">    std::cout &lt;&lt; dna_seq &lt;&lt; std::endl;</span><br><span class="line">    // CGTCAAACGG</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="char-转换成-string"><a href="#char-转换成-string" class="headerlink" title="char[] 转换成 string"></a>char[] 转换成 string</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span> arr[] = <span class="string">&quot;CGTCAAACGG&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function">std::string <span class="title">dna_seq</span><span class="params">(arr, <span class="keyword">sizeof</span>(arr) / <span class="keyword">sizeof</span>(arr[<span class="number">0</span>]))</span></span>;</span><br><span class="line"></span><br><span class="line">    std::cout &lt;&lt; dna_seq &lt;&lt; std::endl;</span><br><span class="line">    <span class="comment">// CGTCAAACGG</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="char-转换成-string-1"><a href="#char-转换成-string-1" class="headerlink" title="char* 转换成 string"></a>char* 转换成 string</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">int main(void) &#123;</span><br><span class="line">    const char* char_ptr = &quot;CGTCAAACGG&quot;;</span><br><span class="line"></span><br><span class="line">    std::string dna_seq = std::string(char_ptr);</span><br><span class="line"></span><br><span class="line">    std::cout &lt;&lt; dna_seq &lt;&lt; std::endl;</span><br><span class="line">    // CGTCAAACGG</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="char-转换成-string-1"><a href="#char-转换成-string-1" class="headerlink" title="char* 转换成 string"></a>char* 转换成 string</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">char</span>* char_ptr = <span class="string">&quot;CGTCAAACGG&quot;</span>;</span><br><span class="line"></span><br><span class="line">    std::string dna_seq = std::<span class="built_in">string</span>(char_ptr);</span><br><span class="line"></span><br><span class="line">    std::cout &lt;&lt; dna_seq &lt;&lt; std::endl;</span><br><span class="line">    <span class="comment">// CGTCAAACGG</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="string可以用-0-来访问"><a href="#string可以用-0-来访问" class="headerlink" title="string可以用 [0] 来访问"></a>string可以用 [0] 来访问</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include &quot;stdafx.h&quot;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cctype&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">string change(string &amp;str);</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt; &quot;Enter a string (q to quit): &quot;;</span><br><span class="line">    string str;</span><br><span class="line">    getline(cin, str);</span><br><span class="line">    while (str != &quot;q&quot;)</span><br><span class="line">    &#123;</span><br><span class="line">        str = change(str);</span><br><span class="line">        cout &lt;&lt; str &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; &quot;Next string (q to quit): &quot;;</span><br><span class="line">        getline(cin, str);</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; &quot;Bye.&quot; &lt;&lt; endl;</span><br><span class="line">    system(&quot;pause&quot;);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">string change(string &amp;str)</span><br><span class="line">&#123;</span><br><span class="line">    for (int i = 0; str[i]; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        str[i] = toupper(str[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    return str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+<h4 id="string可以用-0-来访问"><a href="#string可以用-0-来访问" class="headerlink" title="string可以用 [0] 来访问"></a>string可以用 [0] 来访问</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;stdafx.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function">string <span class="title">change</span><span class="params">(string &amp;str)</span></span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Enter a string (q to quit): &quot;</span>;</span><br><span class="line">    string str;</span><br><span class="line">    <span class="built_in">getline</span>(cin, str);</span><br><span class="line">    <span class="keyword">while</span> (str != <span class="string">&quot;q&quot;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        str = <span class="built_in">change</span>(str);</span><br><span class="line">        cout &lt;&lt; str &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Next string (q to quit): &quot;</span>;</span><br><span class="line">        <span class="built_in">getline</span>(cin, str);</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Bye.&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function">string <span class="title">change</span><span class="params">(string &amp;str)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; str[i]; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        str[i] = <span class="built_in">toupper</span>(str[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
         <category>计算机</category>
         <category>CPrimerPlus</category>
@@ -519,9 +1079,9 @@
   </entry>
   <entry>
     <title>C PrimerPlus(1) 对象与类</title>
-    <url>/WestRoute.github.io/2021/09/20/c++01/</url>
-    <content><![CDATA[<p>需要同时编译两个文件，即：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">g++ bank.cpp usebank.cpp</span><br></pre></td></tr></table></figure>
+    <url>/WestRoute.github.io/2021/09/20/c++01class/</url>
+    <content><![CDATA[<h3 id="对象与类"><a href="#对象与类" class="headerlink" title="对象与类"></a>对象与类</h3><p>需要同时编译两个文件，即：</p>
+<figure class="highlight brainfuck"><table><tr><td class="code"><pre><span class="line"><span class="comment">g</span>++ <span class="comment">bank</span><span class="string">.</span><span class="comment">cpp</span> <span class="comment">usebank</span><span class="string">.</span><span class="comment">cpp</span></span><br></pre></td></tr></table></figure>
 
 <span id="more"></span>
 
@@ -530,47 +1090,41 @@
 <p>私有成员函数  在类定义文件中定义。</p>
 <p>构造函数  类的构造函数是类的一种特殊的成员函数，它会在每次创建类的新对象时执行。构造函数的名称与类的名称是完全相同的，并且不会返回任何类型，也不会返回 void。构造函数可用于为某些成员变量设置初始值。</p>
 <p>析构函数  在每次删除所创建的对象时执行。析构函数的名称与类的名称是完全相同的，只是在前面加了个波浪号（~）作为前缀，它不会返回任何值，也不能带有任何参数。析构函数有助于在跳出程序（比如关闭文件、释放内存等）前释放资源。</p>
-<p>附上编程练习题第6问</p>
-<!--more-->
+<h4 id="编程练习题第6问"><a href="#编程练习题第6问" class="headerlink" title="编程练习题第6问"></a>编程练习题第6问</h4><!--more-->
 
 <p>six.h</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#ifndef SIX_H_</span><br><span class="line">#define SIX_H_</span><br><span class="line">class Move</span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">    double x;</span><br><span class="line">    double y;</span><br><span class="line"></span><br><span class="line">public:</span><br><span class="line">    Move(double a = 0.0, double b = 0.0);</span><br><span class="line">    void showmove() const;</span><br><span class="line">    Move add(const Move &amp;m) const;</span><br><span class="line">    void reset(double a = 0.0, double b = 0.0);</span><br><span class="line">&#125;;</span><br><span class="line">#endif</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> SIX_H_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SIX_H_</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Move</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">double</span> x;</span><br><span class="line">    <span class="keyword">double</span> y;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Move</span>(<span class="keyword">double</span> a = <span class="number">0.0</span>, <span class="keyword">double</span> b = <span class="number">0.0</span>);</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">showmove</span><span class="params">()</span> <span class="keyword">const</span></span>;</span><br><span class="line">    <span class="function">Move <span class="title">add</span><span class="params">(<span class="keyword">const</span> Move &amp;m)</span> <span class="keyword">const</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">reset</span><span class="params">(<span class="keyword">double</span> a = <span class="number">0.0</span>, <span class="keyword">double</span> b = <span class="number">0.0</span>)</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 <p>six.cpp</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#include &quot;six.h&quot;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Move::Move(double a, double b)</span><br><span class="line">&#123;</span><br><span class="line">    x = a;</span><br><span class="line">    y = b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Move::showmove() const</span><br><span class="line">&#123;</span><br><span class="line">    std::cout &lt;&lt; &quot;x = &quot; &lt;&lt; x &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; &quot;y = &quot; &lt;&lt; y &lt;&lt; std::endl;</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Move Move::add(const Move &amp;m) const</span><br><span class="line">&#123;</span><br><span class="line">    Move temp;</span><br><span class="line">    temp.x = m.x + this-&gt;x; //加上调用对象的x值;</span><br><span class="line">    temp.y = m.y + this-&gt;y; //加上调用对象的y值;</span><br><span class="line">    return temp;            //返回值为一个新对象;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void Move::reset(double a, double b)</span><br><span class="line">&#123;</span><br><span class="line">    x = a;</span><br><span class="line">    y = b;</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;six.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Move::<span class="built_in">Move</span>(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span><br><span class="line">&#123;</span><br><span class="line">    x = a;</span><br><span class="line">    y = b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Move::showmove</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;x = &quot;</span> &lt;&lt; x &lt;&lt; std::endl;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;y = &quot;</span> &lt;&lt; y &lt;&lt; std::endl;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Move <span class="title">Move::add</span><span class="params">(<span class="keyword">const</span> Move &amp;m)</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Move temp;</span><br><span class="line">    temp.x = m.x + <span class="keyword">this</span>-&gt;x; <span class="comment">//加上调用对象的x值;</span></span><br><span class="line">    temp.y = m.y + <span class="keyword">this</span>-&gt;y; <span class="comment">//加上调用对象的y值;</span></span><br><span class="line">    <span class="keyword">return</span> temp;            <span class="comment">//返回值为一个新对象;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Move::reset</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    x = a;</span><br><span class="line">    y = b;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 <p>testSix.cpp</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#include &quot;six.h&quot;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    using std::cout;</span><br><span class="line">    using std::endl;</span><br><span class="line">    Move temp;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; &quot;Starting values:&quot; &lt;&lt; endl;</span><br><span class="line">    temp.showmove();</span><br><span class="line">    cout &lt;&lt; &quot;After x + 2, y + 5:&quot; &lt;&lt; endl;</span><br><span class="line">    temp.reset(2, 5);</span><br><span class="line">    temp.showmove();</span><br><span class="line">    cout &lt;&lt; &quot;After adding new object value:&quot; &lt;&lt; endl;</span><br><span class="line">    temp = temp.add(temp); //对象赋值;</span><br><span class="line">    temp.showmove();</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;six.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">using</span> std::cout;</span><br><span class="line">    <span class="keyword">using</span> std::endl;</span><br><span class="line">    Move temp;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Starting values:&quot;</span> &lt;&lt; endl;</span><br><span class="line">    temp.<span class="built_in">showmove</span>();</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;After x + 2, y + 5:&quot;</span> &lt;&lt; endl;</span><br><span class="line">    temp.<span class="built_in">reset</span>(<span class="number">2</span>, <span class="number">5</span>);</span><br><span class="line">    temp.<span class="built_in">showmove</span>();</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;After adding new object value:&quot;</span> &lt;&lt; endl;</span><br><span class="line">    temp = temp.<span class="built_in">add</span>(temp); <span class="comment">//对象赋值;</span></span><br><span class="line">    temp.<span class="built_in">showmove</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-<p>编程练习题第8问</p>
-<p>eight.h</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#ifndef EIGHT_H_</span><br><span class="line">#define EIGHT_H_</span><br><span class="line"></span><br><span class="line">typedef int Item;</span><br><span class="line"></span><br><span class="line">class List</span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">    static const int MAX = 10;</span><br><span class="line">    Item items[MAX];</span><br><span class="line">    int index;</span><br><span class="line"></span><br><span class="line">public:</span><br><span class="line">    List();</span><br><span class="line">    void add_data(Item item);</span><br><span class="line">    bool is_empty();</span><br><span class="line">    bool is_full();</span><br><span class="line">    void visit(void (*pf)(Item &amp;));</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<h4 id="编程练习题第8问"><a href="#编程练习题第8问" class="headerlink" title="编程练习题第8问"></a>编程练习题第8问</h4><p>eight.h</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> EIGHT_H_</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> EIGHT_H_</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">int</span> Item;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">List</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> MAX = <span class="number">10</span>;</span><br><span class="line">    Item items[MAX];</span><br><span class="line">    <span class="keyword">int</span> index;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">List</span>();</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">add_data</span><span class="params">(Item item)</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">is_empty</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">is_full</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">visit</span><span class="params">(<span class="keyword">void</span> (*pf)(Item &amp;))</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
 
 
 
 <p>eight.cpp</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &quot;eight.h&quot;</span><br><span class="line"></span><br><span class="line">List::List()</span><br><span class="line">&#123;</span><br><span class="line">    this-&gt;index = 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void List::add_data(Item item)</span><br><span class="line">&#123;</span><br><span class="line">    this-&gt;items[index++] = item;</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool List::is_empty()</span><br><span class="line">&#123;</span><br><span class="line">    return 0 == index;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bool List::is_full()</span><br><span class="line">&#123;</span><br><span class="line">    return MAX == index;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void List::visit(void (*pf)(Item &amp;))</span><br><span class="line">&#123;</span><br><span class="line">    for (int i = 0; i &lt; this-&gt;index; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        (*pf)(this-&gt;items[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;eight.h&quot;</span></span></span><br><span class="line"></span><br><span class="line">List::<span class="built_in">List</span>()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">this</span>-&gt;index = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">List::add_data</span><span class="params">(Item item)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>-&gt;items[index++] = item;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">List::is_empty</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span> == index;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">List::is_full</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> MAX == index;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">List::visit</span><span class="params">(<span class="keyword">void</span> (*pf)(Item &amp;))</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>-&gt;index; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        (*pf)(<span class="keyword">this</span>-&gt;items[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 <p>testEight.cpp</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cctype&gt;</span><br><span class="line">#include &quot;eight.h&quot;</span><br><span class="line"></span><br><span class="line">void traverse(Item &amp;item);</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    using namespace std;</span><br><span class="line">    char ch;</span><br><span class="line">    Item temp;</span><br><span class="line">    List mylist;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; &quot;The list include following functions:&quot; &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;a to add an number.&quot; &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;v to visit every number.&quot; &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;q to exit the menu.&quot; &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; &quot;Please enter your choice: &quot;;</span><br><span class="line">    while (cin &gt;&gt; ch &amp;&amp; tolower(ch) != &#x27;q&#x27;)</span><br><span class="line">    &#123;</span><br><span class="line">        while (cin.get() != &#x27;\n&#x27;)</span><br><span class="line">            continue;</span><br><span class="line">        if (tolower(ch) != &#x27;a&#x27; &amp;&amp; tolower(ch) != &#x27;v&#x27;) //处理错误选择;</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; &quot;Please enter a, v or q: &quot;;</span><br><span class="line">            continue;</span><br><span class="line">        &#125;</span><br><span class="line">        switch (tolower(ch))</span><br><span class="line">        &#123;</span><br><span class="line">        case &#x27;a&#x27;:</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; &quot;Please enter an number: &quot;;</span><br><span class="line">            while (!(cin &gt;&gt; temp)) //处理错误非数值输入;</span><br><span class="line">            &#123;</span><br><span class="line">                cin.clear();</span><br><span class="line">                while (cin.get() != &#x27;\n&#x27;)</span><br><span class="line">                    continue;</span><br><span class="line">                cout &lt;&lt; &quot;Please enter an number again: &quot;;</span><br><span class="line">            &#125;</span><br><span class="line">            if (mylist.is_full())</span><br><span class="line">            &#123;</span><br><span class="line">                cout &lt;&lt; &quot;The list is full. Can&#x27;t add new number.&quot; &lt;&lt; endl;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                mylist.add_data(temp);</span><br><span class="line">                cout &lt;&lt; &quot;Add number &quot; &lt;&lt; temp &lt;&lt; &quot; successfully.&quot; &lt;&lt; endl;</span><br><span class="line">            &#125;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">        case &#x27;v&#x27;:</span><br><span class="line">        &#123;</span><br><span class="line">            if (mylist.is_empty())</span><br><span class="line">            &#123;</span><br><span class="line">                cout &lt;&lt; &quot;No number.\n&quot;;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                cout &lt;&lt; &quot;Visit every number:&quot; &lt;&lt; endl;</span><br><span class="line">                mylist.visit(traverse);</span><br><span class="line">            &#125;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; &quot;\n\n\n&quot;;</span><br><span class="line">        cout &lt;&lt; &quot;The list include following functions:&quot; &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; &quot;a to add an number.&quot; &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; &quot;v to visit every number.&quot; &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; &quot;q to exit the menu.&quot; &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; &quot;Please enter your choice: &quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; &quot;Bye.&quot; &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void traverse(Item &amp;item)</span><br><span class="line">&#123;</span><br><span class="line">    std::cout &lt;&lt; item &lt;&lt; &#x27; &#x27;;</span><br><span class="line">    return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>CPrimerPlus</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>C　PrimerPlus(4) 对象与类(2)</title>
-    <url>/WestRoute.github.io/2021/09/20/c++04/</url>
-    <content><![CDATA[<h3 id="10-1对象与类"><a href="#10-1对象与类" class="headerlink" title="10.1对象与类"></a>10.1对象与类</h3><p>抽象方法 设计抽象类（通常称为 ABC）的目的，是为了给其他类提供一个可以继承的适当的基类。抽象类不能被用于实例化对象，它只能作为接口使用。如果试图实例化一个抽象类的对象，会导致编译错误。</p>
+<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;eight.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">traverse</span><span class="params">(Item &amp;item)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">    <span class="keyword">char</span> ch;</span><br><span class="line">    Item temp;</span><br><span class="line">    List mylist;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;The list include following functions:&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;a to add an number.&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;v to visit every number.&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;q to exit the menu.&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Please enter your choice: &quot;</span>;</span><br><span class="line">    <span class="keyword">while</span> (cin &gt;&gt; ch &amp;&amp; <span class="built_in">tolower</span>(ch) != <span class="string">&#x27;q&#x27;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (cin.<span class="built_in">get</span>() != <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">tolower</span>(ch) != <span class="string">&#x27;a&#x27;</span> &amp;&amp; <span class="built_in">tolower</span>(ch) != <span class="string">&#x27;v&#x27;</span>) <span class="comment">//处理错误选择;</span></span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;Please enter a, v or q: &quot;</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in"><span class="keyword">switch</span></span> (<span class="built_in">tolower</span>(ch))</span><br><span class="line">        &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;a&#x27;</span>:</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;Please enter an number: &quot;</span>;</span><br><span class="line">            <span class="keyword">while</span> (!(cin &gt;&gt; temp)) <span class="comment">//处理错误非数值输入;</span></span><br><span class="line">            &#123;</span><br><span class="line">                cin.<span class="built_in">clear</span>();</span><br><span class="line">                <span class="keyword">while</span> (cin.<span class="built_in">get</span>() != <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                cout &lt;&lt; <span class="string">&quot;Please enter an number again: &quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (mylist.<span class="built_in">is_full</span>())</span><br><span class="line">            &#123;</span><br><span class="line">                cout &lt;&lt; <span class="string">&quot;The list is full. Can&#x27;t add new number.&quot;</span> &lt;&lt; endl;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                mylist.<span class="built_in">add_data</span>(temp);</span><br><span class="line">                cout &lt;&lt; <span class="string">&quot;Add number &quot;</span> &lt;&lt; temp &lt;&lt; <span class="string">&quot; successfully.&quot;</span> &lt;&lt; endl;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&#x27;v&#x27;</span>:</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (mylist.<span class="built_in">is_empty</span>())</span><br><span class="line">            &#123;</span><br><span class="line">                cout &lt;&lt; <span class="string">&quot;No number.\n&quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                cout &lt;&lt; <span class="string">&quot;Visit every number:&quot;</span> &lt;&lt; endl;</span><br><span class="line">                mylist.<span class="built_in">visit</span>(traverse);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;\n\n\n&quot;</span>;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;The list include following functions:&quot;</span> &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;a to add an number.&quot;</span> &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;v to visit every number.&quot;</span> &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;q to exit the menu.&quot;</span> &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Please enter your choice: &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Bye.&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">traverse</span><span class="params">(Item &amp;item)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    std::cout &lt;&lt; item &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h3 id="10-1对象与类"><a href="#10-1对象与类" class="headerlink" title="10.1对象与类"></a>10.1对象与类</h3><p>抽象方法 设计抽象类（通常称为 ABC）的目的，是为了给其他类提供一个可以继承的适当的基类。抽象类不能被用于实例化对象，它只能作为接口使用。如果试图实例化一个抽象类的对象，会导致编译错误。</p>
 <p>虚方法</p>
 <p>抽象方法和虚方法的区别<br>1.虚方法必须有实现部分，抽象方法没有提供实现部分，抽象方法是一种强制派生类覆盖的方法，否则派生类将不能被实例化。<br>2.抽象方法只能在抽象类中声明，虚方法不是。如果类包含抽象方法，那么该类也是抽象的，也必须声明类是抽象的。<br>3.抽象方法必须在派生类中重写，这一点和接口类似，虚方法不需要再派生类中重写。</p>
 <p>静态联编 在编译时期完成的联编</p>
 <p>动态联编 编译器生成能够在程序运行时选择的正确的虚方法的代码</p>
+<p><br><br><br><br><br><br><br><br></p>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
         <category>计算机</category>
@@ -644,9 +1198,19 @@
       </categories>
   </entry>
   <entry>
-    <title>【更新中】《航空航天概论》笔记(1)</title>
-    <url>/WestRoute.github.io/2021/09/01/%E8%88%AA%E7%A9%BA%E8%88%AA%E5%A4%A9%E6%A6%82%E8%AE%BA/</url>
-    <content><![CDATA[<div class="book">
+    <title>《航空航天概论》笔记(1)</title>
+    <url>/WestRoute.github.io/2021/09/01/%E8%88%AA%E7%A9%BA%E8%88%AA%E5%A4%A9%E6%A6%82%E8%AE%BA01/</url>
+    <content><![CDATA[<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+ MathJax.Hub.Config({
+ tex2jax: {
+ inlineMath: [['$', '$'] ],
+ displayMath: [ ['$$','$$'], ["\\[","\\]"] ]
+ }
+ });
+</script>
+<div class="book">
     <div class="hpbook"><img src="/WestRoute.github.io/images/book/150.jpg"></div>
 
 </div>
@@ -658,17 +1222,20 @@
 <br>
 <br>
 <br>
-<br>
 
-<h3 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h3><p>第二代超声速战斗机的代表机型有 <span style="background-color:#ADD8E6"></span><span style="background-color:#ADD8E6">米格21</span> <span style="background-color:#ADD8E6">F104</span><br>马赫3 <span style="background-color:#ADD8E6">米格21</span> <span style="background-color:#ADD8E6">SR-71</span><br>第一宇宙速度 第二 第三<br>F-80shooting star喷气式战斗机<br>第三代战斗机 <span style="background-color:#ADD8E6">F-15</span> <span style="background-color:#ADD8E6">Su-27</span> <span style="background-color:#ADD8E6">米格29</span><br>第四代战斗机 （银生能力 超声速巡航能力 推力矢量技术 超视距多目标攻击）<span style="background-color:#ADD8E6">F-35</span> <span style="background-color:#ADD8E6"> F-22</span> <span style="background-color:#ADD8E6">歼31</span> <span style="background-color:#ADD8E6"> 歼20</span> <span style="background-color:#ADD8E6">  F16 </span> <span style="background-color:#ADD8E6">米拉吉2000 </span><br>我国自行研制的具有完全自主知识产权的第三代战机是<span style="background-color:#ADD8E6">歼10</span><br><span style="background-color:#ffcccb">1961年</span> 加加林 首次进入太空<br>我国载人飞船的发射场 酒泉卫星发射场<br>低动态临近空间飞行器的飞行速度为 马赫数小于1<br>WW2著名飞机有 <span style="background-color:#ADD8E6">零式</span> <span style="background-color:#ADD8E6">  P-51（美）</span> <span style="background-color:#ADD8E6"> P-61（美）</span><br><span style="background-color:#ffcccb">2003</span> 哥伦比亚号航天飞机失事<br><span style="background-color:#ffcccb">1947年</span> 美国X-1研究机首次突破音障<br><span style="background-color:#ffcccb">1968</span> 苏联首次试飞超声速旅客机<br><span style="background-color:#ffcccb">1969年</span> 英法合作研制协和号超声速旅客机试飞成功<br>第1代超声速战斗机 <span style="background-color:#ADD8E6">歼6</span> <span style="background-color:#ADD8E6">  米格-19 </span> <span style="background-color:#ADD8E6"> F-100</span><br>第2代超声速战斗机 <span style="background-color:#ADD8E6">歼7</span> <span style="background-color:#ADD8E6"> 歼8</span> <span style="background-color:#ADD8E6">   米格-21</span> <span style="background-color:#ADD8E6"> F-104</span><br>美国<span style="background-color:#ADD8E6">F35</span>将代替<span style="background-color:#ADD8E6">F16</span><br>隐身技术：<br>&nbsp;&nbsp;&nbsp;1降低雷达波特征   外形隐身 采用倾斜式双立尾 应用吸收材料<br>&nbsp;&nbsp;&nbsp;2降低红外辐射特征   采用涡扇发动机 采用矩形二元喷管 发动机布置于机身或机翼上<br>&nbsp;&nbsp;&nbsp;3降低可见光特征<br>&nbsp;&nbsp;&nbsp;4降低声学特征<br>隐身飞机有<span style="background-color:#ADD8E6">F-22</span> <span style="background-color:#ADD8E6"> F-117</span> <span style="background-color:#ADD8E6"> B-2</span><br>前掠翼<span style="background-color:#ADD8E6">X29</span><br>飞得最高的 <span style="background-color:#ADD8E6">米格25</span><br>飞的最快的 <span style="background-color:#ADD8E6">SR-71</span><br>最大的客机 <span style="background-color:#ADD8E6">A380</span><br>第一个隐身飞机 <span style="background-color:#ADD8E6">F-117</span><br>隐身直升飞机 <span style="background-color:#ADD8E6">科曼奇</span><br>2015 国产大型客机C919<br>1998 国际空间站<br>中国自主研发的第一个真正意义上的太空实验室 天宫2号<br>地球静止轨道卫星</p>
+<h3 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章 绪论"></a>第一章 绪论</h3><p>第二代超声速战斗机的代表机型有 <span style="background-color:#ADD8E6"></span><span style="background-color:#ADD8E6">米格21</span> <span style="background-color:#ADD8E6">F104</span><br>马赫3 <span style="background-color:#ADD8E6">米格21</span> <span style="background-color:#ADD8E6">SR-71</span><br>第一宇宙速度 第二 第三<br>F-80shooting star喷气式战斗机<br>第三代战斗机 <span style="background-color:#ADD8E6">F-15</span> <span style="background-color:#ADD8E6">Su-27</span> <span style="background-color:#ADD8E6">米格29</span><br>第四代战斗机 （银生能力 超声速巡航能力 推力矢量技术 超视距多目标攻击）<span style="background-color:#ADD8E6">F-35</span> <span style="background-color:#ADD8E6"> F-22</span> <span style="background-color:#ADD8E6">歼31</span> <span style="background-color:#ADD8E6"> 歼20</span> <span style="background-color:#ADD8E6">  F16 </span> <span style="background-color:#ADD8E6">米拉吉2000 </span><br>我国自行研制的具有完全自主知识产权的第三代战机是<span style="background-color:#ADD8E6">歼10</span><br><span style="background-color:#ffcccb">1961年</span> 加加林 首次进入太空<br>我国载人飞船的发射场 酒泉卫星发射场<br>低动态临近空间飞行器的飞行速度为 马赫数小于1<br>WW2著名飞机有 <span style="background-color:#ADD8E6">零式</span> <span style="background-color:#ADD8E6">  P-51（美）</span> <span style="background-color:#ADD8E6"> P-61（美）</span><br><span style="background-color:#ffcccb">2003年</span> 哥伦比亚号航天飞机失事<br><span style="background-color:#ffcccb">1947年</span> 美国X-1研究机首次突破音障<br><span style="background-color:#ffcccb">1968年</span> 苏联首次试飞超声速旅客机<br><span style="background-color:#ffcccb">1969年</span> 英法合作研制协和号超声速旅客机试飞成功<br>第1代超声速战斗机 <span style="background-color:#ADD8E6">歼6</span> <span style="background-color:#ADD8E6">  米格-19 </span> <span style="background-color:#ADD8E6"> F-100</span><br>第2代超声速战斗机 <span style="background-color:#ADD8E6">歼7</span> <span style="background-color:#ADD8E6"> 歼8</span> <span style="background-color:#ADD8E6">   米格-21</span> <span style="background-color:#ADD8E6"> F-104</span><br>美国<span style="background-color:#ADD8E6">F35</span>将代替<span style="background-color:#ADD8E6">F16</span><br>隐身技术：<br>&nbsp;&nbsp;&nbsp;1降低雷达波特征   外形隐身 采用倾斜式双立尾 应用吸收材料<br>&nbsp;&nbsp;&nbsp;2降低红外辐射特征   采用涡扇发动机 采用矩形二元喷管 发动机布置于机身或机翼上<br>&nbsp;&nbsp;&nbsp;3降低可见光特征<br>&nbsp;&nbsp;&nbsp;4降低声学特征<br>隐身飞机有<span style="background-color:#ADD8E6">F-22</span> <span style="background-color:#ADD8E6"> F-117</span> <span style="background-color:#ADD8E6"> B-2</span><br>前掠翼<span style="background-color:#ADD8E6">X29</span><br>飞得最高的 <span style="background-color:#ADD8E6">米格25</span><br>飞的最快的 <span style="background-color:#ADD8E6">SR-71</span><br>最大的客机 <span style="background-color:#ADD8E6">A380</span><br>第一个隐身飞机 <span style="background-color:#ADD8E6">F-117</span><br>隐身直升飞机 <span style="background-color:#ADD8E6">科曼奇</span><br>2015 国产大型客机C919<br>1998 国际空间站<br>中国自主研发的第一个真正意义上的太空实验室 天宫2号<br>地球静止轨道卫星</p>
 <p>直升机的布局形式有 <code>单旋翼</code> <code>纵列双旋翼</code> <code>横列双旋翼</code> <code>共轴双旋翼</code><br>加油方式 <code>伸缩管式</code> <code>插头椎管式</code> <code>嵌入式</code> <code>对接式</code><br><span style="background-color:#ADD8E6">V-22 鱼鹰 侧转旋翼机</span><br>科索沃战争<br>旅行者号经历36年飞出太阳系</p>
 <p>大气层：对流层 平流层 中间层 热层 散逸层<br>地球空间环境：季节 太阳活动程度 电子浓度变化 高能带电粒子辐射带（范艾伦辐射带）<br>行星际空间环境：太阳发射的电磁辐射 爆发性高能粒子辐射 稳定的等离子体流（太阳风）</p>
 <hr>
-<h3 id="第二章-飞行原理"><a href="#第二章-飞行原理" class="headerlink" title="第二章 飞行原理"></a>第二章 飞行原理</h3><p>单翼 反翼 立尾 正常式 鸭式 无尾式<br>公式日后总结<br>变后掠翼飞机： 米格-23 狂风 F-14 B-1轰炸机<br>&nbsp;&nbsp;变后掠翼飞机主要缺点： 转动及结构复杂 结构重量大 气动中心变化大<br>开普勒三大定律：椭圆定律 面积定律 调和定律</p>
-<hr>
-<h3 id="第三章-飞行器的动力系统"><a href="#第三章-飞行器的动力系统" class="headerlink" title="第三章 飞行器的动力系统"></a>第三章 飞行器的动力系统</h3><p>发动机：活塞式发动机和喷气式发动机</p>
-<hr>
-<p>其他航空知识学习网站：<br><a href="https://pigeon-poppo.com/">https://pigeon-poppo.com/</a></p>
+<h3 id="第二章-飞行原理"><a href="#第二章-飞行原理" class="headerlink" title="第二章 飞行原理"></a>第二章 飞行原理</h3><h4 id="流动流体的物理量和参数"><a href="#流动流体的物理量和参数" class="headerlink" title="流动流体的物理量和参数"></a>流动流体的物理量和参数</h4><p>(1)流体的状态参数，可压缩性，声速和粘性<br><strong>流体的状态参数</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;密度、温度、压强<br><br></p>
+<p><strong>可压缩性</strong>也称弹性<br><br></p>
+<p><strong>声速计算公式</strong><br>$$ c=20 \sqrt{T} $$<br>T是空气中的热力学温度<br><strong>粘性</strong><br>摩擦有两种，外摩擦和内摩擦。<br>内摩擦即是粘性，内摩擦里F,相邻流动层的速度差Δv，接触面积ΔS，相邻两层的距离Δy，μ流体内摩擦系数［Pa·s］<br>$$ F=\mu\frac{\Delta x}{\Delta y} \Delta{S} $$</p>
+<p><strong>流动雷诺数Re∞</strong><br>$$ Re_{\infty}=\rho_{\infty}\upsilon_{\infty} l/\mu_{\infty} $$<br>ρ∞，μ∞分别是飞行高度上大气的密度和动力粘度系数，l是飞机的尺寸特征，通常是飞机机长<br><br></p>
+<p><strong>压力系数Cp</strong><br>$$ C_{p}=(p - p_{\infty})/\frac{1}{2}\rho_{\infty}\upsilon^{2}_{\infty} $$<br>ρ是指原前方测得的参数</p>
+<p><strong>可压缩流体的沿流管的连续方程</strong><br>$$ \rho_{1}\upsilon_{1}A_{1} = \rho_{2}\upsilon_{2}A_{2} = \rho_{3}\upsilon_{3}A_{3} $$<br><strong>伯努利方程</strong><br>流体的总压等于静压与动压之和<br>马赫数最本质的作用是体现流体的被压缩的状态。<br>低速流体：<br>$$ \frac{1}{2}\upsilon_{1}^{2}+\frac{ p_{1} }{\rho}=\frac{1}{2}\upsilon_{2}^{2} + \frac{p_{2}}{\rho} $$<br><strong>风速管测速原理</strong><br><strong>低速、亚声速流动和声速流动的区别</strong><br>低速 收缩管道：增速，减压 扩张管道：减速，增压 壁面分离现象<br>亚声速流动 收缩管道：增速，减压 扩张管道：减速，增压<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;亚音速流动是分为两类的：马赫数小于0.3的低速流体视为不可压流体，而马赫数大于0.3的流体为的可压流体。<br>超声速 收缩管道：<span style="background-color:#ffcccb">减速，增压 </span>扩张管道：<span style="background-color:#ffcccb">增速，减压</span><br>拉瓦尔喷管 局部激波 脱体激波<br>单翼 反翼 立尾 正常式 鸭式 无尾式<br>变后掠翼飞机： 米格-23 狂风 F-14 B-1轰炸机</p>
+<p><strong>马赫锥图</strong><br>$$ \sin\mu = c/\upsilon = 1/Ma $$</p>
+<p><strong>外部绕流的区别，离体与附体激波</strong></p>
+<h4 id="作用在飞机上的空气动力"><a href="#作用在飞机上的空气动力" class="headerlink" title="作用在飞机上的空气动力"></a>作用在飞机上的空气动力</h4><p>当给定飞机的外形、飞行高度和速度时，飞机马赫数=常数，飞行雷诺数=常数，而作用于飞机上的升力、阻力和俯仰力矩仅仅取决于飞行仰角α的大小。<br>升力特性曲线，极曲线（阻力特性曲线），俯仰力特性曲线<br><strong>雷诺实验，层流和蓄流</strong><br>&nbsp;&nbsp;变后掠翼飞机主要缺点： 转动及结构复杂 结构重量大 气动中心变化大<br>开普勒三大定律：椭圆定律 面积定律 调和定律</p>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
         <category>杂文</category>

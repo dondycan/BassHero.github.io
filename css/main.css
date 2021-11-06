@@ -2052,7 +2052,7 @@ pre code {
 .progress-film {
 /* 进度部分 */
 /* 利用继承父元素宽度的百分比控制进度 */
-  width: 40%;
+  width: 41%;
   height: 100%;
 /* 内层背景色即进度达到的颜色 */
   background-color: #5cd9d1;
@@ -2061,7 +2061,7 @@ pre code {
 .progress-book {
 /* 进度部分 */
 /* 利用继承父元素宽度的百分比控制进度 */
-  width: 31%;
+  width: 34%;
   height: 100%;
 /* 内层背景色即进度达到的颜色 */
   background-color: #5cd9d1;

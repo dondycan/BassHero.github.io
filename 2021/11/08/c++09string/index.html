@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/WestRoute.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/WestRoute.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/WestRoute.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/WestRoute.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/WestRoute.github.io/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CM+PLUS+1p:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dondycan.github.io","root":"/WestRoute.github.io/","images":"/WestRoute.github.io/images","scheme":"Pisces","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":80,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/WestRoute.github.io/js/config.js"></script>
+<meta name="description" content="string类构造函数string类其实是基于一个类型模板。 12345678910111213141516171819202122232425namespace std &amp;#123;  template &lt;class charT,            class traits &#x3D; char_traits&lt;charT&gt;,            class Allocator &#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c++09 String类">
+<meta property="og:url" content="https://dondycan.github.io/WestRoute.github.io/2021/11/08/c++09string/index.html">
+<meta property="og:site_name" content="咚咚锵">
+<meta property="og:description" content="string类构造函数string类其实是基于一个类型模板。 12345678910111213141516171819202122232425namespace std &amp;#123;  template &lt;class charT,            class traits &#x3D; char_traits&lt;charT&gt;,            class Allocator &#x3D;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-11-07T16:14:10.000Z">
+<meta property="article:modified_time" content="2021-12-02T02:54:29.576Z">
+<meta property="article:author" content="咚咚锵">
+<meta property="article:tag" content="码龄 0年">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://dondycan.github.io/WestRoute.github.io/2021/11/08/c++09string/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://dondycan.github.io/WestRoute.github.io/2021/11/08/c++09string/","path":"2021/11/08/c++09string/","title":"c++09 String类"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>c++09 String类 | 咚咚锵</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/WestRoute.github.io/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/WestRoute.github.io/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">咚咚锵</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">目标 影3000 书500</p>
+      <img class="custom-logo-image" src="/WestRoute.github.io/images/avatar.gif" alt="咚咚锵">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/WestRoute.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/WestRoute.github.io/about/" rel="section"><i class="fa fa-chart-pie fa-fw"></i>个人统计</a></li>
+        <li class="menu-item menu-item-categories"><a href="/WestRoute.github.io/categories/" rel="section"><i class="fa fa-bookmark fa-fw"></i>文章分类</a></li>
+        <li class="menu-item menu-item-book"><a href="/WestRoute.github.io/books/" rel="section"><i class="fa fa-book fa-fw"></i>图书</a></li>
+        <li class="menu-item menu-item-film"><a href="/WestRoute.github.io/films/" rel="section"><i class="fa fa-film fa-fw"></i>观影</a></li>
+        <li class="menu-item menu-item-photo"><a href="/WestRoute.github.io/gallery/" rel="section"><i class="fa fa-camera-retro fa-fw"></i>相册</a></li>
+        <li class="menu-item menu-item-link"><a href="/WestRoute.github.io/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#string%E7%B1%BB%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="nav-number">1.</span> <span class="nav-text">string类构造函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string%E7%B1%BB%E8%BE%93%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">string类输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#string%E7%B1%BB%E5%8A%9F%E8%83%BD"><span class="nav-number">3.</span> <span class="nav-text">string类功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88%E6%A8%A1%E6%9D%BF%E2%80%93delete%E6%8C%87%E9%92%88%E5%AF%B9%E7%AD%96"><span class="nav-number">4.</span> <span class="nav-text">智能指针模板–delete指针对策</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E6%A8%A1%E6%9D%BF%E5%BA%93%E2%80%93%E6%B3%9B%E5%9E%8B%E7%BC%96%E7%A8%8B"><span class="nav-number">5.</span> <span class="nav-text">标准模板库–泛型编程</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">咚咚锵</p>
+  <div class="site-description" itemprop="description">码龄 0年</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/WestRoute.github.io/archives/">
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/WestRoute.github.io/categories/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:dondcyan@gmail.com" title="E-Mail → mailto:dondcyan@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yamagamisukibot" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yamagamisukibot" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dondycan.github.io/WestRoute.github.io/2021/11/08/c++09string/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/WestRoute.github.io/images/avatar.gif">
+      <meta itemprop="name" content="咚咚锵">
+      <meta itemprop="description" content="码龄 0年">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咚咚锵">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          c++09 String类
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-08 01:14:10" itemprop="dateCreated datePublished" datetime="2021-11-08T01:14:10+09:00">2021-11-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/WestRoute.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/WestRoute.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/C-PrimerPlus/" itemprop="url" rel="index"><span itemprop="name">C++PrimerPlus</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>2.7k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="string类构造函数"><a href="#string类构造函数" class="headerlink" title="string类构造函数"></a>string类构造函数</h3><p>string类其实是基于一个类型模板。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> std &#123;</span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">charT</span>,</span></span><br><span class="line"><span class="class">            <span class="keyword">class</span> <span class="title">traits</span> =</span> char_traits&lt;charT&gt;,</span><br><span class="line">            <span class="class"><span class="keyword">class</span> <span class="title">Allocator</span> =</span> allocator&lt;charT&gt; &gt;</span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">basic_string</span>;</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">using</span> string    = basic_string&lt;<span class="keyword">char</span>&gt;;</span><br><span class="line">  <span class="keyword">using</span> u8string  = basic_string&lt;<span class="keyword">char8_t</span>&gt;;   <span class="comment">// C++20から</span></span><br><span class="line">  <span class="keyword">using</span> u16string = basic_string&lt;<span class="keyword">char16_t</span>&gt;;  <span class="comment">// C++11から</span></span><br><span class="line">  <span class="keyword">using</span> u32string = basic_string&lt;<span class="keyword">char32_t</span>&gt;;  <span class="comment">// C++11から</span></span><br><span class="line">  <span class="keyword">using</span> wstring   = basic_string&lt;<span class="keyword">wchar_t</span>&gt;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">namespace</span> pmr &#123;  <span class="comment">// C++17から</span></span><br><span class="line">    <span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">charT</span>, <span class="keyword">class</span> <span class="title">traits</span> =</span> char_traits&lt;charT&gt;&gt;</span><br><span class="line">      <span class="keyword">using</span> basic_string =</span><br><span class="line">        std::basic_string&lt;charT, traits, polymorphic_allocator&lt;charT&gt;&gt;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">using</span> string    = basic_string&lt;<span class="keyword">char</span>&gt;;</span><br><span class="line">    <span class="keyword">using</span> u8string  = basic_string&lt;<span class="keyword">char8_t</span>&gt;; <span class="comment">// C++20から</span></span><br><span class="line">    <span class="keyword">using</span> u16string = basic_string&lt;<span class="keyword">char16_t</span>&gt;;</span><br><span class="line">    <span class="keyword">using</span> u32string = basic_string&lt;<span class="keyword">char32_t</span>&gt;;</span><br><span class="line">    <span class="keyword">using</span> wstring   = basic_string&lt;<span class="keyword">wchar_t</span>&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>头文件string.h和cstring支持对c-风格字符串进行操纵的c库字符串函数，但不支持string类。</p>
+<span id="more"></span>
+
+<table>
+<thead>
+<tr>
+<th>构造函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>string(const char * s)</td>
+<td>将string对象初始化为s指向NBTS。NBTS为null-byte-temnated string的缩写，表示以空字符结束的字符串（传统的C字符串）</td>
+</tr>
+<tr>
+<td>string(size_type n,char c)</td>
+<td>创建一个包含n个元素的string对象，<br>其中每个元素都被初始化为字符c</td>
+</tr>
+<tr>
+<td>string(const string &amp; str)</td>
+<td>复制构造函数</td>
+</tr>
+<tr>
+<td>string()</td>
+<td>创建一个的string对象，长度为0</td>
+</tr>
+<tr>
+<td>string(const char * s, size_type n)</td>
+<td>将string对象初始化为s指向的NBTS中的前n字符，即使超过了NBTS端</td>
+</tr>
+<tr>
+<td>template<clas Iter> string(Iter begin,Iter end)</td>
+<td>将string对象初始化为区间(begin,end)内的字符，其中begin和end的行为就像指针</td>
+</tr>
+<tr>
+<td>string(const string &amp; str,string size_type n = npos)</td>
+<td>将string对象初始化为对象str中从位置pos开始到结尾的字符，<br>或从位置pos开始的n个字符</td>
+</tr>
+<tr>
+<td>string(string &amp;&amp; str)noexcept</td>
+<td>将string对象初始化为string对象(移动构造函数)</td>
+</tr>
+<tr>
+<td>string(initializer_list<char>il)</td>
+<td>将string对象初始化为初始化列表il中的字符</td>
+</tr>
+</tbody></table>
+<p>重载运算符+=,=,&lt;&lt;,[]<br></p>
+<p><strong>string(initializer_list<char>il)</strong> 允许一下使用方式</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">string piano_man=&#123;<span class="string">&#x27;L&#x27;</span>,<span class="string">&#x27;i&#x27;</span>,<span class="string">&#x27;s&#x27;</span>,<span class="string">&#x27;z&#x27;</span>,<span class="string">&#x27;t&#x27;</span>&#125;;</span><br><span class="line">string comp_lang &#123;<span class="string">&#x27;L&#x27;</span>,<span class="string">&#x27;i&#x27;</span>,<span class="string">&#x27;s&#x27;</span>,<span class="string">&#x27;p&#x27;</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="string类输入"><a href="#string类输入" class="headerlink" title="string类输入"></a>string类输入</h3><table>
+<thead>
+<tr>
+<th>输入方式</th>
+<th>实例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>c-</td>
+<td>char info;<br>cin&gt;&gt;info;<br>cin.getlin(info,100);<br>cin.get(info,100);</td>
+</tr>
+<tr>
+<td>string对象</td>
+<td>string stuff;<br>cin &gt;&gt; stuff;<br>getline(cin,stuff);<br></td>
+</tr>
+</tbody></table>
+<p>两个版本都有getline，区别是string对象的getline将自动调整目标string对象的大小。<br>对于c-风格的输入，cin是调用对象，而对于string对象输入，cin是一个函数参数。</p>
+<h3 id="string类功能"><a href="#string类功能" class="headerlink" title="string类功能"></a>string类功能</h3><p>find()<br>capacity()<br>reserve()</p>
+<p>如果你有string，但需要c-风格字符串。比如open接受c-风格字符串</p>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">string filename<span class="comment">;</span></span><br><span class="line">cout&lt;&lt;<span class="string">&quot;Enter file name&quot;</span><span class="comment">;</span></span><br><span class="line">cin&gt;&gt; filename<span class="comment">;</span></span><br><span class="line">ofstream fout<span class="comment">;</span></span><br><span class="line">fout.open(filename.c_str())<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="智能指针模板–delete指针对策"><a href="#智能指针模板–delete指针对策" class="headerlink" title="智能指针模板–delete指针对策"></a>智能指针模板–delete指针对策</h3><p>auto_ptr,unique_ptr,share_ptr可以将new活得的地址付给这些对象，当智能指针过期时(离开代码块时)，其析构函数释放内存。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">demo</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="function">auto_ptr&lt;<span class="keyword">double</span>&gt; <span class="title">ap</span><span class="params">(<span class="keyword">new</span> <span class="keyword">double</span>)</span></span>;</span><br><span class="line">      *ap=<span class="number">25.5</span>;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>需要注意：<br>1.不能指向非堆内存<br>2.两个指针不能指向同一个对象<br>3.使用newp[]时不能用auto_ptr，share_ptr</p>
+<h3 id="标准模板库–泛型编程"><a href="#标准模板库–泛型编程" class="headerlink" title="标准模板库–泛型编程"></a>标准模板库–泛型编程</h3><p>size(),swap(),begin(),end(),push_back(),erase(),insert()<br>for_each(),random_shuffle(),sort()</p>
+<figure class="highlight reasonml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span><span class="constructor">_each(<span class="params">books</span>.<span class="params">begain</span>()</span>,books.<span class="keyword">end</span><span class="literal">()</span>,ShowReveiw)</span><br></pre></td></tr></table></figure>
+
+<p>基于范围的for</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">double</span> prices[<span class="number">5</span>] =&#123;<span class="number">4</span>.<span class="number">99</span>,<span class="number">10</span>.<span class="number">99</span>,<span class="number">6</span>.<span class="number">87</span>,<span class="number">7</span>.<span class="number">99</span>,<span class="number">8</span>.<span class="number">49</span>&#125;;</span><br><span class="line"><span class="attribute">for</span>(double x: prices) cout&lt;&lt; x &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure>
+<p>基于范围的for修改内容</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for(<span class="attribute">auto</span> &amp;x: books) <span class="built_in">InflateReview</span>(x);</span><br></pre></td></tr></table></figure>
+<p>WorseThan()</p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/WestRoute.github.io/2021/11/06/c++08except/" rel="prev" title="c++08 异常处理">
+                  <i class="fa fa-chevron-left"></i> c++08 异常处理
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/WestRoute.github.io/2021/11/09/pipe/" rel="next" title="c和c++ 管道通讯">
+                  c和c++ 管道通讯 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-rocket"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">咚咚锵</span>
+</div>
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv">
+                </span>次 | 
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/WestRoute.github.io/js/comments.js"></script><script src="/WestRoute.github.io/js/utils.js"></script><script src="/WestRoute.github.io/js/motion.js"></script><script src="/WestRoute.github.io/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

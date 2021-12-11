@@ -68,6 +68,153 @@
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
   </entry>
   <entry>
+    <title>计算机网络编程作业 02</title>
+    <url>/WestRoute.github.io/2021/12/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%BD%9C%E4%B8%9A02/</url>
+    <content><![CDATA[<p>参考来自：<a href="https://github.com/jzplp/Computer-Network-A-Top-Down-Approach-Answer">Computer Network A Top-Down Approach Practice Answer-github</a></p>
+<span id="more"></span><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>网络通讯</category>
+        <category>A-Top-Down-Approach</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>计算机网络编程作业 01</title>
+    <url>/WestRoute.github.io/2021/12/09/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B%E4%BD%9C%E4%B8%9A01/</url>
+    <content><![CDATA[<p>参考来自：<a href="https://github.com/jzplp/Computer-Network-A-Top-Down-Approach-Answer">Computer Network A Top-Down Approach Practice Answer-github</a></p>
+<span id="more"></span>
+<h2 id="chapter01"><a href="#chapter01" class="headerlink" title="chapter01"></a>chapter01</h2><p><strong>因特网协议栈中的5个层次</strong><br>应用层：提供了一些网络应用程序和应用层协议。<br>运输层：在应用程序端点之间传输运输层报文。主要有TCP和UDP两种协议。<br>网络层：负责将分组从一台主机移动到另一台主机。<br>链路层：沿着路经将数据报传递给下一层结点。<br>物理层：将整个帧从一个网络元素移动到邻近的网络元素。<br><br></p>
+<hr>
+<br>
+
+<p><strong>R12. 与分组交换网络相比，电路交换网络有哪些优点？在电路交换网络中，TDM比FDM有哪些优点？</strong></p>
+<p>答案：<br>电路交换网络适合实时服务。交付质量高。<br>TDM比FDM的优点如下：（来源于网络）</p>
+<ol>
+<li>当发生拥塞等网络问题时，TDM中的数据丢失可能只会是一部分，而FDM中就可能是大部分或全部。</li>
+<li>TDM适合数字信号传输，而FDM适合模拟信号传输，因为现在通信网络多是传输数字信号，所以TDM比FDM好。</li>
+<li>因为频分复用连接建立后，当中途没有数据传输时，他所占有的频段带宽不能被其他连接使用，故可能存在空置，而在时分复用的统计时分模式下，连接建立后，当某个连接暂时不用传输数据时可以少分时间片或者不分，即其时隙的分配时“按需分配”，这样就让出了相应的传输时间给其他连接。<br></li>
+</ol>
+<p><strong>R16. 考虑从某源主机跨越一条固定路由向某目的主机发送一分组。列出端到端时延组成部分。这些时延中的哪些是固定的，哪些是变化的？</strong></p>
+<p>答案：<br>端到端时延组成部分有：结点处理时延，排队时延，传输时延，传播时延。<br>时延中固定的部分有：传输时延 传播时延<br>时延中变化的部分有：结点处理时延 排队时延</p>
+<p>怎么查看自己电脑的IP地址：ipconfig/all</p>
+<h2 id="chapter-02"><a href="#chapter-02" class="headerlink" title="chapter 02"></a>chapter 02</h2><h3 id="套接字编程作业1：Web服务器"><a href="#套接字编程作业1：Web服务器" class="headerlink" title="套接字编程作业1：Web服务器"></a>套接字编程作业1：Web服务器</h3><p>开发一个处理一个HTTP请求的Web服务器。</p>
+<figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line"><span class="comment">#import socket module</span></span><br><span class="line"><span class="built_in">from</span> <span class="built_in">socket</span> import *</span><br><span class="line">serverSocket = <span class="built_in">socket</span>(AF_INET, SOCK_STREAM)</span><br><span class="line"><span class="comment">#Prepare a sever socket</span></span><br><span class="line">serverPort = <span class="number">80</span></span><br><span class="line">serverSocket.bind((<span class="string">&quot;&quot;</span>, serverPort))</span><br><span class="line">serverSocket.listen(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">    <span class="comment">#Establish the connection</span></span><br><span class="line">    print(<span class="string">&#x27;Ready to serve...&#x27;</span>)</span><br><span class="line">    connectionSocket, addr = serverSocket.accept()</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        message = connectionSocket.recv(<span class="number">1024</span>)</span><br><span class="line">        filename = message.<span class="built_in">split</span>()[<span class="number">1</span>]</span><br><span class="line">        f = <span class="built_in">open</span>(filename[<span class="number">1</span>:])</span><br><span class="line">        outputdata = f.<span class="built_in">read</span>()</span><br><span class="line">        f.<span class="built_in">close</span>()</span><br><span class="line">        <span class="comment">#Send one HTTP header line into socket</span></span><br><span class="line">        outputdata = <span class="string">&#x27;HTTP/1.1 200 OK\r\n\r\n&#x27;</span> + outputdata</span><br><span class="line">        <span class="comment">#Send the content of the requested file to the client</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="built_in">len</span>(outputdata)):</span><br><span class="line">            connectionSocket.<span class="built_in">send</span>(outputdata[i].encode())</span><br><span class="line">        connectionSocket.<span class="built_in">close</span>()</span><br><span class="line">        print(<span class="string">&quot;OK!&quot;</span>)</span><br><span class="line">    except IOError:</span><br><span class="line">        <span class="comment">#Send response message for file not found</span></span><br><span class="line">        outputdata = <span class="string">&#x27;HTTP/1.1 404 Not Found\r\n\r\n&#x27;</span></span><br><span class="line">        <span class="comment">#Close client socket</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="built_in">len</span>(outputdata)):</span><br><span class="line">            connectionSocket.<span class="built_in">send</span>(outputdata[i].encode())</span><br><span class="line">        connectionSocket.<span class="built_in">close</span>()</span><br><span class="line">serverSocket.<span class="built_in">close</span>()</span><br></pre></td></tr></table></figure>
+<p><strong>可选练习</strong><br>目前，这个Web服务器一次只处理一个HTTP请求。请实现一个能够同时处理多个请求的多线程服务器。使用线程，首先创建一个主线程，在固定端口监听客户端请求。当从客户端收到TCP连接请求时，它将通过另一个端口建立TCP连接，并在另外的单独线程中为客户端请求提供服务。这样在每个请求/响应对的独立线程中将有一个独立的TCP连接。</p>
+<p>不使用浏览器，编写自己的HTTP客户端来测试你的服务器。您的客户端将使用一个TCP连接用于连接到服务器，向服务器发送HTTP请求，并将服务器响应显示出来。您可以假定发送的HTTP请求将使用GET方法。 客户端应使用命令行参数指定服务器IP地址或主机名，服务器正在监听的端口，以及被请求对象在服务器上的路径。以下是运行客户端的输入命令格式。</p>
+<figure class="highlight elm"><table><tr><td class="code"><pre><span class="line"><span class="title">client</span>.py server_host server_<span class="keyword">port</span> filename</span><br></pre></td></tr></table></figure>
+
+<p>Answer:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line"><span class="comment">#import socket module</span></span><br><span class="line"><span class="built_in">from</span> <span class="built_in">socket</span> import *</span><br><span class="line">import threading</span><br><span class="line">def webProcess(connectionSocket):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        message = connectionSocket.recv(<span class="number">1024</span>)</span><br><span class="line">        filename = message.<span class="built_in">split</span>()[<span class="number">1</span>]</span><br><span class="line">        f = <span class="built_in">open</span>(filename[<span class="number">1</span>:], <span class="string">&quot;rb&quot;</span>)</span><br><span class="line">        outputdata = f.<span class="built_in">read</span>()</span><br><span class="line">        outputdata = outputdata.decode()</span><br><span class="line">        f.<span class="built_in">close</span>()</span><br><span class="line">        <span class="comment">#Send one HTTP header line into socket</span></span><br><span class="line">        outputdata = <span class="string">&#x27;HTTP/1.1 200 OK\r\n\r\n&#x27;</span> + outputdata</span><br><span class="line">        <span class="comment">#Send the content of the requested file to the client</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="built_in">len</span>(outputdata)):</span><br><span class="line">            connectionSocket.<span class="built_in">send</span>(outputdata[i].encode())</span><br><span class="line">        connectionSocket.<span class="built_in">close</span>()</span><br><span class="line">        print(<span class="string">&quot;OK!&quot;</span>)</span><br><span class="line">    except IOError:</span><br><span class="line">        <span class="comment">#Send response message for file not found</span></span><br><span class="line">        outputdata = <span class="string">&#x27;HTTP/1.1 404 Not Found\r\n\r\n&#x27;</span></span><br><span class="line">        <span class="comment">#Close client socket</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="built_in">len</span>(outputdata)):</span><br><span class="line">            connectionSocket.<span class="built_in">send</span>(outputdata[i].encode())</span><br><span class="line">        connectionSocket.<span class="built_in">close</span>()</span><br><span class="line"></span><br><span class="line">serverSocket = <span class="built_in">socket</span>(AF_INET, SOCK_STREAM)</span><br><span class="line"><span class="comment">#Prepare a sever socket</span></span><br><span class="line">serverPort = <span class="number">80</span></span><br><span class="line">serverSocket.bind((<span class="string">&quot;&quot;</span>, serverPort))</span><br><span class="line">serverSocket.listen(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> True:</span><br><span class="line">    <span class="comment">#Establish the connection</span></span><br><span class="line">    print(<span class="string">&#x27;Ready to serve...&#x27;</span>)</span><br><span class="line">    connectionSocket, addr = serverSocket.accept()</span><br><span class="line">    thread = threading.Thread(target = webProcess, args = (connectionSocket, ))</span><br><span class="line">    thread.<span class="built_in">start</span>()</span><br><span class="line">serverSocket.<span class="built_in">close</span>()</span><br></pre></td></tr></table></figure><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>网络通讯</category>
+        <category>A-Top-Down-Approach</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>「コネクタオリジナルレシピ」を読んで</title>
+    <url>/WestRoute.github.io/2021/12/09/%E3%80%8C%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%83%AC%E3%82%B7%E3%83%94%E3%80%8D%E3%82%92%E8%AA%AD%E3%82%93%E3%81%A7/</url>
+    <content><![CDATA[<h3 id="「コネクタオリジナルレシピ-初級編」を読んでのノートです。"><a href="#「コネクタオリジナルレシピ-初級編」を読んでのノートです。" class="headerlink" title="「コネクタオリジナルレシピ 初級編」を読んでのノートです。"></a>「コネクタオリジナルレシピ 初級編」を読んでのノートです。</h3><blockquote>
+<p>ダウンロード:<a herf="https://ac-blog.panasonic.co.jp/ebook/connector_lp/">コネクタ初級編</a></p>
+</blockquote>
+<span id="more"></span> 
+<h4 id=""><a href="#" class="headerlink" title=""></a></h4><p>機器内接続のコネクタには、主に以下のようなコネクタが挙げられます。</p>
+<h4 id="１．-カードエッジコネクタ"><a href="#１．-カードエッジコネクタ" class="headerlink" title="１． カードエッジコネクタ"></a>１． カードエッジコネクタ</h4><img src="/WestRoute.github.io/images/cardconnecter.png">
+基板から簡単にケーブル出しができ、使い勝手がよいというメリットがありますが、基板の反りや加工公差を考慮しなくてはならず実装が難しいという難点があります。
+
+<h4 id="２．-フラットケーブルコネクタ-flat-cable"><a href="#２．-フラットケーブルコネクタ-flat-cable" class="headerlink" title="２． フラットケーブルコネクタ(flat cable)"></a>２． フラットケーブルコネクタ(flat cable)</h4><img src="/WestRoute.github.io/images/flatcable.png">
+ノイズを拾いやすいという難点
+
+<h4 id="３．-2ピーススタッキングコネクタ"><a href="#３．-2ピーススタッキングコネクタ" class="headerlink" title="３． 2ピーススタッキングコネクタ"></a>３． 2ピーススタッキングコネクタ</h4><p>省スペース<br>基板対基板接続用コネクタ/基板対FPC接続用コネクタ</p>
+<h4 id="４．-FPC・FFCコネクタ"><a href="#４．-FPC・FFCコネクタ" class="headerlink" title="４． FPC・FFCコネクタ"></a>４． FPC・FFCコネクタ</h4><p>FPCとはFlexible Printed Circuitの略です。<br>FFCとはFlexible Flat Cableの略です。<br><img src="/WestRoute.github.io/images/fpc1.png"><br><br><br><br></p>
+<h3 id="「コネクタオリジナルレシピはじめての高速伝送編」を読んでのノートです。"><a href="#「コネクタオリジナルレシピはじめての高速伝送編」を読んでのノートです。" class="headerlink" title="「コネクタオリジナルレシピはじめての高速伝送編」を読んでのノートです。"></a>「コネクタオリジナルレシピはじめての高速伝送編」を読んでのノートです。</h3><blockquote>
+<p>ダウンロード:<a herf="https://ac-blog.panasonic.co.jp/ebook/connectorhighspeed_lp/">高速伝送編</a></p>
+</blockquote>
+<h4 id="インピーダンス"><a href="#インピーダンス" class="headerlink" title="インピーダンス"></a>インピーダンス</h4><p>インピーダンスがそろっていないと、このように信号に乱れが生じてしまいます。<br>この信号の乱れにより、信号が正しく・早く伝えられなくなって<br>下の表2は代表的な伝送規格におけるインピーダンスの値一覧です。</p>
+<img src="/WestRoute.github.io/images/tansport.png">
+ノイズには、大きく2種類あります。一つ目が伝導ノイズ、もう一つが放射ノイズです。前者は、電線やプリント回路を伝わっていくノイズで、後者は空気中を伝わっていくノイズです。
+
+<h4 id="ノイズ"><a href="#ノイズ" class="headerlink" title="ノイズ"></a>ノイズ</h4><p>ノイズに影響されない＝EMS（電磁気妨害感受：Electromagnetic Susceptibility）<br>ノイズを発生しない＝EMI（電磁気妨害：Electromagnetic Interference）<br>EMC（電磁的両立性：Electromagnetic Compatibility）</p>
+<h4 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h4><p><strong>周波数特性</strong><br>1 インサーションロス :入力した信号のうち、出力時にどれくらい減衰したかを示します<br>3 クロストーク :入力した信号のうち、どれくらい出力されずに反射して返ってきたかを示します。<br>2 リターンロス :差動伝送で、隣りあう端子にどれくらい信号が伝わってしまったか（乗り移ってしまったか）を示します。入力側の端子に伝わった信号分を、<br>NEXT（Near End Cross Talk：近い端子への信号の乗り移り）といいます。<br>対して、出力側の端子に伝わった信号分を、<br>FEXT（Far End CrossTalk：遠い端子への信号の乗り移り）といいます</p>
+<p><strong>時間軸特性</strong><br>4 スキュー :スキューとは、差動伝送で伝送しているペア信号同士の伝送時間のずれを示します<br><img src="/WestRoute.github.io/images/seque.png"><br>「0」か「1」か読み取れない エラーの原因になる<br>5 ジッタ<br><img src="/WestRoute.github.io/images/jitta.png"></p>
+<p>アイパターン</p>
+<h4 id="コーディングでのデータ変換"><a href="#コーディングでのデータ変換" class="headerlink" title="コーディングでのデータ変換"></a>コーディングでのデータ変換</h4><p>変換方式は以下のように様々な方法があります。<br>● 8B10B ：8ビットのデータを10ビットへ置き換える<br>● 64B66B ：64ビットのデータを66ビットへ置き換える<br>● 128B130B ：128ビットのデータを130ビットへ置き換える</p>
+<h4 id="パラシリ変換・SerDes"><a href="#パラシリ変換・SerDes" class="headerlink" title="パラシリ変換・SerDes"></a>パラシリ変換・SerDes</h4><p>そもそも、データ伝送は使用する信号線の数によって、下記の2種類の伝送方式に分けられます。<br>実際に、様々な基板や機器を接続する場合、伝送経路内でシリアル通信とパラレル通信が混在する場<br>合がでてきます。<br>その際に行うのが、<strong>SerDes変換（パラシリ変換）</strong>です。<br><strong>パラレル通信</strong><br>複数の信号線や回線を使って、一度に多くのデータを伝送します。<br><strong>シリアル通信</strong><br>ひとつの信号線や回線を使って、データを1ビットずつ順番に伝送する方法。<br><br><br>このSerDes変換に必要になるのが、シリアライザー・デシリアライザーと呼ばれる、ICです。<br>シリアライザー ：パラレル通信→シリアル通信<br>デシリアライザー：シリアル通信→パラレル通信</p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Verilog学习 01</title>
+    <url>/WestRoute.github.io/2021/12/09/Verilog01/</url>
+    <content><![CDATA[<p>Verilog HDL 有下列四种基本的值来表示硬件电路中的电平逻辑：</p>
+<p>0：逻辑 0 或 “假”<br>1：逻辑 1 或 “真”<br>x 或 X：未知<br>z 或 Z：高阻</p>
+<span id="more"></span>
+<h4 id="整数数值表示方法"><a href="#整数数值表示方法" class="headerlink" title="整数数值表示方法"></a>整数数值表示方法</h4><figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">4</span>&#x27;b<span class="number">1011</span>         // <span class="number">4</span>bit 数值</span><br><span class="line"><span class="attribute">32</span>&#x27;h<span class="number">3022</span>_c<span class="number">0</span>de   // <span class="number">32</span>bit 的数值</span><br></pre></td></tr></table></figure><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>unix系统学习 01</title>
+    <url>/WestRoute.github.io/2021/12/09/unix01/</url>
+    <content><![CDATA[<p>《Modern Operating System》<br>ANSI = C99<br>POSIX(Portavle Operating System Interface)</p>
+<span id="more"></span>
+
+<h3 id="简要考察read系统调用：11个步骤"><a href="#简要考察read系统调用：11个步骤" class="headerlink" title="简要考察read系统调用：11个步骤"></a>简要考察read系统调用：11个步骤</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>count = read(fd,buffer,nbytes);</strong><br>1.push nbytes<br>2.push &amp;buffer<br>3.push fd<br>4.Call read<br>5.Put code for read in register<br>6.trap to the kernal<br>7.<br>8.Dispatch<br>9.Sys call handler<br>10.return to caller<br>11.Increment SP</p>
+<h3 id="fork-waitpid"><a href="#fork-waitpid" class="headerlink" title="fork-waitpid"></a>fork-waitpid</h3><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="comment">#define TRUE 1 </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (TRUE) &#123;      <span class="regexp">/* repeat forever */</span> </span><br><span class="line">      type prompt( ); <span class="regexp">/* display prompt on the screen */</span> </span><br><span class="line">      read command(command, parameters); <span class="regexp">/* read input from terminal */</span> </span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">for</span> k() != <span class="number">0</span>) &#123; <span class="regexp">/* fork off child process */</span> </span><br><span class="line">            <span class="regexp">/ * Parent code. */</span> </span><br><span class="line">            waitpid(−<span class="number">1</span>, &amp;status, <span class="number">0</span>); <span class="regexp">/* wait for child to exit */</span> </span><br><span class="line">      &#125; <span class="keyword">else</span> &#123; </span><br><span class="line">            <span class="regexp">/ * Child code. */</span> </span><br><span class="line">            execve(command, parameters, <span class="number">0</span>); </span><br><span class="line">            <span class="regexp">/* execute command */</span> </span><br><span class="line">      &#125; </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+
+<h3 id="link"><a href="#link" class="headerlink" title="link"></a>link</h3><p>允许一个文件以不同的名称出现</p>
+<h3 id="winAPI"><a href="#winAPI" class="headerlink" title="winAPI"></a>winAPI</h3><img src="/WestRoute.github.io/images/os01.png">
+
+<h3 id="微内核"><a href="#微内核" class="headerlink" title="微内核"></a>微内核</h3><p>微内核中断处理、进程、调度、进程间通信(IPC)<br><img src="/WestRoute.github.io/images/os02.png"></p>
+<h3 id="客户端-服务器模式"><a href="#客户端-服务器模式" class="headerlink" title="客户端-服务器模式"></a>客户端-服务器模式</h3><h3 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h3><p>java虚拟机<br><img src="/WestRoute.github.io/images/os03.png"></p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>系统操作</category>
+        <category>Unix</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>CCNA考试 01</title>
+    <url>/WestRoute.github.io/2021/12/09/CCNA01/</url>
+    <content><![CDATA[<p>Step 0:install Packet Tracer</p>
+<span id="more"></span><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>网络通讯</category>
+        <category>CCNA</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>openCV学习 01</title>
+    <url>/WestRoute.github.io/2021/12/09/openCV01/</url>
+    <content><![CDATA[<p>openCV主体分为五个模块，其中四个如下所示<br>CV   MLL   HighGUI<br>↓    ↓       ↓<br>CXCORE</p>
+<span id="more"></span>
+<p>显示图片</p>
+<figure class="highlight nix"><table><tr><td class="code"><pre><span class="line"><span class="built_in">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="attr">filename</span> = <span class="string">&quot;img.jpg&quot;</span></span><br><span class="line"><span class="attr">imgCV</span> = cv2.imread(filename)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>人脸识别</p>
+<figure class="highlight apache"><table><tr><td class="code"><pre><span class="line"><span class="attribute">import</span> cv<span class="number">2</span></span><br><span class="line"><span class="attribute">import</span> aicommon.initAI()</span><br><span class="line"></span><br><span class="line"><span class="attribute">cap</span>=cv<span class="number">2</span>.VideoCapture(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="attribute">if</span> cap.isOpened() is True:</span><br><span class="line">      <span class="attribute">while</span> True:</span><br><span class="line">            <span class="attribute">ret</span>, frame =cap.read()</span><br><span class="line"></span><br><span class="line">            <span class="attribute">face</span>= cascade.detectMultiScale(frame)</span><br><span class="line"></span><br><span class="line">            <span class="attribute">if</span> len(face) &gt; <span class="number">0</span>:</span><br><span class="line">                  <span class="attribute">for</span> x,y,w,h in face:</span><br><span class="line">                        <span class="attribute">cv2</span>.rectangele(frame,(x,y),(x+w,y+h),(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),thickness=<span class="number">2</span>)</span><br><span class="line">                  <span class="attribute">cv2</span>.imshow(&#x27;camera&#x27;,frame)</span><br><span class="line">            <span class="attribute">if</span> cv<span class="number">2</span>.waitKey(<span class="number">1</span>)==<span class="number">27</span>:</span><br><span class="line">                  <span class="attribute">break</span></span><br><span class="line"><span class="attribute">cap</span>.release()</span><br><span class="line"><span class="attribute">cv2</span>.destoryAllWindows()</span><br><span class="line">                  </span><br></pre></td></tr></table></figure>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>软件编程</category>
+        <category>openCV</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>電子工作を始めてからの散財リスト</title>
+    <url>/WestRoute.github.io/2021/12/09/%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C%E3%82%92%E5%A7%8B%E3%82%81%E3%81%A6%E3%81%8B%E3%82%89%E6%95%A3%E8%B2%A1%E3%83%AA%E3%82%B9%E3%83%88/</url>
+    <content><![CDATA[<p>Raspberry pi2 model B(0円,3年前購入)<br>Raspberry piスタンーターキット (1480円)<br>Kuman カメラモジュールRaspberry pi用 (3284円)</p>
+<span id="more"></span>
+<p>USBケーブル A-A(586円)<br>HDMI2.0ケーブル,50cm(999円)<br>収納ケース (1300円)<br>LCD液晶ボード 7inch 1024*600 VGAモニター(5325円)<br>IC FAN MOTOR (5V 0.15A) (1210円)<br>SANDISCK micro SD card 32GB(600円,初期不良)<br>micro SD card 32GB(1080円)<br>servo SG90(480円)<br>servo SG92R(596円)<br>CR2025 1BS(230円)<br>NE555(54円)<br>HDMI2.0ケーブル,50cm(100円)<br>絶縁テーブル(283円)<br>AC adapter(999円)<br>はんだこて (1031円)<br>こて先クリーニング(327円)<br>巻はんだ(1408円)<br>木綿軍手(173円)</p>
+<p>――――   合計 21,645円</p>
+<p>購入予定:</p>
+<p>3Dプリンター<br>はんだ立て<br>LCD 9.7inch LP097QX1 LP097QX2<br>6人用ディスク<br>Raspberry pi4<br>電池ボックス<br>電池 単3</p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+  </entry>
+  <entry>
     <title>每月总结09 (2021/11)</title>
     <url>/WestRoute.github.io/2021/12/02/MonthlyRe09/</url>
     <content><![CDATA[<p>观影22部，读书4部，时间都去做课题了，写了33个文件，没有偷懒。<br>22部虽然少，但是很幸运看了不少感触很深的。</p>
@@ -265,7 +412,7 @@
 
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
-        <category>计算机</category>
+        <category>软件编程</category>
         <category>python</category>
       </categories>
   </entry>
@@ -290,7 +437,7 @@
 <figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> BUFSIZE 5</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">      <span class="keyword">char</span> str[<span class="number">1</span>] ;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;namedpipe:client online\n&quot;</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;P key to connect the pipe\n&quot;</span>);</span><br><span class="line">	cin &gt;&gt; str;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;wait connect\n&quot;</span>);</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">if</span> (<span class="built_in">WaitNamedPipe</span>(<span class="string">&quot;\\\\.\\Pipe\\mypipe&quot;</span>, NMPWAIT_WAIT_FOREVER) == FALSE)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;open pipe\n&quot;</span>);</span><br><span class="line">	HANDLE hPipe = <span class="built_in">CreateFile</span>(<span class="string">&quot;\\\\.\\Pipe\\mypipe&quot;</span>, GENERIC_READ | GENERIC_WRITE, <span class="number">0</span>,</span><br><span class="line">		<span class="literal">NULL</span>, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, <span class="literal">NULL</span>);</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">if</span> ((<span class="keyword">long</span>)hPipe == <span class="number">-1</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">	BOOL fSuccess = <span class="literal">false</span>;</span><br><span class="line">	DWORD len = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> buffer[BUFSIZE];</span><br><span class="line">	string recvData = <span class="string">&quot;&quot;</span>;</span><br><span class="line">	<span class="keyword">int</span> buffercnt=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">do</span></span><br><span class="line">	&#123;</span><br><span class="line">		fSuccess = <span class="built_in">ReadFile</span>(hPipe, buffer, BUFSIZE * <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">char</span>), &amp;len, <span class="literal">NULL</span>);</span><br><span class="line">            <span class="keyword">char</span> buffer2[BUFSIZE + <span class="number">1</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">		<span class="built_in">memcpy</span>(buffer2, buffer, len);</span><br><span class="line">		<span class="comment">//recvData.append(buffer2);</span></span><br><span class="line">		<span class="keyword">if</span> (!fSuccess)&#123;</span><br><span class="line">			<span class="comment">//</span></span><br><span class="line">			cout&lt;&lt;<span class="string">&quot;pipe error\n&quot;</span>;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="comment">//cout &lt;&lt; &quot;recv data form server: &quot; &lt;&lt; recvData.c_str() &lt;&lt; endl &lt;&lt; endl;</span></span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;recv data form server: &quot;</span> &lt;&lt; buffer2 &lt;&lt;endl;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">FlushFileBuffers</span>(hPipe);</span><br><span class="line">	&#125; <span class="keyword">while</span> (<span class="literal">true</span>);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">DisconnectNamedPipe</span>(hPipe);</span><br><span class="line">	<span class="built_in">CloseHandle</span>(hPipe);</span><br><span class="line"> </span><br><span class="line">	<span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </details><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
-        <category>计算机</category>
+        <category>软件编程</category>
         <category>编程练习</category>
       </categories>
   </entry>
@@ -385,7 +532,7 @@
 <p>WorseThan()</p>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
-        <category>计算机</category>
+        <category>软件编程</category>
         <category>C++PrimerPlus</category>
       </categories>
   </entry>
@@ -437,7 +584,7 @@
 <p><br><br><br></p>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
-        <category>计算机</category>
+        <category>软件编程</category>
         <category>C++PrimerPlus</category>
       </categories>
   </entry>
@@ -483,7 +630,7 @@
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// nested.cpp -- using a queue that has a nested class </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;queuetp.h&quot;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> std::string;</span><br><span class="line">	<span class="keyword">using</span> std::cin;</span><br><span class="line">	<span class="keyword">using</span> std::cout;</span><br><span class="line"> </span><br><span class="line">	<span class="function">QueueTP&lt;string&gt; <span class="title">cs</span><span class="params">(<span class="number">5</span>)</span></span>;</span><br><span class="line">	string temp;</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">while</span> (!cs.<span class="built_in">isfull</span>())</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;Please enter your name. You will be served in the order of arrival.\nname: &quot;</span>;</span><br><span class="line">		<span class="built_in">getline</span>(cin, temp);</span><br><span class="line">		cs.<span class="built_in">enqueue</span>(temp);</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;The queue is full. Processing begins!\n&quot;</span>;</span><br><span class="line">	<span class="keyword">while</span> (!cs.<span class="built_in">isempty</span>())</span><br><span class="line">	&#123;</span><br><span class="line">		cs.<span class="built_in">dequeue</span>(temp);</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;Now processing &quot;</span> &lt;&lt; temp &lt;&lt; <span class="string">&quot;...\n&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
-        <category>计算机</category>
+        <category>软件编程</category>
         <category>C++PrimerPlus</category>
       </categories>
   </entry>
@@ -524,7 +671,7 @@
 <h3 id="遍历网站"><a href="#遍历网站" class="headerlink" title="遍历网站"></a>遍历网站</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="comment">#define the variable</span></span><br><span class="line">pages = <span class="built_in">set</span>()</span><br><span class="line">random.seed(datetime.datetime.now())</span><br><span class="line"></span><br><span class="line"><span class="comment">#define the function</span></span><br><span class="line"><span class="comment">#ページ内にあるすべて内部リンクを調べる</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getInternalLinks</span>(<span class="params">bs,includeUrl</span>):</span></span><br><span class="line">    includeUrl = <span class="string">&#x27;&#123;&#125;://&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(urlparse(includeUrl).scheme,urlparse(includeUrl).netloc)</span><br><span class="line">    internalLinks =[]</span><br><span class="line"></span><br><span class="line">        <span class="comment">#&#x27;^(/|.*&#x27;+includeUrl+&#x27;)&#x27;)はregex記法といいます</span></span><br><span class="line">        <span class="comment">#ここでは「//」から始まるリンクだけ探し出す</span></span><br><span class="line">    <span class="keyword">for</span> link <span class="keyword">in</span> bs.find_all(<span class="string">&#x27;a&#x27;</span>,href=re.<span class="built_in">compile</span>(<span class="string">&#x27;^(/|.*&#x27;</span>+includeUrl+<span class="string">&#x27;)&#x27;</span>)):</span><br><span class="line">        <span class="keyword">if</span> link.attrs[<span class="string">&#x27;href&#x27;</span>] <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">if</span> link.attrs[<span class="string">&#x27;href&#x27;</span>] <span class="keyword">not</span> <span class="keyword">in</span> intenalLinks:</span><br><span class="line">                <span class="keyword">if</span>(link.attrs[<span class="string">&#x27;href&#x27;</span>].startswith(<span class="string">&#x27;/&#x27;</span>)):</span><br><span class="line">                    internalLinks.append(includeUrl+link.attrs[<span class="string">&#x27;herf&#x27;</span>])</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    internalLinks.append(link.attrs[<span class="string">&#x27;herf&#x27;</span>])</span><br><span class="line">    <span class="keyword">return</span> internalLinks</span><br><span class="line"></span><br><span class="line"><span class="comment">##ページ内にあるすべて外部リンクを調べる</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getExternalLinks</span>(<span class="params">bs,excludeUrl</span>):</span></span><br><span class="line">    externalLinks =[]</span><br><span class="line"></span><br><span class="line">        <span class="comment">#「http」や「www」から始まるかつ、いままで出ていないリンクだけ探し出す</span></span><br><span class="line">    <span class="keyword">for</span> link <span class="keyword">in</span> bs.find_all(<span class="string">&#x27;a&#x27;</span>,href=re.<span class="built_in">compile</span>(<span class="string">&#x27;^(http|www)((?!&#x27;</span>;excludeUrl+<span class="string">&#x27;).)*$&#x27;</span>)):</span><br><span class="line">        <span class="keyword">if</span> link.attrs[<span class="string">&#x27;href&#x27;</span>] <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">if</span> link.attrs[<span class="string">&#x27;href&#x27;</span>] <span class="keyword">not</span> <span class="keyword">in</span> externalLinks:</span><br><span class="line">                <span class="keyword">if</span>(link.attrs[<span class="string">&#x27;href&#x27;</span>].startswith(<span class="string">&#x27;/&#x27;</span>)):</span><br><span class="line">                    externalLinks.append(link.attrs[<span class="string">&#x27;herf&#x27;</span>])</span><br><span class="line">    <span class="keyword">return</span> externalLinks</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getRandomExternalLink</span>(<span class="params">startingPage</span>):</span></span><br><span class="line">    html = urlopen(startingPage)</span><br><span class="line">    bs=BeautifulSoup(html,<span class="string">&#x27;html.parser&#x27;</span>)</span><br><span class="line">    externalLinks = getExternalLinks(bs,urlparse(startingPage).netloc)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(externalLinks) ==<span class="number">0</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;No external links,looking around the site foe one&#x27;</span>)</span><br><span class="line">        domain=<span class="string">&#x27;&#123;&#125;://&#123;&#125;&#x27;</span>,<span class="built_in">format</span>(urlparse(startingPage).scheme,urlparse(startingPage).netloc)</span><br><span class="line">        internalLinks=getInternalLink(internalLinks[random.randint(<span class="number">0</span>,<span class="built_in">len</span>(internalLinks)-<span class="number">1</span>)])</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> externalLinks[random.randint(<span class="number">0</span>,<span class="built_in">len</span>(externalLinks)-<span class="number">1</span>)]</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">followExternalOnly</span>(<span class="params">startingSite</span>):</span></span><br><span class="line">    externalLink = getRandomExternalLink(startingSite)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Random external link is:&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(externalLink))</span><br><span class="line">    followExternalOnly(externalLink)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#main:</span></span><br><span class="line">followExternalOnly(<span class="string">&#x27;http://oreilly.com&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
-        <category>计算机</category>
+        <category>软件编程</category>
         <category>python</category>
       </categories>
   </entry>
@@ -546,7 +693,7 @@
 <h3 id="C-递归统计文件-1"><a href="#C-递归统计文件-1" class="headerlink" title="C++递归统计文件"></a>C++递归统计文件</h3><figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;dirent.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;filesystem&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isFile</span><span class="params">(<span class="keyword">char</span>* fp)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fileCom</span><span class="params">(<span class="keyword">char</span>* fp)</span></span>;</span><br><span class="line"><span class="keyword">int</span> number = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> size = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    std::string fp;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;パスを入力：&quot;</span>;</span><br><span class="line">    std::cin &gt;&gt; fp;</span><br><span class="line">    std::cout &lt;&lt; std::endl;*/</span><br><span class="line"></span><br><span class="line">    fp = <span class="string">&quot;C:\\Users\\USER\\Desktop&quot;</span>;<span class="comment">//ファイルパスを指定</span></span><br><span class="line">    <span class="keyword">int</span> i = <span class="built_in">fileCom</span>(<span class="keyword">const_cast</span>&lt;<span class="keyword">char</span>*&gt;(fp.<span class="built_in">c_str</span>()));</span><br><span class="line">    std::cout &lt;&lt; std::endl &lt;&lt; <span class="string">&quot;numberSUM：&quot;</span> &lt;&lt; number &lt;&lt; <span class="string">&quot;  sizeSUM：&quot;</span> &lt;&lt; size &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fileCom</span><span class="params">(<span class="keyword">char</span>* fp)</span></span>&#123;</span><br><span class="line">    DIR *pDir = <span class="built_in">opendir</span>(fp);</span><br><span class="line">    dirent *pDirEnt = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> ((pDirEnt = <span class="built_in">readdir</span>(pDir)) != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(pDirEnt-&gt;d_name == std::<span class="built_in">string</span>(<span class="string">&quot;.&quot;</span>) || pDirEnt-&gt;d_name == std::<span class="built_in">string</span>(<span class="string">&quot;..&quot;</span>))&#123;</span><br><span class="line">            <span class="comment">//処理なし</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            std::string fp2 = std::<span class="built_in">string</span>(fp)+<span class="string">&quot;\\&quot;</span>+pDirEnt-&gt;d_name;</span><br><span class="line">            <span class="comment">//std::cout &lt;&lt; fp2 &lt;&lt; std::endl;</span></span><br><span class="line">            <span class="keyword">char</span>* fp3 = <span class="keyword">const_cast</span>&lt;<span class="keyword">char</span>*&gt;(fp2.<span class="built_in">c_str</span>());</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">isFile</span>(fp3))&#123;</span><br><span class="line">                number ++;</span><br><span class="line">                size += std::filesystem::<span class="built_in">file_size</span>(fp3);</span><br><span class="line">                <span class="comment">//std::cout &lt;&lt;&quot;No.&quot; &lt;&lt; number &lt;&lt; &quot;  Name：&quot; &lt;&lt; pDirEnt-&gt;d_name &lt;&lt; &quot;  size：&quot; &lt;&lt; std::filesystem::file_size(fp3) &lt;&lt; std::endl;</span></span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="built_in">fileCom</span>(fp3);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;   </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isFile</span><span class="params">(<span class="keyword">char</span>* fp)</span></span>&#123;</span><br><span class="line">    <span class="keyword">bool</span> isDirectory = std::filesystem::<span class="built_in">is_directory</span>(fp);</span><br><span class="line">    <span class="keyword">if</span>(isDirectory)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <br><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
-        <category>计算机</category>
+        <category>软件编程</category>
         <category>编程练习</category>
       </categories>
   </entry>
@@ -568,7 +715,7 @@
 <p><br><br></p>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
-        <category>计算机</category>
+        <category>软件编程</category>
         <category>编程练习</category>
       </categories>
   </entry>
@@ -597,7 +744,7 @@
 <p><br><br></p>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
-        <category>计算机</category>
+        <category>软件编程</category>
         <category>python</category>
       </categories>
   </entry>
@@ -880,7 +1027,7 @@ StopIteration 异常用于标识迭代的完成
 <h3 id="namespace"><a href="#namespace" class="headerlink" title="namespace"></a>namespace</h3><blockquote><p>A namespace is a mapping from names to objects.Most namespaces are currently implemented as Python dictionaries。</p>
 </blockquote><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
-        <category>计算机</category>
+        <category>软件编程</category>
         <category>python</category>
       </categories>
   </entry>
@@ -945,7 +1092,7 @@ StopIteration 异常用于标识迭代的完成
 <h3 id="pass"><a href="#pass" class="headerlink" title="pass"></a>pass</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">pass</span>  <span class="comment"># 等待键盘中断 (Ctrl+C)</span></span><br></pre></td></tr></table></figure>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
-        <category>计算机</category>
+        <category>软件编程</category>
         <category>python</category>
       </categories>
   </entry>
@@ -1107,7 +1254,7 @@ StopIteration 异常用于标识迭代的完成
 <p>11111<br>22222<br>33333-<br>44444-4444<br>只需要xxxxx-xxxx时<br><code>\d&#123;5&#125;(-\d&#123;4&#125;)?</code> →  <code>\d&#123;5&#125;(?(?=-)-\d&#123;4&#125;)</code></p>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
-        <category>计算机</category>
+        <category>软件编程</category>
       </categories>
   </entry>
   <entry>
@@ -1461,7 +1608,7 @@ template<typename T>
 <h4 id="模板别名"><a href="#模板别名" class="headerlink" title="模板别名"></a>模板别名</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt; </span><br><span class="line">   <span class="keyword">using</span>  arrtype = std::array&lt;T,<span class="number">12</span>&gt;;</span><br></pre></td></tr></table></figure>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
-        <category>计算机</category>
+        <category>软件编程</category>
         <category>C++PrimerPlus</category>
       </categories>
   </entry>
@@ -1506,7 +1653,7 @@ template<typename T>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;也可以放于返回值之前，意味着可以初始化返回对象中的变量，但无法修改返回对象的数据</p>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
-        <category>计算机</category>
+        <category>软件编程</category>
         <category>C++PrimerPlus</category>
       </categories>
   </entry>
@@ -1525,7 +1672,7 @@ template<typename T>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;NULL是表示空指针的C语言宏。</p>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
-        <category>计算机</category>
+        <category>软件编程</category>
         <category>C++PrimerPlus</category>
       </categories>
   </entry>
@@ -1540,7 +1687,7 @@ template<typename T>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h3 id="9-1内存模型和名称空间"><a href="#9-1内存模型和名称空间" class="headerlink" title="9.1内存模型和名称空间"></a>9.1内存模型和名称空间</h3><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
-        <category>计算机</category>
+        <category>软件编程</category>
         <category>C++PrimerPlus</category>
       </categories>
   </entry>
@@ -1560,7 +1707,7 @@ template<typename T>
 
 <h4 id="string可以用-0-来访问"><a href="#string可以用-0-来访问" class="headerlink" title="string可以用 [0] 来访问"></a>string可以用 [0] 来访问</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;stdafx.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function">string <span class="title">change</span><span class="params">(string &amp;str)</span></span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Enter a string (q to quit): &quot;</span>;</span><br><span class="line">    string str;</span><br><span class="line">    <span class="built_in">getline</span>(cin, str);</span><br><span class="line">    <span class="keyword">while</span> (str != <span class="string">&quot;q&quot;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        str = <span class="built_in">change</span>(str);</span><br><span class="line">        cout &lt;&lt; str &lt;&lt; endl;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Next string (q to quit): &quot;</span>;</span><br><span class="line">        <span class="built_in">getline</span>(cin, str);</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Bye.&quot;</span> &lt;&lt; endl;</span><br><span class="line">    <span class="built_in">system</span>(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function">string <span class="title">change</span><span class="params">(string &amp;str)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; str[i]; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        str[i] = <span class="built_in">toupper</span>(str[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
-        <category>计算机</category>
+        <category>软件编程</category>
         <category>C++PrimerPlus</category>
       </categories>
   </entry>
@@ -1614,7 +1761,7 @@ template<typename T>
 <p><br><br><br><br><br><br><br><br></p>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
       <categories>
-        <category>计算机</category>
+        <category>软件编程</category>
         <category>C++PrimerPlus</category>
       </categories>
   </entry>
@@ -1683,15 +1830,6 @@ template<typename T>
       <tags>
         <tag>2021</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Archlinux学习笔记</title>
-    <url>/WestRoute.github.io/2021/09/01/Archlinux/</url>
-    <content><![CDATA[<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>操作系统</category>
-      </categories>
   </entry>
   <entry>
     <title>《航空航天概论》笔记(1)</title>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/WestRoute.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/WestRoute.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/WestRoute.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/WestRoute.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/WestRoute.github.io/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CM+PLUS+1p:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dondycan.github.io","root":"/WestRoute.github.io/","images":"/WestRoute.github.io/images","scheme":"Pisces","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":80,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/WestRoute.github.io/js/config.js"></script>
+<meta name="description" content="《Modern Operating System》ANSI &#x3D; C99POSIX(Portavle Operating System Interface)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="unix系统学习 01">
+<meta property="og:url" content="https://dondycan.github.io/WestRoute.github.io/2021/12/09/unix01/index.html">
+<meta property="og:site_name" content="咚咚锵">
+<meta property="og:description" content="《Modern Operating System》ANSI &#x3D; C99POSIX(Portavle Operating System Interface)">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dondycan.github.io/WestRoute.github.io/images/os01.png">
+<meta property="og:image" content="https://dondycan.github.io/WestRoute.github.io/images/os02.png">
+<meta property="og:image" content="https://dondycan.github.io/WestRoute.github.io/images/os03.png">
+<meta property="article:published_time" content="2021-12-09T03:03:58.000Z">
+<meta property="article:modified_time" content="2021-12-11T16:49:04.882Z">
+<meta property="article:author" content="咚咚锵">
+<meta property="article:tag" content="码龄 0年">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dondycan.github.io/WestRoute.github.io/images/os01.png">
+
+
+<link rel="canonical" href="https://dondycan.github.io/WestRoute.github.io/2021/12/09/unix01/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://dondycan.github.io/WestRoute.github.io/2021/12/09/unix01/","path":"2021/12/09/unix01/","title":"unix系统学习 01"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>unix系统学习 01 | 咚咚锵</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/WestRoute.github.io/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/WestRoute.github.io/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">咚咚锵</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">目标 影3000 书500</p>
+      <img class="custom-logo-image" src="/WestRoute.github.io/images/avatar.gif" alt="咚咚锵">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/WestRoute.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/WestRoute.github.io/about/" rel="section"><i class="fa fa-chart-pie fa-fw"></i>个人统计</a></li>
+        <li class="menu-item menu-item-categories"><a href="/WestRoute.github.io/categories/" rel="section"><i class="fa fa-bookmark fa-fw"></i>文章分类</a></li>
+        <li class="menu-item menu-item-book"><a href="/WestRoute.github.io/books/" rel="section"><i class="fa fa-book fa-fw"></i>图书</a></li>
+        <li class="menu-item menu-item-film"><a href="/WestRoute.github.io/films/" rel="section"><i class="fa fa-film fa-fw"></i>观影</a></li>
+        <li class="menu-item menu-item-photo"><a href="/WestRoute.github.io/gallery/" rel="section"><i class="fa fa-camera-retro fa-fw"></i>相册</a></li>
+        <li class="menu-item menu-item-link"><a href="/WestRoute.github.io/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E8%A6%81%E8%80%83%E5%AF%9Fread%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%EF%BC%9A11%E4%B8%AA%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.</span> <span class="nav-text">简要考察read系统调用：11个步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fork-waitpid"><span class="nav-number">2.</span> <span class="nav-text">fork-waitpid</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#link"><span class="nav-number">3.</span> <span class="nav-text">link</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#winAPI"><span class="nav-number">4.</span> <span class="nav-text">winAPI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E5%86%85%E6%A0%B8"><span class="nav-number">5.</span> <span class="nav-text">微内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A8%A1%E5%BC%8F"><span class="nav-number">6.</span> <span class="nav-text">客户端-服务器模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA"><span class="nav-number">7.</span> <span class="nav-text">虚拟机</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">咚咚锵</p>
+  <div class="site-description" itemprop="description">码龄 0年</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/WestRoute.github.io/archives/">
+          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/WestRoute.github.io/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:dondcyan@gmail.com" title="E-Mail → mailto:dondcyan@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yamagamisukibot" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yamagamisukibot" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dondycan.github.io/WestRoute.github.io/2021/12/09/unix01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/WestRoute.github.io/images/avatar.gif">
+      <meta itemprop="name" content="咚咚锵">
+      <meta itemprop="description" content="码龄 0年">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咚咚锵">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          unix系统学习 01
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-12-09 12:03:58" itemprop="dateCreated datePublished" datetime="2021-12-09T12:03:58+09:00">2021-12-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/WestRoute.github.io/categories/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/" itemprop="url" rel="index"><span itemprop="name">系统操作</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/WestRoute.github.io/categories/%E7%B3%BB%E7%BB%9F%E6%93%8D%E4%BD%9C/Unix/" itemprop="url" rel="index"><span itemprop="name">Unix</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>743</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>《Modern Operating System》<br>ANSI = C99<br>POSIX(Portavle Operating System Interface)</p>
+<span id="more"></span>
+
+<h3 id="简要考察read系统调用：11个步骤"><a href="#简要考察read系统调用：11个步骤" class="headerlink" title="简要考察read系统调用：11个步骤"></a>简要考察read系统调用：11个步骤</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>count = read(fd,buffer,nbytes);</strong><br>1.push nbytes<br>2.push &amp;buffer<br>3.push fd<br>4.Call read<br>5.Put code for read in register<br>6.trap to the kernal<br>7.<br>8.Dispatch<br>9.Sys call handler<br>10.return to caller<br>11.Increment SP</p>
+<h3 id="fork-waitpid"><a href="#fork-waitpid" class="headerlink" title="fork-waitpid"></a>fork-waitpid</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#define TRUE 1 </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (TRUE) &#123;      <span class="regexp">/* repeat forever */</span> </span><br><span class="line">      type prompt( ); <span class="regexp">/* display prompt on the screen */</span> </span><br><span class="line">      read command(command, parameters); <span class="regexp">/* read input from terminal */</span> </span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">for</span> k() != <span class="number">0</span>) &#123; <span class="regexp">/* fork off child process */</span> </span><br><span class="line">            <span class="regexp">/ * Parent code. */</span> </span><br><span class="line">            waitpid(−<span class="number">1</span>, &amp;status, <span class="number">0</span>); <span class="regexp">/* wait for child to exit */</span> </span><br><span class="line">      &#125; <span class="keyword">else</span> &#123; </span><br><span class="line">            <span class="regexp">/ * Child code. */</span> </span><br><span class="line">            execve(command, parameters, <span class="number">0</span>); </span><br><span class="line">            <span class="regexp">/* execute command */</span> </span><br><span class="line">      &#125; </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+
+<h3 id="link"><a href="#link" class="headerlink" title="link"></a>link</h3><p>允许一个文件以不同的名称出现</p>
+<h3 id="winAPI"><a href="#winAPI" class="headerlink" title="winAPI"></a>winAPI</h3><img src="/WestRoute.github.io/images/os01.png">
+
+<h3 id="微内核"><a href="#微内核" class="headerlink" title="微内核"></a>微内核</h3><p>微内核中断处理、进程、调度、进程间通信(IPC)<br><img src="/WestRoute.github.io/images/os02.png"></p>
+<h3 id="客户端-服务器模式"><a href="#客户端-服务器模式" class="headerlink" title="客户端-服务器模式"></a>客户端-服务器模式</h3><h3 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h3><p>java虚拟机<br><img src="/WestRoute.github.io/images/os03.png"></p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/WestRoute.github.io/2021/12/09/CCNA01/" rel="prev" title="CCNA考试 01">
+                  <i class="fa fa-chevron-left"></i> CCNA考试 01
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/WestRoute.github.io/2021/12/09/Verilog01/" rel="next" title="Verilog学习 01">
+                  Verilog学习 01 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-rocket"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">咚咚锵</span>
+</div>
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv">
+                </span>次 | 
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/WestRoute.github.io/js/comments.js"></script><script src="/WestRoute.github.io/js/utils.js"></script><script src="/WestRoute.github.io/js/motion.js"></script><script src="/WestRoute.github.io/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

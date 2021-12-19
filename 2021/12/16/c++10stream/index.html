@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/WestRoute.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/WestRoute.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/WestRoute.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/WestRoute.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/WestRoute.github.io/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CM+PLUS+1p:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dondycan.github.io","root":"/WestRoute.github.io/","images":"/WestRoute.github.io/images","scheme":"Pisces","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":80,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/WestRoute.github.io/js/config.js"></script>
+<meta name="description" content="流和缓冲区C++把输入和输出看作字节流，程序从字节流抽取字节| 数据类型     | 描述                                                                       ||———-|————————————————————————–|| ofstream | 该数据类型表示输出文件流，用于创建文件并向文件写入信息。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c++10 file operator">
+<meta property="og:url" content="https://dondycan.github.io/WestRoute.github.io/2021/12/16/c++10stream/index.html">
+<meta property="og:site_name" content="咚咚锵">
+<meta property="og:description" content="流和缓冲区C++把输入和输出看作字节流，程序从字节流抽取字节| 数据类型     | 描述                                                                       ||———-|————————————————————————–|| ofstream | 该数据类型表示输出文件流，用于创建文件并向文件写入信息。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dondycan.github.io/WestRoute.github.io/images/charactercontrol.png">
+<meta property="article:published_time" content="2021-12-16T01:54:37.000Z">
+<meta property="article:modified_time" content="2021-12-19T13:23:18.788Z">
+<meta property="article:author" content="咚咚锵">
+<meta property="article:tag" content="码龄 0年">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dondycan.github.io/WestRoute.github.io/images/charactercontrol.png">
+
+
+<link rel="canonical" href="https://dondycan.github.io/WestRoute.github.io/2021/12/16/c++10stream/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://dondycan.github.io/WestRoute.github.io/2021/12/16/c++10stream/","path":"2021/12/16/c++10stream/","title":"c++10 file operator"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>c++10 file operator | 咚咚锵</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/WestRoute.github.io/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/WestRoute.github.io/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">咚咚锵</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">目标 影3000 书500</p>
+      <img class="custom-logo-image" src="/WestRoute.github.io/images/avatar.gif" alt="咚咚锵">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/WestRoute.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-about"><a href="/WestRoute.github.io/about/" rel="section"><i class="fa fa-chart-pie fa-fw"></i>个人统计</a></li>
+        <li class="menu-item menu-item-categories"><a href="/WestRoute.github.io/categories/" rel="section"><i class="fa fa-bookmark fa-fw"></i>文章分类</a></li>
+        <li class="menu-item menu-item-book"><a href="/WestRoute.github.io/books/" rel="section"><i class="fa fa-book fa-fw"></i>图书</a></li>
+        <li class="menu-item menu-item-film"><a href="/WestRoute.github.io/films/" rel="section"><i class="fa fa-film fa-fw"></i>观影</a></li>
+        <li class="menu-item menu-item-photo"><a href="/WestRoute.github.io/gallery/" rel="section"><i class="fa fa-camera-retro fa-fw"></i>相册</a></li>
+        <li class="menu-item menu-item-link"><a href="/WestRoute.github.io/links/" rel="section"><i class="fa fa-link fa-fw"></i>友链</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E5%92%8C%E7%BC%93%E5%86%B2%E5%8C%BA"><span class="nav-number">1.</span> <span class="nav-text">流和缓冲区</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E5%AE%9A%E5%90%91"><span class="nav-number">1.1.</span> <span class="nav-text">重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E8%BD%BD-lt-lt"><span class="nav-number">1.2.</span> <span class="nav-text">重载&lt;&lt;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%B7%E6%96%B0%E8%BE%93%E5%87%BA%E7%BC%93%E5%86%B2%E5%8C%BA"><span class="nav-number">1.3.</span> <span class="nav-text">刷新输出缓冲区</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8cin%E8%BF%9B%E8%A1%8C%E8%BE%93%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">使用cin进行输入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%81%E7%8A%B6%E6%80%81-iostate"><span class="nav-number">2.1.</span> <span class="nav-text">流状态(iostate)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E4%BB%96istream%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">其他istream方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA"><span class="nav-number">3.</span> <span class="nav-text">文件输入和输出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E5%AD%98%E5%8F%96"><span class="nav-number">3.1.</span> <span class="nav-text">随机存取</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E6%A0%B8%E6%A0%BC%E5%BC%8F%E5%8C%96"><span class="nav-number">4.</span> <span class="nav-text">内核格式化</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">咚咚锵</p>
+  <div class="site-description" itemprop="description">码龄 0年</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/WestRoute.github.io/archives/">
+          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/WestRoute.github.io/categories/">
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:dondcyan@gmail.com" title="E-Mail → mailto:dondcyan@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yamagamisukibot" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yamagamisukibot" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dondycan.github.io/WestRoute.github.io/2021/12/16/c++10stream/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/WestRoute.github.io/images/avatar.gif">
+      <meta itemprop="name" content="咚咚锵">
+      <meta itemprop="description" content="码龄 0年">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咚咚锵">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          c++10 file operator
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-12-16 10:54:37" itemprop="dateCreated datePublished" datetime="2021-12-16T10:54:37+09:00">2021-12-16</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/WestRoute.github.io/categories/%E8%BD%AF%E4%BB%B6%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">软件编程</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/WestRoute.github.io/categories/%E8%BD%AF%E4%BB%B6%E7%BC%96%E7%A8%8B/C-PrimerPlus/" itemprop="url" rel="index"><span itemprop="name">C++PrimerPlus</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>12k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="流和缓冲区"><a href="#流和缓冲区" class="headerlink" title="流和缓冲区"></a>流和缓冲区</h3><p>C++把输入和输出看作字节流，程序从字节流抽取字节<br>| 数据类型     | 描述                                                                       |<br>|———-|————————————————————————–|<br>| ofstream | 该数据类型表示输出文件流，用于创建文件并向文件写入信息。                                             |<br>| ifstream | 该数据类型表示输入文件流，用于从文件读取信息。                                                  |<br>| fstream  | 该数据类型通常表示文件流，且同时具有 ofstream 和 ifstream 两种功能，这意味着它可以创建文件，向文件写入信息，从文件读取信息。 |</p>
+<span id="more"></span>
+
+<p>iostream自动创建8个流对象</p>
+<ol>
+<li>cin标准输入流</li>
+<li>cout标准输出流</li>
+<li>cerr标准错误流，显示错误消息，直接发送，不会被缓冲</li>
+<li>clog标准错误流，被缓冲</li>
+<li>对象代表流</li>
+</ol>
+<h4 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h4><p>输出到文件</p>
+<h4 id="重载-lt-lt"><a href="#重载-lt-lt" class="headerlink" title="重载&lt;&lt;"></a>重载&lt;&lt;</h4><p>C:左位移<br>C++：插入运算符<br>cout&lt;&lt;“putlock”返回的是cout对象，因此可以通过插入来连接输出<br>&lt;&lt;用来显示字符，put，write用来显示字符串<br>cout.put(‘W’);<br>cout.put(‘W’).put(‘W’);</p>
+<h4 id="刷新输出缓冲区"><a href="#刷新输出缓冲区" class="headerlink" title="刷新输出缓冲区"></a>刷新输出缓冲区</h4><ol>
+<li><p>修改显示计数系统</p>
+<details><summary>manip.cpp (可点开查看)</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// manip.cpp -- using format manipulators </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span> </span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Enter an integer: &quot;</span>;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;n n*n\n&quot;</span>;</span><br><span class="line">	cout &lt;&lt; n &lt;&lt; <span class="string">&quot;	&quot;</span> &lt;&lt; n * n &lt;&lt; <span class="string">&quot; (decimal)\n&quot;</span>;</span><br><span class="line">	<span class="comment">// set to hex mode </span></span><br><span class="line">	cout &lt;&lt; hex;</span><br><span class="line">	cout &lt;&lt; n &lt;&lt; <span class="string">&quot;	&quot;</span>;</span><br><span class="line">	cout &lt;&lt; n * n &lt;&lt; <span class="string">&quot; (hexadecimal)\n&quot;</span>;</span><br><span class="line">	<span class="comment">// set to octal mode</span></span><br><span class="line">	cout &lt;&lt; oct &lt;&lt; n &lt;&lt; <span class="string">&quot;	&quot;</span> &lt;&lt; n * n &lt;&lt; <span class="string">&quot; (octal)\n&quot;</span>;</span><br><span class="line">	<span class="comment">// alternative way to call a manipulator dec &lt; cout);</span></span><br><span class="line">	cout &lt;&lt; n &lt;&lt; <span class="string">&quot;	&quot;</span> &lt;&lt; n * n &lt;&lt; <span class="string">&quot; (decimal)\n&quot;</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+<br></li>
+<li><p>调整字段宽度</p>
+<details><summary>width.cpp(可点开查看)</summary>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// width.cpp -- using the width method </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> std::cout;</span><br><span class="line">	<span class="keyword">int</span> w = cout.<span class="built_in">width</span>(<span class="number">30</span>);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;default field width = &quot;</span> &lt;&lt; w &lt;&lt; <span class="string">&quot;:\n&quot;</span>;</span><br><span class="line">	cout.<span class="built_in">width</span>(<span class="number">5</span>);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;N&quot;</span> &lt;&lt; <span class="string">&quot;:&quot;</span>;</span><br><span class="line">	cout.<span class="built_in">width</span>(<span class="number">8</span>);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;N * N&quot;</span> &lt;&lt; <span class="string">&quot;:\n&quot;</span>;</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">long</span> i = <span class="number">1</span>; i &lt;= <span class="number">100</span>; i *= <span class="number">10</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		cout.<span class="built_in">width</span>(<span class="number">5</span>);</span><br><span class="line">		cout &lt;&lt; i &lt;&lt; <span class="string">&quot;:&quot;</span>;</span><br><span class="line">		cout.<span class="built_in">width</span>(<span class="number">8</span>);</span><br><span class="line">		cout &lt;&lt; i * i &lt;&lt; <span class="string">&quot;:\n&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details><br></li>
+<li><p>填充字符</p>
+<details><summary>fill.cpp(可点开查看)</summary>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// fill.cpp -- changing fill character for fields </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> std::cout;</span><br><span class="line">	cout.<span class="built_in">fill</span>(<span class="string">&#x27;*&#x27;</span>);</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">char</span> * staff[<span class="number">2</span>] = &#123; <span class="string">&quot;Waldo Whipsnade&quot;</span>, <span class="string">&quot;Wilmarie Wooper&quot;</span> &#125;;</span><br><span class="line">	<span class="keyword">long</span> bonus[<span class="number">2</span>] = &#123; <span class="number">900</span>, <span class="number">1350</span> &#125;;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; staff[i] &lt;&lt; <span class="string">&quot;: $&quot;</span>;</span><br><span class="line">		cout.<span class="built_in">width</span>(<span class="number">7</span>);</span><br><span class="line">		cout &lt;&lt; bonus[i] &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details><br></li>
+<li><p>设置浮点数</p>
+<details><summary>precise.cpp(可点开查看)</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//precise.cpp -- setting the precision</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> std::cout;</span><br><span class="line">	<span class="keyword">float</span> pricel = <span class="number">20.40</span>;</span><br><span class="line">	<span class="keyword">float</span> price2 = <span class="number">1.9</span> + <span class="number">8.0</span> / <span class="number">9.0</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;V&#x27;Furry Friends\&quot; is S&quot;</span> &lt;&lt; pricel &lt;&lt; <span class="string">&quot;!\n &quot;</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;\&quot;Fiery Fiends\&quot; is $&quot;</span> &lt;&lt; price2 &lt;&lt; <span class="string">&quot;!\n&quot;</span>;</span><br><span class="line">	cout.<span class="built_in">precision</span>(<span class="number">2</span>);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;\&quot;Furry Friends\&quot; is $&quot;</span> &lt;&lt; pricel &lt;&lt; <span class="string">&quot;!\n &quot;</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;\&quot;Fiery Fiends\&quot; is $&quot;</span> &lt;&lt; price2 &lt;&lt; <span class="string">&quot;!\n&quot;</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details><br></li>
+<li><p>setf</p>
+<details><summary>setf.cpp(可点开查看)</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//setf.cpp -- using setf() to control formatting</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">	<span class="keyword">int</span> temperature = <span class="number">63</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Today&#x27;s water temperature:&quot;</span>;</span><br><span class="line">		cout.<span class="built_in">setf</span>(ios_base::showpos);	<span class="comment">// show plus sign</span></span><br><span class="line">	cout &lt;&lt; temperature &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;For our programming friends, that&#x27;s\n&quot;</span>;</span><br><span class="line">	cout &lt;&lt; std::hex &lt;&lt; temperature &lt;&lt; endl; <span class="comment">// use hex</span></span><br><span class="line">	cout.<span class="built_in">setf</span>(ios_base::uppercase);	<span class="comment">// use uppercase in hex</span></span><br><span class="line">	cout.<span class="built_in">setf</span>(ios_base::showbase);	<span class="comment">// use OX prefix for hex</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;or\n&quot;</span>;</span><br><span class="line">	cout &lt;&lt; temperature &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;How &quot;</span> &lt;&lt; <span class="literal">true</span> &lt;&lt; <span class="string">&quot;! oops -- How &quot;</span>;</span><br><span class="line">	cout.<span class="built_in">setf</span>(ios_base::boolalpha);</span><br><span class="line">	cout &lt;&lt; <span class="literal">true</span> &lt;&lt; <span class="string">&quot;!\n&quot;</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details><br>
+<details><summary>setf2.cpp(可点开查看)</summary>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// setf2.cpp -- using setf() with 2 arguments to control formatting </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">	<span class="comment">// use left justification, show the plus sign, show trailing</span></span><br><span class="line">	<span class="comment">// zeros, with a precision of 3 </span></span><br><span class="line">	cout.<span class="built_in">setf</span>(ios_base::left, ios_base::adjustfield);</span><br><span class="line">	cout.<span class="built_in">setf</span>(ios_base::showpos); </span><br><span class="line">cout.<span class="built_in">setf</span>(ios_base::showpoint); </span><br><span class="line">cout.<span class="built_in">precision</span>(<span class="number">3</span>);</span><br><span class="line">	<span class="comment">// use e-notation and save old format setting</span></span><br><span class="line">ios_base::fmtflags old = cout.<span class="built_in">setf</span>(ios_base::scientific, ios_base::floatfield);</span><br><span class="line">cout &lt;&lt; <span class="string">&quot;Left Justification:\n&quot;</span>;</span><br><span class="line"><span class="keyword">long</span> n;</span><br><span class="line"><span class="keyword">for</span> (n = <span class="number">1</span>; n &lt;= <span class="number">41</span>; n += <span class="number">10</span>)</span><br><span class="line">&#123;</span><br><span class="line">	cout.<span class="built_in">width</span>(<span class="number">4</span>);</span><br><span class="line">	cout &lt;&lt; n &lt;&lt; <span class="string">&quot;|&quot;</span>;</span><br><span class="line">	cout.<span class="built_in">width</span>(<span class="number">12</span>);</span><br><span class="line">	cout &lt;&lt; <span class="built_in">sqrt</span>(<span class="built_in"><span class="keyword">double</span></span>(n)) &lt;&lt; <span class="string">&quot;|\n&quot;</span>;</span><br><span class="line">	<span class="comment">// change to internal justification</span></span><br><span class="line">	cout.<span class="built_in">setf</span>(ios_base::internal, ios_base::adjustfield);</span><br><span class="line">	<span class="comment">// restore default floating-point display style </span></span><br><span class="line">	cout.<span class="built_in">setf</span>(old, ios_base::floatfield);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Internal Justification:\n&quot;</span>; <span class="keyword">for</span> (n = <span class="number">1</span>; n &lt;= <span class="number">41</span>; n += <span class="number">10</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		cout.<span class="built_in">width</span>(<span class="number">4</span>); cout &lt;&lt; n &lt;&lt; cout.<span class="built_in">width</span>(<span class="number">12</span>);</span><br><span class="line">		cout &lt;&lt; <span class="built_in">sqrt</span>(<span class="built_in"><span class="keyword">double</span></span>(n)) &lt;&lt; <span class="string">&quot;|\n&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// use right justification, fixed notation</span></span><br><span class="line">	cout.<span class="built_in">setf</span>(ios_base::right, ios_base::adjustfield);</span><br><span class="line">	cout.<span class="built_in">setf</span>(ios_base::fixed, ios_base::floatfield);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Right Justification:\n&quot;</span>;</span><br><span class="line">	<span class="keyword">for</span> (n = <span class="number">1</span>; n &lt;= <span class="number">41</span>; n += <span class="number">10</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		cout.<span class="built_in">width</span>(<span class="number">4</span>);</span><br><span class="line">		cout &lt;&lt; n &lt;&lt; <span class="string">&quot; |&quot;</span>;</span><br><span class="line">		cout.<span class="built_in">width</span>(<span class="number">12</span>);</span><br><span class="line">		cout &lt;&lt; <span class="built_in">sqrt</span>(<span class="built_in"><span class="keyword">double</span></span>(n)) &lt;&lt; <span class="string">&quot;|\n&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details><br></li>
+<li><p>标准控制符</p>
+<img src="/WestRoute.github.io/images/charactercontrol.png"></li>
+<li><p>头文件iomanip<br>setrecision()设置精度<br>setfill()设置填充字符<br>setw()设置字段宽度</p>
+</li>
+</ol>
+<h3 id="使用cin进行输入"><a href="#使用cin进行输入" class="headerlink" title="使用cin进行输入"></a>使用cin进行输入</h3><h4 id="流状态-iostate"><a href="#流状态-iostate" class="headerlink" title="流状态(iostate)"></a>流状态(iostate)</h4><p>eofbit() 如果达到文件尾，设置为1<br>badfit() 如果流被破坏，则设置为1<br>failbit()<br>goodbit() 表示0<br>good()<br>eof() 如果eofbit被设置，则返回true<br>bad() 如果badbit被设置，则返回true<br>fail() 如果badbit 或 fail比他 被设置，则返回true<br>exception() 返回一个掩码，指出那些标记异常被引发<br>exception(isostate ex)<br>设置状态<br>clear(iostate s)<br>setstate(iostate s)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// cinexcp.cpp -- having cin throw an exception </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;exception&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">	<span class="comment">// have failbit cause an exception to be thrown</span></span><br><span class="line">	cin.<span class="built_in">exceptions</span>(ios_base::failbit);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Enter numbers: &quot;</span>;</span><br><span class="line">	<span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> input;</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">		<span class="keyword">while</span> (cin &gt;&gt; input)</span><br><span class="line">		&#123;</span><br><span class="line">			sum += input;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in"><span class="keyword">catch</span></span> (ios_base::failure &amp; bf)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; bf.<span class="built_in">what</span>() &lt;&lt; endl;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;0! the horror!\n&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Last value entered = &quot;</span> &lt;&lt; input &lt;&lt; endl;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Sum = &quot;</span> &lt;&lt; sum &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="其他istream方法"><a href="#其他istream方法" class="headerlink" title="其他istream方法"></a>其他istream方法</h4><p>get(char&amp;)get(void)提供不跳过空格的但字符输入功能<br>get(char&amp;,int,char)和getline(char&amp;,int,char)在默认情况下读取整行而不是一个单词<br>char line[50];<br>cin.get(line,50);将在第49位或空格停止输入。<br>get()将分界字符留在输入队列中，getline()不保留</p>
+<details><summary>setf2.cpp(可点开查看)</summary>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// get_fun.cpp -- using get() and getline()</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span> </span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> Limit = <span class="number">255</span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> std::cout;</span><br><span class="line">	<span class="keyword">using</span> std::cin;</span><br><span class="line">	<span class="keyword">using</span> std::endl;</span><br><span class="line">	<span class="keyword">char</span> input[Limit];</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Enter a string for getlineO processing:\n&quot;</span>;</span><br><span class="line">	cin.<span class="built_in">getline</span>(input, Limit, <span class="string">&#x27;#&#x27;</span>);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Here is your input:\n&quot;</span>;</span><br><span class="line">	cout &lt;&lt; input &lt;&lt; <span class="string">&quot;\nDone with phase 1\n&quot;</span>;</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">char</span> ch;</span><br><span class="line">	cin.<span class="built_in">get</span>(ch);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;The next input character is &quot;</span> &lt;&lt; ch &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">if</span> (ch != <span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">		cin.<span class="built_in">ignore</span>(Limit, <span class="string">&#x27;\n&#x27;</span>);	<span class="comment">// discard rest of line</span></span><br><span class="line"> </span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Enter a string for get() processing:\n&quot;</span>;</span><br><span class="line">	cin.<span class="built_in">get</span>(input, Limit, <span class="string">&#x27;#&#x27;</span>);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Here is your input:\n&quot;</span>;</span><br><span class="line">	cout &lt;&lt; input &lt;&lt; <span class="string">&quot;\nDone with phase 2\n&quot;</span>;</span><br><span class="line">	cin.<span class="built_in">get</span>(ch);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;The next input character is &quot;</span> &lt;&lt; ch &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details><br>
+read()读取指定字节，并将它们储存到指定位置上
+peek()返回输入中的下一个字节，但不抽取输入流
+gcount()
+putback()
+
+<h3 id="文件输入和输出"><a href="#文件输入和输出" class="headerlink" title="文件输入和输出"></a>文件输入和输出</h3><p>输出:</p>
+<ol>
+<li>创建一个ofstream对象来管理输出流</li>
+<li>将该对象与特定的文件关联起来</li>
+<li>使用count的方式使用该对象，唯一的区别是输出将进入文件，而不是屏幕<br>输入也一样</li>
+</ol>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//fileio.cpp -- saving to a file</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span> <span class="comment">// not needed for many systems </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">	string filename;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Enter name for new file: &quot;</span>;</span><br><span class="line">	cin &gt;&gt; filename;</span><br><span class="line">	<span class="comment">// create output stream object for new file and call it fout </span></span><br><span class="line">	<span class="function">ofstream <span class="title">fout</span><span class="params">(filename.c_str())</span></span>;</span><br><span class="line">	fout &lt;&lt; <span class="string">&quot;For your eyes only!\n&quot;</span>;	<span class="comment">// write to file</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Enter your secret number: &quot;</span>;<span class="comment">// write to screen</span></span><br><span class="line">	<span class="keyword">float</span> secret; cin &gt;&gt; secret;</span><br><span class="line">	fout &lt;&lt; <span class="string">&quot;Your secret number is &quot;</span> &lt;&lt; secret &lt;&lt; endl;</span><br><span class="line">	fout.<span class="built_in">close</span>();	<span class="comment">// close file</span></span><br><span class="line">	<span class="comment">// create input stream object for new file and call it fin </span></span><br><span class="line">	<span class="function">ifstream <span class="title">fin</span><span class="params">(filename.c_str())</span></span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Here are the contents of &quot;</span> &lt;&lt; filename &lt;&lt; <span class="string">&quot;:\n&quot;</span>; <span class="keyword">char</span> ch;</span><br><span class="line">	<span class="keyword">while</span> (fin.<span class="built_in">get</span>(ch))	<span class="comment">// read character from file and</span></span><br><span class="line">		cout &lt;&lt; ch;	<span class="comment">// write it to screen</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Done\n&quot;</span>;</span><br><span class="line">	fin.<span class="built_in">close</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>试图打开一个不存在的文件进行输入时，将设置failbit位<br>fin.open(argv[file]);<br>if(fin.fail()){<br>    ….<br>}<br>也可以这样做<br>fin.open(argv[file]);<br>if(!fin){<br>    ….<br>}<br>也可以<br>if(!fin.is_open()){<br>    ….<br>}<br>打开多个文件<br>fin.open(“one.txt”);<br>fin.close();<br>fin.clear();<br>fin.open(“two.txt”);<br><br><br>argc是命令行参数个数，是数组</p>
+<table>
+<thead>
+<tr>
+<th>模式标志</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ios::app</td>
+<td>追加模式。所有写入都追加到文件末尾。</td>
+</tr>
+<tr>
+<td>ios::ate</td>
+<td>文件打开后定位到文件末尾。</td>
+</tr>
+<tr>
+<td>ios::in</td>
+<td>打开文件用于读取。</td>
+</tr>
+<tr>
+<td>ios::out</td>
+<td>打开文件用于写入。</td>
+</tr>
+<tr>
+<td>ios::trunc</td>
+<td>如果该文件已经存在，其内容将在打开文件之前被截断，即把文件长度设为 0。</td>
+</tr>
+</tbody></table>
+<p>二进制输入<br>二进制文件更精准更简洁，但可移植性较差<br>read()和write()支持二进制<br>ofstream fout(“planets.dat”,ios_base::out|ios_base::app|ios_base::binary);<br>fout.write((char*) &amp;pl,sizeof pl);</p>
+<h4 id="随机存取"><a href="#随机存取" class="headerlink" title="随机存取"></a>随机存取</h4><p>文件读取整个文件后，并设置eofbit元素，禁止对文件进一步读写。使用clear()方法重置流状态，并打开eofbit后，程序便可以再次访问该文件，else处理其他原因引起的停止读取的情况。<br>seekg()和seekp()函数提供对文件的随机存取<br>tellg()和tellp()方法报告当前的文件位置</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// random.cpp -- random access to a binary file</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span> <span class="comment">// not required by most systems </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span>	<span class="comment">// for exit()</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> LIM = <span class="number">20</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">planet</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">char</span> name[LIM];<span class="comment">// name of planet </span></span><br><span class="line">	<span class="keyword">double</span> population;<span class="comment">// its population</span></span><br><span class="line">	<span class="keyword">double</span> g;<span class="comment">// its acceleration of gravity</span></span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> * file = <span class="string">&quot;planets.dat&quot;</span>;	<span class="comment">// ASSUMED TO EXIST (binary.cpp example)</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">eatline</span><span class="params">()</span> </span>&#123; <span class="keyword">while</span> (std::cin.<span class="built_in">get</span>() != <span class="string">&#x27;\n&#x27;</span>) <span class="keyword">continue</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">	planet pl;</span><br><span class="line">	cout &lt;&lt; fixed;</span><br><span class="line">	<span class="comment">// show initial contents</span></span><br><span class="line">	fstream finout;	<span class="comment">// read and write streams</span></span><br><span class="line">	finout.<span class="built_in">open</span>(file, ios_base::in | ios_base::out | ios_base::binary);</span><br><span class="line">	<span class="comment">//<span class="doctag">NOTE:</span> Some Unix systems require omitting - ios::binary </span></span><br><span class="line">	<span class="keyword">int</span> ct = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (finout.<span class="built_in">is_open</span>())</span><br><span class="line">	&#123;</span><br><span class="line">		finout.<span class="built_in">seekg</span>(<span class="number">0</span>);<span class="comment">// go to beginning</span></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;Here are tRe current contents of the  &quot;</span> &lt;&lt; file &lt;&lt; <span class="string">&quot; file: \n&quot;</span>;</span><br><span class="line">		<span class="keyword">while</span> (finout.<span class="built_in">read</span>((<span class="keyword">char</span> *)&amp;pl, <span class="keyword">sizeof</span> pl))</span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; ct++ &lt;&lt; <span class="string">&quot;: &quot;</span> &lt;&lt; <span class="built_in">setw</span>(LIM) &lt;&lt; pl.name &lt;&lt; <span class="string">&quot;: &quot;</span></span><br><span class="line">				&lt;&lt; <span class="built_in">setprecision</span>(<span class="number">0</span>) &lt;&lt; <span class="built_in">setw</span>(<span class="number">-12</span>) &lt;&lt; pl.population</span><br><span class="line">				&lt;&lt; <span class="built_in">setprecision</span>(<span class="number">2</span>) &lt;&lt; <span class="built_in">setw</span>(<span class="number">6</span>) &lt;&lt; pl.g &lt;&lt; endl;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (finout.<span class="built_in">eof</span>())</span><br><span class="line">			finout.<span class="built_in">clear</span>(); <span class="comment">// clear eof flag</span></span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			cerr &lt;&lt; <span class="string">&quot;Error in reading &quot;</span> &lt;&lt; file &lt;&lt; <span class="string">&quot;.\n&quot;</span>;</span><br><span class="line">			<span class="built_in">exit</span>(EXIT_FAILURE);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		cerr &lt;&lt; file &lt;&lt; <span class="string">&quot; could not be opened -- bye.\n&quot;</span>;</span><br><span class="line">		<span class="built_in">exit</span>(EXIT_FAILURE);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// &quot;&quot;&quot;change a record&quot;&quot;&quot;</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Enter the record number you wish to change: &quot;</span>;</span><br><span class="line">	<span class="keyword">long</span> rec;</span><br><span class="line">	cin &gt;&gt; rec;</span><br><span class="line">	<span class="built_in">eatline</span>();	<span class="comment">// get rid of newline</span></span><br><span class="line">	<span class="keyword">if</span> (rec &lt; <span class="number">0</span> || rec &gt;= ct)</span><br><span class="line">	&#123;</span><br><span class="line">		cerr &lt;&lt; <span class="string">&quot;Invalid record number -- bye\n&quot;</span>;</span><br><span class="line">		<span class="built_in">exit</span>(EXIT_FAILURE);</span><br><span class="line">	&#125;</span><br><span class="line">	streampos place = rec * <span class="keyword">sizeof</span> pl; <span class="comment">// convert to streampos type</span></span><br><span class="line">	finout.<span class="built_in">seekg</span>(place);	<span class="comment">// random access</span></span><br><span class="line">	<span class="keyword">if</span> (finout.<span class="built_in">fail</span>())</span><br><span class="line">	&#123;</span><br><span class="line">		cerr &lt;&lt; <span class="string">&quot;Error on attempted seek\n&quot;</span>;</span><br><span class="line">		<span class="built_in">exit</span>(EXIT_FAILURE);</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	finout.<span class="built_in">read</span>((<span class="keyword">char</span> *)&amp;pl, <span class="keyword">sizeof</span> pl);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Your selection:\n&quot;</span>;</span><br><span class="line">	cout &lt;&lt; rec &lt;&lt; <span class="string">&quot;: &quot;</span> &lt;&lt; <span class="built_in">setw</span>(LIM) &lt;&lt; pl.name &lt;&lt; <span class="string">&quot;: &quot;</span></span><br><span class="line">		&lt;&lt; <span class="built_in">setprecision</span>(<span class="number">0</span>) &lt;&lt; <span class="built_in">setw</span>(<span class="number">12</span>) &lt;&lt; pl.population</span><br><span class="line">		&lt;&lt; <span class="built_in">setprecision</span>(<span class="number">2</span>) &lt;&lt; <span class="built_in">setw</span>(<span class="number">6</span>) &lt;&lt; pl.g &lt;&lt; endl;</span><br><span class="line">	<span class="comment">// clear eof flag</span></span><br><span class="line">	<span class="keyword">if</span> (finout.<span class="built_in">eof</span>())</span><br><span class="line">		finout.<span class="built_in">clear</span>();</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Enter planet name: &quot;</span>;</span><br><span class="line">	cin.<span class="built_in">get</span>(pl.name, LIM);</span><br><span class="line">	<span class="built_in">eatline</span>();</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Enter planetary population: &quot;</span>;</span><br><span class="line">	cin &gt;&gt; pl.population;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Enter planet&#x27;s acceleration of gravity: &quot;</span>;</span><br><span class="line">	cin &gt;&gt; pl.g;</span><br><span class="line">	finout.<span class="built_in">seekp</span>(place);	<span class="comment">// go back</span></span><br><span class="line">	finout.<span class="built_in">write</span>((<span class="keyword">char</span> *)&amp;pl, <span class="keyword">sizeof</span> pl) &lt;&lt; flush;</span><br><span class="line">	<span class="keyword">if</span> (finout.<span class="built_in">fail</span>())</span><br><span class="line">	&#123;</span><br><span class="line">		cerr &lt;&lt; <span class="string">&quot;Error on attempted write\n&quot;</span>;</span><br><span class="line">		<span class="built_in">exit</span>(EXIT_FAILURE);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// show revised file ct = 0;</span></span><br><span class="line">	finout.<span class="built_in">seekg</span>(<span class="number">0</span>);	<span class="comment">// go to beginning of file</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Here are the new contents of the &quot;</span> &lt;&lt; file &lt;&lt; <span class="string">&quot;file:\n&quot;</span>;</span><br><span class="line">	<span class="keyword">while</span> (finout.<span class="built_in">read</span>((<span class="keyword">char</span> *)&amp;pl, <span class="keyword">sizeof</span> pl))</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; ct++ &lt;&lt; <span class="string">&quot;: &quot;</span> &lt;&lt; <span class="built_in">setw</span>(LIM) &lt;&lt; pl.name &lt;&lt; <span class="string">&quot;: &quot;</span></span><br><span class="line">			&lt;&lt; <span class="built_in">setprecision</span>(<span class="number">0</span>) &lt;&lt; <span class="built_in">setw</span>(<span class="number">12</span>) &lt;&lt; pl.population</span><br><span class="line">			&lt;&lt; <span class="built_in">setprecision</span>(<span class="number">2</span>) &lt;&lt; <span class="built_in">setw</span>(<span class="number">6</span>) &lt;&lt; pl.g &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	finout.<span class="built_in">close</span>();</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Done.\n&quot;</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="内核格式化"><a href="#内核格式化" class="headerlink" title="内核格式化"></a>内核格式化</h3><p>iostream族支持程序与终端之间的I/O<br>fstream族使用相同的接口提供程序和文件之间的I/O<br>sstream族使用相同的接口提供程序和string对象之间的I/O</p>
+<p>读取string对象中的格式化信息或将格式化信息写入string对象中被称为内核格式化(incore formatting)<br><br></p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// strin.cpp -- formatted reading from a char array </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span> </span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">	string lit = <span class="string">&quot;t was a dark and stormy day, and the full moon glowed brilliantly. &quot;</span>;</span><br><span class="line">	<span class="function">istringstream <span class="title">instr</span><span class="params">(lit)</span></span>; <span class="comment">// use buf for input </span></span><br><span class="line">	string <span class="keyword">word</span>;</span><br><span class="line">	<span class="keyword">while</span> (instr &gt;&gt; <span class="keyword">word</span>)<span class="comment">// read a word a time</span></span><br><span class="line">		cout &lt;&lt; <span class="keyword">word</span> &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><link rel="stylesheet" href="/css/bilicard.css" type="text/css">
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/WestRoute.github.io/2021/12/12/ec01/" rel="prev" title="電子部品">
+                  <i class="fa fa-chevron-left"></i> 電子部品
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/WestRoute.github.io/2021/12/16/openCV02/" rel="next" title="openCV02">
+                  openCV02 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-rocket"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">咚咚锵</span>
+</div>
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv">
+                </span>次 | 
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/WestRoute.github.io/js/comments.js"></script><script src="/WestRoute.github.io/js/utils.js"></script><script src="/WestRoute.github.io/js/motion.js"></script><script src="/WestRoute.github.io/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

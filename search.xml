@@ -41,7 +41,7 @@
         var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
         var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
 
-        document.getElementById("sitetime").innerHTML=" 已运行"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+        document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
     }
     siteTime();
 </script>
@@ -49,7 +49,7 @@
 
 <br>
 
-<div style="text-align: center;"><font size="4";color="#808080";>已看：1354/3000 | 已读： 238/500</font></div>
+<div style="text-align: center;"><font size="4";color="#808080";>已看：1372/3000 | 已读： 266/500</font></div>
 <br>
 <div  style="text-align: center;">
    电影进度
@@ -67,7 +67,180 @@
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
   </entry>
   <entry>
-    <title>MonthlyRe14</title>
+    <title>月报(15)2022/09</title>
+    <url>/WestRoute.github.io/2022/09/23/MonthlyRe15/</url>
+    <content><![CDATA[<p>距离2023还有不到100天，我希望马上就加速到2023。<br>这个月相对平稳，不知不觉就过去了，唯一的遗憾是几乎没运动吧，过于平淡了些，能感到体力在不断地衰弱。</p>
+<span id="more"></span>
+<p>2022/9/23:<br>最近新交了一位朋友，这位朋友有时有点学生的幼稚和愤怒，让我觉得有点累。<br>但是他的出现我重新开始看电影了。很感谢他。</p>
+<p>这个朋友偶尔会自己创作一些同人作品，他喜欢用自然现象让主角开窍，我很难对此感到同意。我觉得一个追求自我完善的个人，他的成长应该是自内而外，无论环境怎么变化都不会对他产生什么印象————就像一次旅游，一次潜水，这都不会让我的人生目标产生改变才对。<br>直到9月末天气逐渐变冷，身体为了过冬开始不断寻找甜食存积脂肪，我才觉得我的朋友是对的。</p>
+<p>爸爸想让我做的程序到现在还没做完，拖延症持续中，我也不知道为什么。</p>
+<h1 id="书-15"><a href="#书-15" class="headerlink" title="书(15)"></a>书(15)</h1><table>
+<thead>
+<tr>
+<th>名字</th>
+<th>作者</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>什么也别说-一桩北爱尔兰谋杀案</td>
+<td>帕特里克·拉登·基夫</td>
+</tr>
+<tr>
+<td>不含传说的普鲁士</td>
+<td>塞巴斯提安·哈夫纳</td>
+</tr>
+<tr>
+<td>单行道</td>
+<td>瓦尔特·本雅明</td>
+</tr>
+<tr>
+<td>浮木</td>
+<td>杨本芬</td>
+</tr>
+<tr>
+<td>刀锋</td>
+<td>毛姆</td>
+</tr>
+<tr>
+<td>维特根斯坦传</td>
+<td>瑞·蒙克</td>
+</tr>
+<tr>
+<td>地理B一問一答</td>
+<td>東進ブックス</td>
+</tr>
+<tr>
+<td>文学课</td>
+<td>胡里奥·科塔萨尔</td>
+</tr>
+<tr>
+<td>谈修养</td>
+<td>朱光潜</td>
+</tr>
+<tr>
+<td>征服者（葡萄牙帝国的崛起）</td>
+<td>罗杰·克劳利</td>
+</tr>
+<tr>
+<td>奥斯特里茨</td>
+<td>温弗里德·塞巴尔德</td>
+</tr>
+<tr>
+<td>写在身体上</td>
+<td>珍妮特·温特森</td>
+</tr>
+<tr>
+<td>绝叫</td>
+<td>叶真中显</td>
+</tr>
+<tr>
+<td>城市与狗</td>
+<td>(秘鲁)马里奥·巴尔加斯·略萨</td>
+</tr>
+<tr>
+<td>政府与革命中的阿拉伯人</td>
+<td>尤金·罗根</td>
+</tr>
+</tbody></table>
+<h2 id="政府与革命中的阿拉伯人"><a href="#政府与革命中的阿拉伯人" class="headerlink" title="政府与革命中的阿拉伯人"></a>政府与革命中的阿拉伯人</h2><p>一边调查一边读完的，对我来说完全是个新领域，完完全全的新知识。看似写的模糊但是现实里的民族边境本来就是模糊的，抱着追求“民族的就一定是纯血的”“民族有他不可侵犯的神圣边界”心态来读估计就会读不懂吧。</p>
+<h2 id="城市与狗"><a href="#城市与狗" class="headerlink" title="城市与狗"></a>城市与狗</h2><p>没有分段的长篇小说。<br>叙事方法也很不容易读，这就是反对西方文化侵蚀的人写下的带有民族特色的作品吗？对于民族之外的人来说简直是灾难。<br>但是故事立意很好。</p>
+<h2 id="绝叫"><a href="#绝叫" class="headerlink" title="绝叫"></a>绝叫</h2><p>叙事十分清楚流畅，他恨不得把一切能发生的悲剧都让他发生，看到最后心已经彻底麻木了。很绝望的一本书。</p>
+<h2 id="写在身体上"><a href="#写在身体上" class="headerlink" title="写在身体上"></a>写在身体上</h2><p>藏在她文字下的才智与疯狂是一场风暴。</p>
+<h2 id="奥斯特里茨"><a href="#奥斯特里茨" class="headerlink" title="奥斯特里茨"></a>奥斯特里茨</h2><p>开头讨论建筑史的精彩绝伦的对话引我进入故事，但是不分段让人抓狂，之后根本读不下去。我知道这是一部很伟大的作品，而它拒绝像我这种只一心想尽快读完的人，没有办法，希望以后会有机会读吧。</p>
+<p>没办法悠闲地读书确实是一个潜在的大问题，我内心清楚我是工作忙里偷闲地来看书，这份负罪感一天不消失我就一天也不能静下来读书吧。</p>
+<h2 id="征服者——葡萄牙帝国的崛起"><a href="#征服者——葡萄牙帝国的崛起" class="headerlink" title="征服者——葡萄牙帝国的崛起"></a>征服者——葡萄牙帝国的崛起</h2><p>故事跨度很短，只写了两代人，出场人物少，故事清晰。</p>
+<h2 id="文学课"><a href="#文学课" class="headerlink" title="文学课"></a>文学课</h2><p>一直以来无人为我解答的几个文学问题：<br>我不喜欢奇幻元素，他哪里有趣了？<br>我比较喜欢长篇小说，为什么我读不下短篇小说，短篇小说有什么魅力？<br>文学与性爱。为什么有性爱的小说在非阅读爱好的普通读者很受欢迎？</p>
+<p>这本书虽然没有为这些问题给我提供答案，有的甚至解答了也没能说服我，但是这是我第一次坐下来不再逃避这些问题，仔细思考它们的一次。</p>
+<h2 id="维特根斯坦传"><a href="#维特根斯坦传" class="headerlink" title="维特根斯坦传"></a>维特根斯坦传</h2><p>这个月我只吸了四天烟，就是读这本书的这四天；读一小时吸一根。之后一个星期嗓子一直疼。<br>很好很好。很牛。心满意足。不能言说的不必说。<br>十足的斯宾格勒主义者。</p>
+<h2 id="刀锋"><a href="#刀锋" class="headerlink" title="刀锋"></a>刀锋</h2><p>和读的第一本毛姆的书《月亮与六便士》很像。对生活的漫不经心的人或许曾经是最热爱生活而失去一切的人。</p>
+<h2 id="浮木"><a href="#浮木" class="headerlink" title="浮木"></a>浮木</h2><p>我喜欢看饥荒年代的纪实小说。<br>故事里的人们因为那个时代充满着死亡和绝望，不见尽头的恐怖让人们在亲人死去的时候只有麻木。<br>现代人偶尔也有麻木，当我们对身边的人注入太多感情时，或者看了太多让人焦虑的社会新闻时，我们都会陷入一种麻木。<br>当我每次陷入这种现代式的感情麻木时我会回想起这些饥荒纪实小说。<br>有人可能会说物质充足的现代人是无法理解饥荒时代的人的感情的。难道我们真的没资格麻木吗？<br>我觉得不是。我觉得两者处境上是一样的。</p>
+<p>同样我看到一个人开始消沉，而他知道什么是自己什么是外界，我不会看不起他的理智上的消沉。<br>但如果一个人任由自己消沉下去，不考虑不改善，沉浸在自己的世界，看不到外面，那这样的人不配得到救赎。</p>
+<h2 id="单行道"><a href="#单行道" class="headerlink" title="单行道"></a>单行道</h2><p>以散文的形式来写下思考的结晶。<br>并不是字数少就包含的东西就少，也不是情绪化的散文就一定是片面的见解。</p>
+<h2 id="不含传说的普鲁士"><a href="#不含传说的普鲁士" class="headerlink" title="不含传说的普鲁士"></a>不含传说的普鲁士</h2><p>这本书不是一本正经的历史书，它更像是假定你已经了解普鲁士的传说和神话，而他通过他的见解来给你去祛魅————他反复说普鲁士的存在可有可无，强调普鲁士的成功是由巧合，幸运和鲁莽组成的。<br>全片强烈的作者的个人立场对一个对普鲁士和腓特烈二世充满憧憬的读者是一个很沉重的打击。<br>具体怎么定论，我还需要一段思考的时间。</p>
+<h2 id="什么也别说-一桩北爱尔兰谋杀案"><a href="#什么也别说-一桩北爱尔兰谋杀案" class="headerlink" title="什么也别说-一桩北爱尔兰谋杀案"></a>什么也别说-一桩北爱尔兰谋杀案</h2><p>一起没有真相的杀人案，十分恐怖。<br>不可否认，我是从《少女革命》出发去了解世界上过去曾经发生过的“革命”。<br>因为我必须通过这些革命来冷静地看清自己逃离不了的现代的浪潮。</p>
+<h1 id="影视-19"><a href="#影视-19" class="headerlink" title="影视(19)"></a>影视(19)</h1><table>
+<thead>
+<tr>
+<th>名字</th>
+<th>作者</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>横滨蓝调</td>
+<td>null</td>
+</tr>
+<tr>
+<td>亨利八世的六位王后</td>
+<td>null</td>
+</tr>
+<tr>
+<td>幼女战记</td>
+<td>null</td>
+</tr>
+<tr>
+<td>水星领航人第一季</td>
+<td>null</td>
+</tr>
+<tr>
+<td>机动战舰抚子号</td>
+<td>null</td>
+</tr>
+<tr>
+<td>蝴蝶君</td>
+<td>null</td>
+</tr>
+<tr>
+<td>飞翔的魔女</td>
+<td>null</td>
+</tr>
+<tr>
+<td>口袋里的战争</td>
+<td>null</td>
+</tr>
+<tr>
+<td>梦戏巴黎</td>
+<td>null</td>
+</tr>
+<tr>
+<td>解放军在巴黎</td>
+<td>null</td>
+</tr>
+<tr>
+<td>鼹鼠</td>
+<td>null</td>
+</tr>
+<tr>
+<td>ONE PIECE FILM RED</td>
+<td>null</td>
+</tr>
+<tr>
+<td>高达00</td>
+<td>null</td>
+</tr>
+<tr>
+<td>圣血</td>
+<td>null</td>
+</tr>
+<tr>
+<td>魔女之旅</td>
+<td>null</td>
+</tr>
+</tbody></table>
+<p>电影没有特别好说的。</p>
+<h1 id="CD"><a href="#CD" class="headerlink" title="CD"></a>CD</h1><p>开始听cd了，下个月开始统计。</p>
+<p>2022/10/1:<br>九月最后一周去了公司，公司新来了一位同事。在国内的时候在网易，bilibili上过班，在上海疫情严重时决定出国，从他到决定出国到日本只用了一个月，我见到他时他才到日本20多天。<br>这一周的工期其实挺赶的，或许我本来也没时间去帮助他，但是我还是周六和他出门帮他买些家具。<br>他聊到编程时和他平常时是不一样的，平常时很谦虚也很礼貌，很为他人着想。但是聊到代码就会变得激动，表现出对代码的执着。<br>他还抱怨日本的假期太多，“刚结束两个三连休，怎么下周还是三连休？”</p>
+<p>整段时间里，基本都是他在讲，最近从在宅转到去办公室上班体力不太好，他一直说我反而不需要说话了。挺好。<br>虽然是个三十岁的人但是说起话来完全不觉得有隔阂，很年轻的人。<br>我很认同的他说的外界函数是关于时间的函数。</p>
+<p>2022/10/2：<br>去了公司，叔叔帮我看了程序，感觉可以继续写下去了。</p>
+<link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>每月总结</category>
+      </categories>
+      <tags>
+        <tag>2022</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>月报(14)2022/08</title>
     <url>/WestRoute.github.io/2022/08/28/MonthlyRe14/</url>
     <content><![CDATA[<p>今年最累的一个月。我直说，这个月没“看完”任何影视作品，但是关于书我有很多想说的。</p>
 <span id="more"></span>
@@ -141,6 +314,12 @@
 <p>日本人看书就很杂了，而且有些莫名其妙简直就是浪费纸张的书。<br>日本的普通民众：漫画，轻小说，职业专业书<br>日本的爱书民众：料理书(非常多)，音乐书，儿童绘本，关于酒的关于咖啡的，侦探小说，一些哲学和西方历史(希腊罗马居多)，关于现代的书(日本社会问题，现代人的自我实现)比较多，一些现代诗人</p>
 <p>还有就是日本作家的从业环境明显就是比国内好一些，日本书店的国内现代书是占了很大一个区域(轻小说也在其中)。<br>由此看出日本人看书比较随性，中国人比较钱多。</p>
 <link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>每月总结</category>
+      </categories>
+      <tags>
+        <tag>2022</tag>
+      </tags>
   </entry>
   <entry>
     <title>月报(13)2022/07</title>

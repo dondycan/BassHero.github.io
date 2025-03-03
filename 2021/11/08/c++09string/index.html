@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
@@ -50,10 +50,10 @@
   <noscript>
     <link rel="stylesheet" href="/BassHero.github.io/css/noscript.css">
   </noscript>
-</head>
+<!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-google-photos-album@1.2.0/css/google_photos_album.css" integrity="sha256-+fmg1peSAbhT32GtVA2D9f1zAjN3v6lX+9Y14jKmYBs=" crossorigin="anonymous"><!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="headband"></div>
 
   <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -88,9 +88,11 @@
 <nav class="site-nav">
   <ul class="main-menu menu">
         <li class="menu-item menu-item-home"><a href="/BassHero.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-archives"><a href="/BassHero.github.io/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+        <li class="menu-item menu-item-daily"><a href="/BassHero.github.io/daily/" rel="section"><i class="fa fa-archive fa-fw"></i>日记</a></li>
+        <li class="menu-item menu-item-articles"><a href="/BassHero.github.io/article/" rel="section"><i class="fa fa-folder-open fa-fw"></i>文章</a></li>
         <li class="menu-item menu-item-book"><a href="/BassHero.github.io/books/" rel="section"><i class="fa fa-book fa-fw"></i>图书</a></li>
         <li class="menu-item menu-item-film"><a href="/BassHero.github.io/films/" rel="section"><i class="fa fa-film fa-fw"></i>观影</a></li>
+        <li class="menu-item menu-item-memo"><a href="/BassHero.github.io/memos/" rel="section"><i class="fa fa-quote-left fa-fw"></i>摘抄</a></li>
         <li class="menu-item menu-item-photo"><a href="/BassHero.github.io/gallery/" rel="section"><i class="fa fa-camera-retro fa-fw"></i>相册</a></li>
         <li class="menu-item menu-item-video"><a href="/BassHero.github.io/video/" rel="section"><i class="fa fa-video fa-fw"></i>视频</a></li>
   </ul>
@@ -137,18 +139,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/BassHero.github.io/archives/">
-          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-count">41</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/BassHero.github.io/categories/">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/BassHero.github.io/tags/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -255,7 +257,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h3 id="string类构造函数"><a href="#string类构造函数" class="headerlink" title="string类构造函数"></a>string类构造函数</h3><p>string类其实是基于一个类型模板。</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><h3 id="string类构造函数"><a href="#string类构造函数" class="headerlink" title="string类构造函数"></a>string类构造函数</h3><p>string类其实是基于一个类型模板。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> std &#123;</span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">charT</span>,</span></span><br><span class="line"><span class="class">            <span class="keyword">class</span> <span class="title">traits</span> =</span> char_traits&lt;charT&gt;,</span><br><span class="line">            <span class="class"><span class="keyword">class</span> <span class="title">Allocator</span> =</span> allocator&lt;charT&gt; &gt;</span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">basic_string</span>;</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">using</span> string    = basic_string&lt;<span class="keyword">char</span>&gt;;</span><br><span class="line">  <span class="keyword">using</span> u8string  = basic_string&lt;<span class="keyword">char8_t</span>&gt;;   <span class="comment">// C++20から</span></span><br><span class="line">  <span class="keyword">using</span> u16string = basic_string&lt;<span class="keyword">char16_t</span>&gt;;  <span class="comment">// C++11から</span></span><br><span class="line">  <span class="keyword">using</span> u32string = basic_string&lt;<span class="keyword">char32_t</span>&gt;;  <span class="comment">// C++11から</span></span><br><span class="line">  <span class="keyword">using</span> wstring   = basic_string&lt;<span class="keyword">wchar_t</span>&gt;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">namespace</span> pmr &#123;  <span class="comment">// C++17から</span></span><br><span class="line">    <span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">charT</span>, <span class="keyword">class</span> <span class="title">traits</span> =</span> char_traits&lt;charT&gt;&gt;</span><br><span class="line">      <span class="keyword">using</span> basic_string =</span><br><span class="line">        std::basic_string&lt;charT, traits, polymorphic_allocator&lt;charT&gt;&gt;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">using</span> string    = basic_string&lt;<span class="keyword">char</span>&gt;;</span><br><span class="line">    <span class="keyword">using</span> u8string  = basic_string&lt;<span class="keyword">char8_t</span>&gt;; <span class="comment">// C++20から</span></span><br><span class="line">    <span class="keyword">using</span> u16string = basic_string&lt;<span class="keyword">char16_t</span>&gt;;</span><br><span class="line">    <span class="keyword">using</span> u32string = basic_string&lt;<span class="keyword">char32_t</span>&gt;;</span><br><span class="line">    <span class="keyword">using</span> wstring   = basic_string&lt;<span class="keyword">wchar_t</span>&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>头文件string.h和cstring支持对c-风格字符串进行操纵的c库字符串函数，但不支持string类。</p>
@@ -384,7 +386,12 @@ wordmap["the"]:word出现过的次数
 <figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//vslice.cpp -- using valarray slices</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;valarray&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> SIZE = <span class="number">12</span>;</span><br><span class="line"><span class="keyword">typedef</span> std::valarray&lt;<span class="keyword">int</span>&gt; vint; <span class="comment">// simplify declarations </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">const</span> vint &amp; v, <span class="keyword">int</span> cols)</span></span>; </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> std::slice;	<span class="comment">// from &lt;valarray&gt;</span></span><br><span class="line">	<span class="keyword">using</span> std::cout;</span><br><span class="line">	<span class="function">vint <span class="title">valint</span><span class="params">(SIZE)</span></span>;	<span class="comment">// think of as 4 rows of 3</span></span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; SIZE; ++i)</span><br><span class="line">		valint[i] = std::<span class="built_in">rand</span>() % <span class="number">10</span>;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Original array:\n&quot;</span>;</span><br><span class="line">	<span class="built_in">show</span>(valint, <span class="number">3</span>); <span class="comment">// show in 3 columns</span></span><br><span class="line">	<span class="function">vint <span class="title">vcol</span><span class="params">(valint[slice(<span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>)])</span></span>; <span class="comment">// extract 2nd column</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Second column:\n&quot;</span>;</span><br><span class="line">	<span class="built_in">show</span>(vcol, <span class="number">1</span>);<span class="comment">// show in 1 column </span></span><br><span class="line">	<span class="function">vint <span class="title">vrow</span><span class="params">(valint[slice(<span class="number">3</span>, <span class="number">3</span>, <span class="number">1</span>)])</span></span>;<span class="comment">// extract 2nd row</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Second row:\n&quot;</span>;</span><br><span class="line">	<span class="built_in">show</span>(vrow, <span class="number">3</span>);</span><br><span class="line">	valint[<span class="built_in">slice</span>(<span class="number">2</span>, <span class="number">4</span>, <span class="number">3</span>)] = <span class="number">10</span>;<span class="comment">// assign to 2nd column</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Set last column to 10:\n&quot;</span>; <span class="built_in">show</span>(valint, <span class="number">3</span>);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Set first column to sum of next two:\n&quot;</span>;</span><br><span class="line">	<span class="comment">// + not defined for slices, so convert to valarray&lt;int&gt;</span></span><br><span class="line">	valint[<span class="built_in">slice</span>(<span class="number">0</span>, <span class="number">4</span>, <span class="number">3</span>)] = <span class="built_in">vint</span>(valint[<span class="built_in">slice</span>(<span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>)]) + <span class="built_in">vint</span>(valint[<span class="built_in">slice</span>(<span class="number">2</span>, <span class="number">4</span>, <span class="number">3</span>)]);</span><br><span class="line">	<span class="built_in">show</span>(valint, <span class="number">3</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">(<span class="keyword">const</span> vint &amp; v, <span class="keyword">int</span> cols)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> std::cout;</span><br><span class="line">	<span class="keyword">using</span> std::endl;</span><br><span class="line">	<span class="keyword">int</span> lim = v.<span class="built_in">size</span>();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; lim; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		cout.<span class="built_in">width</span>(<span class="number">3</span>);</span><br><span class="line">		cout &lt;&lt; v[i];</span><br><span class="line">		<span class="keyword">if</span> (i % cols == cols - <span class="number">1</span>)</span><br><span class="line">			cout &lt;&lt; endl;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			cout &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (lim % cols != <span class="number">0</span>)</span><br><span class="line">		cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 </details>
 
-<link rel="stylesheet" href="/css/bilicard.css" type="text/css">
+</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">
     </div>
 
     
@@ -426,7 +433,7 @@ wordmap["the"]:word出现过的次数
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2024</span>
+  <span itemprop="copyrightYear">2025</span>
   <span class="with-love">
     <i class="fa fa-rocket"></i>
   </span>
@@ -458,5 +465,32 @@ wordmap["the"]:word出现过的次数
 
 
 
-</body>
+<!-- hexo injector body_end start --><script>
+function addLoadEvent(func) {
+  const oldonload = window.onload;
+  if (typeof window.onload !== 'function') {
+    window.onload = func;
+  } else {
+    window.onload = () => {
+      oldonload();
+      func();
+    };
+  }
+}
+  addLoadEvent(() => {
+    try {
+      if (window.innerWidth < Number('768')) {
+        return;
+      }
+      const imgs = Array.from(document.body.querySelectorAll('.google-photos-album-images a'));
+      imgs.push(...Array.from(document.body.querySelectorAll('a.google-photos-album-image')));
+      for (const anchor of imgs) {
+        anchor.href = anchor.href.replace(/=s720\-no/i, '=s1920-no');
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  });
+</script>
+<!-- hexo injector body_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 </html>

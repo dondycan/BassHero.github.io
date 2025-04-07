@@ -53,10 +53,6 @@ abbr[title] {
   text-decoration: underline; /* 2 */
   text-decoration: underline dotted; /* 2 */
 }
-b,
-strong {
-  font-weight: bolder;
-}
 code,
 kbd,
 samp {
@@ -196,7 +192,7 @@ h5,
 h6 {
   font-family: Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
   font-weight: bold;
-  line-height: 1.5;
+  line-height: 1;
   margin: 30px 0 15px;
 }
 h1 {
@@ -248,14 +244,36 @@ hr {
   margin: 40px 0;
 }
 blockquote {
-  border-left: 4px solid #00c4b6;
-  color: var(--blockquote-color);
-  margin: 0;
-  padding: 0 15px;
+  position: relative;
+  padding: 35px 15px 10px 15px;
+  box-sizing: border-box;
+  font-style: italic;
+  background: #f8f8f8;
+  color: #636363;
+  border-left: 4px solid #ffc70e;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.14);
 }
-blockquote cite::before {
-  content: '-';
-  padding: 0 5px;
+blockquote:before {
+  display: inline-block;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  content: "\f10d";
+  font-family: "Font Awesome 5 Free";
+  color: #ffc70e;
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 900;
+}
+blockquote p {
+  padding: 0;
+  margin: 3px 0;
+  line-height: 1.3;
+}
+blockquote cite {
+  text-align: left;
+  color: #a0a0a0;
+  font-size: 0.9em;
 }
 dt {
   font-weight: bold;
@@ -287,15 +305,25 @@ td {
 }
 th,
 td {
-  border: 1px solid #ddd;
+  border: 3px solid #ddd;
   border-bottom: 3px solid #ddd;
 }
 th {
   font-weight: 700;
   padding-bottom: 10px;
+  background: #ddd;
 }
 td {
   border-bottom-width: 1px;
+}
+table.timeline_img {
+  border-radius: 8px;
+}
+table.timeline_img th,
+td {
+  border: 0px;
+  border-bottom: 0px;
+  background-color: rgba(183,221,247,0.144);
 }
 .btn {
   background: var(--btn-default-bg);
@@ -1528,48 +1556,6 @@ pre code {
   top: -5px;
   transform: rotate(-45deg);
 }
-.post-toc {
-  font-size: 0.875em;
-}
-.post-toc ol {
-  list-style: none;
-  margin: 0;
-  padding: 0 2px 5px 10px;
-  text-align: left;
-}
-.post-toc ol > ol {
-  padding-left: 0;
-}
-.post-toc ol a {
-  transition: all 0.2s ease-in-out;
-}
-.post-toc .nav-item {
-  line-height: 1.8;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.post-toc .nav .nav-child {
-  display: none;
-}
-.post-toc .nav .active > .nav-child {
-  display: block;
-}
-.post-toc .nav .active-current > .nav-child {
-  display: block;
-}
-.post-toc .nav .active-current > .nav-child > .nav-item {
-  display: block;
-}
-.post-toc .nav .active > a {
-  border-bottom-color: #fc6423;
-  color: #fc6423;
-}
-.post-toc .nav .active-current > a {
-  color: #fc6423;
-}
-.post-toc .nav .active-current > a:hover {
-  color: #fc6423;
-}
 .site-state {
   display: flex;
   flex-wrap: wrap;
@@ -1792,6 +1778,7 @@ pre code {
   margin-bottom: 35px;
   margin-left: 35px;
   position: relative;
+  border-radius: 1rem;
 }
 @media (max-width: 767px) {
   .posts-collapse .post-content {
@@ -1982,7 +1969,7 @@ pre code {
   color: #999;
   font-size: 0.875em;
   font-weight: bold;
-  line-height: 1;
+  line-height: 0.8;
   margin: -20px auto 15px;
   text-align: center;
 }
@@ -2070,7 +2057,7 @@ pre code {
 .progress-film {
 /* 进度部分 */
 /* 利用继承父元素宽度的百分比控制进度 */
-  width: 45%;
+  width: 57%;
   height: 100%;
 /* 内层背景色即进度达到的颜色 */
   background-color: #5cd9d1;
@@ -2079,7 +2066,7 @@ pre code {
 .progress-book {
 /* 进度部分 */
 /* 利用继承父元素宽度的百分比控制进度 */
-  width: 53%;
+  width: 66%;
   height: 100%;
 /* 内层背景色即进度达到的颜色 */
   background-color: #5cd9d1;
@@ -3283,6 +3270,10 @@ div.center {
 #kg {
   text-indent: 2em;
 }
+/***************      timeline  2025.3.3     *******************/
+/*   Authoer :KazumiLin                                        */
+/*   Url:     https://my.kzm.pw/tw/hexo-timeline-block-md/     */
+/***************************************************************/
 .timeline span.p.h2,
 p.p.h2 {
   font-size: 3rem;
@@ -3318,7 +3309,6 @@ p.p.h2 {
 .timenode .meta {
   position: relative;
   color: #1f2d3d;
-  font-size: 0.375rem;
   line-height: 32px;
   height: 32px;
   left: 27px;
@@ -3376,6 +3366,9 @@ p.p.h2 {
   background: #ff5722;
   transform: scale(1);
 }
+.timenode .body img {
+  height: 50%; /* % で指定すると親の div に対する高さに対する割合になります。 */
+}
 .div-table {
   display: table;
   text-align: center;
@@ -3388,5 +3381,101 @@ p.p.h2 {
 .div-table-col {
   float: left; /* fix for  buggy browsers */
   display: table-column;
-  width: 80px;
+  width: 100px;
+}
+.div-table a {
+  border-bottom: 0px;
+  font-family: serif;
+  font-weight: bold;
+  font-size: 30px;
+}
+.div-table a:hover {
+  border-bottom: 1px solid #999;
+}
+/***************      preview-block  2025.3.4     *******************/
+/*   Authoer :KazumiLin　　　　　　　　　　　　　　　　　　　　　　　　 */
+/*   Url:     https://my.kzm.pw/tw/hexo-link-preview-block/　　　  　*/
+/*******************************************************************/
+.link-preview {
+  border-color: #cfd9de;
+  border-radius: 16px;
+  overflow: hidden;
+  border-width: 1px;
+  border-style: solid;
+  display: flex;
+  max-width: 500px;
+  width: 90%;
+/* aspect-ratio : 4 / 1;  */
+  height: 25vw;
+  max-height: 150px;
+  margin: 10px;
+}
+.link-preview .og-image {
+  overflow: hidden;
+/* aspect-ratio : 11 / 10; */
+  width: 28vw;
+  height: 100%;
+  max-width: 155px;
+  border-right: 1px solid #cfd9de;
+}
+.link-preview .og-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  margin: 0px;
+}
+.link-preview .link-area {
+  margin-bottom: 12px;
+  margin-top: 4px;
+  font-weight: normal;
+  font-size: 14px;
+  color: #777;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.link-preview .descriptions {
+  margin-top: 10px;
+  white-space: initial;
+  overflow-wrap: break-word;
+}
+@media screen and (max-width: 500px) {
+  .link-preview .descriptions > p {
+    -webkit-line-clamp: 2;
+  }
+}
+@media screen and (min-width: 500px) {
+  .link-preview .descriptions > p {
+    -webkit-line-clamp: 3;
+  }
+}
+.link-preview .descriptions > p {
+  margin: 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.link-preview .link-content-no-img {
+  display: inline-block;
+  margin-bottom: auto;
+  margin-top: auto;
+  margin-left: 10%;
+  margin-right: 10%;
+  overflow: hidden;
+  width: 80%;
+  text-overflow: ellipsis;
+}
+.link-preview .link-content-img {
+  display: inline-block;
+  margin-bottom: auto;
+  margin-top: auto;
+  margin-left: 12px;
+  margin-right: 12px;
+  overflow: hidden;
+  width: 80%;
+  text-overflow: ellipsis;
+}
+.daily-subtitle p {
+  text-align: center;
 }

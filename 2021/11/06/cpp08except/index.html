@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/BassHero.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/BassHero.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/BassHero.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/BassHero.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/BassHero.github.io/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CM+PLUS+1p:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dondycan.github.io","root":"/BassHero.github.io/","images":"/BassHero.github.io/images","scheme":"Pisces","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":80,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/BassHero.github.io/js/config.js"></script>
+<meta property="og:type" content="article">
+<meta property="og:title" content="c++08 异常处理">
+<meta property="og:url" content="https://dondycan.github.io/BassHero.github.io/2021/11/06/cpp08except/index.html">
+<meta property="og:site_name" content="咚咚锵">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dondycan.github.io/WestRoute.github.io/images/cmemoery.png">
+<meta property="article:published_time" content="2021-11-06T06:05:38.000Z">
+<meta property="article:modified_time" content="2025-04-06T15:33:40.416Z">
+<meta property="article:author" content="咚咚锵">
+<meta property="article:tag" content="2021">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dondycan.github.io/WestRoute.github.io/images/cmemoery.png">
+
+
+<link rel="canonical" href="https://dondycan.github.io/BassHero.github.io/2021/11/06/cpp08except/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://dondycan.github.io/BassHero.github.io/2021/11/06/cpp08except/","path":"2021/11/06/cpp08except/","title":"c++08 异常处理"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>c++08 异常处理 | 咚咚锵</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/BassHero.github.io/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-google-photos-album@1.2.0/css/google_photos_album.css" integrity="sha256-+fmg1peSAbhT32GtVA2D9f1zAjN3v6lX+9Y14jKmYBs=" crossorigin="anonymous"><!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/BassHero.github.io/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">咚咚锵</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">目标 影2500 书300</p>
+      <img class="custom-logo-image" src="/BassHero.github.io/images/avatar.gif" alt="咚咚锵">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/BassHero.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-daily"><a href="/BassHero.github.io/daily/" rel="section"><i class="fa fa-archive fa-fw"></i>日记</a></li>
+        <li class="menu-item menu-item-article"><a href="/BassHero.github.io/categories/" rel="section"><i class="fa fa-folder-open fa-fw"></i>文章</a></li>
+        <li class="menu-item menu-item-book"><a href="/BassHero.github.io/books/" rel="section"><i class="fa fa-book fa-fw"></i>阅读</a></li>
+        <li class="menu-item menu-item-film"><a href="/BassHero.github.io/films/" rel="section"><i class="fa fa-film fa-fw"></i>观影</a></li>
+        <li class="menu-item menu-item-photo"><a href="/BassHero.github.io/gallery/" rel="section"><i class="fa fa-camera-retro fa-fw"></i>相册</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">咚咚锵</p>
+  <div class="site-description" itemprop="description">码龄 0年</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/BassHero.github.io/archives/">
+          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/BassHero.github.io/categories/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/BassHero.github.io/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:dondcyan@gmail.com" title="E-Mail → mailto:dondcyan@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yamagamisukibot" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yamagamisukibot" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dondycan.github.io/BassHero.github.io/2021/11/06/cpp08except/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/BassHero.github.io/images/avatar.gif">
+      <meta itemprop="name" content="咚咚锵">
+      <meta itemprop="description" content="码龄 0年">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咚咚锵">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          c++08 异常处理
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-11-06 15:05:38" itemprop="dateCreated datePublished" datetime="2021-11-06T15:05:38+09:00">2021-11-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/BassHero.github.io/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/BassHero.github.io/categories/%E6%8A%80%E6%9C%AF/CPP/" itemprop="url" rel="index"><span itemprop="name">CPP</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>9.2k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
+<p>Throw –&gt;Try –&gt;Catch<br>thorw不会引起异常</p>
+<h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>abort()：向标准错误流发送消息 bnormal program terminaton<br>throw “message”：throw是一种跳转，及命令程序跳转到另一条语句。message用来指出异常的特征。<br>try：可能出现error的程序<br>catch：用来捕获throw抛出的异常，{}内是出现error之后的处理(这里是要求输入新数字)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//error3.cpp -- using an exception</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">hmean</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span></span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> x, y, z;</span><br><span class="line"> </span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Enter two numbers: &quot;</span>;</span><br><span class="line">	<span class="keyword">while</span> (cin &gt;&gt; x &gt;&gt; y)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">try</span><span class="comment">//start of try block</span></span><br><span class="line">		&#123;</span><br><span class="line">			z = <span class="built_in">hmean</span>(x, y);</span><br><span class="line">		&#125;<span class="comment">//end of try block</span></span><br><span class="line">		<span class="built_in"><span class="keyword">catch</span></span> (<span class="keyword">const</span> <span class="keyword">char</span> * s)<span class="comment">//start of exception handler</span></span><br><span class="line">		&#123;</span><br><span class="line">			cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;Enter a new pair of numbers: &quot;</span>;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;<span class="comment">//end of handler</span></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;Harmonic mean of &quot;</span> &lt;&lt; x &lt;&lt; <span class="string">&quot; and &quot;</span> &lt;&lt; y &lt;&lt; <span class="string">&quot; is &quot;</span> &lt;&lt; z &lt;&lt; endl;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;Enter next set of numbers &lt;q to quit&gt; : &quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Bye!\n&quot;</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">hmean</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a == -b)</span><br><span class="line">		<span class="keyword">throw</span> <span class="string">&quot;bad hmean() arguments: a = -b not allowed&quot;</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">2.0</span> * a * b / (a + b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="将对象用作异常类型"><a href="#将对象用作异常类型" class="headerlink" title="将对象用作异常类型"></a>将对象用作异常类型</h4><p>没看懂<br><br></p>
+<h4 id="异常规范"><a href="#异常规范" class="headerlink" title="异常规范"></a>异常规范</h4><p>throw可以在函数体中抛出异常，也可以在函数声明中指明当前函数能抛出的异常。<br>double harm(double a) throw(bad_thing);//throw bad_thing exception<br>double marm(double) throw;//doesnt throw<br>可使用新增的noexcept指出函数不会抛出异常<br>double marm() noexcept;</p>
+<h4 id="栈解退"><a href="#栈解退" class="headerlink" title="栈解退"></a>栈解退</h4><p>当引用对引发异常的函数进行调用的函数时，涉及栈解退。<br><a href="/WestRoute.github.io/images/cmemoery.png" class="gallery-item"><img src="/WestRoute.github.io/images/cmemoery.png"></a><br>程序将函数指令的返回地址存入栈中，当被调用的函数执行完毕后，程序将用该地址来确定从哪里继续执行。<br>在栈中，这些函数被视为自动变量。如果被调用的函数调用了其他函数，则后者的信息也将添加在栈中。<br>假设最顶部的函数由于出现异常而被中止，栈直到找到try的}地址为止一直释放栈，控制权转为块尾的异常处理。<br>栈和函数返回一样，对与栈中的自动类对象，类的析构函数会被调用。<br>然而函数返回仅仅是处理该函数放在栈中的对象，而throw语句则处理try-catch之间整个函数调用序列放在战中的对象。</p>
+<details><summary>error5.h(可点开查看)</summary>
+
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//error5.cpp -- unwinding the stack</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span>	</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;exc_mean.h&quot;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">demo</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	string <span class="keyword">word</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">demo</span>(<span class="keyword">const</span> string &amp; str)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">word</span> = str;</span><br><span class="line">		std::cout &lt;&lt; <span class="string">&quot;demo &quot;</span> &lt;&lt; <span class="keyword">word</span> &lt;&lt; <span class="string">&quot; created\n&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	~<span class="built_in">demo</span>()</span><br><span class="line">	&#123;</span><br><span class="line">		std::cout &lt;&lt; <span class="string">&quot;demo &quot;</span> &lt;&lt; <span class="keyword">word</span> &lt;&lt; <span class="string">&quot; destroyed\n&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">show</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		std::cout &lt;&lt; <span class="string">&quot;demo &quot;</span> &lt;&lt; <span class="keyword">word</span> &lt;&lt; <span class="string">&quot; lives!\n&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// function prototypes</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">hmean</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">gmean</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">means</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span></span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">using</span> std::cout;</span><br><span class="line">	<span class="keyword">using</span> std::cin;</span><br><span class="line">	<span class="keyword">using</span> std::endl;</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">double</span> x, y, z;</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="function">demo <span class="title">d1</span><span class="params">(<span class="string">&quot;found in block in main() &quot;</span>)</span></span>;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;Enter two numbers : &quot;</span>;</span><br><span class="line">		<span class="keyword">while</span> (cin &gt;&gt; x &gt;&gt; y)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">try</span><span class="comment">// stare of try block</span></span><br><span class="line">			&#123;</span><br><span class="line">				z = <span class="built_in">means</span>(x, y);</span><br><span class="line">				cout &lt;&lt; <span class="string">&quot;The mean mean of &quot;</span> &lt;&lt; x &lt;&lt; <span class="string">&quot; and &quot;</span> &lt;&lt; y &lt;&lt; <span class="string">&quot;is &quot;</span> &lt;&lt; z &lt;&lt; endl;</span><br><span class="line">				cout &lt;&lt; <span class="string">&quot;Enter next pair: &quot;</span>;</span><br><span class="line">			&#125; <span class="comment">// end of try block</span></span><br><span class="line"> </span><br><span class="line">			<span class="built_in"><span class="keyword">catch</span></span> (bad_hmean &amp; bg) <span class="comment">// start of catch block</span></span><br><span class="line">			&#123;</span><br><span class="line">				bg.<span class="built_in">mesg</span>();</span><br><span class="line">				cout &lt;&lt; <span class="string">&quot;Try again.\n&quot;</span>;</span><br><span class="line">				<span class="keyword">continue</span>;</span><br><span class="line">			&#125;</span><br><span class="line"> </span><br><span class="line">			<span class="built_in"><span class="keyword">catch</span></span> (bad_gmean &amp; hg)</span><br><span class="line">			&#123;</span><br><span class="line">				cout &lt;&lt; hg.<span class="built_in">mesg</span>();</span><br><span class="line">				cout &lt;&lt; <span class="string">&quot;Values used: &quot;</span> &lt;&lt; hg.vl &lt;&lt; <span class="string">&quot;, &quot;</span> &lt;&lt; hg.v2 &lt;&lt; endl;</span><br><span class="line">				cout &lt;&lt; <span class="string">&quot;Sorry, you don&#x27;t get to play any more.\n&quot;</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125; <span class="comment">// end of catch block</span></span><br><span class="line">		&#125;</span><br><span class="line">		d1.<span class="built_in">show</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Bye!\n&quot;</span>;</span><br><span class="line">	cin.<span class="built_in">get</span>(); </span><br><span class="line">	cin.<span class="built_in">get</span>(); </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">hmean</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a == -b)</span><br><span class="line">		<span class="keyword">throw</span> <span class="built_in">bad_hmean</span>(a, b);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">2.0</span> * a * b / (a + b);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">gmean</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a &lt; <span class="number">0</span> || b &lt; <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">throw</span> <span class="built_in">bad_gmean</span>(a, b); <span class="keyword">return</span> std::<span class="built_in">sqrt</span>(a * b);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">means</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">double</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">double</span> am, hm, gm;</span><br><span class="line">	<span class="function">demo <span class="title">d2</span><span class="params">(<span class="string">&quot;found in means&#123;)&quot;</span>)</span></span>;</span><br><span class="line">	am = (a + b) / <span class="number">2.0</span>;	<span class="comment">// arithmetic mean</span></span><br><span class="line">	<span class="keyword">try</span></span><br><span class="line">	&#123;</span><br><span class="line">		hm = <span class="built_in">hmean</span>(a, b);</span><br><span class="line">		gm = <span class="built_in">gmean</span>(a, b);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in"><span class="keyword">catch</span></span> (bad_hmean &amp; bg) <span class="comment">// start of catch block</span></span><br><span class="line">	&#123;</span><br><span class="line">		bg.<span class="built_in">mesg</span>();</span><br><span class="line">		std::cout &lt;&lt; <span class="string">&quot;Caught in means()\n&quot;</span>;</span><br><span class="line">		<span class="keyword">throw</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	d2.<span class="built_in">show</span>();</span><br><span class="line">	<span class="keyword">return</span> (am + hm + gm) / <span class="number">3.0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<h4 id="exception类"><a href="#exception类" class="headerlink" title="exception类"></a>exception类</h4><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">except.h或者exception.h</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;exception&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>1.stdexcept<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;logic_error:可通过编译修改<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;domain_error<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;invaild_argument<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;length_error<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;out_of_bounds<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;runtime_error:无可避免的问题<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;range_error<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;overflow_error<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;underflow_error<br>2.bad_alloc和new</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;new&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>在不用异常处理时，当无法分配请求的内存量时，返回空指针。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">try</span><br><span class="line">&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Trying to get a big block of memory:\n&quot;</span>;</span><br><span class="line">	pb = new Big[<span class="number">10000</span>]; <span class="regexp">//</span> <span class="number">1</span>,<span class="number">600</span>,<span class="number">000</span>,<span class="number">000</span> bytes</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Got past the new request:\n&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line">catch (bad_alloc &amp; ba)</span><br><span class="line">&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Caught the exception!\n&quot;</span>;</span><br><span class="line">	cout &lt;&lt; ba.what() &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">exit</span>(EXIT_FAILURE);</span><br></pre></td></tr></table></figure>
+<p>也可以不抛出异常</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *pi= <span class="built_in"><span class="keyword">new</span></span> (std::nothrow) <span class="keyword">int</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="异常，类和继承"><a href="#异常，类和继承" class="headerlink" title="异常，类和继承"></a>异常，类和继承</h4><p>异常，类和继承以三种方式互相关联。<br>注意，bad_index()在class Sales的公开部分里，这使得外部类的catch块可以使用这个类作为类型。<br>Sales::bad_index()是logic_error类派生来的，能够储存和报告数组索引的超界值(out of bounds values)。</p>
+<details><summary>sales.h(可点开查看)</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// sales.h -- exceptions and inheritance </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdexcept&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Sales</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="class"><span class="keyword">enum</span> &#123;</span> MONTHS = <span class="number">12</span> &#125;;	<span class="comment">// could be a static const  </span></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">bad_index</span> :</span> <span class="keyword">public</span> std::logic_error</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		<span class="keyword">int</span> bi; <span class="comment">// bad index value </span></span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="function"><span class="keyword">explicit</span> <span class="title">bad_index</span><span class="params">(<span class="keyword">int</span> ix, <span class="keyword">const</span> std::string &amp; s = <span class="string">&quot;Index error in Sales object\n&quot;</span>)</span></span>;</span><br><span class="line">		<span class="function"><span class="keyword">int</span> <span class="title">bi_val</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> bi; &#125;</span><br><span class="line">		<span class="keyword">virtual</span> ~<span class="built_in">bad_index</span>() <span class="keyword">throw</span>() &#123;&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="function"><span class="keyword">explicit</span> <span class="title">Sales</span><span class="params">(<span class="keyword">int</span> yy = <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="built_in">Sales</span>(<span class="keyword">int</span> yy, <span class="keyword">const</span> <span class="keyword">double</span> * gr, <span class="keyword">int</span> n);</span><br><span class="line">	<span class="keyword">virtual</span> ~<span class="built_in">Sales</span>() &#123; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">Year</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> year; &#125;</span><br><span class="line">	<span class="keyword">virtual</span> <span class="keyword">double</span> <span class="keyword">operator</span>[](<span class="keyword">int</span> i) <span class="keyword">const</span>;</span><br><span class="line">	<span class="keyword">virtual</span> <span class="keyword">double</span> &amp; <span class="keyword">operator</span>[](<span class="keyword">int</span> i);</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">double</span> gross[MONTHS];</span><br><span class="line">	<span class="keyword">int</span> year;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LabeledSales</span> :</span> <span class="keyword">public</span> Sales</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">nbad_index</span> :</span> <span class="keyword">public</span> Sales::bad_index</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		std::string lbl;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		<span class="built_in">nbad_index</span>(<span class="keyword">const</span> std::string &amp; lb, <span class="keyword">int</span> ix, <span class="keyword">const</span> std::string &amp; s = <span class="string">&quot;Index error in LabeledSales object\n&quot;</span>);</span><br><span class="line">		<span class="function"><span class="keyword">const</span> std::string &amp; <span class="title">label_val</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> lbl; &#125;</span><br><span class="line">		<span class="keyword">virtual</span> ~<span class="built_in">nbad_index</span>() <span class="keyword">throw</span>() &#123;&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">	<span class="function"><span class="keyword">explicit</span> <span class="title">LabeledSales</span><span class="params">(<span class="keyword">const</span> std::string &amp; lb = <span class="string">&quot;none&quot;</span>, <span class="keyword">int</span> yy = <span class="number">0</span>)</span></span>;</span><br><span class="line">	<span class="built_in">LabeledSales</span>(<span class="keyword">const</span> std::string &amp; lb, <span class="keyword">int</span> yy, <span class="keyword">const</span> <span class="keyword">double</span> * gr, <span class="keyword">int</span> n);</span><br><span class="line">	<span class="keyword">virtual</span> ~<span class="built_in">LabeledSales</span>() &#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">const</span> std::string &amp; <span class="title">Label</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> label; &#125;</span><br><span class="line">	<span class="keyword">virtual</span> <span class="keyword">double</span> <span class="keyword">operator</span>[](<span class="keyword">int</span> i) <span class="keyword">const</span>;</span><br><span class="line">	<span class="keyword">virtual</span> <span class="keyword">double</span> &amp; <span class="keyword">operator</span>[] (<span class="keyword">int</span> i);</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	std::string label;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</details>
+之所以析构函数virtual ~bad_index() throw() {}使用了异常规范是因为bad_index是继承于C++98的except类，而except类的析构函数就是这样写的。而C++11中，except类的析构函数没有异常规范。
+当数组索引超界，operator[]()会引发异常。
+
+<p>带异常规范的函数没有与列表中的一场匹配时会导致问题，默认情况下，未捕获的异常将导致程序终止。<br>set_terminate()函数可以修改terminate()函数不去调用abort()来中止程序。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">void myQuit()&#123;</span><br><span class="line">   cou&lt;&lt;<span class="string">&quot;Terminating due to uncaught exception.\n&quot;</span></span><br><span class="line">   <span class="keyword">exit</span>(<span class="number">5</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">set_terminate(myQuit);</span><br></pre></td></tr></table></figure>
+<p>原则上，异常规范应包含调用函数的其他函数所引发的异常，如果发生意外异常，程序将调用unexcept()函数。<br>在这种情况想捕获所有异常，可以</p>
+<figure class="highlight mercury"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">void myUnexcepted()&#123;</span><br><span class="line">	throw std::bad_exception();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.</span><br><span class="line">..</span><br><span class="line">...</span><br><span class="line">set_unexcepted(myUnexcepted);</span><br><span class="line"></span><br><span class="line">.</span><br><span class="line">..</span><br><span class="line">...</span><br><span class="line">double Argh(double, double) throw(out_of_bounds,bad_exception)&#123;</span><br><span class="line">	...</span><br><span class="line">	<span class="built_in">try</span>&#123;</span><br><span class="line">		x<span class="built_in">=</span>Argh(a,b);</span><br><span class="line">	&#125;<span class="built_in">catch</span>(out_of_bounds)&#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;<span class="built_in">catch</span>(bad_exception)&#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>程序设计时就应该实现设计好异常，因为异常不适合模板和动态分配。</p>
+<h4 id="RTTI（Runtime-Type-Identification）RTTI只适合在包含虚函数的类使用"><a href="#RTTI（Runtime-Type-Identification）RTTI只适合在包含虚函数的类使用" class="headerlink" title="RTTI（Runtime Type Identification）RTTI只适合在包含虚函数的类使用"></a>RTTI（Runtime Type Identification）RTTI只适合在包含虚函数的类使用</h4><p>dynamic_cast 使用基类指针生成一个指向派生类的指针（是否可以安全的将对象的地址赋给特定类型的指针），返回0则为空指针。<br>typeid 返回一个指出对象的类型的值<br>type_info 结构储存了特定类型的信息</p>
+<details><summary>dynamic_cast的使用(可点开查看)</summary>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//rttil.cpp -- using the RTTI dynamic_cast operator</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">using</span> std::cout; </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Grand</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">int</span> hold;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">Grand</span>(<span class="keyword">int</span> h = <span class="number">0</span>) : <span class="built_in">hold</span>(h) &#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Speak</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;I am a grand class h\n&quot;</span>; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">int</span> <span class="title">Value</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> hold; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Superb</span> :</span> <span class="keyword">public</span> Grand</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">Superb</span>(<span class="keyword">int</span> h = <span class="number">0</span>) : <span class="built_in">Grand</span>(h) &#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Speak</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;I am a superb class!!\n&quot;</span>; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Say</span><span class="params">()</span> <span class="keyword">const</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;I hold the superb value of: &quot;</span> &lt;&lt; <span class="built_in">Value</span>() &lt;&lt; <span class="string">&quot;!\n&quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Magnificent</span> :</span> <span class="keyword">public</span> Superb</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="keyword">char</span> ch;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">Magnificent</span>(<span class="keyword">int</span> h = <span class="number">0</span>, <span class="keyword">char</span> c = <span class="string">&#x27;A&#x27;</span>) : <span class="built_in">Superb</span>(h), <span class="built_in">ch</span>(c) &#123;&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Speak</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;I am a magnificent class I !!\n&quot;</span>; &#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">Say</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; cout &lt;&lt; <span class="string">&quot;I hold the character &quot;</span> &lt;&lt; ch &lt;&lt; <span class="string">&quot; and the integer &quot;</span> &lt;&lt; <span class="built_in">Value</span>() &lt;&lt; <span class="string">&quot;!\n&quot;</span>; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="function">Grand * <span class="title">GetOne</span><span class="params">()</span></span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> </span><br><span class="line">	std::<span class="built_in">srand</span>(std::<span class="built_in">time</span>(<span class="number">0</span>));</span><br><span class="line">	Grand * pg;</span><br><span class="line">	Superb * ps;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		pg - <span class="built_in">GetOne</span>();</span><br><span class="line">		pg-&gt;<span class="built_in">Speak</span>();</span><br><span class="line">		<span class="keyword">if</span> (ps = <span class="keyword">dynamic_cast</span>&lt;Superb *&gt;(pg))</span><br><span class="line">			ps-&gt;<span class="built_in">Say</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function">Grand * <span class="title">GetOne</span><span class="params">()</span> <span class="comment">// generate one of three kinds of objects randomly</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">		   Grand * p;</span><br><span class="line">		   <span class="built_in"><span class="keyword">switch</span></span>(std::<span class="built_in">rand</span>() % <span class="number">3</span>)</span><br><span class="line">		   &#123;</span><br><span class="line">		   <span class="keyword">case</span>	<span class="number">0</span>:	p = <span class="keyword">new</span> <span class="built_in">Grand</span>(std::<span class="built_in">rand</span>()  % <span class="number">100</span>);</span><br><span class="line">			   <span class="keyword">break</span>;</span><br><span class="line">		   <span class="keyword">case</span>	<span class="number">1</span>:	p = <span class="keyword">new</span> <span class="built_in">Superb</span>(std::<span class="built_in">rand</span>() % <span class="number">100</span>);</span><br><span class="line">			   <span class="keyword">break</span>;</span><br><span class="line">		   <span class="keyword">case</span>	<span class="number">2</span>:	p = <span class="keyword">new</span> <span class="built_in">Magnificent</span>(std::<span class="built_in">rand</span>() % <span class="number">100</span>, <span class="string">&#x27;A&#x27;</span> + std::<span class="built_in">rand</span>() % <span class="number">26</span>);</span><br><span class="line">			   <span class="keyword">break</span>;</span><br><span class="line">		   &#125;</span><br><span class="line"><span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</details>
+
+<h4 id="更严格的类型转换"><a href="#更严格的类型转换" class="headerlink" title="更严格的类型转换"></a>更严格的类型转换</h4><p>dynamic_cast;  向上转换 (Low类和High类是is-a关系)pointerLow=dynamic_cast&lt;Low*&gt;pointerHigh;<br>const_cast;  const–&gt;volatile 可以修改指针，但不能修改 const int等；<br>static_cast;<br>reinterpret_cast;比较危险的转换<br>reinterpret_cast示例</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">dat</span>&#123;</span><span class="keyword">short</span> a;<span class="keyword">short</span> b;&#125;;</span><br><span class="line"><span class="keyword">long</span> value _0xA224B118;</span><br><span class="line">dat*pd=<span class="keyword">reinterpret_cast</span>&lt;dat*&gt;(&amp;value);</span><br><span class="line">cout&lt;&lt;hex&lt;&lt;pd-&gt;a;</span><br></pre></td></tr></table></figure>
+
+
+<p><br><br><br></p>
+</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/BassHero.github.io/tags/2021/" rel="tag"># 2021</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/BassHero.github.io/2021/11/06/cpp07friends/" rel="prev" title="c++07　友元">
+                  <i class="fa fa-chevron-left"></i> c++07　友元
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/BassHero.github.io/2021/11/08/cpp09string/" rel="next" title="c++09 String类">
+                  c++09 String类 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-rocket"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">咚咚锵</span>
+</div>
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv">
+                </span>次 | 
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/BassHero.github.io/js/comments.js"></script><script src="/BassHero.github.io/js/utils.js"></script><script src="/BassHero.github.io/js/motion.js"></script><script src="/BassHero.github.io/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+<!-- hexo injector body_end start --><script>
+function addLoadEvent(func) {
+  const oldonload = window.onload;
+  if (typeof window.onload !== 'function') {
+    window.onload = func;
+  } else {
+    window.onload = () => {
+      oldonload();
+      func();
+    };
+  }
+}
+  addLoadEvent(() => {
+    try {
+      if (window.innerWidth < Number('768')) {
+        return;
+      }
+      const imgs = Array.from(document.body.querySelectorAll('.google-photos-album-images a'));
+      imgs.push(...Array.from(document.body.querySelectorAll('a.google-photos-album-image')));
+      for (const anchor of imgs) {
+        anchor.href = anchor.href.replace(/=s720\-no/i, '=s1920-no');
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  });
+</script>
+<!-- hexo injector body_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+</html>

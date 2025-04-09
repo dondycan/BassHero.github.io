@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/BassHero.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/BassHero.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/BassHero.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/BassHero.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/BassHero.github.io/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CM+PLUS+1p:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dondycan.github.io","root":"/BassHero.github.io/","images":"/BassHero.github.io/images","scheme":"Pisces","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":80,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/BassHero.github.io/js/config.js"></script>
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络基础自测问题_02">
+<meta property="og:url" content="https://dondycan.github.io/BassHero.github.io/2025/04/09/InternetNotes-02/index.html">
+<meta property="og:site_name" content="咚咚锵">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-04-09T12:51:31.000Z">
+<meta property="article:modified_time" content="2025-04-09T12:56:49.493Z">
+<meta property="article:author" content="咚咚锵">
+<meta property="article:tag" content="2025">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://dondycan.github.io/BassHero.github.io/2025/04/09/InternetNotes-02/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://dondycan.github.io/BassHero.github.io/2025/04/09/InternetNotes-02/","path":"2025/04/09/InternetNotes-02/","title":"网络基础自测问题_02"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>网络基础自测问题_02 | 咚咚锵</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/BassHero.github.io/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-google-photos-album@1.2.0/css/google_photos_album.css" integrity="sha256-+fmg1peSAbhT32GtVA2D9f1zAjN3v6lX+9Y14jKmYBs=" crossorigin="anonymous"><!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/BassHero.github.io/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">咚咚锵</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">目标 影2500 书300</p>
+      <img class="custom-logo-image" src="/BassHero.github.io/images/avatar.gif" alt="咚咚锵">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/BassHero.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-daily"><a href="/BassHero.github.io/daily/" rel="section"><i class="fa fa-archive fa-fw"></i>日记</a></li>
+        <li class="menu-item menu-item-article"><a href="/BassHero.github.io/categories/" rel="section"><i class="fa fa-folder-open fa-fw"></i>文章</a></li>
+        <li class="menu-item menu-item-book"><a href="/BassHero.github.io/books/" rel="section"><i class="fa fa-book fa-fw"></i>阅读</a></li>
+        <li class="menu-item menu-item-film"><a href="/BassHero.github.io/films/" rel="section"><i class="fa fa-film fa-fw"></i>观影</a></li>
+        <li class="menu-item menu-item-photo"><a href="/BassHero.github.io/gallery/" rel="section"><i class="fa fa-camera-retro fa-fw"></i>相册</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">咚咚锵</p>
+  <div class="site-description" itemprop="description">码龄 0年</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/BassHero.github.io/archives/">
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/BassHero.github.io/categories/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/BassHero.github.io/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:dondcyan@gmail.com" title="E-Mail → mailto:dondcyan@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yamagamisukibot" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yamagamisukibot" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dondycan.github.io/BassHero.github.io/2025/04/09/InternetNotes-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/BassHero.github.io/images/avatar.gif">
+      <meta itemprop="name" content="咚咚锵">
+      <meta itemprop="description" content="码龄 0年">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咚咚锵">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          网络基础自测问题_02
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-04-09 21:51:31" itemprop="dateCreated datePublished" datetime="2025-04-09T21:51:31+09:00">2025-04-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/BassHero.github.io/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/BassHero.github.io/categories/%E6%8A%80%E6%9C%AF/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">网络</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.8k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
+<h3 id="一、基础协议问题"><a href="#一、基础协议问题" class="headerlink" title="一、基础协议问题"></a><strong>一、基础协议问题</strong></h3><ol>
+<li><strong>TCP协议</strong></li>
+</ol>
+<ul>
+<li>描述TCP三次握手和四次挥手的过程。为什么握手是三次，而挥手需要四次？</li>
+<li>什么是TCP的滑动窗口机制？它如何实现流量控制？</li>
+<li>如果TCP连接的一方突然宕机（未发送FIN包），另一方会如何处理？</li>
+</ul>
+<ol start="2">
+<li><strong>UDP协议</strong></li>
+</ol>
+<ul>
+<li>UDP是否绝对不可靠？举一个基于UDP但实现可靠传输的协议例子（如QUIC）。</li>
+<li>为什么DNS查询默认使用UDP，但在某些情况下会切换到TCP？</li>
+</ul>
+<ol start="3">
+<li><strong>HTTP/1.1 vs HTTP/2</strong></li>
+</ol>
+<ul>
+<li>HTTP/1.1的队头阻塞（Head-of-Line Blocking）问题是什么？HTTP/2如何解决它？</li>
+<li>什么是HTTP长连接（Keep-Alive）？如何通过Wireshark观察它的行为？</li>
+</ul>
+<ol start="4">
+<li><strong>DNS协议</strong></li>
+</ol>
+<ul>
+<li>递归查询 vs 迭代查询的区别是什么？</li>
+<li>什么是DNS缓存投毒（DNS Cache Poisoning）？如何防御？</li>
+</ul>
+<ol start="5">
+<li><strong>ARP协议</strong></li>
+</ol>
+<ul>
+<li>ARP协议的作用是什么？如何用<code>arp -a</code>命令查看本地ARP缓存？</li>
+<li>如何通过伪造ARP响应实现中间人攻击（MITM）？</li>
+</ul>
+<hr>
+<h3 id="二、进阶协议与安全"><a href="#二、进阶协议与安全" class="headerlink" title="二、进阶协议与安全"></a><strong>二、进阶协议与安全</strong></h3><ol>
+<li><strong>HTTPS与TLS</strong></li>
+</ol>
+<ul>
+<li>TLS握手过程中，客户端和服务端如何协商加密套件（Cipher Suite）？</li>
+<li>什么是SNI（Server Name Indication）？为什么它会影响HTTPS的安全性？</li>
+<li>如果证书链中的中间CA私钥泄露，会引发什么风险？</li>
+</ul>
+<ol start="2">
+<li><strong>WebSocket协议</strong></li>
+</ol>
+<ul>
+<li>WebSocket如何通过HTTP完成握手？握手请求头中的<code>Upgrade</code>字段作用是什么？</li>
+<li>如何防御WebSocket的跨站劫持（Cross-Site WebSocket Hijacking）？</li>
+</ul>
+<ol start="3">
+<li><strong>ICMP协议</strong></li>
+</ol>
+<ul>
+<li>Ping命令基于ICMP的哪类报文？如何用ICMP实现隐蔽通信（如ICMP隧道）？</li>
+<li>什么是ICMP重定向攻击？如何防范？</li>
+</ul>
+<ol start="4">
+<li><strong>DHCP协议</strong></li>
+</ol>
+<ul>
+<li>DHCP的四步分配过程（DISCOVER-OFFER-REQUEST-ACK）是如何工作的？</li>
+<li>什么是DHCP饥饿攻击（DHCP Starvation Attack）？如何防御？</li>
+</ul>
+<ol start="5">
+<li><strong>SSH协议</strong></li>
+</ol>
+<ul>
+<li>SSH密钥交换的过程（如Diffie-Hellman）是如何保证安全性的？</li>
+<li>如何通过SSH隧道实现端口转发（Port Forwarding）？举例说明其应用场景。</li>
+</ul>
+<hr>
+<h3 id="三、协议分析与实践"><a href="#三、协议分析与实践" class="headerlink" title="三、协议分析与实践"></a><strong>三、协议分析与实践</strong></h3><ol>
+<li><strong>Wireshark实战</strong></li>
+</ol>
+<ul>
+<li>抓取一次DNS查询过程，分析请求和响应的报文结构（如查询类型、响应记录）。</li>
+<li>分析一次HTTPS握手过程，找到Client Hello和Server Hello报文中的加密套件列表。</li>
+<li>如何通过Wireshark过滤出所有重传的TCP报文？重传的可能原因有哪些？</li>
+</ul>
+<ol start="2">
+<li><strong>协议逆向与调试</strong></li>
+</ol>
+<ul>
+<li>用Python的<code>scapy</code>库构造一个伪造源IP的SYN包（SYN Flood攻击的原理）。</li>
+<li>如何通过修改Host头实现HTTP请求走私（HTTP Request Smuggling）？</li>
+</ul>
+<ol start="3">
+<li><strong>协议漏洞场景</strong></li>
+</ol>
+<ul>
+<li>为什么过时的SSLv2/SSLv3协议被认为不安全？列举它们已知的漏洞（如POODLE）。</li>
+<li>什么是Slowloris攻击？它如何利用HTTP协议的特性耗尽服务器资源？</li>
+</ul>
+<hr>
+<h3 id="四、开放性问题（面试常见）"><a href="#四、开放性问题（面试常见）" class="headerlink" title="四、开放性问题（面试常见）"></a><strong>四、开放性问题（面试常见）</strong></h3><ol>
+<li><strong>设计类问题</strong></li>
+</ol>
+<ul>
+<li>如果要设计一个实时视频传输协议，你会选择TCP还是UDP？为什么？</li>
+<li>如何为一个物联网设备设计轻量级的通信协议（考虑功耗与安全）？</li>
+</ul>
+<ol start="2">
+<li><strong>安全攻防</strong></li>
+</ol>
+<ul>
+<li>如何通过篡改HTTP响应头实施XSS攻击？怎样通过CSP（Content Security Policy）防御？</li>
+<li>什么是证书透明化（Certificate Transparency）？它如何防止恶意证书的签发？</li>
+</ul>
+<ol start="3">
+<li><strong>协议扩展性</strong></li>
+</ol>
+<ul>
+<li>HTTP/3为什么要基于QUIC协议？QUIC相比TCP有哪些优势？</li>
+<li>在IPv6普及的背景下，NAT协议是否还有必要存在？为什么？</li>
+</ul>
+<hr>
+<h3 id="五、学习建议"><a href="#五、学习建议" class="headerlink" title="五、学习建议"></a><strong>五、学习建议</strong></h3><ol>
+<li><strong>动手实验</strong></li>
+</ol>
+<ul>
+<li>用<code>telnet</code>或<code>nc</code>手动构造HTTP请求（如<code>GET / HTTP/1.1</code>），观察服务器响应。</li>
+<li>在虚拟机中搭建DNS服务器（如Bind9），配置域名解析并测试投毒攻击。</li>
+</ul>
+<ol start="2">
+<li><strong>协议文档</strong></li>
+</ol>
+<ul>
+<li>阅读RFC文档（如TCP的RFC 793、HTTP/1.1的RFC 2616），理解协议设计细节。</li>
+<li>对比不同协议的RFC，观察设计思路差异（如TCP的可靠性与UDP的简洁性）。</li>
+</ul>
+<ol start="3">
+<li><strong>安全工具链</strong></li>
+</ol>
+<ul>
+<li>使用<code>openssl s_client</code>命令调试TLS握手过程（如<code>openssl s_client -connect google.com:443</code>）。</li>
+<li>用Nmap脚本引擎（NSE）检测协议漏洞（如<code>nmap --script ssl-enum-ciphers</code>）。</li>
+</ul>
+</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/BassHero.github.io/tags/2025/" rel="tag"># 2025</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/BassHero.github.io/2025/04/09/InternetNotes/" rel="prev" title="网络基础自测问题">
+                  <i class="fa fa-chevron-left"></i> 网络基础自测问题
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-rocket"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">咚咚锵</span>
+</div>
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv">
+                </span>次 | 
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/BassHero.github.io/js/comments.js"></script><script src="/BassHero.github.io/js/utils.js"></script><script src="/BassHero.github.io/js/motion.js"></script><script src="/BassHero.github.io/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+<!-- hexo injector body_end start --><script>
+function addLoadEvent(func) {
+  const oldonload = window.onload;
+  if (typeof window.onload !== 'function') {
+    window.onload = func;
+  } else {
+    window.onload = () => {
+      oldonload();
+      func();
+    };
+  }
+}
+  addLoadEvent(() => {
+    try {
+      if (window.innerWidth < Number('768')) {
+        return;
+      }
+      const imgs = Array.from(document.body.querySelectorAll('.google-photos-album-images a'));
+      imgs.push(...Array.from(document.body.querySelectorAll('a.google-photos-album-image')));
+      for (const anchor of imgs) {
+        anchor.href = anchor.href.replace(/=s720\-no/i, '=s1920-no');
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  });
+</script>
+<!-- hexo injector body_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+</html>

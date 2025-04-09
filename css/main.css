@@ -159,6 +159,7 @@ details {
 }
 summary {
   display: list-item;
+  color: #3c94db;
 }
 template {
   display: none;
@@ -983,9 +984,11 @@ pre code {
 .post-body .note summary {
   cursor: pointer;
   outline: 0;
+  color: #1221f5;
 }
 .post-body .note summary p {
   display: inline;
+  color: #1221f5;
 }
 .post-body .note h2,
 .post-body .note h3,

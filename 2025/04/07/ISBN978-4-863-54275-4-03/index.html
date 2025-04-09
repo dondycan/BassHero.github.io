@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/BassHero.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/BassHero.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/BassHero.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/BassHero.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/BassHero.github.io/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CM+PLUS+1p:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dondycan.github.io","root":"/BassHero.github.io/","images":"/BassHero.github.io/images","scheme":"Pisces","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":80,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/BassHero.github.io/js/config.js"></script>
+<meta property="og:type" content="article">
+<meta property="og:title" content="組込みエンジニアの教科書_CHAPTER03(OSなしソフトウェア)">
+<meta property="og:url" content="https://dondycan.github.io/BassHero.github.io/2025/04/07/ISBN978-4-863-54275-4-03/index.html">
+<meta property="og:site_name" content="咚咚锵">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-04-07T12:21:42.000Z">
+<meta property="article:modified_time" content="2025-04-09T13:49:04.893Z">
+<meta property="article:author" content="咚咚锵">
+<meta property="article:tag" content="2025">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://dondycan.github.io/BassHero.github.io/2025/04/07/ISBN978-4-863-54275-4-03/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://dondycan.github.io/BassHero.github.io/2025/04/07/ISBN978-4-863-54275-4-03/","path":"2025/04/07/ISBN978-4-863-54275-4-03/","title":"組込みエンジニアの教科書_CHAPTER03(OSなしソフトウェア)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>組込みエンジニアの教科書_CHAPTER03(OSなしソフトウェア) | 咚咚锵</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/BassHero.github.io/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-google-photos-album@1.2.0/css/google_photos_album.css" integrity="sha256-+fmg1peSAbhT32GtVA2D9f1zAjN3v6lX+9Y14jKmYBs=" crossorigin="anonymous"><!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/BassHero.github.io/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">咚咚锵</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">目标 影2500 书300</p>
+      <img class="custom-logo-image" src="/BassHero.github.io/images/avatar.gif" alt="咚咚锵">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/BassHero.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-daily"><a href="/BassHero.github.io/daily/" rel="section"><i class="fa fa-archive fa-fw"></i>日记</a></li>
+        <li class="menu-item menu-item-article"><a href="/BassHero.github.io/categories/" rel="section"><i class="fa fa-folder-open fa-fw"></i>文章</a></li>
+        <li class="menu-item menu-item-book"><a href="/BassHero.github.io/books/" rel="section"><i class="fa fa-book fa-fw"></i>阅读</a></li>
+        <li class="menu-item menu-item-film"><a href="/BassHero.github.io/films/" rel="section"><i class="fa fa-film fa-fw"></i>观影</a></li>
+        <li class="menu-item menu-item-photo"><a href="/BassHero.github.io/gallery/" rel="section"><i class="fa fa-camera-retro fa-fw"></i>相册</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">咚咚锵</p>
+  <div class="site-description" itemprop="description">码龄 0年</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/BassHero.github.io/archives/">
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/BassHero.github.io/categories/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/BassHero.github.io/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:dondcyan@gmail.com" title="E-Mail → mailto:dondcyan@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yamagamisukibot" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yamagamisukibot" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dondycan.github.io/BassHero.github.io/2025/04/07/ISBN978-4-863-54275-4-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/BassHero.github.io/images/avatar.gif">
+      <meta itemprop="name" content="咚咚锵">
+      <meta itemprop="description" content="码龄 0年">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咚咚锵">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          組込みエンジニアの教科書_CHAPTER03(OSなしソフトウェア)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-04-07 21:21:42" itemprop="dateCreated datePublished" datetime="2025-04-07T21:21:42+09:00">2025-04-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/BassHero.github.io/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/BassHero.github.io/categories/%E6%8A%80%E6%9C%AF/%E7%B5%84%E8%BE%BC%E3%81%BF%E7%B3%BB/" itemprop="url" rel="index"><span itemprop="name">組込み系</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.4k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
+<h2 id="組込みソフトウェア開発の流れ"><a href="#組込みソフトウェア開発の流れ" class="headerlink" title="組込みソフトウェア開発の流れ"></a>組込みソフトウェア開発の流れ</h2><p><strong>クロス開発環境</strong><br>パソコンに入ってるgccはそのまま組込み環境では使えません、パソコンのCPUは組込み機器のCPUが異なっているためです。<br>Arduino向けコンパイラー avr-gcc<br><strong>ビルド</strong><br>コンパイル -→ アセンブル -→ リンク -→ HEXファイル(ROMファイル)</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">//</span>プリプロセス処理</span><br><span class="line"><span class="regexp">//</span>コンパイル処理</span><br><span class="line"><span class="regexp">//</span>アセンブル処理</span><br><span class="line"><span class="regexp">//</span>リンク処理</span><br><span class="line">avr-gcc -<span class="number">0</span>s -Wall -mmcu=atmega328p main.c -o test.elf</span><br><span class="line"></span><br><span class="line"><span class="regexp">//</span>HEXファイル変換</span><br><span class="line">avr-objcopy b-l elf32-avr -O ihex test.elf test.hex</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>プリプロセス処理</strong><br>#include #ifdefなどのディレクティブを処理。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以下のコマンドを実行し、プリプロセス処理だけ実行したファイルの中身を見れる</span></span><br><span class="line">avr-gcc -<span class="number">0s</span> -Wall -mmcu=atmega328p -E <span class="selector-tag">main</span><span class="selector-class">.c</span> &gt;preprocess.c</span><br></pre></td></tr></table></figure>
+
+<p><strong>コンパイル処理</strong><br>コンパイル処理後、アセンブルファイルが生成される。</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">avr</span>-gcc -<span class="number">0</span>s -Wall -mmcu=atmega<span class="number">328</span>p -S preprocess.c</span><br></pre></td></tr></table></figure>
+
+<p><strong>アセンブル処理</strong><br>アセンブル処理後、OBJ形式ファイルが生成される。<br>OBJ形式ファイルはバイナリファイル。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">avr-gcc <span class="attribute">-mmcu</span>=atmega328p -o main.o preprocess.s</span><br></pre></td></tr></table></figure>
+
+<p><strong>リンク処理</strong><br>依存しているライブラリを読み込む。</p>
+<p><strong>HEXファイル変換</strong><br>ROMに書き込むためのHEXファイルが生成される。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">avr-objcopy b-l elf32-avr -O ihex <span class="keyword">test</span>.elf <span class="keyword">test</span>.hex</span><br></pre></td></tr></table></figure>
+
+<h2 id="アセンブル言語"><a href="#アセンブル言語" class="headerlink" title="アセンブル言語"></a>アセンブル言語</h2><p><strong>スタートアップルーチン</strong><br>main関数を呼び出し前のハードウェアの初期設定、ソフトウェアを動作する前の初期設定。<br>プログラムが必要な初期設定：<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ROMエリア<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RAMエリア<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;関数をコールするためのスタック領域<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;グローバル変数の初期化</p>
+<p><strong>main関数が呼び出されるまでの流れ</strong><br>組込み機器の電源がONになると、リセット信号がCPUに送られます。<br> -→ リセット信号をCPUが受けることで、CPUの動作が始まります<br> -→ メモリーアドレスの０番地からプログラムの実行がスタート<br> -→ 割り込みベクターの設定が行われ<br> -→ スタック領域、データ領域などが初期化<br> -→ main関数が呼び出される</p>
+<p>組込みソフトウェアは基本的に永久ループを作る。<br>テレビはリモートの操作で電源ON/OFFにできるのは、リモートの操作でソフトウェアを待機状態にするだけ。</p>
+<p><strong>メモリーマップ</strong></p>
+<table>
+<thead>
+<tr>
+<th>セクション名</th>
+<th>領域名</th>
+<th>プログラムと言語</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>text</td>
+<td>コード</td>
+<td>機械語(プログラム)を格納</td>
+</tr>
+<tr>
+<td>data</td>
+<td>初期化済みデータ</td>
+<td>初期値を持っている変数を格納</td>
+</tr>
+<tr>
+<td>bss</td>
+<td>非初期化済みデータ</td>
+<td>初期値を持ってない変数を格納</td>
+</tr>
+</tbody></table>
+<p><strong>スタック</strong><br>関数を呼び出す際に、割り込みが発生した場合に使用されるメモリエリア。LIFO。</p>
+<p><strong>割り込みが発生した場合は、「割り込み発生前の戻りアドレス」と「CPUが持っている内部の状態」をスタックに保存する</strong></p>
+<h2 id="組込みソフトウェアのテスト環境"><a href="#組込みソフトウェアのテスト環境" class="headerlink" title="組込みソフトウェアのテスト環境"></a>組込みソフトウェアのテスト環境</h2></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/BassHero.github.io/tags/2025/" rel="tag"># 2025</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/BassHero.github.io/2025/04/07/ISBN978-4-863-54275-4_02_2/" rel="prev" title="組込みエンジニアの教科書_CHAPTER02(CPU)">
+                  <i class="fa fa-chevron-left"></i> 組込みエンジニアの教科書_CHAPTER02(CPU)
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/BassHero.github.io/2025/04/09/InternetNotes/" rel="next" title="网络基础自测问题">
+                  网络基础自测问题 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-rocket"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">咚咚锵</span>
+</div>
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv">
+                </span>次 | 
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/BassHero.github.io/js/comments.js"></script><script src="/BassHero.github.io/js/utils.js"></script><script src="/BassHero.github.io/js/motion.js"></script><script src="/BassHero.github.io/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+<!-- hexo injector body_end start --><script>
+function addLoadEvent(func) {
+  const oldonload = window.onload;
+  if (typeof window.onload !== 'function') {
+    window.onload = func;
+  } else {
+    window.onload = () => {
+      oldonload();
+      func();
+    };
+  }
+}
+  addLoadEvent(() => {
+    try {
+      if (window.innerWidth < Number('768')) {
+        return;
+      }
+      const imgs = Array.from(document.body.querySelectorAll('.google-photos-album-images a'));
+      imgs.push(...Array.from(document.body.querySelectorAll('a.google-photos-album-image')));
+      for (const anchor of imgs) {
+        anchor.href = anchor.href.replace(/=s720\-no/i, '=s1920-no');
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  });
+</script>
+<!-- hexo injector body_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+</html>

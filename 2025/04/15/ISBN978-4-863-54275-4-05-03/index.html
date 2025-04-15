@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/BassHero.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/BassHero.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/BassHero.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/BassHero.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/BassHero.github.io/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CM+PLUS+1p:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dondycan.github.io","root":"/BassHero.github.io/","images":"/BassHero.github.io/images","scheme":"Pisces","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":80,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/BassHero.github.io/js/config.js"></script>
+<meta property="og:type" content="article">
+<meta property="og:title" content="組込みエンジニアの教科書_CHAPTER05(FreeRTOSと他のOS)">
+<meta property="og:url" content="https://dondycan.github.io/BassHero.github.io/2025/04/15/ISBN978-4-863-54275-4-05-03/index.html">
+<meta property="og:site_name" content="咚咚锵">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2025-04-15T13:02:39.000Z">
+<meta property="article:modified_time" content="2025-04-15T13:44:30.617Z">
+<meta property="article:author" content="咚咚锵">
+<meta property="article:tag" content="2025">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://dondycan.github.io/BassHero.github.io/2025/04/15/ISBN978-4-863-54275-4-05-03/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://dondycan.github.io/BassHero.github.io/2025/04/15/ISBN978-4-863-54275-4-05-03/","path":"2025/04/15/ISBN978-4-863-54275-4-05-03/","title":"組込みエンジニアの教科書_CHAPTER05(FreeRTOSと他のOS)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>組込みエンジニアの教科書_CHAPTER05(FreeRTOSと他のOS) | 咚咚锵</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/BassHero.github.io/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-google-photos-album@1.2.0/css/google_photos_album.css" integrity="sha256-+fmg1peSAbhT32GtVA2D9f1zAjN3v6lX+9Y14jKmYBs=" crossorigin="anonymous"><!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/BassHero.github.io/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">咚咚锵</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">目标 影2500 书300</p>
+      <img class="custom-logo-image" src="/BassHero.github.io/images/avatar.gif" alt="咚咚锵">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/BassHero.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-daily"><a href="/BassHero.github.io/daily/" rel="section"><i class="fa fa-archive fa-fw"></i>日记</a></li>
+        <li class="menu-item menu-item-article"><a href="/BassHero.github.io/categories/" rel="section"><i class="fa fa-folder-open fa-fw"></i>文章</a></li>
+        <li class="menu-item menu-item-book"><a href="/BassHero.github.io/books/" rel="section"><i class="fa fa-book fa-fw"></i>阅读</a></li>
+        <li class="menu-item menu-item-film"><a href="/BassHero.github.io/films/" rel="section"><i class="fa fa-film fa-fw"></i>观影</a></li>
+        <li class="menu-item menu-item-photo"><a href="/BassHero.github.io/gallery/" rel="section"><i class="fa fa-camera-retro fa-fw"></i>相册</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">咚咚锵</p>
+  <div class="site-description" itemprop="description">码龄 0年</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/BassHero.github.io/archives/">
+          <span class="site-state-item-count">46</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/BassHero.github.io/categories/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/BassHero.github.io/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:dondcyan@gmail.com" title="E-Mail → mailto:dondcyan@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yamagamisukibot" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yamagamisukibot" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dondycan.github.io/BassHero.github.io/2025/04/15/ISBN978-4-863-54275-4-05-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/BassHero.github.io/images/avatar.gif">
+      <meta itemprop="name" content="咚咚锵">
+      <meta itemprop="description" content="码龄 0年">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咚咚锵">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          組込みエンジニアの教科書_CHAPTER05(FreeRTOSと他のOS)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2025-04-15 22:02:39" itemprop="dateCreated datePublished" datetime="2025-04-15T22:02:39+09:00">2025-04-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/BassHero.github.io/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/BassHero.github.io/categories/%E6%8A%80%E6%9C%AF/%E7%B5%84%E8%BE%BC%E3%81%BF%E7%B3%BB/" itemprop="url" rel="index"><span itemprop="name">組込み系</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>4.1k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
+<h2 id="FreeRTOSの構成"><a href="#FreeRTOSの構成" class="headerlink" title="FreeRTOSの構成"></a>FreeRTOSの構成</h2><p><strong>TCB(Task Control Block)</strong><br>タスクの情報を保持するものです。タスクの情報には, そのタスクの優先度, 状態, 前のプログラムコード位置(タスクが切り換えられ復帰するための現在実行中のプログラムコードの位置)などを含みます</p>
+<p><strong>セマフォ</strong><br>複数のプロセスが同期して処理を進めることができます。</p>
+<figure class="highlight c"><figcaption><span>seminit.c</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/types.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/ipc.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/sem.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">union</span> <span class="title">semun</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> val;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">semid_ds</span> *<span class="title">buf</span>;</span></span><br><span class="line">    <span class="keyword">unsigned</span> <span class="keyword">short</span> *<span class="built_in">array</span>;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">key_t</span> key;</span><br><span class="line">    <span class="keyword">int</span> semid;</span><br><span class="line">    <span class="class"><span class="keyword">union</span> <span class="title">semun</span> <span class="title">arg</span>;</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> ((key = ftok(<span class="string">&quot;sem.dat&quot;</span>, <span class="string">&#x27;S&#x27;</span>)) == <span class="number">-1</span>) &#123;</span><br><span class="line">        perror(<span class="string">&quot;ftok&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">/* create a semaphore set with 1 semaphore: */</span></span><br><span class="line">    <span class="keyword">if</span> ((semid = semget(key, <span class="number">1</span>, <span class="number">0666</span> | IPC_CREAT)) == <span class="number">-1</span>) &#123;</span><br><span class="line">        perror(<span class="string">&quot;semget&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">/* initialize semaphore #0 to 1: */</span></span><br><span class="line">    arg.val = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (semctl(semid, <span class="number">0</span>, SETVAL, arg) == <span class="number">-1</span>) &#123;</span><br><span class="line">        perror(<span class="string">&quot;semctl&quot;</span>);</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="FreeRTOSのサンプルコード"><a href="#FreeRTOSのサンプルコード" class="headerlink" title="FreeRTOSのサンプルコード"></a>FreeRTOSのサンプルコード</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Arduino_FreeRTOS.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// define two tasks for Blink &amp; AnalogRead</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TaskBlink</span><span class="params">( <span class="keyword">void</span> *pvParameters )</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TaskAnalogRead</span><span class="params">( <span class="keyword">void</span> *pvParameters )</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// the setup function runs once when you press reset or power the board</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// initialize serial communication at 9600 bits per second:</span></span><br><span class="line">  Serial.begin(<span class="number">9600</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">while</span> (!Serial) &#123;</span><br><span class="line">    ; <span class="comment">// wait for serial port to connect. Needed for native USB, on LEONARDO, MICRO, YUN, and other 32u4 based boards.</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Now set up two tasks to run independently.</span></span><br><span class="line">  xTaskCreate(</span><br><span class="line">    TaskBlink</span><br><span class="line">    ,  (<span class="keyword">const</span> portCHAR *)<span class="string">&quot;Blink&quot;</span>   <span class="comment">// A name just for humans</span></span><br><span class="line">    ,  <span class="number">128</span>  <span class="comment">// This stack size can be checked &amp; adjusted by reading the Stack Highwater</span></span><br><span class="line">    ,  <span class="literal">NULL</span></span><br><span class="line">    ,  <span class="number">2</span>  <span class="comment">// Priority, with 3 (configMAX_PRIORITIES - 1) being the highest, and 0 being the lowest.</span></span><br><span class="line">    ,  <span class="literal">NULL</span> );</span><br><span class="line"></span><br><span class="line">  xTaskCreate(</span><br><span class="line">    TaskAnalogRead</span><br><span class="line">    ,  (<span class="keyword">const</span> portCHAR *) <span class="string">&quot;AnalogRead&quot;</span></span><br><span class="line">    ,  <span class="number">128</span>  <span class="comment">// Stack size</span></span><br><span class="line">    ,  <span class="literal">NULL</span></span><br><span class="line">    ,  <span class="number">1</span>  <span class="comment">// Priority</span></span><br><span class="line">    ,  <span class="literal">NULL</span> );</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Now the task scheduler, which takes over control of scheduling individual tasks, is automatically started.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">// Empty. Things are done in Tasks.</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*--------------------------------------------------*/</span></span><br><span class="line"><span class="comment">/*---------------------- Tasks ---------------------*/</span></span><br><span class="line"><span class="comment">/*--------------------------------------------------*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TaskBlink</span><span class="params">(<span class="keyword">void</span> *pvParameters)</span>  <span class="comment">// This is a task.</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  (<span class="keyword">void</span>) pvParameters;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  Blink</span></span><br><span class="line"><span class="comment">  Turns on an LED on for one second, then off for one second, repeatedly.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  Most Arduinos have an on-board LED you can control. On the UNO, LEONARDO, MEGA, and ZERO </span></span><br><span class="line"><span class="comment">  it is attached to digital pin 13, on MKR1000 on pin 6. LED_BUILTIN takes care </span></span><br><span class="line"><span class="comment">  of use the correct LED pin whatever is the board used.</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  The MICRO does not have a LED_BUILTIN available. For the MICRO board please substitute</span></span><br><span class="line"><span class="comment">  the LED_BUILTIN definition with either LED_BUILTIN_RX or LED_BUILTIN_TX.</span></span><br><span class="line"><span class="comment">  e.g. pinMode(LED_BUILTIN_RX, OUTPUT); etc.</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  If you want to know what pin the on-board LED is connected to on your Arduino model, check</span></span><br><span class="line"><span class="comment">  the Technical Specs of your board  at https://www.arduino.cc/en/Main/Products</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  This example code is in the public domain.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  modified 8 May 2014</span></span><br><span class="line"><span class="comment">  by Scott Fitzgerald</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  modified 2 Sep 2016</span></span><br><span class="line"><span class="comment">  by Arturo Guadalupi</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// initialize digital LED_BUILTIN on pin 13 as an output.</span></span><br><span class="line">  pinMode(LED_BUILTIN, OUTPUT);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (;;) <span class="comment">// A Task shall never return or exit.</span></span><br><span class="line">  &#123;</span><br><span class="line">    digitalWrite(LED_BUILTIN, HIGH);   <span class="comment">// turn the LED on (HIGH is the voltage level)</span></span><br><span class="line">    vTaskDelay( <span class="number">1000</span> / portTICK_PERIOD_MS ); <span class="comment">// wait for one second</span></span><br><span class="line">    digitalWrite(LED_BUILTIN, LOW);    <span class="comment">// turn the LED off by making the voltage LOW</span></span><br><span class="line">    vTaskDelay( <span class="number">1000</span> / portTICK_PERIOD_MS ); <span class="comment">// wait for one second</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">TaskAnalogRead</span><span class="params">(<span class="keyword">void</span> *pvParameters)</span>  <span class="comment">// This is a task.</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  (<span class="keyword">void</span>) pvParameters;</span><br><span class="line">  </span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  AnalogReadSerial</span></span><br><span class="line"><span class="comment">  Reads an analog input on pin 0, prints the result to the serial monitor.</span></span><br><span class="line"><span class="comment">  Graphical representation is available using serial plotter (Tools &gt; Serial Plotter menu)</span></span><br><span class="line"><span class="comment">  Attach the center pin of a potentiometer to pin A0, and the outside pins to +5V and ground.</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">  This example code is in the public domain.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (;;)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// read the input on analog pin 0:</span></span><br><span class="line">    <span class="keyword">int</span> sensorValue = analogRead(A0);</span><br><span class="line">    <span class="comment">// print out the value you read:</span></span><br><span class="line">    Serial.println(sensorValue);</span><br><span class="line">    vTaskDelay(<span class="number">1</span>);  <span class="comment">// one tick delay (15ms) in between reads for stability</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="POSIX"><a href="#POSIX" class="headerlink" title="POSIX"></a>POSIX</h2><p>オペレーティングシステム (OS) の標準的なインタフェースおよび環境を定義するIEEE規格。<br>POSIX準拠OSは、、ハードウェアを全てOSの管理下にあり、ハードウェアはドライバーで制御し、ユーザーはハードウェアを直接制御できない。<br>組込み機器に求めるリアルタイム性が高い場合は、求められる<strong>速度が満たさない</strong>。</p>
+<h2 id="TRON-project"><a href="#TRON-project" class="headerlink" title="TRON project"></a>TRON project</h2><p>最小限度のシステムコールとスケジューラを仕様として公開している。</p>
+<h2 id="T-Kernal仕様"><a href="#T-Kernal仕様" class="headerlink" title="T-Kernal仕様"></a>T-Kernal仕様</h2><p>T-KernelにおいてμITRONから拡張された機能</p>
+</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/BassHero.github.io/tags/2025/" rel="tag"># 2025</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/BassHero.github.io/2025/04/15/pipe2/" rel="prev" title="プロセス間通信と共有メモリ">
+                  <i class="fa fa-chevron-left"></i> プロセス間通信と共有メモリ
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/BassHero.github.io/2025/04/15/ISBN978-4-863-54275-4-06/" rel="next" title="組込みエンジニアの教科書_CHAPTER06">
+                  組込みエンジニアの教科書_CHAPTER06 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-rocket"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">咚咚锵</span>
+</div>
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv">
+                </span>次 | 
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/BassHero.github.io/js/comments.js"></script><script src="/BassHero.github.io/js/utils.js"></script><script src="/BassHero.github.io/js/motion.js"></script><script src="/BassHero.github.io/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+<!-- hexo injector body_end start --><script>
+function addLoadEvent(func) {
+  const oldonload = window.onload;
+  if (typeof window.onload !== 'function') {
+    window.onload = func;
+  } else {
+    window.onload = () => {
+      oldonload();
+      func();
+    };
+  }
+}
+  addLoadEvent(() => {
+    try {
+      if (window.innerWidth < Number('768')) {
+        return;
+      }
+      const imgs = Array.from(document.body.querySelectorAll('.google-photos-album-images a'));
+      imgs.push(...Array.from(document.body.querySelectorAll('a.google-photos-album-image')));
+      for (const anchor of imgs) {
+        anchor.href = anchor.href.replace(/=s720\-no/i, '=s1920-no');
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  });
+</script>
+<!-- hexo injector body_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+</html>

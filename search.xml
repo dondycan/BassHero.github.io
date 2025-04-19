@@ -75,9 +75,32 @@
         }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
   </entry>
   <entry>
-    <title>組込みエンジニアの教科書_CHAPTER06</title>
+    <title>組込みエンジニアの教科書_CHAPTER07(Linux)</title>
+    <url>/BassHero.github.io/2025/04/19/ISBN978-4-863-54275-4-07/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
+<p><strong>MMU(Memory Management unit)</strong>:メモリ管理ユニット<br>仮想アドレス空間から物理アドレス空間の変換を行う機能がある、物理メモリをページと呼ばれる最小単位で管理できる。ソフトウェアの<strong>プロセスごと</strong>にページ単位でメモリ割り当てする。<br>ページテーブルに参照する際に仮想空間に対応する物理空間が見つからないと「ページフォルト」が発生します。<br>ページアウトが発生すると不要とされるページを二次記憶に書き出して（ページアウト）、新たに必要なページを二次記憶装置から物理空間に読み込んで(ページイン)、ページを置換する。</p>
+</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>技术</category>
+        <category>組込み系</category>
+      </categories>
+      <tags>
+        <tag>2025</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>組込みエンジニアの教科書_CHAPTER06(デバイスの選択)</title>
     <url>/BassHero.github.io/2025/04/15/ISBN978-4-863-54275-4-06/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
+
+<p><strong>Soc(System on Chip)</strong><br>システム<strong>LSI</strong>（Large Scale Integration）とは、異なる機能を持つ、複数の集積回路を1つのLSI上にまとめたもののことを指します<br><a href="/WestRoute.github.io/images/SoCBCM2837.png" class="gallery-item"><img src="/WestRoute.github.io/images/SoCBCM2837.png"></a></p>
+<p><strong>リファレンスボード</strong><br>ICチップなどの製品を試用して評価を行うために作成・提供される、動作に必要な周辺チップや回路、端子などを搭載した半導体基板のこと。<br><strong>BSP(Borad Support Package)</strong><br><strong>HAL(Hardware Abstraction Layer)</strong> ハードウェア抽象化レイヤー</p>
+</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
             selector: '.gallery-item'
         };
@@ -373,88 +396,6 @@
       </tags>
   </entry>
   <entry>
-    <title>网络基础自测问题</title>
-    <url>/BassHero.github.io/2025/04/09/InternetNotes/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
-
-<h3 id="一、基础自测问题（适合初学者）"><a href="#一、基础自测问题（适合初学者）" class="headerlink" title="一、基础自测问题（适合初学者）"></a><strong>一、基础自测问题（适合初学者）</strong></h3><p>先测试你的基础网络知识，如果大部分不会，需要补基础；如果已掌握，可以跳到进阶部分。</p>
-<h4 id="1-网络分层模型"><a href="#1-网络分层模型" class="headerlink" title="1. 网络分层模型"></a><strong>1. 网络分层模型</strong></h4><ul>
-<li><strong>问题</strong>：OSI七层模型和TCP/IP四层模型的区别是什么？每层的核心功能是什么？</li>
-<li><strong>问题</strong>：HTTP协议属于哪一层？路由器工作在哪一层？</li>
-<li><strong>问题</strong>：为什么需要分层？如果物理层被攻击，可能引发什么问题？</li>
-</ul>
-<h4 id="2-IP与子网"><a href="#2-IP与子网" class="headerlink" title="2. IP与子网"></a><strong>2. IP与子网</strong></h4><ul>
-<li><strong>问题</strong>：IPv4地址 <code>192.168.1.100/24</code> 的子网掩码是什么？这个子网最多容纳多少台设备？</li>
-<li><strong>问题</strong>：解释NAT（网络地址转换）的作用，为什么家庭路由器需要它？</li>
-<li><strong>问题</strong>：公网IP和私有IP的区别是什么？私有IP范围有哪些？</li>
-</ul>
-<h4 id="3-协议与端口"><a href="#3-协议与端口" class="headerlink" title="3. 协议与端口"></a><strong>3. 协议与端口</strong></h4><ul>
-<li><strong>问题</strong>：TCP和UDP的区别是什么？举出各自的应用场景。</li>
-<li><strong>问题</strong>：HTTP和HTTPS的核心区别是什么？HTTPS如何保证安全性？</li>
-<li><strong>问题</strong>：DNS的作用是什么？描述一次DNS查询的完整过程。</li>
-</ul>
-<h4 id="4-网络工具实践"><a href="#4-网络工具实践" class="headerlink" title="4. 网络工具实践"></a><strong>4. 网络工具实践</strong></h4><ul>
-<li><strong>问题</strong>：如何用<code>ping</code>命令测试网络连通性？TTL值的含义是什么？</li>
-<li><strong>问题</strong>：用<code>traceroute</code>（Windows是<code>tracert</code>）追踪到<code>google.com</code>的路由路径，解释输出结果。</li>
-<li><strong>问题</strong>：用Wireshark抓取一次HTTP请求，分析TCP三次握手过程。</li>
-</ul>
-<hr>
-<h3 id="二、学习方法与提高路径"><a href="#二、学习方法与提高路径" class="headerlink" title="二、学习方法与提高路径"></a><strong>二、学习方法与提高路径</strong></h3><h4 id="1-基础夯实"><a href="#1-基础夯实" class="headerlink" title="1. 基础夯实"></a><strong>1. 基础夯实</strong></h4><ul>
-<li><strong>书籍</strong>：《计算机网络：自顶向下方法》《TCP/IP详解 卷1》</li>
-<li><strong>实验</strong>：</li>
-<li>用VirtualBox搭建局域网，配置静态IP、DHCP、NAT。</li>
-<li>使用Wireshark分析常见协议（如ARP、DNS、HTTP）。</li>
-<li>用Python的<code>socket</code>库实现简单的TCP/UDP通信。</li>
-</ul>
-<h4 id="2-安全进阶"><a href="#2-安全进阶" class="headerlink" title="2. 安全进阶"></a><strong>2. 安全进阶</strong></h4><ul>
-<li><strong>核心知识</strong>：</li>
-<li>防火墙/ACL（访问控制列表）的工作原理。</li>
-<li>中间人攻击（MITM）、DDoS、SQL注入的原理与防御。</li>
-<li>SSL/TLS握手过程，证书体系（CA、公钥/私钥）。</li>
-<li><strong>工具实践</strong>：</li>
-<li>使用<code>nmap</code>扫描端口，识别网络服务。</li>
-<li>用<code>tcpdump</code>分析网络流量。</li>
-<li>在Metasploit或Burp Suite中尝试基础渗透测试。</li>
-</ul>
-<h4 id="3-项目实战"><a href="#3-项目实战" class="headerlink" title="3. 项目实战"></a><strong>3. 项目实战</strong></h4><ul>
-<li><strong>场景</strong>：模拟企业网络，配置防火墙规则阻挡特定IP。</li>
-<li><strong>场景</strong>：搭建HTTPS服务器（如用Let’s Encrypt申请免费证书）。</li>
-<li><strong>场景</strong>：编写脚本检测异常流量（如SYN Flood攻击）。</li>
-</ul>
-<hr>
-<h3 id="三、网络技术面试问题（含安全方向）"><a href="#三、网络技术面试问题（含安全方向）" class="headerlink" title="三、网络技术面试问题（含安全方向）"></a><strong>三、网络技术面试问题（含安全方向）</strong></h3><h4 id="初级问题"><a href="#初级问题" class="headerlink" title="初级问题"></a><strong>初级问题</strong></h4><ol>
-<li>什么是ARP协议？如何防范ARP欺骗？</li>
-<li>解释CSRF攻击的原理，如何防御？</li>
-<li>什么是SYN洪水攻击？如何缓解？</li>
-<li>描述HTTPS的握手过程，为什么需要非对称加密+对称加密结合？</li>
-</ol>
-<h4 id="高级问题"><a href="#高级问题" class="headerlink" title="高级问题"></a><strong>高级问题</strong></h4><ol>
-<li>如何通过Wireshark判断一次TCP连接是否被劫持？</li>
-<li>解释零信任网络（Zero Trust）的核心思想。</li>
-<li>什么是DNS劫持？如何用DNSSEC防御？</li>
-<li>如何设计一个安全的API认证机制？（结合OAuth2/JWT）</li>
-</ol>
-<h4 id="编程相关"><a href="#编程相关" class="headerlink" title="编程相关"></a><strong>编程相关</strong></h4><ul>
-<li><strong>问题</strong>：用Python实现一个简单的端口扫描器。</li>
-<li><strong>问题</strong>：如何检测HTTP请求中的SQL注入特征？（正则表达式或语义分析）</li>
-<li>：设计一个防止暴力破解密码的算法（如封禁IP或延迟响应）。</li>
-<li><strong>问题</strong>:理解协议细节（如解析HTTP头）、实现自动化安全检测。</li>
-</ul>
-</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
-      <categories>
-        <category>技术</category>
-        <category>网络</category>
-      </categories>
-      <tags>
-        <tag>2025</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>网络基础自测问题_02</title>
     <url>/BassHero.github.io/2025/04/09/InternetNotes-02/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
@@ -597,6 +538,88 @@
 <ul>
 <li>使用<code>openssl s_client</code>命令调试TLS握手过程（如<code>openssl s_client -connect google.com:443</code>）。</li>
 <li>用Nmap脚本引擎（NSE）检测协议漏洞（如<code>nmap --script ssl-enum-ciphers</code>）。</li>
+</ul>
+</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>技术</category>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>2025</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网络基础自测问题</title>
+    <url>/BassHero.github.io/2025/04/09/InternetNotes/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
+
+<h3 id="一、基础自测问题（适合初学者）"><a href="#一、基础自测问题（适合初学者）" class="headerlink" title="一、基础自测问题（适合初学者）"></a><strong>一、基础自测问题（适合初学者）</strong></h3><p>先测试你的基础网络知识，如果大部分不会，需要补基础；如果已掌握，可以跳到进阶部分。</p>
+<h4 id="1-网络分层模型"><a href="#1-网络分层模型" class="headerlink" title="1. 网络分层模型"></a><strong>1. 网络分层模型</strong></h4><ul>
+<li><strong>问题</strong>：OSI七层模型和TCP/IP四层模型的区别是什么？每层的核心功能是什么？</li>
+<li><strong>问题</strong>：HTTP协议属于哪一层？路由器工作在哪一层？</li>
+<li><strong>问题</strong>：为什么需要分层？如果物理层被攻击，可能引发什么问题？</li>
+</ul>
+<h4 id="2-IP与子网"><a href="#2-IP与子网" class="headerlink" title="2. IP与子网"></a><strong>2. IP与子网</strong></h4><ul>
+<li><strong>问题</strong>：IPv4地址 <code>192.168.1.100/24</code> 的子网掩码是什么？这个子网最多容纳多少台设备？</li>
+<li><strong>问题</strong>：解释NAT（网络地址转换）的作用，为什么家庭路由器需要它？</li>
+<li><strong>问题</strong>：公网IP和私有IP的区别是什么？私有IP范围有哪些？</li>
+</ul>
+<h4 id="3-协议与端口"><a href="#3-协议与端口" class="headerlink" title="3. 协议与端口"></a><strong>3. 协议与端口</strong></h4><ul>
+<li><strong>问题</strong>：TCP和UDP的区别是什么？举出各自的应用场景。</li>
+<li><strong>问题</strong>：HTTP和HTTPS的核心区别是什么？HTTPS如何保证安全性？</li>
+<li><strong>问题</strong>：DNS的作用是什么？描述一次DNS查询的完整过程。</li>
+</ul>
+<h4 id="4-网络工具实践"><a href="#4-网络工具实践" class="headerlink" title="4. 网络工具实践"></a><strong>4. 网络工具实践</strong></h4><ul>
+<li><strong>问题</strong>：如何用<code>ping</code>命令测试网络连通性？TTL值的含义是什么？</li>
+<li><strong>问题</strong>：用<code>traceroute</code>（Windows是<code>tracert</code>）追踪到<code>google.com</code>的路由路径，解释输出结果。</li>
+<li><strong>问题</strong>：用Wireshark抓取一次HTTP请求，分析TCP三次握手过程。</li>
+</ul>
+<hr>
+<h3 id="二、学习方法与提高路径"><a href="#二、学习方法与提高路径" class="headerlink" title="二、学习方法与提高路径"></a><strong>二、学习方法与提高路径</strong></h3><h4 id="1-基础夯实"><a href="#1-基础夯实" class="headerlink" title="1. 基础夯实"></a><strong>1. 基础夯实</strong></h4><ul>
+<li><strong>书籍</strong>：《计算机网络：自顶向下方法》《TCP/IP详解 卷1》</li>
+<li><strong>实验</strong>：</li>
+<li>用VirtualBox搭建局域网，配置静态IP、DHCP、NAT。</li>
+<li>使用Wireshark分析常见协议（如ARP、DNS、HTTP）。</li>
+<li>用Python的<code>socket</code>库实现简单的TCP/UDP通信。</li>
+</ul>
+<h4 id="2-安全进阶"><a href="#2-安全进阶" class="headerlink" title="2. 安全进阶"></a><strong>2. 安全进阶</strong></h4><ul>
+<li><strong>核心知识</strong>：</li>
+<li>防火墙/ACL（访问控制列表）的工作原理。</li>
+<li>中间人攻击（MITM）、DDoS、SQL注入的原理与防御。</li>
+<li>SSL/TLS握手过程，证书体系（CA、公钥/私钥）。</li>
+<li><strong>工具实践</strong>：</li>
+<li>使用<code>nmap</code>扫描端口，识别网络服务。</li>
+<li>用<code>tcpdump</code>分析网络流量。</li>
+<li>在Metasploit或Burp Suite中尝试基础渗透测试。</li>
+</ul>
+<h4 id="3-项目实战"><a href="#3-项目实战" class="headerlink" title="3. 项目实战"></a><strong>3. 项目实战</strong></h4><ul>
+<li><strong>场景</strong>：模拟企业网络，配置防火墙规则阻挡特定IP。</li>
+<li><strong>场景</strong>：搭建HTTPS服务器（如用Let’s Encrypt申请免费证书）。</li>
+<li><strong>场景</strong>：编写脚本检测异常流量（如SYN Flood攻击）。</li>
+</ul>
+<hr>
+<h3 id="三、网络技术面试问题（含安全方向）"><a href="#三、网络技术面试问题（含安全方向）" class="headerlink" title="三、网络技术面试问题（含安全方向）"></a><strong>三、网络技术面试问题（含安全方向）</strong></h3><h4 id="初级问题"><a href="#初级问题" class="headerlink" title="初级问题"></a><strong>初级问题</strong></h4><ol>
+<li>什么是ARP协议？如何防范ARP欺骗？</li>
+<li>解释CSRF攻击的原理，如何防御？</li>
+<li>什么是SYN洪水攻击？如何缓解？</li>
+<li>描述HTTPS的握手过程，为什么需要非对称加密+对称加密结合？</li>
+</ol>
+<h4 id="高级问题"><a href="#高级问题" class="headerlink" title="高级问题"></a><strong>高级问题</strong></h4><ol>
+<li>如何通过Wireshark判断一次TCP连接是否被劫持？</li>
+<li>解释零信任网络（Zero Trust）的核心思想。</li>
+<li>什么是DNS劫持？如何用DNSSEC防御？</li>
+<li>如何设计一个安全的API认证机制？（结合OAuth2/JWT）</li>
+</ol>
+<h4 id="编程相关"><a href="#编程相关" class="headerlink" title="编程相关"></a><strong>编程相关</strong></h4><ul>
+<li><strong>问题</strong>：用Python实现一个简单的端口扫描器。</li>
+<li><strong>问题</strong>：如何检测HTTP请求中的SQL注入特征？（正则表达式或语义分析）</li>
+<li>：设计一个防止暴力破解密码的算法（如封禁IP或延迟响应）。</li>
+<li><strong>问题</strong>:理解协议细节（如解析HTTP头）、实现自动化安全检测。</li>
 </ul>
 </div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
@@ -1100,6 +1123,24 @@
       </tags>
   </entry>
   <entry>
+    <title>播客读书不成林笔记</title>
+    <url>/BassHero.github.io/2025/03/13/podcast02Notes/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
+<h2 id="自由"><a href="#自由" class="headerlink" title="自由"></a>自由</h2><h4 id="102-自由主义咋在赢了冷战后迅速变成了人人嫌的过街老鼠"><a href="#102-自由主义咋在赢了冷战后迅速变成了人人嫌的过街老鼠" class="headerlink" title="102-自由主义咋在赢了冷战后迅速变成了人人嫌的过街老鼠"></a>102-自由主义咋在赢了冷战后迅速变成了人人嫌的过街老鼠</h4><h2 id="关于文学"><a href="#关于文学" class="headerlink" title="关于文学"></a>关于文学</h2></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>播客笔记</category>
+      </categories>
+      <tags>
+        <tag>2025</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>梵高笔记2024</title>
     <url>/BassHero.github.io/2025/03/13/podcast01Notes_2024/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
@@ -1200,24 +1241,6 @@
 <p>19世纪中期，首位共和党的美国总统亚伯拉罕·林肯遵循辉格党的经济自由主义，包括增加国家控制如铁路的供给和管理。太平洋铁路法（Pacific Railway Acts）提供了第一条跨大陆铁路的发展依据。</p>
 <h4 id="效用曲线"><a href="#效用曲线" class="headerlink" title="效用曲线"></a>效用曲线</h4><p>用于反映决策者对风险态度的一种曲线。又称偏好曲线。</p>
 </div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
-      <categories>
-        <category>笔记</category>
-        <category>播客笔记</category>
-      </categories>
-      <tags>
-        <tag>2025</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>播客读书不成林笔记</title>
-    <url>/BassHero.github.io/2025/03/13/podcast02Notes/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
-<h2 id="自由"><a href="#自由" class="headerlink" title="自由"></a>自由</h2><h4 id="102-自由主义咋在赢了冷战后迅速变成了人人嫌的过街老鼠"><a href="#102-自由主义咋在赢了冷战后迅速变成了人人嫌的过街老鼠" class="headerlink" title="102-自由主义咋在赢了冷战后迅速变成了人人嫌的过街老鼠"></a>102-自由主义咋在赢了冷战后迅速变成了人人嫌的过街老鼠</h4><h2 id="关于文学"><a href="#关于文学" class="headerlink" title="关于文学"></a>关于文学</h2></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
             selector: '.gallery-item'
         };

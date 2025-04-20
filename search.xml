@@ -75,6 +75,29 @@
         }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
   </entry>
   <entry>
+    <title>sadservers_01(No.1 ~No.5)</title>
+    <url>/BassHero.github.io/2025/04/20/sadservers-01/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
+<h2 id="NO-1"><a href="#NO-1" class="headerlink" title="NO.1"></a>NO.1</h2><p>描述：一名开发人员创建了一个测试程序，该程序持续向日志文件 /var/log/bad.log 写入内容，导致磁盘空间被占满。你可以通过命令（例如 tail -f /var/log/bad.log）查看日志内容。<br>该程序已不再需要，请找到并终止它。</p>
+<figure class="highlight ps"><figcaption><span>aux``` :查看open中的线程</span></figcaption><table><tr><td class="code"><pre><span class="line">```fuser [<span class="type">file</span> <span class="type">name</span>]``` :查看文件使用者</span><br><span class="line">```lsof``` :find opening fil。查看正在被打开的文件。</span><br><span class="line">&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;包括pipe和socket</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">## NO.2</span></span><br><span class="line">Description: There<span class="string">&#x27;s a web server access log file at /home/admin/access.log. The file consists of one line per HTTP request, with the requester&#x27;</span>s IP address at the beginning of each line.</span><br><span class="line">``` bash</span><br><span class="line">admin@ip<span class="literal">-172</span><span class="literal">-31</span><span class="literal">-27</span><span class="literal">-155</span>:/<span class="variable">$</span> <span class="built_in">cat</span> /home/admin/access.log  | awk <span class="string">&#x27;&#123;print $1&#125;&#x27;</span> |<span class="built_in">sort</span> | uniq <span class="literal">-c</span> | <span class="built_in">sort</span> <span class="literal">-nr</span> | head <span class="literal">-n</span> <span class="number">10</span></span><br><span class="line">    <span class="number">482</span> <span class="number">66.249</span>.<span class="number">73.135</span></span><br><span class="line">    <span class="number">364</span> <span class="number">46.105</span>.<span class="number">14.53</span></span><br><span class="line">    <span class="number">357</span> <span class="number">130.237</span>.<span class="number">218.86</span></span><br><span class="line">    <span class="number">273</span> <span class="number">75.97</span>.<span class="number">9.59</span></span><br><span class="line">    <span class="number">113</span> <span class="number">50.16</span>.<span class="number">19.13</span></span><br><span class="line">    <span class="number">102</span> <span class="number">209.85</span>.<span class="number">238.199</span></span><br><span class="line">     <span class="number">99</span> <span class="number">68.180</span>.<span class="number">224.225</span></span><br><span class="line">     <span class="number">84</span> <span class="number">100.43</span>.<span class="number">83.137</span></span><br><span class="line">     <span class="number">83</span> <span class="number">208.115</span>.<span class="number">111.72</span></span><br><span class="line">     <span class="number">82</span> <span class="number">198.46</span>.<span class="number">149.143</span></span><br><span class="line">admin@ip<span class="literal">-172</span><span class="literal">-31</span><span class="literal">-27</span><span class="literal">-155</span>:/<span class="variable">$</span> <span class="built_in">echo</span> <span class="string">&quot;66.249.73.135&quot;</span> &gt;/home/admin/highestip.txt</span><br><span class="line">admin@ip<span class="literal">-172</span><span class="literal">-31</span><span class="literal">-27</span><span class="literal">-155</span>:/<span class="variable">$</span> sha1sum /home/admin/highestip.txt</span><br><span class="line"><span class="number">6</span>ef426c40652babc0d081d438b9f353709008e93  /home/admin/highestip.txt</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">##  cat :确认文件内容</span></span><br><span class="line"><span class="comment">##  awk :提取指定列</span></span><br><span class="line">cat logfile | awk <span class="string">&#x27;&#123;print $3&#125;&#x27;</span>  <span class="comment"># 提取所有行的第3列</span></span><br><span class="line">cat file | tr -s <span class="string">&#x27; &#x27;</span> | awk <span class="string">&#x27;&#123;print $N&#125;&#x27;</span>  <span class="comment"># 将连续空格压缩为单个空格</span></span><br><span class="line">awk <span class="string">&#x27;&#123;print $2, $5&#125;&#x27;</span> input.txt &gt; output.txt  <span class="comment"># 按列输出到文件</span></span><br><span class="line"></span><br><span class="line">cat file | tr -s <span class="string">&#x27; &#x27;</span> | awk <span class="string">&#x27;&#123;print $N&#125;&#x27;</span> | sort | uniq -c <span class="comment"># 频率统计</span></span><br><span class="line"><span class="comment">##  sort：先排序（uniq 要求输入是排序的）</span></span><br><span class="line"><span class="comment">##  uniq -c：统计每个唯一值的出现次数</span></span><br><span class="line">cat file | tr -s <span class="string">&#x27; &#x27;</span> | awk <span class="string">&#x27;&#123;print $N&#125;&#x27;</span> | sort | uniq -c |head -n 10 <span class="comment">## 显示前 10 个最频繁的值	</span></span><br></pre></td></tr></table></figure></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>技术</category>
+        <category>OS</category>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>2025</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>組込みエンジニアの教科書_CHAPTER07(Linux)</title>
     <url>/BassHero.github.io/2025/04/19/ISBN978-4-863-54275-4-07/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
@@ -2265,6 +2288,37 @@ putback()
       </tags>
   </entry>
   <entry>
+    <title>套接字编程作业2：UDPping程序</title>
+    <url>/BassHero.github.io/2021/12/09/ISBN978-7-111-45378-9_02/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p>参考来自：<a href="https://github.com/jzplp/Computer-Network-A-Top-Down-Approach-Answer">Computer Network A Top-Down Approach Practice Answer-github</a></p>
+<span id="more"></span>
+<h3 id="套接字编程作业2：UDPping程序"><a href="#套接字编程作业2：UDPping程序" class="headerlink" title="套接字编程作业2：UDPping程序"></a>套接字编程作业2：UDPping程序</h3><p>客户端向服务器发送10次ping。因为UDP是不可靠的协议，所以从客户端发送到服务器的数据包可能在网络中丢失。因此，客户端不能无限期地等待ping消息的回复。客户等待服务器回答的时间至多为一秒，如果在一秒内没有收到回复，您的客户端程序应该假定数据包在网络传输期间丢失。<br><br>您需要查找Python文档，以了解如何在数据报套接字上设置超时值。</p>
+<p>具体来说，您的客户端程序应该<br>1.使用UDP发送ping消息（注意：不同于TCP，您不需要首先建立连接，因为UDP是无连接协议。）<br>2.从服务器输出响应消息<br>3.如果从服务器受到响应，则计算并输出每个数据包的往返时延（RTT）（以秒为单位），<br>4.否则输出“请求超时”<br>在开发过程中，您应该先在计算机上运行UDPPingerServer.py，并通过向localhost（或127.0.0.1）发送数据包来测试客户端。调试完成代码后，您应该能看到ping服务器和ping客户端在不同机器上通过网络进行通信。<br><br></p>
+<p><strong>其他阅读链接：</strong><a href="/BassHero.github.io/2021/12/17/ping/" title="ping">ping</a><br><br></p>
+<figure class="highlight python"><figcaption><span>UDPPingerClient.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">serverName = <span class="string">&#x27;127.0.0.1&#x27;</span></span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line">clientSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    time1 = time.time()</span><br><span class="line">    outputdata = <span class="string">&#x27;Ping &#x27;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot; &quot;</span> + <span class="built_in">str</span>(time1)</span><br><span class="line">    <span class="comment"># 设置超时 单位秒</span></span><br><span class="line">    clientSocket.settimeout(<span class="number">1</span>)</span><br><span class="line">    clientSocket.sendto(outputdata.encode(), (serverName, serverPort))</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        modifiedMessage, serverAddress = clientSocket.recvfrom(<span class="number">2048</span>)</span><br><span class="line">        timeDiff = time.time() - time1</span><br><span class="line">        <span class="built_in">print</span>(modifiedMessage.decode() + <span class="string">&quot; RTT: &quot;</span> + <span class="built_in">str</span>(timeDiff))</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;lost &quot;</span> + <span class="built_in">str</span>(i))</span><br></pre></td></tr></table></figure>
+<p><strong>可选练习</strong><br><br><br>1.目前，程序计算每个数据包的往返时间（RTT），并单独打印出来。请按照标准ping程序的模式修改。您需要在客户端每次ping后显示最小，最大和平均RTT。另外，还需计算丢包率（百分比）。<br><br></p>
+<figure class="highlight python"><figcaption><span>UDPPingerClient.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">serverName = <span class="string">&#x27;127.0.0.1&#x27;</span></span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line">clientSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    time1 = time.time()</span><br><span class="line">    outputdata = <span class="string">&#x27;Heartbeat &#x27;</span> + <span class="built_in">str</span>(time1)</span><br><span class="line">    clientSocket.sendto(outputdata.encode(), (serverName, serverPort))</span><br><span class="line">    time.sleep(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+<br>
+2.UDP Ping的另一个类似的应用是UDP Heartbeat。<br><br>心跳可用于检查应用程序是否已启动并运行，并报告单向丢包。客户端在UDP数据包中将一个序列号和当前时间戳发送给正在监听客户端心跳的服务器。服务器收到数据包后，计算时差，报告丢包（若发生）。如果心跳数据包在指定的一段时间内丢失，我们可以假设客户端应用程序已经停止。实现UDP Heartbeat（客户端和服务器端）。<br><br>您需要修改给定的UDPPingerServer.py和您自己的UDP ping客户端。
+<br><br>
+
+
+<figure class="highlight python"><figcaption><span>UDPPingerServer.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">#We will need the following module to generate randomized lost packets</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment">#Create a UDP socket</span></span><br><span class="line"><span class="comment">#Notice the use of SOCK_DGRAM for UDP packets</span></span><br><span class="line">serverSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"><span class="comment">#Assign IP address and port number to socket</span></span><br><span class="line">serverSocket.bind((<span class="string">&#x27;&#x27;</span>, <span class="number">12000</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    message, address = serverSocket.recvfrom(<span class="number">1024</span>)</span><br><span class="line">    message = message.decode()</span><br><span class="line">    message = message.split()[<span class="number">1</span>]</span><br><span class="line">    timeDiff = time.time() - <span class="built_in">float</span>(message)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;receive RTT:&quot;</span>, timeDiff)</span><br></pre></td></tr></table></figure></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>技术</category>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>2021</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>套接字编程作业1：Web服务器</title>
     <url>/BassHero.github.io/2021/12/09/ISBN978-7-111-45378-9_01/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p>参考来自：<a href="https://github.com/jzplp/Computer-Network-A-Top-Down-Approach-Answer">Computer Network A Top-Down Approach Practice Answer-github</a></p>
@@ -2336,37 +2390,6 @@ putback()
 
 
 </div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
-      <categories>
-        <category>技术</category>
-        <category>网络</category>
-      </categories>
-      <tags>
-        <tag>2021</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>套接字编程作业2：UDPping程序</title>
-    <url>/BassHero.github.io/2021/12/09/ISBN978-7-111-45378-9_02/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p>参考来自：<a href="https://github.com/jzplp/Computer-Network-A-Top-Down-Approach-Answer">Computer Network A Top-Down Approach Practice Answer-github</a></p>
-<span id="more"></span>
-<h3 id="套接字编程作业2：UDPping程序"><a href="#套接字编程作业2：UDPping程序" class="headerlink" title="套接字编程作业2：UDPping程序"></a>套接字编程作业2：UDPping程序</h3><p>客户端向服务器发送10次ping。因为UDP是不可靠的协议，所以从客户端发送到服务器的数据包可能在网络中丢失。因此，客户端不能无限期地等待ping消息的回复。客户等待服务器回答的时间至多为一秒，如果在一秒内没有收到回复，您的客户端程序应该假定数据包在网络传输期间丢失。<br><br>您需要查找Python文档，以了解如何在数据报套接字上设置超时值。</p>
-<p>具体来说，您的客户端程序应该<br>1.使用UDP发送ping消息（注意：不同于TCP，您不需要首先建立连接，因为UDP是无连接协议。）<br>2.从服务器输出响应消息<br>3.如果从服务器受到响应，则计算并输出每个数据包的往返时延（RTT）（以秒为单位），<br>4.否则输出“请求超时”<br>在开发过程中，您应该先在计算机上运行UDPPingerServer.py，并通过向localhost（或127.0.0.1）发送数据包来测试客户端。调试完成代码后，您应该能看到ping服务器和ping客户端在不同机器上通过网络进行通信。<br><br></p>
-<p><strong>其他阅读链接：</strong><a href="/BassHero.github.io/2021/12/17/ping/" title="ping">ping</a><br><br></p>
-<figure class="highlight python"><figcaption><span>UDPPingerClient.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">serverName = <span class="string">&#x27;127.0.0.1&#x27;</span></span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line">clientSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    time1 = time.time()</span><br><span class="line">    outputdata = <span class="string">&#x27;Ping &#x27;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot; &quot;</span> + <span class="built_in">str</span>(time1)</span><br><span class="line">    <span class="comment"># 设置超时 单位秒</span></span><br><span class="line">    clientSocket.settimeout(<span class="number">1</span>)</span><br><span class="line">    clientSocket.sendto(outputdata.encode(), (serverName, serverPort))</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        modifiedMessage, serverAddress = clientSocket.recvfrom(<span class="number">2048</span>)</span><br><span class="line">        timeDiff = time.time() - time1</span><br><span class="line">        <span class="built_in">print</span>(modifiedMessage.decode() + <span class="string">&quot; RTT: &quot;</span> + <span class="built_in">str</span>(timeDiff))</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;lost &quot;</span> + <span class="built_in">str</span>(i))</span><br></pre></td></tr></table></figure>
-<p><strong>可选练习</strong><br><br><br>1.目前，程序计算每个数据包的往返时间（RTT），并单独打印出来。请按照标准ping程序的模式修改。您需要在客户端每次ping后显示最小，最大和平均RTT。另外，还需计算丢包率（百分比）。<br><br></p>
-<figure class="highlight python"><figcaption><span>UDPPingerClient.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">serverName = <span class="string">&#x27;127.0.0.1&#x27;</span></span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line">clientSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    time1 = time.time()</span><br><span class="line">    outputdata = <span class="string">&#x27;Heartbeat &#x27;</span> + <span class="built_in">str</span>(time1)</span><br><span class="line">    clientSocket.sendto(outputdata.encode(), (serverName, serverPort))</span><br><span class="line">    time.sleep(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
-
-<br>
-2.UDP Ping的另一个类似的应用是UDP Heartbeat。<br><br>心跳可用于检查应用程序是否已启动并运行，并报告单向丢包。客户端在UDP数据包中将一个序列号和当前时间戳发送给正在监听客户端心跳的服务器。服务器收到数据包后，计算时差，报告丢包（若发生）。如果心跳数据包在指定的一段时间内丢失，我们可以假设客户端应用程序已经停止。实现UDP Heartbeat（客户端和服务器端）。<br><br>您需要修改给定的UDPPingerServer.py和您自己的UDP ping客户端。
-<br><br>
-
-
-<figure class="highlight python"><figcaption><span>UDPPingerServer.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">#We will need the following module to generate randomized lost packets</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment">#Create a UDP socket</span></span><br><span class="line"><span class="comment">#Notice the use of SOCK_DGRAM for UDP packets</span></span><br><span class="line">serverSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"><span class="comment">#Assign IP address and port number to socket</span></span><br><span class="line">serverSocket.bind((<span class="string">&#x27;&#x27;</span>, <span class="number">12000</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    message, address = serverSocket.recvfrom(<span class="number">1024</span>)</span><br><span class="line">    message = message.decode()</span><br><span class="line">    message = message.split()[<span class="number">1</span>]</span><br><span class="line">    timeDiff = time.time() - <span class="built_in">float</span>(message)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;receive RTT:&quot;</span>, timeDiff)</span><br></pre></td></tr></table></figure></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
             selector: '.gallery-item'
         };

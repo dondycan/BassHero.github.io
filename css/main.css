@@ -248,7 +248,6 @@ blockquote {
   position: relative;
   padding: 35px 15px 10px 15px;
   box-sizing: border-box;
-  font-style: italic;
   background: #f8f8f8;
   color: #636363;
   border-left: 4px solid #ffc70e;
@@ -1886,7 +1885,7 @@ pre code {
 }
 @media (min-width: 1200px) {
   .post-body {
-    font-size: 1.1em;
+    font-size: 1em;
   }
 }
 @media (min-width: 992px) {

@@ -199,7 +199,9 @@
     <url>/BassHero.github.io/2025/04/15/ISBN978-4-863-54275-4-06/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 
-<p><strong>Soc(System on Chip)</strong><br>システム<strong>LSI</strong>（Large Scale Integration）とは、異なる機能を持つ、複数の集積回路を1つのLSI上にまとめたもののことを指します<br><a href="/BaseHero.github.io/images/SoCBCM2837.png" class="gallery-item"><img src="/BaseHero.github.io/images/SoCBCM2837.png"></a></p>
+<p><strong>Soc(System on Chip)</strong><br>システム<strong>LSI</strong>（Large Scale Integration）とは、異なる機能を持つ、複数の集積回路を1つのLSI上にまとめたもののことを指します</p>
+<a href="/BaseHero.github.io/images/SoCBCM2837.png" class="gallery-item"><img src="/BaseHero.github.io/images/SoCBCM2837.png"></a>
+
 <p><strong>リファレンスボード</strong><br>ICチップなどの製品を試用して評価を行うために作成・提供される、動作に必要な周辺チップや回路、端子などを搭載した半導体基板のこと。<br><strong>BSP(Borad Support Package)</strong><br><strong>HAL(Hardware Abstraction Layer)</strong> ハードウェア抽象化レイヤー</p>
 </div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
@@ -389,7 +391,13 @@
     <title>組込みエンジニアの教科書_CHAPTER04</title>
     <url>/BassHero.github.io/2025/04/13/ISBN978-4-863-54275-4-04/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
-<h2 id="Arduinoのハードウェアを確認する"><a href="#Arduinoのハードウェアを確認する" class="headerlink" title="Arduinoのハードウェアを確認する"></a>Arduinoのハードウェアを確認する</h2><p>1.型番から<strong>データシート</strong>と言われるハードウェアマニュアルを入手できる。<br>2.ピン構成と基盤回路図を確認する<br><a href="/BaseHero.github.io/images/pinconfig.jpg" class="gallery-item"><img src="/BaseHero.github.io/images/pinconfig.jpg"></a><br><a href="/BaseHero.github.io/images/KAIROZU.jpg" class="gallery-item"><img src="/BaseHero.github.io/images/KAIROZU.jpg"></a><br>3.基盤のシルク名と端子構成、コネクタとマイコンの配線のドキュメントを作成<br><a href="/BaseHero.github.io/images/connectinfo.jpg" class="gallery-item"><img src="/BaseHero.github.io/images/connectinfo.jpg"></a></p>
+<h2 id="Arduinoのハードウェアを確認する"><a href="#Arduinoのハードウェアを確認する" class="headerlink" title="Arduinoのハードウェアを確認する"></a>Arduinoのハードウェアを確認する</h2><p>1.型番から<strong>データシート</strong>と言われるハードウェアマニュアルを入手できる。<br>2.ピン構成と基盤回路図を確認する</p>
+<a href="/BaseHero.github.io/images/pinconfig.jpg" class="gallery-item"><img src="/BaseHero.github.io/images/pinconfig.jpg"></a>
+
+<a href="/BaseHero.github.io/images/KAIROZU.jpg" class="gallery-item"><img src="/BaseHero.github.io/images/KAIROZU.jpg"></a>
+3.基盤のシルク名と端子構成、コネクタとマイコンの配線のドキュメントを作成
+<a href="/BaseHero.github.io/images/connectinfo.jpg" class="gallery-item"><img src="/BaseHero.github.io/images/connectinfo.jpg"></a>
+
 <figure class="highlight c"><figcaption><span>LED点滅</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;avr/io.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j;</span><br><span class="line">    DDRB | =(<span class="number">1</span> &lt;&lt;PB1); <span class="comment">//ATmega328Pのピンの初期設定をする   </span></span><br><span class="line">    <span class="comment">// DDRB The Port B Data Direction Register</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        PORTB ^=(<span class="number">1</span> &lt;&lt;PB1);   <span class="comment">//ATmega328Pのピンから信号を出力</span></span><br><span class="line">        <span class="comment">// PORTB The Port B Data Register</span></span><br><span class="line">        <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++&gt;)&#123;</span><br><span class="line">            <span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;<span class="number">10000</span>; j++);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight shell"><figcaption><span>動作確認</span></figcaption><table><tr><td class="code"><pre><span class="line">//ビルド</span><br><span class="line">//最適化オプションを付けるとfor文なくなるので、最適化なしでビルド</span><br><span class="line">avr-gcc -g -mmcuatmega328p led_for .c -o lef_for.elf</span><br><span class="line">//HEXファイル生成</span><br><span class="line">avr-objcopy -I elf32-avr -O iehx led_for.elf led_for.hex</span><br><span class="line"></span><br><span class="line">//Arduino UNOボードへ転送</span><br><span class="line">avrdude -CC:\\Users\\userfolder\\arduino-1.8.8.\\hardware\\tools\\avr\\etc\\avrdude.conf -v -patamega328p -carduino -PCOM3 -b115200 -D -Uflash:w:led_for.hex:i</span><br></pre></td></tr></table></figure>

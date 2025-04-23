@@ -25,15 +25,15 @@
 <meta property="og:url" content="https://dondycan.github.io/BassHero.github.io/2025/04/13/ISBN978-4-863-54275-4-04/index.html">
 <meta property="og:site_name" content="咚咚锵">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://dondycan.github.io/BassHero.github.io/2025/04/13/ISBN978-4-863-54275-4-04/images/pinconfig.jpg">
-<meta property="og:image" content="https://dondycan.github.io/BassHero.github.io/2025/04/13/ISBN978-4-863-54275-4-04/images/KAIROZU.jpg">
-<meta property="og:image" content="https://dondycan.github.io/BassHero.github.io/2025/04/13/ISBN978-4-863-54275-4-04/images/connectinfo.jpg">
+<meta property="og:image" content="https://dondycan.github.io/BassHero.github.io/2025/04/13/ISBN978-4-863-54275-4-04/images/pinconfig.png">
+<meta property="og:image" content="https://dondycan.github.io/BassHero.github.io/2025/04/13/ISBN978-4-863-54275-4-04/images/KAIROZU.png">
+<meta property="og:image" content="https://dondycan.github.io/BassHero.github.io/2025/04/13/ISBN978-4-863-54275-4-04/images/connectinfo.png">
 <meta property="article:published_time" content="2025-04-13T11:38:02.000Z">
-<meta property="article:modified_time" content="2025-04-23T13:50:17.019Z">
+<meta property="article:modified_time" content="2025-04-23T13:54:10.405Z">
 <meta property="article:author" content="咚咚锵">
 <meta property="article:tag" content="2025">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://dondycan.github.io/BassHero.github.io/2025/04/13/ISBN978-4-863-54275-4-04/images/pinconfig.jpg">
+<meta name="twitter:image" content="https://dondycan.github.io/BassHero.github.io/2025/04/13/ISBN978-4-863-54275-4-04/images/pinconfig.png">
 
 
 <link rel="canonical" href="https://dondycan.github.io/BassHero.github.io/2025/04/13/ISBN978-4-863-54275-4-04/">
@@ -258,11 +258,11 @@
     <div class="post-body" itemprop="articleBody">
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h2 id="Arduinoのハードウェアを確認する"><a href="#Arduinoのハードウェアを確認する" class="headerlink" title="Arduinoのハードウェアを確認する"></a>Arduinoのハードウェアを確認する</h2><p>1.型番から<strong>データシート</strong>と言われるハードウェアマニュアルを入手できる。<br>2.ピン構成と基盤回路図を確認する</p>
-<a href="images/pinconfig.jpg" class="gallery-item"><img src="images/pinconfig.jpg"></a>
+<a href="images/pinconfig.png" class="gallery-item"><img src="images/pinconfig.png"></a>
 
-<a href="images/KAIROZU.jpg" class="gallery-item"><img src="images/KAIROZU.jpg"></a>
+<a href="images/KAIROZU.png" class="gallery-item"><img src="images/KAIROZU.png"></a>
 3.基盤のシルク名と端子構成、コネクタとマイコンの配線のドキュメントを作成
-<a href="images/connectinfo.jpg" class="gallery-item"><img src="images/connectinfo.jpg"></a>
+<a href="images/connectinfo.png" class="gallery-item"><img src="images/connectinfo.png"></a>
 
 <figure class="highlight c"><figcaption><span>LED点滅</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;avr/io.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j;</span><br><span class="line">    DDRB | =(<span class="number">1</span> &lt;&lt;PB1); <span class="comment">//ATmega328Pのピンの初期設定をする   </span></span><br><span class="line">    <span class="comment">// DDRB The Port B Data Direction Register</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        PORTB ^=(<span class="number">1</span> &lt;&lt;PB1);   <span class="comment">//ATmega328Pのピンから信号を出力</span></span><br><span class="line">        <span class="comment">// PORTB The Port B Data Register</span></span><br><span class="line">        <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++&gt;)&#123;</span><br><span class="line">            <span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;<span class="number">10000</span>; j++);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 

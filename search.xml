@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>---- &lt;i class=&quot;fa fa-heart&quot;&gt;&lt;/i&gt; &lt;i class=&quot;fa fa-skull&quot;&gt;&lt;/i&gt; &lt;i class=&quot;fa fa-robot&quot;&gt;&lt;/i&gt;  ----</title>
-    <url>/BassHero.github.io/2024/04/13/top/</url>
+    <url>/BassHero.github.io/top.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><div style="text-align: center;color:#808080;">
       <i class="fas fa-crow"></i>
   <span id="sitetime"></span>
@@ -76,7 +76,7 @@
   </entry>
   <entry>
     <title>sadservers_01(No.4 ~No.6)</title>
-    <url>/BassHero.github.io/2025/04/22/sadservers-02/</url>
+    <url>/BassHero.github.io/sadservers-02.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h2 id="NO-４"><a href="#NO-４" class="headerlink" title="NO.４"></a>NO.４</h2><p><strong>Description:</strong> There is a web server on port :80 protected with Port Knocking. Find the one “knock” needed (sending a SYN to a single port, not a sequence) so you can curl localhost.</p>
 <blockquote><p><strong>Port Knocking</strong> 是一种网络安全技术，用于隐蔽地开启防火墙上的端口。它的核心思想是：只有按特定顺序访问一系列封闭的端口后，目标服务器才会开放真正的服务端口。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>工作原理</strong></p>
@@ -145,7 +145,7 @@
   </entry>
   <entry>
     <title>sadservers_01(No.1 ~No.3)</title>
-    <url>/BassHero.github.io/2025/04/20/sadservers-01/</url>
+    <url>/BassHero.github.io/sadservers-01.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h2 id="NO-1"><a href="#NO-1" class="headerlink" title="NO.1"></a>NO.1</h2><p><strong>Description:</strong> A developer created a testing program that is continuously writing to a log file /var/log/bad.log and filling up disk. You can check for example with <code>tail -f /var/log/bad.log</code>.<br>This program is no longer needed. Find it and terminate it.<br>&nbsp;&nbsp;<code>ps aux</code>  :查看open中的线程<br>&nbsp;&nbsp;<code>fuser /var/log/bad.log</code> :查看文件使用者<br>&nbsp;&nbsp;<code>lsof /var/log/bad.log</code> :find opening file。查看正在被打开的文件。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;包括pipe和socket</p>
 <h2 id="NO-2"><a href="#NO-2" class="headerlink" title="NO.2"></a>NO.2</h2><p><strong>Description:</strong> There’s a web server access log file at /home/admin/access.log. The file consists of one line per HTTP request, with the requester’s IP address at the beginning of each line.</p>
@@ -177,7 +177,7 @@
   </entry>
   <entry>
     <title>組込みエンジニアの教科書_CHAPTER07(Linux)</title>
-    <url>/BassHero.github.io/2025/04/19/ISBN978-4-863-54275-4-07/</url>
+    <url>/BassHero.github.io/ISBN978-4-863-54275-4-07.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <p><strong>MMU(Memory Management unit)</strong>:メモリ管理ユニット<br>仮想アドレス空間から物理アドレス空間の変換を行う機能がある、物理メモリをページと呼ばれる最小単位で管理できる。ソフトウェアの<strong>プロセスごと</strong>にページ単位でメモリ割り当てする。<br>ページテーブルに参照する際に仮想空間に対応する物理空間が見つからないと「ページフォルト」が発生します。<br>ページアウトが発生すると不要とされるページを二次記憶に書き出して（ページアウト）、新たに必要なページを二次記憶装置から物理空間に読み込んで(ページイン)、ページを置換する。</p>
 </div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
@@ -196,7 +196,7 @@
   </entry>
   <entry>
     <title>組込みエンジニアの教科書_CHAPTER06(デバイスの選択)</title>
-    <url>/BassHero.github.io/2025/04/15/ISBN978-4-863-54275-4-06/</url>
+    <url>/BassHero.github.io/ISBN978-4-863-54275-4-06.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 
 <p><strong>Soc(System on Chip)</strong><br>システム<strong>LSI</strong>（Large Scale Integration）とは、異なる機能を持つ、複数の集積回路を1つのLSI上にまとめたもののことを指します</p>
@@ -230,7 +230,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>組込みエンジニアの教科書_CHAPTER05(FreeRTOSと他のOS)</title>
-    <url>/BassHero.github.io/2025/04/15/ISBN978-4-863-54275-4-05-03/</url>
+    <url>/BassHero.github.io/ISBN978-4-863-54275-4-05-03.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h2 id="FreeRTOSの構成"><a href="#FreeRTOSの構成" class="headerlink" title="FreeRTOSの構成"></a>FreeRTOSの構成</h2><p><strong>TCB(Task Control Block)</strong><br>タスクの情報を保持するものです。タスクの情報には, そのタスクの優先度, 状態, 前のプログラムコード位置(タスクが切り換えられ復帰するための現在実行中のプログラムコードの位置)などを含みます</p>
 <p><strong>セマフォ</strong><br>複数のプロセスが同期して処理を進めることができます。</p>
@@ -259,7 +259,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>プロセス間通信と共有メモリ</title>
-    <url>/BassHero.github.io/2025/04/15/pipe2/</url>
+    <url>/BassHero.github.io/pipe2.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <p>UNIX系のOSでは（一部特定の機能を除いて）それぞれのプロセスのメモリアドレス空間は独立している。このため、プロセス間でデータをやりとりしようとした場合には（独立したソフトウェア同士がデータのやりとりをしようとした場合には）、ファイルシステムを経由したり、パイプを使ったり、ソケットを使ってネットワーク通信などを実施する必要がある。</p>
 <p>　インタラクティブシェルで、例えば「cat ファイル | grep キーワード」のような処理を実行したことがあると思うが、これはcat(1)とgrep(1)という異なるプロセス（ソフトウェア）に関して、シェルがpipe(2)を使ってパイプを生成し、cat(1)の標準出力をgrep(1)の標準入力に設定して一方通行でデータ通信できるようにしたものだ。</p>
@@ -282,7 +282,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>組込みエンジニアの教科書_CHAPTER05(システムコール)</title>
-    <url>/BassHero.github.io/2025/04/15/ISBN978-4-863-54275-4-05-02/</url>
+    <url>/BassHero.github.io/ISBN978-4-863-54275-4-05-02.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h2 id="システムコール"><a href="#システムコール" class="headerlink" title="システムコール"></a>システムコール</h2><p>「非特権モードで動作しているプログラム」が「特権モードで動作しているカーネル」に「仕事を依頼する」方法。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># /bin/echo hello</span></span><br><span class="line">hello</span><br><span class="line"><span class="comment"># </span></span><br></pre></td></tr></table></figure>
@@ -355,7 +355,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>組込みエンジニアの教科書_CHAPTER05(リアルタイムOS)</title>
-    <url>/BassHero.github.io/2025/04/14/ISBN978-4-863-54275-4-05/</url>
+    <url>/BassHero.github.io/ISBN978-4-863-54275-4-05.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <p>RTOS(リアルタイムOS)：決められた時間を守ることを目的にスケジューリングが実行される。<br>汎用OS：処理ごとに時間を分け合いながらスケジューリングする。</p>
 <p>基本的に汎用OS方が高機能ですが、汎用OSは多数の機能に時間を平等に与えるため、処理時間に制約条件がない。<br>RTOSはevent-driven型。汎用OSはTSS(Time Sharing System)<br>組込みOSがあると、<strong>ハードウェアを時間で効率よく使えるから</strong></p>
@@ -379,7 +379,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>WindowsServer2016_01</title>
-    <url>/BassHero.github.io/2025/04/13/WindowsServer2016-01/</url>
+    <url>/BassHero.github.io/WindowsServer2016-01.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h2 id="系统的安装"><a href="#系统的安装" class="headerlink" title="系统的安装"></a>系统的安装</h2><h2 id="检查设备驱动状态"><a href="#检查设备驱动状态" class="headerlink" title="检查设备驱动状态"></a>检查设备驱动状态</h2><p>「开始」–→　设备管理器</p>
 <h2 id="接入工作组WorkGroup"><a href="#接入工作组WorkGroup" class="headerlink" title="接入工作组WorkGroup"></a>接入工作组WorkGroup</h2><p>控制面板 系统和安全 系统 高级系统设置</p>
@@ -400,7 +400,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>組込みエンジニアの教科書_CHAPTER04</title>
-    <url>/BassHero.github.io/2025/04/13/ISBN978-4-863-54275-4-04/</url>
+    <url>/BassHero.github.io/ISBN978-4-863-54275-4-04.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h2 id="Arduinoのハードウェアを確認する"><a href="#Arduinoのハードウェアを確認する" class="headerlink" title="Arduinoのハードウェアを確認する"></a>Arduinoのハードウェアを確認する</h2><p>1.型番から<strong>データシート</strong>と言われるハードウェアマニュアルを入手できる。<br>2.ピン構成と基盤回路図を確認する</p>
 <a href="/images/pinconfig.png" class="gallery-item"><img src="/images/pinconfig.png"></a>
@@ -437,7 +437,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>組込みエンジニアの教科書_CHAPTER03(テスト環境とコンパイラ)</title>
-    <url>/BassHero.github.io/2025/04/13/ISBN978-4-863-54275-4-03-2/</url>
+    <url>/BassHero.github.io/ISBN978-4-863-54275-4-03-2.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 
 <h2 id="組込みソフトウェアのテスト環境"><a href="#組込みソフトウェアのテスト環境" class="headerlink" title="組込みソフトウェアのテスト環境"></a>組込みソフトウェアのテスト環境</h2><p><strong>■ ICE(In-ircuit Emulator)</strong></p>
@@ -517,7 +517,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>网络基础自测问题_02</title>
-    <url>/BassHero.github.io/2025/04/09/InternetNotes-02/</url>
+    <url>/BassHero.github.io/InternetNotes-02.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h3 id="一、基础协议问题"><a href="#一、基础协议问题" class="headerlink" title="一、基础协议问题"></a><strong>一、基础协议问题</strong></h3><ol>
 <li><strong>TCP协议</strong></li>
@@ -675,7 +675,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>网络基础自测问题</title>
-    <url>/BassHero.github.io/2025/04/09/InternetNotes/</url>
+    <url>/BassHero.github.io/InternetNotes.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 
 <h3 id="一、基础自测问题（适合初学者）"><a href="#一、基础自测问题（适合初学者）" class="headerlink" title="一、基础自测问题（适合初学者）"></a><strong>一、基础自测问题（适合初学者）</strong></h3><p>先测试你的基础网络知识，如果大部分不会，需要补基础；如果已掌握，可以跳到进阶部分。</p>
@@ -757,7 +757,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>組込みエンジニアの教科書_CHAPTER03(OSなしソフトウェア)</title>
-    <url>/BassHero.github.io/2025/04/07/ISBN978-4-863-54275-4-03/</url>
+    <url>/BassHero.github.io/ISBN978-4-863-54275-4-03.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h2 id="組込みソフトウェア開発の流れ"><a href="#組込みソフトウェア開発の流れ" class="headerlink" title="組込みソフトウェア開発の流れ"></a>組込みソフトウェア開発の流れ</h2><p><strong>クロス開発環境</strong><br>パソコンに入ってるgccはそのまま組込み環境では使えません、パソコンのCPUは組込み機器のCPUが異なっているためです。<br>Arduino向けコンパイラー avr-gcc<br><strong>ビルド</strong><br>コンパイル -→ アセンブル -→ リンク -→ HEXファイル(ROMファイル)</p>
 <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">//</span>プリプロセス処理</span><br><span class="line"><span class="regexp">//</span>コンパイル処理</span><br><span class="line"><span class="regexp">//</span>アセンブル処理</span><br><span class="line"><span class="regexp">//</span>リンク処理</span><br><span class="line">avr-gcc -<span class="number">0</span>s -Wall -mmcu=atmega328p main.c -o test.elf</span><br><span class="line"></span><br><span class="line"><span class="regexp">//</span>HEXファイル変換</span><br><span class="line">avr-objcopy b-l elf32-avr -O ihex test.elf test.hex</span><br></pre></td></tr></table></figure>
@@ -829,7 +829,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>組込みエンジニアの教科書_CHAPTER02(CPU)</title>
-    <url>/BassHero.github.io/2025/04/07/ISBN978-4-863-54275-4_02_2/</url>
+    <url>/BassHero.github.io/ISBN978-4-863-54275-4_02_2.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h2 id="CPUとは"><a href="#CPUとは" class="headerlink" title="CPUとは"></a>CPUとは</h2><p><strong>PC(プログラムカウンタ)</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;次に実行すべき命令を読みだすアドレスをCPUに伝える役割<br><strong>デコーダー(decoder)</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;読みだされた命令を理解するハードウェア。<br><strong>ALU(Arithmetic and Logic Unit演算回路)</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;四則演算、論理演算<br><strong>汎用レジスタ</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;内蔵高速メモリー<br><strong>システムレジスタ</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CPUが命令を実行する際に利用するレジスタ。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;命令レジスタ<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;アドレスレジスタ<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ステータスレジスタ</p>
 <table>
@@ -886,7 +886,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>Wireshark</title>
-    <url>/BassHero.github.io/2025/04/06/ISBN978-7-115-36661-0/</url>
+    <url>/BassHero.github.io/ISBN978-7-115-36661-0.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
             selector: '.gallery-item'
@@ -903,7 +903,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>組込みエンジニアの教科書_CHAPTER02(マイコンの構成)</title>
-    <url>/BassHero.github.io/2025/04/06/ISBN978-4-863-54275-4_02_1/</url>
+    <url>/BassHero.github.io/ISBN978-4-863-54275-4_02_1.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 
 <h2 id="ハードウェアの種類"><a href="#ハードウェアの種類" class="headerlink" title="ハードウェアの種類"></a>ハードウェアの種類</h2><p><strong>1. マイコン:</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CPU<br><strong>2. メモリー:</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ROM(不揮発性メモリー、プログラム書き読み)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RAM(揮発性メモリー、データ書き読み)<br><strong>3. ペリフェラル(Peripheral):</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TIMER<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DMA Controller<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interrupt Controller<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Serial ontroller<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A/D Controller<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PWM Controller</p>
@@ -929,7 +929,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>組込みエンジニアの教科書_CHAPTER01</title>
-    <url>/BassHero.github.io/2025/04/06/ISBN978-4-863-54275-4_01/</url>
+    <url>/BassHero.github.io/ISBN978-4-863-54275-4_01.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h2 id="NTCR要件"><a href="#NTCR要件" class="headerlink" title="NTCR要件"></a>NTCR要件</h2><table>
 <thead>
@@ -1189,7 +1189,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>特朗普的关税政策违反了WTO政策了吗</title>
-    <url>/BassHero.github.io/2025/03/17/deepseekmemo/</url>
+    <url>/BassHero.github.io/deepseekmemo.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 
 <p>特朗普政府于2018年依据美国《贸易扩展法》第232条款，以“国家安全”为由对进口钢铁和铝产品分别加征25%和10%的关税。这一措施被广泛认为违反了世界贸易组织（WTO）的核心规则。</p>
@@ -1204,7 +1204,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>梵高笔记2025</title>
-    <url>/BassHero.github.io/2025/03/15/podcast01Notes-2025/</url>
+    <url>/BassHero.github.io/podcast01Notes-2025.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h2 id="2025-02-18-国运级与民营企业：从杭州刘小龙看中国国际竞争格局"><a href="#2025-02-18-国运级与民营企业：从杭州刘小龙看中国国际竞争格局" class="headerlink" title="2025/02/18 国运级与民营企业：从杭州刘小龙看中国国际竞争格局"></a>2025/02/18 国运级与民营企业：从杭州刘小龙看中国国际竞争格局</h2><h4 id="斯坦福大学与人口外流与硅谷的形成"><a href="#斯坦福大学与人口外流与硅谷的形成" class="headerlink" title="斯坦福大学与人口外流与硅谷的形成"></a>斯坦福大学与人口外流与硅谷的形成</h4><p>在基因上和硅谷比较像的城市<br>1.有很好的教育资源<br>2.需要急迫地解决人才外流的问题</p>
 <h2 id="2025-02-25-德国大选出炉老对手终上位俄乌局势突变老欧洲该怎么办"><a href="#2025-02-25-德国大选出炉老对手终上位俄乌局势突变老欧洲该怎么办" class="headerlink" title="2025/02/25　德国大选出炉老对手终上位俄乌局势突变老欧洲该怎么办"></a>2025/02/25　德国大选出炉老对手终上位俄乌局势突变老欧洲该怎么办</h2><p>默克尔：德国应该已发展中小企业为主流。<br>如果中小企业出了问题，你可以把它卖掉，但是大公司出了问题，没人愿意买它的。</p>
@@ -1227,7 +1227,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>欧阳编曲网课笔记</title>
-    <url>/BassHero.github.io/2025/03/15/musicarrangementtheroy/</url>
+    <url>/BassHero.github.io/musicarrangementtheroy.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
             selector: '.gallery-item'
@@ -1244,7 +1244,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>梵高笔记2024</title>
-    <url>/BassHero.github.io/2025/03/13/podcast01Notes_2024/</url>
+    <url>/BassHero.github.io/podcast01Notes_2024.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <p>读书和上课并不是唯一一种学习的方式，有时候听别人指点反而是条捷径。<br>这是我听梵高moneytalk时学到的知识，让我这样的门外汉无痛地开始了解经济学知识。</p>
 <p>这个播客很久就开始听了，里面的话题并不是每一个都能文字化作为笔记记录下来，仅仅作为一种生活记录希望记录下去。</p>
@@ -1358,7 +1358,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>播客读书不成林笔记</title>
-    <url>/BassHero.github.io/2025/03/13/podcast02Notes/</url>
+    <url>/BassHero.github.io/podcast02Notes.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h2 id="自由"><a href="#自由" class="headerlink" title="自由"></a>自由</h2><h4 id="102-自由主义咋在赢了冷战后迅速变成了人人嫌的过街老鼠"><a href="#102-自由主义咋在赢了冷战后迅速变成了人人嫌的过街老鼠" class="headerlink" title="102-自由主义咋在赢了冷战后迅速变成了人人嫌的过街老鼠"></a>102-自由主义咋在赢了冷战后迅速变成了人人嫌的过街老鼠</h4><h2 id="关于文学"><a href="#关于文学" class="headerlink" title="关于文学"></a>关于文学</h2></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
@@ -1376,7 +1376,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>メモリー</title>
-    <url>/BassHero.github.io/2025/03/13/MemoryManagement/</url>
+    <url>/BassHero.github.io/MemoryManagement.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p>たまに復習しないと忘れる内容。</p>
 <span id="more"></span>
 <p><strong>静的領域</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;プログラム実行中にずっとｓ存在するデータを保持する領域です。<br>&nbsp;&nbsp;&nbsp;&nbsp;（グローバル変数やプログラム実行可能な形式に変換したコード情報）</p>
@@ -1398,7 +1398,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>默克尔回忆录读书笔记（上）</title>
-    <url>/BassHero.github.io/2025/03/13/ISBN978-6-267-50633-2_01/</url>
+    <url>/BassHero.github.io/ISBN978-6-267-50633-2_01.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 
 <details>
@@ -1637,7 +1637,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>《大众文化与文化理论》(2)</title>
-    <url>/BassHero.github.io/2022/03/31/ISBN978-7-309-05840-6_02/</url>
+    <url>/BassHero.github.io/ISBN978-7-309-05840-6_02.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><h2 id="第六章-结构主义与后结构主义"><a href="#第六章-结构主义与后结构主义" class="headerlink" title="第六章 结构主义与后结构主义"></a>第六章 结构主义与后结构主义</h2><p>在对结构主义文化理论展开讨论之前，有必要先对索绪尔的语言学著作做一介绍，并引入对于理解结构主义而言至关重要的一系列关键概念。<br></p>
 <span id="more"></span>
 
@@ -1927,7 +1927,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>《大众文化与文化理论》(1)</title>
-    <url>/BassHero.github.io/2022/03/30/ISBN978-7-309-05840-6_01/</url>
+    <url>/BassHero.github.io/ISBN978-7-309-05840-6_01.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><h2 id="第一章-何谓大众文化"><a href="#第一章-何谓大众文化" class="headerlink" title="第一章 何谓大众文化"></a>第一章 何谓大众文化</h2><h3 id="文化"><a href="#文化" class="headerlink" title="文化"></a>文化</h3><p>文化=意识形态<br><br>雷蒙德·威廉斯（Raymond Williams）指出，文化乃是“英语之中最复杂的两三个词语之一”（Williams, 1983: 87）。他为文化下了三个范围宽泛的定义。第一，“文化”一词的第一种用法可以指“智力、精神和美学发展的一般过程”（90）。例如，在谈论西欧文化发展史的时候，我们可以仅仅涉及智力、精神和美学方面的成就，如伟大的哲学家、艺术家和诗人。这也是一种易于理解的解释方式。“文化”一词的第二种用法是指“一群人、一个时期或一个群体的某种特别的生活方式”（同上）。若想以这种用法来解读西欧文化发展史，我们便不能仅仅考虑智力和美学成就，还要了解诸如识字率、休闲方式、体育运动、宗教节日等内容。最后，威廉斯指出，文化可被用来指涉“智力，尤其是美学所创造的作品和实践”（同上）。换言之，此处的“文化”指的是一系列的文本与实践，而这些文本与实践的主要功能是对意义（meaning）进行指涉和生产，并为这一过程提供场所。文化的第三个含义与结构主义者以及后结构主义者所声称的“指意实践”（signifying practices）大体相同（参见第六章）。如果用第三种定义来看待文化，那么诗歌、小说、芭蕾、歌剧和美术都将被纳入考察的范畴。至于我们所要探讨的“大众文化”，则需灵活运用文化的第二个和第三个定义。</p>
 <span id="more"></span>
 <h3 id="意识形态"><a href="#意识形态" class="headerlink" title="意识形态"></a>意识形态</h3><p>第一，意识形态可以指“为某一特定人群所接合（articulate）的观念系统”。例如，我们常说的“专业意识形态”即指代表特定专业人群实践的那些观念。再比如，我们可以说“工党的意识形态”，意指体现了该党精神与实践的那些政治、经济和社会观念的集合。<br>第二种定义则将意识形态视为某种掩饰、扭曲或欺瞒，用来描述某些文本和实践如何呈现对现实加以歪曲的图景。有些时候，人们认为这些被歪曲的现实图景制造出“虚假意识”（false consciousness），并在权力者利益和无权者利益之间发挥作用。<br>第三种定义（在某种程度上依托于第二种定义并与之关系密切）用“意识形态”这一表述来指代“意识形态构成”（Marx, 1976a: 5）。这一定义关注文本（电视剧、流行音乐、小说、剧情片等）如何持续不断地呈现关于外部世界的图景。其理论前提是：“社会”的概念建立于互相冲突而非彼此赞成的基础之上，是围绕着不平等、剥削和压迫被建构出来的。在这场冲突中，文本有意无意地偏袒着某一方。德国剧作家贝托尔特·布莱希特 [1] （Bertolt Brecht）如是总结：“无论好剧还是坏剧，都包含着一幅世界的图景……世上不存在对观众的立场与观点毫无影响的戏剧和演出。艺术从来都伴随着某种后果”（Brecht, 1978: 150-151）。<br>正如斯图亚特·霍尔（Stuart Hall）声称的那样，大众文化是“创造总体性的社会观念”的场所，是“指意的政治”彼此争夺、诱使人们按照某些特定的方式观察世界的竞技场（Hall, 2009a: 122-123）。<br><br>意识形态的第四个定义与法国文化理论家罗兰·巴尔特（Roland Barthes）的早期作品有密切关联（在第六章会详细讨论）。巴尔特指出，意识形态（巴尔特本人称之为“神话”）主要在内涵（connotation）层面上发挥作用，是文本或实践所承载或可能承载的、间接的、常常是无意识的含义。在英国社会中，那些白种的、男性的、异性恋的、中产阶级的人是不言自明的“正常人”“普通人”“自然人”，而其他人则是这一“原型”的次等“变种”。<br><br>第五个定义在20世纪70年代和80年代早期十分盛行，其作者是法国马克思主义哲学家路易·阿尔都塞（Louis Arthusser）。在第四章中,阿尔都塞的主要观点是：意识形态并不是简单的观念的集合，而是一种物质实践，这意味着意识形态存在于日常生活的实践之中，而不仅仅存在于关于日常生活的观念之中。他还认为，一些仪式和风俗会通过某种方式起作用，将我们捆绑在社会秩序之上；而这所谓的社会秩序的标志，是财富、地位与权力的显著不平等。<br></p>
@@ -2064,7 +2064,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>c++11newfunction</title>
-    <url>/BassHero.github.io/2021/12/19/cpp11newfunction/</url>
+    <url>/BassHero.github.io/cpp11newfunction.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><ol>
 <li><p> 缩窄<br>char c1 {66}；</p>
@@ -2095,7 +2095,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>ping</title>
-    <url>/BassHero.github.io/2021/12/17/ping/</url>
+    <url>/BassHero.github.io/ping.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h3 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h3><figure class="highlight nix"><table><tr><td class="code"><pre><span class="line"><span class="built_in">import</span> pings</span><br><span class="line"></span><br><span class="line"><span class="attr">p</span> = pings.Ping(<span class="attr">quiet=False)</span></span><br><span class="line"><span class="attr">res</span> = p.ping(<span class="string">&quot;google.com&quot;</span>)  <span class="comment"># googleを監視</span></span><br></pre></td></tr></table></figure>
 <h3 id="用python实现发送原生ping包"><a href="#用python实现发送原生ping包" class="headerlink" title="用python实现发送原生ping包"></a>用python实现发送原生ping包</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"> </span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    A pure python ping implementation using raw socket.</span></span><br><span class="line"><span class="string">    Note that ICMP messages can only be sent from processes running as root.</span></span><br><span class="line"><span class="string">    Derived from ping.c distributed in Linux&#x27;s netkit. That code is</span></span><br><span class="line"><span class="string">    copyright (c) 1989 by The Regents of the University of California.</span></span><br><span class="line"><span class="string">    That code is in turn derived from code written by Mike Muuss of the</span></span><br><span class="line"><span class="string">    US Army Ballistic Research Laboratory in December, 1983 and</span></span><br><span class="line"><span class="string">    placed in the public domain. They have my thanks.</span></span><br><span class="line"><span class="string">    Bugs are naturally mine. I&#x27;d be glad to hear about them. There are</span></span><br><span class="line"><span class="string">    certainly word - size dependenceies here.</span></span><br><span class="line"><span class="string">    Copyright (c) Matthew Dixon Cowles, &lt;http://www.visi.com/~mdc/&gt;.</span></span><br><span class="line"><span class="string">    Distributable under the terms of the GNU General Public License</span></span><br><span class="line"><span class="string">    version 2. Provided with no warranties of any sort.</span></span><br><span class="line"><span class="string">    Original Version from Matthew Dixon Cowles:</span></span><br><span class="line"><span class="string">      -&gt; ftp://ftp.visi.com/users/mdc/ping.py</span></span><br><span class="line"><span class="string">    Rewrite by Jens Diemer:</span></span><br><span class="line"><span class="string">      -&gt; http://www.python-forum.de/post-69122.html#69122</span></span><br><span class="line"><span class="string">    Revision history</span></span><br><span class="line"><span class="string">    ~~~~~~~~~~~~~~~~</span></span><br><span class="line"><span class="string">    March 11, 2010</span></span><br><span class="line"><span class="string">    changes by Samuel Stauffer:</span></span><br><span class="line"><span class="string">    - replaced time.clock with default_timer which is set to</span></span><br><span class="line"><span class="string">      time.clock on windows and time.time on other systems.</span></span><br><span class="line"><span class="string">    May 30, 2007</span></span><br><span class="line"><span class="string">    little rewrite by Jens Diemer:</span></span><br><span class="line"><span class="string">     -  change socket asterisk import to a normal import</span></span><br><span class="line"><span class="string">     -  replace time.time() with time.clock()</span></span><br><span class="line"><span class="string">     -  delete &quot;return None&quot; (or change to &quot;return&quot; only)</span></span><br><span class="line"><span class="string">     -  in checksum() rename &quot;str&quot; to &quot;source_string&quot;</span></span><br><span class="line"><span class="string">    November 22, 1997</span></span><br><span class="line"><span class="string">    Initial hack. Doesn&#x27;t do much, but rather than try to guess</span></span><br><span class="line"><span class="string">    what features I (or others) will want in the future, I&#x27;ve only</span></span><br><span class="line"><span class="string">    put in what I need now.</span></span><br><span class="line"><span class="string">    December 16, 1997</span></span><br><span class="line"><span class="string">    For some reason, the checksum bytes are in the wrong order when</span></span><br><span class="line"><span class="string">    this is run under Solaris 2.X for SPARC but it works right under</span></span><br><span class="line"><span class="string">    Linux x86. Since I don&#x27;t know just what&#x27;s wrong, I&#x27;ll swap the</span></span><br><span class="line"><span class="string">    bytes always and then do an htons().</span></span><br><span class="line"><span class="string">    December 4, 2000</span></span><br><span class="line"><span class="string">    Changed the struct.pack() calls to pack the checksum and ID as</span></span><br><span class="line"><span class="string">    unsigned. My thanks to Jerome Poincheval for the fix.</span></span><br><span class="line"><span class="string">    Januari 27, 2015</span></span><br><span class="line"><span class="string">    Changed receive response to not accept ICMP request messages.</span></span><br><span class="line"><span class="string">    It was possible to receive the very request that was sent.</span></span><br><span class="line"><span class="string">    Last commit info:</span></span><br><span class="line"><span class="string">    ~~~~~~~~~~~~~~~~~</span></span><br><span class="line"><span class="string">    $LastChangedDate: $</span></span><br><span class="line"><span class="string">    $Rev: $</span></span><br><span class="line"><span class="string">    $Author: $</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> os, sys, socket, struct, select, time</span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> sys.platform == <span class="string">&quot;win32&quot;</span>:</span><br><span class="line">    <span class="comment"># On Windows, the best timer is time.clock()</span></span><br><span class="line">    default_timer = time.clock</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="comment"># On most other platforms the best timer is time.time()</span></span><br><span class="line">    default_timer = time.time</span><br><span class="line"> </span><br><span class="line"><span class="comment">#From /usr/include/linux/icmp.h; your milage may vary.</span></span><br><span class="line">ICMP_ECHO_REQUEST = <span class="number">8</span> <span class="comment"># Seems to be the same on Solaris.</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">checksum</span>(<span class="params">source_string</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    I&#x27;m not too confident that this is right but testing seems</span></span><br><span class="line"><span class="string">    to suggest that it gives the same answers as in_cksum in ping.c</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line">    countTo = (<span class="built_in">len</span>(source_string)/<span class="number">2</span>)*<span class="number">2</span></span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> count&lt;countTo:</span><br><span class="line">        thisVal = <span class="built_in">ord</span>(source_string[count + <span class="number">1</span>])*<span class="number">256</span> + <span class="built_in">ord</span>(source_string[count])</span><br><span class="line">        <span class="built_in">sum</span> = <span class="built_in">sum</span> + thisVal</span><br><span class="line">        <span class="built_in">sum</span> = <span class="built_in">sum</span> &amp; <span class="number">0xffffffff</span> <span class="comment"># Necessary?</span></span><br><span class="line">        count = count + <span class="number">2</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">if</span> countTo&lt;<span class="built_in">len</span>(source_string):</span><br><span class="line">        <span class="built_in">sum</span> = <span class="built_in">sum</span> + <span class="built_in">ord</span>(source_string[<span class="built_in">len</span>(source_string) - <span class="number">1</span>])</span><br><span class="line">        <span class="built_in">sum</span> = <span class="built_in">sum</span> &amp; <span class="number">0xffffffff</span> <span class="comment"># Necessary?</span></span><br><span class="line"> </span><br><span class="line">    <span class="built_in">sum</span> = (<span class="built_in">sum</span> &gt;&gt; <span class="number">16</span>)  +  (<span class="built_in">sum</span> &amp; <span class="number">0xffff</span>)</span><br><span class="line">    <span class="built_in">sum</span> = <span class="built_in">sum</span> + (<span class="built_in">sum</span> &gt;&gt; <span class="number">16</span>)</span><br><span class="line">    answer = ~<span class="built_in">sum</span></span><br><span class="line">    answer = answer &amp; <span class="number">0xffff</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">#Swap bytes. Bugger me if I know why.</span></span><br><span class="line">    answer = answer &gt;&gt; <span class="number">8</span> | (answer &lt;&lt; <span class="number">8</span> &amp; <span class="number">0xff00</span>)</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> answer</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">receive_one_ping</span>(<span class="params">my_socket, ID, timeout</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    receive the ping from the socket.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    timeLeft = timeout</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        startedSelect = default_timer()</span><br><span class="line">        whatReady = select.select([my_socket], [], [], timeLeft)</span><br><span class="line">        howLongInSelect = (default_timer() - startedSelect)</span><br><span class="line">        <span class="keyword">if</span> whatReady[<span class="number">0</span>] == []: <span class="comment"># Timeout</span></span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"> </span><br><span class="line">        timeReceived = default_timer()</span><br><span class="line">        recPacket, addr = my_socket.recvfrom(<span class="number">1024</span>)</span><br><span class="line">        icmpHeader = recPacket[<span class="number">20</span>:<span class="number">28</span>]</span><br><span class="line">        <span class="built_in">type</span>, code, checksum, packetID, sequence = struct.unpack(</span><br><span class="line">            <span class="string">&quot;bbHHh&quot;</span>, icmpHeader</span><br><span class="line">        )</span><br><span class="line">        <span class="comment">#Filters out the echo request itself. </span></span><br><span class="line">        <span class="comment">#This can be tested by pinging 127.0.0.1 </span></span><br><span class="line">        <span class="comment">#You&#x27;ll see your own request</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">type</span> != <span class="number">8</span> <span class="keyword">and</span> packetID == ID:</span><br><span class="line">            bytesInDouble = struct.calcsize(<span class="string">&quot;d&quot;</span>)</span><br><span class="line">            timeSent = struct.unpack(<span class="string">&quot;d&quot;</span>, recPacket[<span class="number">28</span>:<span class="number">28</span> + bytesInDouble])[<span class="number">0</span>]</span><br><span class="line">            <span class="keyword">return</span> timeReceived - timeSent</span><br><span class="line"> </span><br><span class="line">        timeLeft = timeLeft - howLongInSelect</span><br><span class="line">        <span class="keyword">if</span> timeLeft &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">send_one_ping</span>(<span class="params">my_socket, dest_addr, ID</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Send one ping to the given &gt;dest_addr&lt;.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    dest_addr  =  socket.gethostbyname(dest_addr)</span><br><span class="line"> </span><br><span class="line">    <span class="comment">#Header is type (8), code (8), checksum (16), id (16), sequence (16)</span></span><br><span class="line">    my_checksum = <span class="number">0</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">#Make a dummy heder with a 0 checksum.</span></span><br><span class="line">    header = struct.pack(<span class="string">&quot;bbHHh&quot;</span>, ICMP_ECHO_REQUEST, <span class="number">0</span>, my_checksum, ID, <span class="number">1</span>)</span><br><span class="line">    bytesInDouble = struct.calcsize(<span class="string">&quot;d&quot;</span>)</span><br><span class="line">    data = (<span class="number">192</span> - bytesInDouble) * <span class="string">&quot;Q&quot;</span></span><br><span class="line">    data = struct.pack(<span class="string">&quot;d&quot;</span>, default_timer()) + data</span><br><span class="line"> </span><br><span class="line">    <span class="comment">#Calculate the checksum on the data and the dummy header.</span></span><br><span class="line">    my_checksum = checksum(header + data)</span><br><span class="line"> </span><br><span class="line">    <span class="comment">#Now that we have the right checksum, we put that in. It&#x27;s just easier</span></span><br><span class="line">    <span class="comment">#to make up a new header than to stuff it into the dummy.</span></span><br><span class="line">    header = struct.pack(</span><br><span class="line">        <span class="string">&quot;bbHHh&quot;</span>, ICMP_ECHO_REQUEST, <span class="number">0</span>, socket.htons(my_checksum), ID, <span class="number">1</span></span><br><span class="line">    )</span><br><span class="line">    packet = header + data</span><br><span class="line">    my_socket.sendto(packet, (dest_addr, <span class="number">1</span>)) <span class="comment"># Don&#x27;t know about the 1</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">do_one</span>(<span class="params">dest_addr, timeout</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Returns either the delay (in seconds) or none on timeout.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    icmp = socket.getprotobyname(<span class="string">&quot;icmp&quot;</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        my_socket = socket.socket(socket.AF_INET, socket.SOCK_RAW, icmp)</span><br><span class="line">    <span class="keyword">except</span> socket.error, (errno, msg):</span><br><span class="line">        <span class="keyword">if</span> errno == <span class="number">1</span>:</span><br><span class="line">            <span class="comment"># Operation not permitted</span></span><br><span class="line">            msg = msg + (</span><br><span class="line">                <span class="string">&quot; - Note that ICMP messages can only be sent from processes&quot;</span></span><br><span class="line">                <span class="string">&quot; running as root.&quot;</span></span><br><span class="line">            )</span><br><span class="line">            <span class="keyword">raise</span> socket.error(msg)</span><br><span class="line">        <span class="keyword">raise</span> <span class="comment"># raise the original error</span></span><br><span class="line"> </span><br><span class="line">    my_ID = os.getpid() &amp; <span class="number">0xFFFF</span></span><br><span class="line"> </span><br><span class="line">    send_one_ping(my_socket, dest_addr, my_ID)</span><br><span class="line">    delay = receive_one_ping(my_socket, my_ID, timeout)</span><br><span class="line"> </span><br><span class="line">    my_socket.close()</span><br><span class="line">    <span class="keyword">return</span> delay</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">verbose_ping</span>(<span class="params">dest_addr, timeout = <span class="number">2</span>, count = <span class="number">4</span></span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Send &gt;count&lt; ping to &gt;dest_addr&lt; with the given &gt;timeout&lt; and display</span></span><br><span class="line"><span class="string">    the result.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> xrange(count):</span><br><span class="line">        <span class="built_in">print</span> <span class="string">&quot;ping %s...&quot;</span> % dest_addr,</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            delay  =  do_one(dest_addr, timeout)</span><br><span class="line">        <span class="keyword">except</span> socket.gaierror, e:</span><br><span class="line">            <span class="built_in">print</span> <span class="string">&quot;failed. (socket error: &#x27;%s&#x27;)&quot;</span> % e[<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line"> </span><br><span class="line">        <span class="keyword">if</span> delay  ==  <span class="literal">None</span>:</span><br><span class="line">            <span class="built_in">print</span> <span class="string">&quot;failed. (timeout within %ssec.)&quot;</span> % timeout</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            delay  =  delay * <span class="number">1000</span></span><br><span class="line">            <span class="built_in">print</span> <span class="string">&quot;get ping in %0.4fms&quot;</span> % delay</span><br><span class="line">    <span class="built_in">print</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    verbose_ping(<span class="string">&quot;heise.de&quot;</span>)</span><br><span class="line">    verbose_ping(<span class="string">&quot;google.com&quot;</span>)</span><br><span class="line">    verbose_ping(<span class="string">&quot;192.168.90.126&quot;</span>)</span><br><span class="line">    verbose_ping(<span class="string">&quot;192.168.1.1&quot;</span>)</span><br></pre></td></tr></table></figure>
@@ -2118,7 +2118,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
   </entry>
   <entry>
     <title>c++10 file operator</title>
-    <url>/BassHero.github.io/2021/12/16/cpp10stream/</url>
+    <url>/BassHero.github.io/cpp10stream.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h3 id="流和缓冲区"><a href="#流和缓冲区" class="headerlink" title="流和缓冲区"></a>流和缓冲区</h3><p>C++把输入和输出看作字节流，程序从字节流抽取字节<br>| 数据类型     | 描述                                                                       |<br>|———-|————————————————————————–|<br>| ofstream | 该数据类型表示输出文件流，用于创建文件并向文件写入信息。                                             |<br>| ifstream | 该数据类型表示输入文件流，用于从文件读取信息。                                                  |<br>| fstream  | 该数据类型通常表示文件流，且同时具有 ofstream 和 ifstream 两种功能，这意味着它可以创建文件，向文件写入信息，从文件读取信息。 |</p>
 <p>iostream自动创建8个流对象</p>
@@ -2230,7 +2230,7 @@ putback()
   </entry>
   <entry>
     <title>ICMP ping</title>
-    <url>/BassHero.github.io/2021/12/09/ISBN978-7-111-45378-9-06/</url>
+    <url>/BassHero.github.io/ISBN978-7-111-45378-9-06.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p>参考来自：<a href="https://github.com/jzplp/Computer-Network-A-Top-Down-Approach-Answer">Computer Network A Top-Down Approach Practice Answer-github</a></p>
 <span id="more"></span>
 <h2 id="chapter4"><a href="#chapter4" class="headerlink" title="chapter4"></a>chapter4</h2><h3 id="ICMP-ping"><a href="#ICMP-ping" class="headerlink" title="ICMP ping"></a>ICMP ping</h3><p>Ping是一个网络应用程序，用于测试某个主机在IP网络中是否可访问。它也用于测试计算机的网卡或测试网络延迟。它通过向目标主机发送ICMP“回显”包并监听ICMP“回显”应答来工作。“回显”有时称为”pong”。ping程序测量往返时间，记录数据包丢失，并输出接收到的回显包的统计摘要（往返时间的最小值、最大值和平均值，以及在某些版本中的平均值的标准差）。<br>您的任务是用python开发自己的Ping程序。您的程序将使用ICMP，但为了保持简单，将不完全遵循RFC 1739中的正式规范。请注意，您只需要编写程序的客户端，因为服务器端所需的功能几乎内置于所有操作系统中。<br>您的Ping程序能将ping请求发送到指定的主机，间隔大约一秒钟。每个消息包含一个带有时间戳的数据包。每个数据包发送完后，程序最多等待一秒，用于接收响应。如果一秒后服务器没有响应，那么客户端应假设ping数据包或pong数据包在网络中丢失（或者服务器已关闭）。</p>
@@ -2281,7 +2281,7 @@ putback()
   </entry>
   <entry>
     <title>关于nmap</title>
-    <url>/BassHero.github.io/2021/12/09/ISBN978-7-111-45378-9-05/</url>
+    <url>/BassHero.github.io/ISBN978-7-111-45378-9-05.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p>参考来自：<a href="https://github.com/jzplp/Computer-Network-A-Top-Down-Approach-Answer">Computer Network A Top-Down Approach Practice Answer-github</a></p>
 <span id="more"></span>
 
@@ -2309,7 +2309,7 @@ putback()
   </entry>
   <entry>
     <title>套接字编程作业4：多线程Web代理服务器</title>
-    <url>/BassHero.github.io/2021/12/09/ISBN978-7-111-45378-9-04/</url>
+    <url>/BassHero.github.io/ISBN978-7-111-45378-9-04.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p>参考来自：<a href="https://github.com/jzplp/Computer-Network-A-Top-Down-Approach-Answer">Computer Network A Top-Down Approach Practice Answer-github</a></p>
 <span id="more"></span>
 <h3 id="套接字编程作业4：多线程Web代理服务器"><a href="#套接字编程作业4：多线程Web代理服务器" class="headerlink" title="套接字编程作业4：多线程Web代理服务器"></a>套接字编程作业4：多线程Web代理服务器</h3><p>客户端通过代理服务器请求对象。代理服务器将客户端的请求转发到Web服务器。然后，Web服务器将生成响应消息并将其传递给代理服务器，代理服务器又将其发送给客户端。</p>
@@ -2348,7 +2348,7 @@ putback()
   </entry>
   <entry>
     <title>套接字编程作业3：邮件客户端</title>
-    <url>/BassHero.github.io/2021/12/09/ISBN978-7-111-45378-9-03/</url>
+    <url>/BassHero.github.io/ISBN978-7-111-45378-9-03.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p>参考来自：<a href="https://github.com/jzplp/Computer-Network-A-Top-Down-Approach-Answer">Computer Network A Top-Down Approach Practice Answer-github</a></p>
 <span id="more"></span>
 
@@ -2385,8 +2385,39 @@ putback()
       </tags>
   </entry>
   <entry>
+    <title>套接字编程作业2：UDPping程序</title>
+    <url>/BassHero.github.io/ISBN978-7-111-45378-9_02.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p>参考来自：<a href="https://github.com/jzplp/Computer-Network-A-Top-Down-Approach-Answer">Computer Network A Top-Down Approach Practice Answer-github</a></p>
+<span id="more"></span>
+<h3 id="套接字编程作业2：UDPping程序"><a href="#套接字编程作业2：UDPping程序" class="headerlink" title="套接字编程作业2：UDPping程序"></a>套接字编程作业2：UDPping程序</h3><p>客户端向服务器发送10次ping。因为UDP是不可靠的协议，所以从客户端发送到服务器的数据包可能在网络中丢失。因此，客户端不能无限期地等待ping消息的回复。客户等待服务器回答的时间至多为一秒，如果在一秒内没有收到回复，您的客户端程序应该假定数据包在网络传输期间丢失。<br><br>您需要查找Python文档，以了解如何在数据报套接字上设置超时值。</p>
+<p>具体来说，您的客户端程序应该<br>1.使用UDP发送ping消息（注意：不同于TCP，您不需要首先建立连接，因为UDP是无连接协议。）<br>2.从服务器输出响应消息<br>3.如果从服务器受到响应，则计算并输出每个数据包的往返时延（RTT）（以秒为单位），<br>4.否则输出“请求超时”<br>在开发过程中，您应该先在计算机上运行UDPPingerServer.py，并通过向localhost（或127.0.0.1）发送数据包来测试客户端。调试完成代码后，您应该能看到ping服务器和ping客户端在不同机器上通过网络进行通信。<br><br></p>
+<p><strong>其他阅读链接：</strong><a href="/BassHero.github.io/ping.html" title="ping">ping</a><br><br></p>
+<figure class="highlight python"><figcaption><span>UDPPingerClient.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">serverName = <span class="string">&#x27;127.0.0.1&#x27;</span></span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line">clientSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    time1 = time.time()</span><br><span class="line">    outputdata = <span class="string">&#x27;Ping &#x27;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot; &quot;</span> + <span class="built_in">str</span>(time1)</span><br><span class="line">    <span class="comment"># 设置超时 单位秒</span></span><br><span class="line">    clientSocket.settimeout(<span class="number">1</span>)</span><br><span class="line">    clientSocket.sendto(outputdata.encode(), (serverName, serverPort))</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        modifiedMessage, serverAddress = clientSocket.recvfrom(<span class="number">2048</span>)</span><br><span class="line">        timeDiff = time.time() - time1</span><br><span class="line">        <span class="built_in">print</span>(modifiedMessage.decode() + <span class="string">&quot; RTT: &quot;</span> + <span class="built_in">str</span>(timeDiff))</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;lost &quot;</span> + <span class="built_in">str</span>(i))</span><br></pre></td></tr></table></figure>
+<p><strong>可选练习</strong><br><br><br>1.目前，程序计算每个数据包的往返时间（RTT），并单独打印出来。请按照标准ping程序的模式修改。您需要在客户端每次ping后显示最小，最大和平均RTT。另外，还需计算丢包率（百分比）。<br><br></p>
+<figure class="highlight python"><figcaption><span>UDPPingerClient.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">serverName = <span class="string">&#x27;127.0.0.1&#x27;</span></span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line">clientSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    time1 = time.time()</span><br><span class="line">    outputdata = <span class="string">&#x27;Heartbeat &#x27;</span> + <span class="built_in">str</span>(time1)</span><br><span class="line">    clientSocket.sendto(outputdata.encode(), (serverName, serverPort))</span><br><span class="line">    time.sleep(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+<br>
+2.UDP Ping的另一个类似的应用是UDP Heartbeat。<br><br>心跳可用于检查应用程序是否已启动并运行，并报告单向丢包。客户端在UDP数据包中将一个序列号和当前时间戳发送给正在监听客户端心跳的服务器。服务器收到数据包后，计算时差，报告丢包（若发生）。如果心跳数据包在指定的一段时间内丢失，我们可以假设客户端应用程序已经停止。实现UDP Heartbeat（客户端和服务器端）。<br><br>您需要修改给定的UDPPingerServer.py和您自己的UDP ping客户端。
+<br><br>
+
+
+<figure class="highlight python"><figcaption><span>UDPPingerServer.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">#We will need the following module to generate randomized lost packets</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment">#Create a UDP socket</span></span><br><span class="line"><span class="comment">#Notice the use of SOCK_DGRAM for UDP packets</span></span><br><span class="line">serverSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"><span class="comment">#Assign IP address and port number to socket</span></span><br><span class="line">serverSocket.bind((<span class="string">&#x27;&#x27;</span>, <span class="number">12000</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    message, address = serverSocket.recvfrom(<span class="number">1024</span>)</span><br><span class="line">    message = message.decode()</span><br><span class="line">    message = message.split()[<span class="number">1</span>]</span><br><span class="line">    timeDiff = time.time() - <span class="built_in">float</span>(message)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;receive RTT:&quot;</span>, timeDiff)</span><br></pre></td></tr></table></figure></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>技术</category>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>2021</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>套接字编程作业1：Web服务器</title>
-    <url>/BassHero.github.io/2021/12/09/ISBN978-7-111-45378-9_01/</url>
+    <url>/BassHero.github.io/ISBN978-7-111-45378-9_01.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p>参考来自：<a href="https://github.com/jzplp/Computer-Network-A-Top-Down-Approach-Answer">Computer Network A Top-Down Approach Practice Answer-github</a></p>
 <span id="more"></span>
 <h2 id="chapter01"><a href="#chapter01" class="headerlink" title="chapter01"></a>chapter01</h2><p><strong>因特网协议栈中的5个层次</strong><br>应用层：提供了一些网络应用程序和应用层协议。<br>运输层：在应用程序端点之间传输运输层报文。主要有TCP和UDP两种协议。<br>网络层：负责将分组从一台主机移动到另一台主机。<br>链路层：沿着路经将数据报传递给下一层结点。<br>物理层：将整个帧从一个网络元素移动到邻近的网络元素。</p>
@@ -2470,39 +2501,8 @@ putback()
       </tags>
   </entry>
   <entry>
-    <title>套接字编程作业2：UDPping程序</title>
-    <url>/BassHero.github.io/2021/12/09/ISBN978-7-111-45378-9_02/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p>参考来自：<a href="https://github.com/jzplp/Computer-Network-A-Top-Down-Approach-Answer">Computer Network A Top-Down Approach Practice Answer-github</a></p>
-<span id="more"></span>
-<h3 id="套接字编程作业2：UDPping程序"><a href="#套接字编程作业2：UDPping程序" class="headerlink" title="套接字编程作业2：UDPping程序"></a>套接字编程作业2：UDPping程序</h3><p>客户端向服务器发送10次ping。因为UDP是不可靠的协议，所以从客户端发送到服务器的数据包可能在网络中丢失。因此，客户端不能无限期地等待ping消息的回复。客户等待服务器回答的时间至多为一秒，如果在一秒内没有收到回复，您的客户端程序应该假定数据包在网络传输期间丢失。<br><br>您需要查找Python文档，以了解如何在数据报套接字上设置超时值。</p>
-<p>具体来说，您的客户端程序应该<br>1.使用UDP发送ping消息（注意：不同于TCP，您不需要首先建立连接，因为UDP是无连接协议。）<br>2.从服务器输出响应消息<br>3.如果从服务器受到响应，则计算并输出每个数据包的往返时延（RTT）（以秒为单位），<br>4.否则输出“请求超时”<br>在开发过程中，您应该先在计算机上运行UDPPingerServer.py，并通过向localhost（或127.0.0.1）发送数据包来测试客户端。调试完成代码后，您应该能看到ping服务器和ping客户端在不同机器上通过网络进行通信。<br><br></p>
-<p><strong>其他阅读链接：</strong><a href="/BassHero.github.io/2021/12/17/ping/" title="ping">ping</a><br><br></p>
-<figure class="highlight python"><figcaption><span>UDPPingerClient.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">serverName = <span class="string">&#x27;127.0.0.1&#x27;</span></span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line">clientSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    time1 = time.time()</span><br><span class="line">    outputdata = <span class="string">&#x27;Ping &#x27;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot; &quot;</span> + <span class="built_in">str</span>(time1)</span><br><span class="line">    <span class="comment"># 设置超时 单位秒</span></span><br><span class="line">    clientSocket.settimeout(<span class="number">1</span>)</span><br><span class="line">    clientSocket.sendto(outputdata.encode(), (serverName, serverPort))</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        modifiedMessage, serverAddress = clientSocket.recvfrom(<span class="number">2048</span>)</span><br><span class="line">        timeDiff = time.time() - time1</span><br><span class="line">        <span class="built_in">print</span>(modifiedMessage.decode() + <span class="string">&quot; RTT: &quot;</span> + <span class="built_in">str</span>(timeDiff))</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;lost &quot;</span> + <span class="built_in">str</span>(i))</span><br></pre></td></tr></table></figure>
-<p><strong>可选练习</strong><br><br><br>1.目前，程序计算每个数据包的往返时间（RTT），并单独打印出来。请按照标准ping程序的模式修改。您需要在客户端每次ping后显示最小，最大和平均RTT。另外，还需计算丢包率（百分比）。<br><br></p>
-<figure class="highlight python"><figcaption><span>UDPPingerClient.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">serverName = <span class="string">&#x27;127.0.0.1&#x27;</span></span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line">clientSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    time1 = time.time()</span><br><span class="line">    outputdata = <span class="string">&#x27;Heartbeat &#x27;</span> + <span class="built_in">str</span>(time1)</span><br><span class="line">    clientSocket.sendto(outputdata.encode(), (serverName, serverPort))</span><br><span class="line">    time.sleep(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
-
-<br>
-2.UDP Ping的另一个类似的应用是UDP Heartbeat。<br><br>心跳可用于检查应用程序是否已启动并运行，并报告单向丢包。客户端在UDP数据包中将一个序列号和当前时间戳发送给正在监听客户端心跳的服务器。服务器收到数据包后，计算时差，报告丢包（若发生）。如果心跳数据包在指定的一段时间内丢失，我们可以假设客户端应用程序已经停止。实现UDP Heartbeat（客户端和服务器端）。<br><br>您需要修改给定的UDPPingerServer.py和您自己的UDP ping客户端。
-<br><br>
-
-
-<figure class="highlight python"><figcaption><span>UDPPingerServer.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">#We will need the following module to generate randomized lost packets</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment">#Create a UDP socket</span></span><br><span class="line"><span class="comment">#Notice the use of SOCK_DGRAM for UDP packets</span></span><br><span class="line">serverSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"><span class="comment">#Assign IP address and port number to socket</span></span><br><span class="line">serverSocket.bind((<span class="string">&#x27;&#x27;</span>, <span class="number">12000</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    message, address = serverSocket.recvfrom(<span class="number">1024</span>)</span><br><span class="line">    message = message.decode()</span><br><span class="line">    message = message.split()[<span class="number">1</span>]</span><br><span class="line">    timeDiff = time.time() - <span class="built_in">float</span>(message)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;receive RTT:&quot;</span>, timeDiff)</span><br></pre></td></tr></table></figure></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
-      <categories>
-        <category>技术</category>
-        <category>网络</category>
-      </categories>
-      <tags>
-        <tag>2021</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>python05</title>
-    <url>/BassHero.github.io/2021/11/10/python05/</url>
+    <url>/BassHero.github.io/python05.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p>使用beautifulSoup实现的网站遍历爬虫</p>
 <span id="more"></span>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlparse</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="comment">#define the variable</span></span><br><span class="line">pages = <span class="built_in">set</span>()</span><br><span class="line">random.seed(datetime.datetime.now())</span><br><span class="line"></span><br><span class="line"><span class="comment">#define the function</span></span><br><span class="line"><span class="comment">#ページ内にあるすべて内部リンクを調べる</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getInternalLinks</span>(<span class="params">bs,includeUrl</span>):</span></span><br><span class="line">    includeUrl = <span class="string">&#x27;&#123;&#125;://&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(urlparse(includeUrl).scheme,</span><br><span class="line">    urlparse(includeUrl).netloc)</span><br><span class="line">    internalLinks = []</span><br><span class="line"></span><br><span class="line">        <span class="comment">#&#x27;^(/|.*&#x27;+includeUrl+&#x27;)&#x27;)はregex記法といいます</span></span><br><span class="line">        <span class="comment">#ここでは「//」から始まるリンクだけ探し出す</span></span><br><span class="line">    <span class="keyword">for</span> link <span class="keyword">in</span> bs.find_all(<span class="string">&#x27;a&#x27;</span>,</span><br><span class="line">        href=re.<span class="built_in">compile</span>(<span class="string">&#x27;^(/|.*&#x27;</span>+includeUrl+<span class="string">&#x27;)&#x27;</span>)):</span><br><span class="line">        <span class="keyword">if</span> link.attrs[<span class="string">&#x27;href&#x27;</span>] <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">if</span> link.attrs[<span class="string">&#x27;href&#x27;</span>] <span class="keyword">not</span> <span class="keyword">in</span> internalLinks:</span><br><span class="line">                <span class="keyword">if</span>(link.attrs[<span class="string">&#x27;href&#x27;</span>].startswith(<span class="string">&#x27;/&#x27;</span>)):</span><br><span class="line">                    internalLinks.append(</span><br><span class="line">                    includeUrl+link.attrs[<span class="string">&#x27;href&#x27;</span>])</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    internalLinks.append(link.attrs[<span class="string">&#x27;href&#x27;</span>])</span><br><span class="line">    <span class="keyword">return</span> internalLinks</span><br><span class="line"></span><br><span class="line"><span class="comment">##ページ内にあるすべて外部リンクを調べる</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getExternalLinks</span>(<span class="params">bs,excludeUrl</span>):</span></span><br><span class="line">    externalLinks =[]</span><br><span class="line"></span><br><span class="line">        <span class="comment">#「http」や「www」から始まるかつ、いままで出ていないリンクだけ探し出す</span></span><br><span class="line">    <span class="keyword">for</span> link <span class="keyword">in</span> bs.find_all(<span class="string">&#x27;a&#x27;</span>,href=re.<span class="built_in">compile</span>(<span class="string">&#x27;^(http|www)((?!&#x27;</span>+excludeUrl+<span class="string">&#x27;).)*$&#x27;</span>)):</span><br><span class="line">        <span class="keyword">if</span> link.attrs[<span class="string">&#x27;href&#x27;</span>] <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">if</span> link.attrs[<span class="string">&#x27;href&#x27;</span>] <span class="keyword">not</span> <span class="keyword">in</span> externalLinks:</span><br><span class="line">                externalLinks.append(link.attrs[<span class="string">&#x27;href&#x27;</span>])</span><br><span class="line">    <span class="keyword">return</span> externalLinks</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">getRandomExternalLink</span>(<span class="params">startingPage</span>):</span></span><br><span class="line">    html = urlopen(startingPage)</span><br><span class="line">    bs = BeautifulSoup(html, <span class="string">&#x27;html.parser&#x27;</span>)</span><br><span class="line">    externalLinks = getExternalLinks(bs,</span><br><span class="line">    urlparse(startingPage).netloc)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(externalLinks) == <span class="number">0</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;No external links, looking around the site for one&#x27;</span>)</span><br><span class="line">        domain = <span class="string">&#x27;&#123;&#125;://&#123;&#125;&#x27;</span>.<span class="built_in">format</span>(urlparse(startingPage).scheme,</span><br><span class="line">        urlparse(startingPage).netloc)</span><br><span class="line">        internalLinks = getInternalLinks(bs, domain)</span><br><span class="line">        <span class="keyword">return</span> getRandomExternalLink(internalLinks[random.randint(<span class="number">0</span>,</span><br><span class="line">        <span class="built_in">len</span>(internalLinks)-<span class="number">1</span>)])</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> externalLinks[random.randint(<span class="number">0</span>, <span class="built_in">len</span>(externalLinks)-<span class="number">1</span>)]</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">followExternalOnly</span>(<span class="params">startingSite</span>):</span></span><br><span class="line">    externalLink = getRandomExternalLink(startingSite)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Random external link is: &#123;&#125;&#x27;</span>.<span class="built_in">format</span>(externalLink))</span><br><span class="line">    followExternalOnly(externalLink)</span><br><span class="line"></span><br><span class="line"><span class="comment">#main:</span></span><br><span class="line">followExternalOnly(<span class="string">&#x27;http://oreilly.com&#x27;</span>)</span><br></pre></td></tr></table></figure>
@@ -2519,7 +2519,7 @@ putback()
   </entry>
   <entry>
     <title>c和c++ 管道通讯</title>
-    <url>/BassHero.github.io/2021/11/09/pipe/</url>
+    <url>/BassHero.github.io/pipe.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p>用来复习和对比</p>
 <span id="more"></span>
 <details><summary>server.c(可点开查看)</summary>
@@ -2552,7 +2552,7 @@ putback()
   </entry>
   <entry>
     <title>c++09 String类</title>
-    <url>/BassHero.github.io/2021/11/08/cpp09string/</url>
+    <url>/BassHero.github.io/cpp09string.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h3 id="string类构造函数"><a href="#string类构造函数" class="headerlink" title="string类构造函数"></a>string类构造函数</h3><p>string类其实是基于一个类型模板。</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">namespace</span> std &#123;</span><br><span class="line">  <span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">charT</span>,</span></span><br><span class="line"><span class="class">            <span class="keyword">class</span> <span class="title">traits</span> =</span> char_traits&lt;charT&gt;,</span><br><span class="line">            <span class="class"><span class="keyword">class</span> <span class="title">Allocator</span> =</span> allocator&lt;charT&gt; &gt;</span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">basic_string</span>;</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">using</span> string    = basic_string&lt;<span class="keyword">char</span>&gt;;</span><br><span class="line">  <span class="keyword">using</span> u8string  = basic_string&lt;<span class="keyword">char8_t</span>&gt;;   <span class="comment">// C++20から</span></span><br><span class="line">  <span class="keyword">using</span> u16string = basic_string&lt;<span class="keyword">char16_t</span>&gt;;  <span class="comment">// C++11から</span></span><br><span class="line">  <span class="keyword">using</span> u32string = basic_string&lt;<span class="keyword">char32_t</span>&gt;;  <span class="comment">// C++11から</span></span><br><span class="line">  <span class="keyword">using</span> wstring   = basic_string&lt;<span class="keyword">wchar_t</span>&gt;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="keyword">namespace</span> pmr &#123;  <span class="comment">// C++17から</span></span><br><span class="line">    <span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">charT</span>, <span class="keyword">class</span> <span class="title">traits</span> =</span> char_traits&lt;charT&gt;&gt;</span><br><span class="line">      <span class="keyword">using</span> basic_string =</span><br><span class="line">        std::basic_string&lt;charT, traits, polymorphic_allocator&lt;charT&gt;&gt;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">using</span> string    = basic_string&lt;<span class="keyword">char</span>&gt;;</span><br><span class="line">    <span class="keyword">using</span> u8string  = basic_string&lt;<span class="keyword">char8_t</span>&gt;; <span class="comment">// C++20から</span></span><br><span class="line">    <span class="keyword">using</span> u16string = basic_string&lt;<span class="keyword">char16_t</span>&gt;;</span><br><span class="line">    <span class="keyword">using</span> u32string = basic_string&lt;<span class="keyword">char32_t</span>&gt;;</span><br><span class="line">    <span class="keyword">using</span> wstring   = basic_string&lt;<span class="keyword">wchar_t</span>&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -2699,7 +2699,7 @@ wordmap["the"]:word出现过的次数
   </entry>
   <entry>
     <title>c++08 异常处理</title>
-    <url>/BassHero.github.io/2021/11/06/cpp08except/</url>
+    <url>/BassHero.github.io/cpp08except.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <p>Throw –&gt;Try –&gt;Catch<br>thorw不会引起异常</p>
 <h3 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h3><p>abort()：向标准错误流发送消息 bnormal program terminaton<br>throw “message”：throw是一种跳转，及命令程序跳转到另一条语句。message用来指出异常的特征。<br>try：可能出现error的程序<br>catch：用来捕获throw抛出的异常，{}内是出现error之后的处理(这里是要求输入新数字)</p>
@@ -2759,7 +2759,7 @@ wordmap["the"]:word出现过的次数
   </entry>
   <entry>
     <title>c++07　友元</title>
-    <url>/BassHero.github.io/2021/11/06/cpp07friends/</url>
+    <url>/BassHero.github.io/cpp07friends.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h3 id="友元类"><a href="#友元类" class="headerlink" title="友元类"></a>友元类</h3><p>友元类的所有方法可以访问原始类的私有成员和保护成员</p>
 <h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><p><strong>或 |</strong><br>运算规则：0|0=0&nbsp;&nbsp;&nbsp;&nbsp;0|1=1&nbsp;&nbsp;&nbsp;&nbsp;1|0=1&nbsp;&nbsp;&nbsp;&nbsp;1|1=1<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3|5即&nbsp;&nbsp;&nbsp;&nbsp;0000 0011| 0000 0101 = 0000 0111，因此，3|5的值得7<br><strong>异或 ^</strong><br>运算规则：0^0=0&nbsp;&nbsp;&nbsp;&nbsp;0^1=1&nbsp;&nbsp;&nbsp;&nbsp;1^0=1&nbsp;&nbsp;&nbsp;&nbsp;1^1=0<br><strong>取反运算符 (~)</strong><br>运算规则：　<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ～1=0<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ～0=1<br><strong>复合赋值运算符</strong><br>&amp;=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;例：a&amp;=b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;相当于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a=a&amp;b<br>|=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;例：a|=b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;相当于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a=a|b<br>/&gt;&gt;=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;例：a&gt;&gt;=b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;相当于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a=a&gt;&gt;b<br>&lt;&lt;=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;例：a&lt;&lt;=b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;相当于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a=a&lt;&lt;b<br>^=&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;例：a^=b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;相当于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a=a^b</p>
@@ -2813,7 +2813,7 @@ wordmap["the"]:word出现过的次数
   </entry>
   <entry>
     <title>C　PrimerPlus(6) 14私有继承与类模板</title>
-    <url>/BassHero.github.io/2021/09/25/cpp06classtemplate/</url>
+    <url>/BassHero.github.io/cpp06classtemplate.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h3 id="私有继承"><a href="#私有继承" class="headerlink" title="私有继承"></a>私有继承</h3><p>实现has-a关系的方法除了包含还有私有继承。<br>推荐使用包含。<br><strong>私有成员永远只能被本类的成员函数访问，或者是友元访问，除此以外，即使是其派生出的子类，也不能直接访问这些私有成员。</strong><br>私有继承也是默认的继承方式，如果没有继承方式的关键字说明，默认为私有继承。<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>私有继承-如何定义类</p>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="symbol">Student</span> : <span class="symbol">private</span> <span class="symbol">std::<span class="symbol">string</span>,<span class="symbol">private</span></span> <span class="symbol">std::<span class="symbol">valarray</span></span>&lt;<span class="symbol">double</span>&gt;&#123;</span><br><span class="line">    <span class="comment">//上文指出student类是从string类和valarray类派生而来</span></span><br><span class="line">    <span class="comment">//多重继承</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -2902,7 +2902,7 @@ template<typename T>
   </entry>
   <entry>
     <title>C　PrimerPlus(5) 13类继承与接口</title>
-    <url>/BassHero.github.io/2021/09/24/cpp05Inherit/</url>
+    <url>/BassHero.github.io/cpp05Inherit.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><p>接口与实现</p>
 <blockquote><p>使用公有继承时，类可以继承接口，可能还有实现（基类的纯虚函数提供接口，但不提供实现）\n<br>获得接口是is-a关系的组成部分。\n<br>而使用组合，类可以获得实现，但不能获得接口。不继承接口是has-a关系的组成部分。\n</p>
@@ -2954,7 +2954,7 @@ template<typename T>
   </entry>
   <entry>
     <title>C　PrimerPlus(4) 11使用类12类的动态内存</title>
-    <url>/BassHero.github.io/2021/09/23/cpp04objectAndClass/</url>
+    <url>/BassHero.github.io/cpp04objectAndClass.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><h3 id="重载运算符"><a href="#重载运算符" class="headerlink" title="重载运算符"></a>重载运算符</h3><figure class="highlight coq"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Time</span> <span class="keyword">Time</span>::operator+(const <span class="keyword">Time</span> &amp;t)const&#123;</span><br><span class="line">    <span class="keyword">Time</span> <span class="built_in">sum</span>;</span><br><span class="line">    <span class="built_in">sum</span>.minutes = minutes + t.minutes;</span><br><span class="line">    <span class="built_in">sum</span>.hours = hours + t.hours+su.minutes/<span class="number">60</span>;</span><br><span class="line">    <span class="built_in">sum</span>.minutes %= <span class="number">60</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <span id="more"></span>
 <h3 id="友元函数"><a href="#友元函数" class="headerlink" title="友元函数"></a>友元函数</h3><p>通过让函数称为类的友元，可以赋予该函数与类的成员函数相同的访问权限<br>符号重载实现B<em>2.78， 友元的符号重载实现2.78</em>B<br>&nbsp;&nbsp;&nbsp;&nbsp;1.将友元函数的声明放入类声明中   2.不要再定义函数时加上friend</p>
@@ -2981,7 +2981,7 @@ template<typename T>
   </entry>
   <entry>
     <title>C PrimerPlus(3) 函数与命名空间</title>
-    <url>/BassHero.github.io/2021/09/22/cpp03funcAndNamespace/</url>
+    <url>/BassHero.github.io/cpp03funcAndNamespace.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><h3 id="8-5显式具体化"><a href="#8-5显式具体化" class="headerlink" title="8.5显式具体化"></a>8.5显式具体化</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;显式具体化：可以提供具体化函数定义。</p>
 <span id="more"></span>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// non template function prototype</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Swap</span><span class="params">(job&amp;,job&amp;)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//template prototype</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Swap</span><span class="params">(T &amp;,T &amp;)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//explicit specialization for the job type</span></span><br><span class="line"><span class="comment">//程序选择时，显式具体化优先于第二个模板生成</span></span><br><span class="line"><span class="keyword">template</span> &lt;&gt; <span class="keyword">void</span> Swap&lt;job&gt;(job &amp;,job &amp;);</span><br></pre></td></tr></table></figure>
@@ -3004,7 +3004,7 @@ template<typename T>
   </entry>
   <entry>
     <title>C PrimerPlus(2) string与char[]、char*</title>
-    <url>/BassHero.github.io/2021/09/21/cpp02string/</url>
+    <url>/BassHero.github.io/cpp02string.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h3 id="c语言"><a href="#c语言" class="headerlink" title="c语言"></a>c语言</h3><p>printf只能用char*型，所以需要转换成string型。<br><code>str.c_str()</code></p>
 <h4 id="string-h-函数库"><a href="#string-h-函数库" class="headerlink" title="string.h 函数库"></a>string.h 函数库</h4><p><strong>连接文字符</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;char *strcat(char *s, chat *a);<br>&nbsp;&nbsp;&nbsp;&nbsp;char *strncat(char *s, chat *a, int n);<br><strong>比较</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;int strcmp(char *s, chat *t);<br>&nbsp;&nbsp;&nbsp;&nbsp;int strncmp(char *s, chat *t, int n);<br><strong>复制</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;char *strcpy(char *d, chat *s);<br>&nbsp;&nbsp;&nbsp;&nbsp;char *strncpy(char *d, chat *s, int n);<br><strong>求长</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;int strlen(chat *s);<br><strong>位置</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;char *strchr(chat *s, int c);<br>&nbsp;&nbsp;&nbsp;&nbsp;char *strrchr(chat *s, int c);<br>&nbsp;&nbsp;&nbsp;&nbsp;char *strstr(chat *s, char *ss);    </p>
@@ -3032,7 +3032,7 @@ template<typename T>
   </entry>
   <entry>
     <title>C PrimerPlus(1) 对象与类</title>
-    <url>/BassHero.github.io/2021/09/20/cpp01class/</url>
+    <url>/BassHero.github.io/cpp01class.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h3 id="对象与类"><a href="#对象与类" class="headerlink" title="对象与类"></a>对象与类</h3><p>需要同时编译两个文件，即：</p>
 <figure class="highlight brainfuck"><table><tr><td class="code"><pre><span class="line"><span class="comment">g</span>++ <span class="comment">bank</span><span class="string">.</span><span class="comment">cpp</span> <span class="comment">usebank</span><span class="string">.</span><span class="comment">cpp</span></span><br></pre></td></tr></table></figure>
@@ -3092,7 +3092,7 @@ template<typename T>
   </entry>
   <entry>
     <title>《哲学的故事》笔记</title>
-    <url>/BassHero.github.io/2021/09/01/ISBN978-7-568-91092-7/</url>
+    <url>/BassHero.github.io/ISBN978-7-568-91092-7.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p>（美）杜兰特著；蒋剑峰，张程程译. —杭州：浙江大学出版社</p>
 <span id="more"></span>
 <h3 id="第一章-柏拉图"><a href="#第一章-柏拉图" class="headerlink" title="第一章 柏拉图"></a>第一章 柏拉图</h3><p>古希腊第一批天文学家<br>起初哲学是物理性质的</p>

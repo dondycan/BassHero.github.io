@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <!-- hexo-inject:begin --><script src='https://unpkg.com/echarts@3.3.2/dist/echarts.min.js'></script><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/BassHero.github.io/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/BassHero.github.io/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/BassHero.github.io/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/BassHero.github.io/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/BassHero.github.io/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:300,300italic,400,400italic,700,700italic%7CM+PLUS+1p:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"dondycan.github.io","root":"/BassHero.github.io/","images":"/BassHero.github.io/images","scheme":"Pisces","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":80,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/BassHero.github.io/js/config.js"></script>
+<meta name="description" content="参考来自：Computer Network A Top-Down Approach Practice Answer-github">
+<meta property="og:type" content="article">
+<meta property="og:title" content="套接字编程作业1：Web服务器">
+<meta property="og:url" content="https://dondycan.github.io/BassHero.github.io/ISBN978-7-111-45378-9_01.html">
+<meta property="og:site_name" content="咚咚锵">
+<meta property="og:description" content="参考来自：Computer Network A Top-Down Approach Practice Answer-github">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-09T03:51:47.000Z">
+<meta property="article:modified_time" content="2025-04-09T12:21:30.546Z">
+<meta property="article:author" content="咚咚锵">
+<meta property="article:tag" content="2021">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://dondycan.github.io/BassHero.github.io/ISBN978-7-111-45378-9_01.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://dondycan.github.io/BassHero.github.io/ISBN978-7-111-45378-9_01.html","path":"ISBN978-7-111-45378-9_01.html","title":"套接字编程作业1：Web服务器"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>套接字编程作业1：Web服务器 | 咚咚锵</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/BassHero.github.io/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-tag-google-photos-album@1.2.0/css/google_photos_album.css" integrity="sha256-+fmg1peSAbhT32GtVA2D9f1zAjN3v6lX+9Y14jKmYBs=" crossorigin="anonymous"><!-- hexo injector head_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/BassHero.github.io/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">咚咚锵</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">目标 影2500 书300</p>
+      <img class="custom-logo-image" src="/BassHero.github.io/images/avatar.gif" alt="咚咚锵">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/BassHero.github.io/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-daily"><a href="/BassHero.github.io/daily/" rel="section"><i class="fa fa-archive fa-fw"></i>日记</a></li>
+        <li class="menu-item menu-item-article"><a href="/BassHero.github.io/categories/" rel="section"><i class="fa fa-folder-open fa-fw"></i>文章</a></li>
+        <li class="menu-item menu-item-book"><a href="/BassHero.github.io/books/" rel="section"><i class="fa fa-book fa-fw"></i>阅读</a></li>
+        <li class="menu-item menu-item-film"><a href="/BassHero.github.io/films/" rel="section"><i class="fa fa-film fa-fw"></i>观影</a></li>
+        <li class="menu-item menu-item-photo"><a href="/BassHero.github.io/gallery/" rel="section"><i class="fa fa-camera-retro fa-fw"></i>相册</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-overview">
+            <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">咚咚锵</p>
+  <div class="site-description" itemprop="description">码龄 0年</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/BassHero.github.io/archives/">
+          <span class="site-state-item-count">49</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/BassHero.github.io/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/BassHero.github.io/tags/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:dondcyan@gmail.com" title="E-Mail → mailto:dondcyan@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/yamagamisukibot" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;yamagamisukibot" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://dondycan.github.io/BassHero.github.io/ISBN978-7-111-45378-9_01.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/BassHero.github.io/images/avatar.gif">
+      <meta itemprop="name" content="咚咚锵">
+      <meta itemprop="description" content="码龄 0年">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="咚咚锵">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          套接字编程作业1：Web服务器
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-12-09 12:51:47" itemprop="dateCreated datePublished" datetime="2021-12-09T12:51:47+09:00">2021-12-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/BassHero.github.io/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/BassHero.github.io/categories/%E6%8A%80%E6%9C%AF/%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">网络</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>5.7k</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p>参考来自：<a target="_blank" rel="noopener" href="https://github.com/jzplp/Computer-Network-A-Top-Down-Approach-Answer">Computer Network A Top-Down Approach Practice Answer-github</a></p>
+<span id="more"></span>
+<h2 id="chapter01"><a href="#chapter01" class="headerlink" title="chapter01"></a>chapter01</h2><p><strong>因特网协议栈中的5个层次</strong><br>应用层：提供了一些网络应用程序和应用层协议。<br>运输层：在应用程序端点之间传输运输层报文。主要有TCP和UDP两种协议。<br>网络层：负责将分组从一台主机移动到另一台主机。<br>链路层：沿着路经将数据报传递给下一层结点。<br>物理层：将整个帧从一个网络元素移动到邻近的网络元素。</p>
+<table>
+<thead>
+<tr>
+<th>OSI</th>
+<th>TCP/IP</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>应用层</td>
+<td>应用层</td>
+</tr>
+<tr>
+<td>表示层</td>
+<td>-</td>
+</tr>
+<tr>
+<td>会话层</td>
+<td>-</td>
+</tr>
+<tr>
+<td>运输层</td>
+<td>运输层</td>
+</tr>
+<tr>
+<td>网络层</td>
+<td>网际层IP</td>
+</tr>
+<tr>
+<td>数据连接层</td>
+<td>网络连接层</td>
+</tr>
+<tr>
+<td>物理层</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<br>
+
+<p><strong>R12. 与分组交换网络相比，电路交换网络有哪些优点？在电路交换网络中，TDM比FDM有哪些优点？</strong></p>
+<p>答案：<br>电路交换网络适合实时服务。交付质量高。<br>TDM比FDM的优点如下：（来源于网络）</p>
+<ol>
+<li>当发生拥塞等网络问题时，TDM中的数据丢失可能只会是一部分，而FDM中就可能是大部分或全部。</li>
+<li>TDM适合数字信号传输，而FDM适合模拟信号传输，因为现在通信网络多是传输数字信号，所以TDM比FDM好。</li>
+<li>因为频分复用连接建立后，当中途没有数据传输时，他所占有的频段带宽不能被其他连接使用，故可能存在空置，而在时分复用的统计时分模式下，连接建立后，当某个连接暂时不用传输数据时可以少分时间片或者不分，即其时隙的分配时“按需分配”，这样就让出了相应的传输时间给其他连接。<br></li>
+</ol>
+<p><strong>R16. 考虑从某源主机跨越一条固定路由向某目的主机发送一分组。列出端到端时延组成部分。这些时延中的哪些是固定的，哪些是变化的？</strong></p>
+<p>答案：<br>端到端时延组成部分有：结点处理时延，排队时延，传输时延，传播时延。<br>时延中固定的部分有：传输时延 传播时延<br>时延中变化的部分有：结点处理时延 排队时延<br><br><br>怎么查看自己电脑的IP地址：ipconfig/all<br><br><br></p>
+<h2 id="chapter-02"><a href="#chapter-02" class="headerlink" title="chapter 02"></a>chapter 02</h2><h3 id="套接字编程作业1：Web服务器"><a href="#套接字编程作业1：Web服务器" class="headerlink" title="套接字编程作业1：Web服务器"></a>套接字编程作业1：Web服务器</h3><p>开发一个处理一个HTTP请求的Web服务器。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#import socket module</span></span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line">serverSocket = socket(AF_INET, SOCK_STREAM)</span><br><span class="line"><span class="comment">#Prepare a sever socket</span></span><br><span class="line">serverPort = <span class="number">80</span></span><br><span class="line">serverSocket.bind((<span class="string">&quot;&quot;</span>, serverPort))</span><br><span class="line">serverSocket.listen(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="comment">#Establish the connection</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Ready to serve...&#x27;</span>)</span><br><span class="line">    connectionSocket, addr = serverSocket.accept()</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        message = connectionSocket.recv(<span class="number">1024</span>)</span><br><span class="line">        filename = message.split()[<span class="number">1</span>]</span><br><span class="line">        f = <span class="built_in">open</span>(filename[<span class="number">1</span>:])</span><br><span class="line">        outputdata = f.read()</span><br><span class="line">        f.close()</span><br><span class="line">        <span class="comment">#Send one HTTP header line into socket</span></span><br><span class="line">        outputdata = <span class="string">&#x27;HTTP/1.1 200 OK\r\n\r\n&#x27;</span> + outputdata</span><br><span class="line">        <span class="comment">#Send the content of the requested file to the client</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(outputdata)):</span><br><span class="line">            connectionSocket.send(outputdata[i].encode())</span><br><span class="line">        connectionSocket.close()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;OK!&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> IOError:</span><br><span class="line">        <span class="comment">#Send response message for file not found</span></span><br><span class="line">        outputdata = <span class="string">&#x27;HTTP/1.1 404 Not Found\r\n\r\n&#x27;</span></span><br><span class="line">        <span class="comment">#Close client socket</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(outputdata)):</span><br><span class="line">            connectionSocket.send(outputdata[i].encode())</span><br><span class="line">        connectionSocket.close()</span><br><span class="line">serverSocket.close()</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<p><strong>可选练习</strong><br>目前，这个Web服务器一次只处理一个HTTP请求。请实现一个能够同时处理多个请求的多线程服务器。使用线程，首先创建一个主线程，在固定端口监听客户端请求。当从客户端收到TCP连接请求时，它将通过另一个端口建立TCP连接，并在另外的单独线程中为客户端请求提供服务。这样在每个请求/响应对的独立线程中将有一个独立的TCP连接。</p>
+<figure class="highlight python"><figcaption><span>服务器端</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">MAIN_PORT = <span class="number">8000</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ClientHandler</span>(<span class="params">threading.Thread</span>):</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, port</span>):</span></span><br><span class="line"><span class="built_in">super</span>().__init__()</span><br><span class="line">self.port = port</span><br><span class="line">self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">self.server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, <span class="number">1</span>)</span><br><span class="line">self.server_socket.bind((<span class="string">&#x27;localhost&#x27;</span>, self.port))</span><br><span class="line">self.server_socket.listen(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run</span>(<span class="params">self</span>):</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;新端口 <span class="subst">&#123;self.port&#125;</span> 等待客户端连接...&quot;</span>)</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">client_socket, addr = self.server_socket.accept()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;端口 <span class="subst">&#123;self.port&#125;</span> 已连接客户端 <span class="subst">&#123;addr&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 处理请求</span></span><br><span class="line">request = client_socket.recv(<span class="number">1024</span>).decode()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;收到请求[<span class="subst">&#123;self.port&#125;</span>]: <span class="subst">&#123;request&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 模拟处理耗时</span></span><br><span class="line">time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 发送响应</span></span><br><span class="line">response = <span class="string">f&quot;服务器响应自端口 <span class="subst">&#123;self.port&#125;</span>&quot;</span></span><br><span class="line">client_socket.send(response.encode())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭连接</span></span><br><span class="line">client_socket.close()</span><br><span class="line">self.server_socket.close()</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;端口 <span class="subst">&#123;self.port&#125;</span> 处理异常: <span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main_server</span>():</span></span><br><span class="line">main_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">main_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, <span class="number">1</span>)</span><br><span class="line">main_socket.bind((<span class="string">&#x27;localhost&#x27;</span>, MAIN_PORT))</span><br><span class="line">main_socket.listen(<span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;主服务器启动，监听端口 <span class="subst">&#123;MAIN_PORT&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">client_socket, addr = main_socket.accept()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;接收到客户端连接: <span class="subst">&#123;addr&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 分配新端口</span></span><br><span class="line">temp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">temp_socket.bind((<span class="string">&#x27;localhost&#x27;</span>, <span class="number">0</span>))</span><br><span class="line">new_port = temp_socket.getsockname()[<span class="number">1</span>]</span><br><span class="line">temp_socket.close()  <span class="comment"># 释放临时端口</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 启动新端口监听线程</span></span><br><span class="line">handler = ClientHandler(new_port)</span><br><span class="line">handler.start()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 发送新端口给客户端</span></span><br><span class="line">client_socket.send(<span class="built_in">str</span>(new_port).encode())</span><br><span class="line">client_socket.close()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;已分配端口 <span class="subst">&#123;new_port&#125;</span> 给客户端 <span class="subst">&#123;addr&#125;</span>&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;主服务器异常: <span class="subst">&#123;<span class="built_in">str</span>(e)&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">main_server()</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><figcaption><span>用户端</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">client</span>():</span></span><br><span class="line"><span class="comment"># 第一步：连接主服务器获取新端口</span></span><br><span class="line">main_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">main_sock.connect((<span class="string">&#x27;localhost&#x27;</span>, <span class="number">8000</span>))</span><br><span class="line">new_port = <span class="built_in">int</span>(main_sock.recv(<span class="number">1024</span>).decode())</span><br><span class="line">main_sock.close()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;获取到新端口: <span class="subst">&#123;new_port&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第二步：连接新端口</span></span><br><span class="line">client_sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)</span><br><span class="line">client_sock.connect((<span class="string">&#x27;localhost&#x27;</span>, new_port))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 发送请求</span></span><br><span class="line">client_sock.send(<span class="string">&quot;客户端请求&quot;</span>.encode())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 接收响应</span></span><br><span class="line">response = client_sock.recv(<span class="number">1024</span>).decode()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;收到响应: <span class="subst">&#123;response&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">client_sock.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">client()</span><br></pre></td></tr></table></figure>
+<p><br><br></p>
+<p>不使用浏览器，编写自己的HTTP客户端来测试你的服务器。您的客户端将使用一个TCP连接用于连接到服务器，向服务器发送HTTP请求，并将服务器响应显示出来。您可以假定发送的HTTP请求将使用GET方法。 客户端应使用命令行参数指定服务器IP地址或主机名，服务器正在监听的端口，以及被请求对象在服务器上的路径。以下是运行客户端的输入命令格式。<br><br></p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">client</span>.py server_host server_<span class="keyword">port</span> filename</span><br></pre></td></tr></table></figure>
+
+<p>Answer:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#import socket module</span></span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">webProcess</span>(<span class="params">connectionSocket</span>):</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        message = connectionSocket.recv(<span class="number">1024</span>)</span><br><span class="line">        filename = message.split()[<span class="number">1</span>]</span><br><span class="line">        f = <span class="built_in">open</span>(filename[<span class="number">1</span>:], <span class="string">&quot;rb&quot;</span>)</span><br><span class="line">        outputdata = f.read()</span><br><span class="line">        outputdata = outputdata.decode()</span><br><span class="line">        f.close()</span><br><span class="line">        <span class="comment">#Send one HTTP header line into socket</span></span><br><span class="line">        outputdata = <span class="string">&#x27;HTTP/1.1 200 OK\r\n\r\n&#x27;</span> + outputdata</span><br><span class="line">        <span class="comment">#Send the content of the requested file to the client</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(outputdata)):</span><br><span class="line">            connectionSocket.send(outputdata[i].encode())</span><br><span class="line">        connectionSocket.close()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;OK!&quot;</span>)</span><br><span class="line">    <span class="keyword">except</span> IOError:</span><br><span class="line">        <span class="comment">#Send response message for file not found</span></span><br><span class="line">        outputdata = <span class="string">&#x27;HTTP/1.1 404 Not Found\r\n\r\n&#x27;</span></span><br><span class="line">        <span class="comment">#Close client socket</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(outputdata)):</span><br><span class="line">            connectionSocket.send(outputdata[i].encode())</span><br><span class="line">        connectionSocket.close()</span><br><span class="line"></span><br><span class="line">serverSocket = socket(AF_INET, SOCK_STREAM)</span><br><span class="line"><span class="comment">#Prepare a sever socket</span></span><br><span class="line">serverPort = <span class="number">80</span></span><br><span class="line">serverSocket.bind((<span class="string">&quot;&quot;</span>, serverPort))</span><br><span class="line">serverSocket.listen(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    <span class="comment">#Establish the connection</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;Ready to serve...&#x27;</span>)</span><br><span class="line">    connectionSocket, addr = serverSocket.accept()</span><br><span class="line">    thread = threading.Thread(target = webProcess, args = (connectionSocket, ))</span><br><span class="line">    thread.start()</span><br><span class="line">serverSocket.close()</span><br></pre></td></tr></table></figure>
+
+
+
+
+</div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/BassHero.github.io/tags/2021/" rel="tag"># 2021</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/BassHero.github.io/python05.html" rel="prev" title="python05">
+                  <i class="fa fa-chevron-left"></i> python05
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/BassHero.github.io/ISBN978-7-111-45378-9_02.html" rel="next" title="套接字编程作业2：UDPping程序">
+                  套接字编程作业2：UDPping程序 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-rocket"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">咚咚锵</span>
+</div>
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_site_pv">
+                本站总访问量<span id="busuanzi_value_site_pv">
+                </span>次 | 
+        <span id="busuanzi_container_site_uv" style='display:none'>
+                本站访客数<span id="busuanzi_value_site_uv"></span>人
+        </span>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/BassHero.github.io/js/comments.js"></script><script src="/BassHero.github.io/js/utils.js"></script><script src="/BassHero.github.io/js/motion.js"></script><script src="/BassHero.github.io/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+<!-- hexo injector body_end start --><script>
+function addLoadEvent(func) {
+  const oldonload = window.onload;
+  if (typeof window.onload !== 'function') {
+    window.onload = func;
+  } else {
+    window.onload = () => {
+      oldonload();
+      func();
+    };
+  }
+}
+  addLoadEvent(() => {
+    try {
+      if (window.innerWidth < Number('768')) {
+        return;
+      }
+      const imgs = Array.from(document.body.querySelectorAll('.google-photos-album-images a'));
+      imgs.push(...Array.from(document.body.querySelectorAll('a.google-photos-album-image')));
+      for (const anchor of imgs) {
+        anchor.href = anchor.href.replace(/=s720\-no/i, '=s1920-no');
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  });
+</script>
+<!-- hexo injector body_end end --><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+</html>

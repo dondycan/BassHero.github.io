@@ -403,7 +403,7 @@ ICチップなどの製品を試用して評価を行うために作成・提供
     <url>/BassHero.github.io/ISBN978-4-863-54275-4-04.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <h2 id="Arduinoのハードウェアを確認する"><a href="#Arduinoのハードウェアを確認する" class="headerlink" title="Arduinoのハードウェアを確認する"></a>Arduinoのハードウェアを確認する</h2><p>1.型番から<strong>データシート</strong>と言われるハードウェアマニュアルを入手できる。<br>2.ピン構成と基盤回路図を確認する</p>
-<a href="/images/pinconfig.png" class="gallery-item"><img src="/images/pinconfig.png"></a>
+<a href="images/pinconfig.png" class="gallery-item"><img src="images/pinconfig.png"></a>
 
 <a href="images/KAIROZU.png" class="gallery-item"><img src="images/KAIROZU.png"></a>
 3.基盤のシルク名と端子構成、コネクタとマイコンの配線のドキュメントを作成

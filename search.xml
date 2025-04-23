@@ -2385,37 +2385,6 @@ putback()
       </tags>
   </entry>
   <entry>
-    <title>套接字编程作业2：UDPping程序</title>
-    <url>/BassHero.github.io/ISBN978-7-111-45378-9_02.html</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p>参考来自：<a href="https://github.com/jzplp/Computer-Network-A-Top-Down-Approach-Answer">Computer Network A Top-Down Approach Practice Answer-github</a></p>
-<span id="more"></span>
-<h3 id="套接字编程作业2：UDPping程序"><a href="#套接字编程作业2：UDPping程序" class="headerlink" title="套接字编程作业2：UDPping程序"></a>套接字编程作业2：UDPping程序</h3><p>客户端向服务器发送10次ping。因为UDP是不可靠的协议，所以从客户端发送到服务器的数据包可能在网络中丢失。因此，客户端不能无限期地等待ping消息的回复。客户等待服务器回答的时间至多为一秒，如果在一秒内没有收到回复，您的客户端程序应该假定数据包在网络传输期间丢失。<br><br>您需要查找Python文档，以了解如何在数据报套接字上设置超时值。</p>
-<p>具体来说，您的客户端程序应该<br>1.使用UDP发送ping消息（注意：不同于TCP，您不需要首先建立连接，因为UDP是无连接协议。）<br>2.从服务器输出响应消息<br>3.如果从服务器受到响应，则计算并输出每个数据包的往返时延（RTT）（以秒为单位），<br>4.否则输出“请求超时”<br>在开发过程中，您应该先在计算机上运行UDPPingerServer.py，并通过向localhost（或127.0.0.1）发送数据包来测试客户端。调试完成代码后，您应该能看到ping服务器和ping客户端在不同机器上通过网络进行通信。<br><br></p>
-<p><strong>其他阅读链接：</strong><a href="/BassHero.github.io/ping.html" title="ping">ping</a><br><br></p>
-<figure class="highlight python"><figcaption><span>UDPPingerClient.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">serverName = <span class="string">&#x27;127.0.0.1&#x27;</span></span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line">clientSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    time1 = time.time()</span><br><span class="line">    outputdata = <span class="string">&#x27;Ping &#x27;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot; &quot;</span> + <span class="built_in">str</span>(time1)</span><br><span class="line">    <span class="comment"># 设置超时 单位秒</span></span><br><span class="line">    clientSocket.settimeout(<span class="number">1</span>)</span><br><span class="line">    clientSocket.sendto(outputdata.encode(), (serverName, serverPort))</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        modifiedMessage, serverAddress = clientSocket.recvfrom(<span class="number">2048</span>)</span><br><span class="line">        timeDiff = time.time() - time1</span><br><span class="line">        <span class="built_in">print</span>(modifiedMessage.decode() + <span class="string">&quot; RTT: &quot;</span> + <span class="built_in">str</span>(timeDiff))</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;lost &quot;</span> + <span class="built_in">str</span>(i))</span><br></pre></td></tr></table></figure>
-<p><strong>可选练习</strong><br><br><br>1.目前，程序计算每个数据包的往返时间（RTT），并单独打印出来。请按照标准ping程序的模式修改。您需要在客户端每次ping后显示最小，最大和平均RTT。另外，还需计算丢包率（百分比）。<br><br></p>
-<figure class="highlight python"><figcaption><span>UDPPingerClient.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">serverName = <span class="string">&#x27;127.0.0.1&#x27;</span></span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line">clientSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    time1 = time.time()</span><br><span class="line">    outputdata = <span class="string">&#x27;Heartbeat &#x27;</span> + <span class="built_in">str</span>(time1)</span><br><span class="line">    clientSocket.sendto(outputdata.encode(), (serverName, serverPort))</span><br><span class="line">    time.sleep(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
-
-<br>
-2.UDP Ping的另一个类似的应用是UDP Heartbeat。<br><br>心跳可用于检查应用程序是否已启动并运行，并报告单向丢包。客户端在UDP数据包中将一个序列号和当前时间戳发送给正在监听客户端心跳的服务器。服务器收到数据包后，计算时差，报告丢包（若发生）。如果心跳数据包在指定的一段时间内丢失，我们可以假设客户端应用程序已经停止。实现UDP Heartbeat（客户端和服务器端）。<br><br>您需要修改给定的UDPPingerServer.py和您自己的UDP ping客户端。
-<br><br>
-
-
-<figure class="highlight python"><figcaption><span>UDPPingerServer.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">#We will need the following module to generate randomized lost packets</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment">#Create a UDP socket</span></span><br><span class="line"><span class="comment">#Notice the use of SOCK_DGRAM for UDP packets</span></span><br><span class="line">serverSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"><span class="comment">#Assign IP address and port number to socket</span></span><br><span class="line">serverSocket.bind((<span class="string">&#x27;&#x27;</span>, <span class="number">12000</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    message, address = serverSocket.recvfrom(<span class="number">1024</span>)</span><br><span class="line">    message = message.decode()</span><br><span class="line">    message = message.split()[<span class="number">1</span>]</span><br><span class="line">    timeDiff = time.time() - <span class="built_in">float</span>(message)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;receive RTT:&quot;</span>, timeDiff)</span><br></pre></td></tr></table></figure></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
-      <categories>
-        <category>技术</category>
-        <category>网络</category>
-      </categories>
-      <tags>
-        <tag>2021</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>套接字编程作业1：Web服务器</title>
     <url>/BassHero.github.io/ISBN978-7-111-45378-9_01.html</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p>参考来自：<a href="https://github.com/jzplp/Computer-Network-A-Top-Down-Approach-Answer">Computer Network A Top-Down Approach Practice Answer-github</a></p>
@@ -2487,6 +2456,37 @@ putback()
 
 
 </div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script><link rel="stylesheet" href="/css/bilicard.css" type="text/css">]]></content>
+      <categories>
+        <category>技术</category>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>2021</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>套接字编程作业2：UDPping程序</title>
+    <url>/BassHero.github.io/ISBN978-7-111-45378-9_02.html</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><p>参考来自：<a href="https://github.com/jzplp/Computer-Network-A-Top-Down-Approach-Answer">Computer Network A Top-Down Approach Practice Answer-github</a></p>
+<span id="more"></span>
+<h3 id="套接字编程作业2：UDPping程序"><a href="#套接字编程作业2：UDPping程序" class="headerlink" title="套接字编程作业2：UDPping程序"></a>套接字编程作业2：UDPping程序</h3><p>客户端向服务器发送10次ping。因为UDP是不可靠的协议，所以从客户端发送到服务器的数据包可能在网络中丢失。因此，客户端不能无限期地等待ping消息的回复。客户等待服务器回答的时间至多为一秒，如果在一秒内没有收到回复，您的客户端程序应该假定数据包在网络传输期间丢失。<br><br>您需要查找Python文档，以了解如何在数据报套接字上设置超时值。</p>
+<p>具体来说，您的客户端程序应该<br>1.使用UDP发送ping消息（注意：不同于TCP，您不需要首先建立连接，因为UDP是无连接协议。）<br>2.从服务器输出响应消息<br>3.如果从服务器受到响应，则计算并输出每个数据包的往返时延（RTT）（以秒为单位），<br>4.否则输出“请求超时”<br>在开发过程中，您应该先在计算机上运行UDPPingerServer.py，并通过向localhost（或127.0.0.1）发送数据包来测试客户端。调试完成代码后，您应该能看到ping服务器和ping客户端在不同机器上通过网络进行通信。<br><br></p>
+<p><strong>其他阅读链接：</strong><a href="/BassHero.github.io/ping.html" title="ping">ping</a><br><br></p>
+<figure class="highlight python"><figcaption><span>UDPPingerClient.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">serverName = <span class="string">&#x27;127.0.0.1&#x27;</span></span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line">clientSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    time1 = time.time()</span><br><span class="line">    outputdata = <span class="string">&#x27;Ping &#x27;</span> + <span class="built_in">str</span>(i) + <span class="string">&quot; &quot;</span> + <span class="built_in">str</span>(time1)</span><br><span class="line">    <span class="comment"># 设置超时 单位秒</span></span><br><span class="line">    clientSocket.settimeout(<span class="number">1</span>)</span><br><span class="line">    clientSocket.sendto(outputdata.encode(), (serverName, serverPort))</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        modifiedMessage, serverAddress = clientSocket.recvfrom(<span class="number">2048</span>)</span><br><span class="line">        timeDiff = time.time() - time1</span><br><span class="line">        <span class="built_in">print</span>(modifiedMessage.decode() + <span class="string">&quot; RTT: &quot;</span> + <span class="built_in">str</span>(timeDiff))</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;lost &quot;</span> + <span class="built_in">str</span>(i))</span><br></pre></td></tr></table></figure>
+<p><strong>可选练习</strong><br><br><br>1.目前，程序计算每个数据包的往返时间（RTT），并单独打印出来。请按照标准ping程序的模式修改。您需要在客户端每次ping后显示最小，最大和平均RTT。另外，还需计算丢包率（百分比）。<br><br></p>
+<figure class="highlight python"><figcaption><span>UDPPingerClient.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">serverName = <span class="string">&#x27;127.0.0.1&#x27;</span></span><br><span class="line">serverPort = <span class="number">12000</span></span><br><span class="line">clientSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    time1 = time.time()</span><br><span class="line">    outputdata = <span class="string">&#x27;Heartbeat &#x27;</span> + <span class="built_in">str</span>(time1)</span><br><span class="line">    clientSocket.sendto(outputdata.encode(), (serverName, serverPort))</span><br><span class="line">    time.sleep(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+<br>
+2.UDP Ping的另一个类似的应用是UDP Heartbeat。<br><br>心跳可用于检查应用程序是否已启动并运行，并报告单向丢包。客户端在UDP数据包中将一个序列号和当前时间戳发送给正在监听客户端心跳的服务器。服务器收到数据包后，计算时差，报告丢包（若发生）。如果心跳数据包在指定的一段时间内丢失，我们可以假设客户端应用程序已经停止。实现UDP Heartbeat（客户端和服务器端）。<br><br>您需要修改给定的UDPPingerServer.py和您自己的UDP ping客户端。
+<br><br>
+
+
+<figure class="highlight python"><figcaption><span>UDPPingerServer.py</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">#We will need the following module to generate randomized lost packets</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> socket <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment">#Create a UDP socket</span></span><br><span class="line"><span class="comment">#Notice the use of SOCK_DGRAM for UDP packets</span></span><br><span class="line">serverSocket = socket(AF_INET, SOCK_DGRAM)</span><br><span class="line"><span class="comment">#Assign IP address and port number to socket</span></span><br><span class="line">serverSocket.bind((<span class="string">&#x27;&#x27;</span>, <span class="number">12000</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    message, address = serverSocket.recvfrom(<span class="number">1024</span>)</span><br><span class="line">    message = message.decode()</span><br><span class="line">    message = message.split()[<span class="number">1</span>]</span><br><span class="line">    timeDiff = time.time() - <span class="built_in">float</span>(message)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;receive RTT:&quot;</span>, timeDiff)</span><br></pre></td></tr></table></figure></div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
             selector: '.gallery-item'
         };

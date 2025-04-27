@@ -25,11 +25,13 @@
 <meta property="og:url" content="https://dondycan.github.io/BassHero.github.io/ISBN978-4-863-54275-4-07.html">
 <meta property="og:site_name" content="咚咚锵">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://dondycan.github.io/BassHero.github.io/images/device.png">
 <meta property="article:published_time" content="2025-04-19T01:58:07.000Z">
-<meta property="article:modified_time" content="2025-04-19T02:29:27.773Z">
+<meta property="article:modified_time" content="2025-04-27T07:02:54.975Z">
 <meta property="article:author" content="咚咚锵">
 <meta property="article:tag" content="2025">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://dondycan.github.io/BassHero.github.io/images/device.png">
 
 
 <link rel="canonical" href="https://dondycan.github.io/BassHero.github.io/ISBN978-4-863-54275-4-07.html">
@@ -241,7 +243,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>257</span>
+      <span>4.8k</span>
     </span>
 </div>
 
@@ -254,6 +256,336 @@
     <div class="post-body" itemprop="articleBody">
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/css/lightgallery.min.css" /><div class=".article-gallery"><span id="more"></span>
 <p><strong>MMU(Memory Management unit)</strong>:メモリ管理ユニット<br>仮想アドレス空間から物理アドレス空間の変換を行う機能がある、物理メモリをページと呼ばれる最小単位で管理できる。ソフトウェアの<strong>プロセスごと</strong>にページ単位でメモリ割り当てする。<br>ページテーブルに参照する際に仮想空間に対応する物理空間が見つからないと「ページフォルト」が発生します。<br>ページアウトが発生すると不要とされるページを二次記憶に書き出して（ページアウト）、新たに必要なページを二次記憶装置から物理空間に読み込んで(ページイン)、ページを置換する。</p>
+<p>パソコンやサーバは起動するとまず HDD にインストールされた OS (Kernel) プログラムをメモリ領域に展開します。このとき使われるメモリ領域を <strong>『カーネル空間』</strong>と呼びます。<br>一方、OS 上でプログラムが起動された場合は OS の管理下の元、メモリ領域に展開します。このときのメモリ領域を <strong>『ユーザー空間』</strong>j7と呼びます。</p>
+<p><strong>ユーザー空間</strong>:</p>
+<ol>
+<li>プロセスごとにメモリ割り当てする。</li>
+<li>物理メモリを意識する必要がない。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▶物理メモリの上限以上にメモリを利用可能<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▶物理空間で断片化したメモリを連続するメモリとして扱える。</li>
+<li>0~3GBの空間にマッピング<br></li>
+</ol>
+<p><strong>カーネル空間</strong>:</p>
+<ol>
+<li>物理メモリにストレートマップ</li>
+<li>多重化されない</li>
+<li>３GB以降の空間にマッピング</li>
+</ol>
+<h2 id="プロセス"><a href="#プロセス" class="headerlink" title="プロセス"></a>プロセス</h2><p>プロセス ・プログラムの実行単位<br>・1つのプロセスは、1つのメモリ空間を持つ<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▶異なるプロセス間では変数アクセス不可 ・プロセスは、task_struct構造体（task_t型）で管理<br>・プロセスには必ず親プロセスがいる<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;※プロセス作成の仕組み<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;①システムコールfork（）で子プロセスを作成<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;②exec<em>（）で新しいプログラムを実行<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;③子プロセスはexit</em>（）で終了<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;④親プロセスはwait*（）で子プロセスの終了ステータスを取得<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▶親がwaitを呼ばないとゾンビになる（子が終了しない）<br>・子プロセスは親プロセスの複製なので、ファイルのオープン情報やセマフォなどの状況も引き継がれる<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▶デッドロックなどプログラムが停止する原因に注意が必要 ・データ領域（ヒープ、スタック）は親と子で別々になっている</p>
+<h2 id="スレッド"><a href="#スレッド" class="headerlink" title="スレッド"></a>スレッド</h2><p>●プログラムの実行はプロセスと同様<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;・スレッドの動作に必要な情報は単独で持つ （thread ID、スケジュール優先度、スケジュールポリシーなど）<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;・プロセスの情報（スレッド固有でないもの）は共有する （プロセスID、親プロセスID、プロセスグループID、ユーザーID、グループID、カレントディレクトリ位置など）<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;・スレッドもtask_struct構造体（task_t型）を持つ<br>●スレッド間共有資源を操作するときは排他的制御が必要<br>●POSIX互換のpthread*で作成、終了</p>
+<h2 id="IPC-Introduction-of-Communication-プロセス間通信"><a href="#IPC-Introduction-of-Communication-プロセス間通信" class="headerlink" title="IPC(Introduction of Communication)プロセス間通信"></a>IPC(Introduction of Communication)プロセス間通信</h2><table>
+<thead>
+<tr>
+<th>IPC種別</th>
+<th>識別子</th>
+<th>ハンドラ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>パイプ</td>
+<td>なし</td>
+<td>ファイルディスクリプタ</td>
+</tr>
+<tr>
+<td>FIFO</td>
+<td>パス</td>
+<td>ファイルディスクリプタ</td>
+</tr>
+<tr>
+<td>System Vセマフォ</td>
+<td>System V IPCキー</td>
+<td>System V IPC ID</td>
+</tr>
+<tr>
+<td>POSIX 無名セマフォ</td>
+<td>なし</td>
+<td>セマフォポインタ</td>
+</tr>
+<tr>
+<td>POSIX 名前付きセマフォ</td>
+<td>POSIX IPCパス</td>
+<td>セマフォポインタ</td>
+</tr>
+<tr>
+<td>System Vメッセージ</td>
+<td>System V IPCキー</td>
+<td>System V IPC ID</td>
+</tr>
+<tr>
+<td>POSIXメッセージ</td>
+<td>POSIX IPCパス</td>
+<td>メッセージキューディスクリプタ</td>
+</tr>
+<tr>
+<td>System V共有メモリ</td>
+<td>System V IPCキー</td>
+<td>System V IPC ID</td>
+</tr>
+<tr>
+<td>POSIX共有メモリ</td>
+<td>POSIX IPCパス</td>
+<td>ファイルディスクリプタ</td>
+</tr>
+<tr>
+<td>UNIXドメインソケット</td>
+<td>パス</td>
+<td>ファイルディスクリプタ</td>
+</tr>
+<tr>
+<td>インターネットドメインソケット</td>
+<td>IPアドレス ポート</td>
+<td>ファイルディスクリプタ</td>
+</tr>
+</tbody></table>
+<h2 id="カーネル"><a href="#カーネル" class="headerlink" title="カーネル"></a>カーネル</h2><p>コマンド<code>uname -r</code> で動いているカーネルのバージョンを表示する</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ uname -r</span><br><span class="line">5.3.0-1033-aws</span><br><span class="line">$ ls -lh /boot | grep vml</span><br><span class="line">-rw------- 1 root root 7.6M Aug 27  2018 vmlinuz-4.15.0-1021-aws</span><br><span class="line">-rw------- 1 root root 8.5M Aug  5 14:10 vmlinuz-5.3.0-1033-aws</span><br><span class="line">-rw------- 1 root root 8.5M Sep  5 16:49 vmlinuz-5.3.0-1035-aws</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>アーキテクチャ種類</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>システムコールインタフェース</td>
+<td>カーネルが持つ機能をユーザ空間のプロセスから利用できるよう提供するインタフェース。</td>
+</tr>
+<tr>
+<td>カーネル・コード</td>
+<td>ハードウェアのアーキテクチャに依存しない、LinuxOSがサポートするCPUアーキテクチャ全てに共通する部分。プロセス管理やスレッド管理のスケジューラーなど。</td>
+</tr>
+<tr>
+<td>アーキテクチャ依存のコード</td>
+<td>特定のアーキテクチャに依存した固有のコード部分。ARMやIntelといったCPU、SoCのアーキテクチャに依存するコードなど。</td>
+</tr>
+</tbody></table>
+<p><strong>カーネル関連のソースコードディレクトリ</strong></p>
+<table>
+<thead>
+<tr>
+<th>パス</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>arch</strong></td>
+<td>アーキテクチャ依存部x86やArm、Power、MIPSなどがディレクトリで用意されている</td>
+</tr>
+<tr>
+<td><strong>block</strong></td>
+<td>ハードディスクドライブ/メモリ領域などのアドレス指定可能な機器</td>
+</tr>
+<tr>
+<td>crypto</td>
+<td>暗号/復号化レイヤ</td>
+</tr>
+<tr>
+<td>drivers</td>
+<td>各種ドライバLinuxカーネルの半分の規模を占める</td>
+</tr>
+<tr>
+<td>fs</td>
+<td>ファイルシステムextやfat、nfsなどがディレクトリで用意されている</td>
+</tr>
+<tr>
+<td>include</td>
+<td>ヘッダファイル群アーキテクチャ依存部はarch/xxx/includeに配置</td>
+</tr>
+<tr>
+<td>init</td>
+<td>初期化処理</td>
+</tr>
+<tr>
+<td>ipc</td>
+<td>プロセス間通信レイヤ</td>
+</tr>
+<tr>
+<td><strong>kernel</strong></td>
+<td>カーネルコア部スケジューラやタイマーなどが含まれる</td>
+</tr>
+<tr>
+<td><strong>lib</strong></td>
+<td>共通ライブラリ対象アーキテクチャで高速化命令が存在しない場合などに使用されることが多いe.g. memcpy、memcmp、strcmp</td>
+</tr>
+<tr>
+<td>mm</td>
+<td>メモリ管理アーキテクチャ非依存部アーキテクチャ依存部はarch/xxx/mmに配置</td>
+</tr>
+<tr>
+<td>net</td>
+<td>各種ネットワークe.g. ipv4/6、bluetooth、wimax</td>
+</tr>
+<tr>
+<td>security</td>
+<td>セキュリティSELinuxやtomoyoなど</td>
+</tr>
+<tr>
+<td>sound</td>
+<td>ALSAのカーネル側コード</td>
+</tr>
+<tr>
+<td>virt</td>
+<td>仮想化KVMコードなど</td>
+</tr>
+</tbody></table>
+<p>コマンド<code>sudo parted -l</code>で全てのブロックデバイスのパーティション情報を表示します。</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ sudo parted -l                                                                                                                                                                          </span><br><span class="line">Model: Xen Virtual <span class="keyword">Block</span> Device (xvd)</span><br><span class="line">Disk /dev/xvda: <span class="number">10.7</span>GB</span><br><span class="line">Sector <span class="built_in">size</span> (<span class="keyword">logical</span>/physical): <span class="number">512</span>B/<span class="number">512</span>B</span><br><span class="line">Partition Table: msdos</span><br><span class="line">Disk Flags: </span><br><span class="line"></span><br><span class="line"><span class="keyword">Number</span>  Start   <span class="keyword">End</span>     <span class="built_in">Size</span>    <span class="keyword">Type</span>     <span class="keyword">File</span> system  Flags</span><br><span class="line"> <span class="number">1</span>      <span class="number">1049</span>kB  <span class="number">10.7</span>GB  <span class="number">10.7</span>GB  primary  ext4         boot</span><br></pre></td></tr></table></figure>
+
+<h2 id="システムコールインタフェース"><a href="#システムコールインタフェース" class="headerlink" title="システムコールインタフェース"></a>システムコールインタフェース</h2><table>
+<thead>
+<tr>
+<th>システムコール</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>open()</td>
+<td>デバイスファイルと呼ばれるカーネルが提供するファイルを開く場合に使う</td>
+</tr>
+<tr>
+<td>close()</td>
+<td>デバイス制が終了した場合に使う</td>
+</tr>
+<tr>
+<td>read()</td>
+<td>デバイスからの読み取りを行う場合に使う</td>
+</tr>
+<tr>
+<td>write()</td>
+<td>デバイスに書き込みを行う場合に使う</td>
+</tr>
+<tr>
+<td>ioclt()</td>
+<td>read/write関数の読み取りや書き込み以外にデバイスを操作する場合に使う</td>
+</tr>
+<tr>
+<td>poll()</td>
+<td>デバイスからの応答を監視する場合に使う</td>
+</tr>
+</tbody></table>
+<h2 id="VFS-Virtual-File-System"><a href="#VFS-Virtual-File-System" class="headerlink" title="VFS(Virtual File System)"></a>VFS(Virtual File System)</h2><p>VFSとは標準的なUNIXファイルシステムのすべてのシステムコールを取り扱う、カーネルが提供するソフトウェアレイヤです。</p>
+<h2 id="デバイスファイル-dev"><a href="#デバイスファイル-dev" class="headerlink" title="デバイスファイル /dev"></a>デバイスファイル /dev</h2><p>原則として、一つのデバイスに対して、一つのデバイスファイルが存在する。<br><a href="images/device.png" class="gallery-item"><img src="images/device.png"></a></p>
+<h2 id="システムファイル-sys"><a href="#システムファイル-sys" class="headerlink" title="システムファイル /sys"></a>システムファイル /sys</h2><p>/sysディレクトリはLinuxカーネルの実体のない仮想ファイルシステムであり、デバイスやカーネルモジュールの情報を表示することや、カーネルやファイルシステムなどの設定値の変更などができます</p>
+<table>
+<thead>
+<tr>
+<th>サブディレクトリ</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>block</td>
+<td>ブロックデバイス（ディスクなど）に関する情報</td>
+</tr>
+<tr>
+<td>bus</td>
+<td>システムバス（PCI、USBなど）に関する情報</td>
+</tr>
+<tr>
+<td>class</td>
+<td>デバイスのクラス（ネットワーク、サウンドなど）に関する情報</td>
+</tr>
+<tr>
+<td>dev</td>
+<td>デバイスファイルの情報</td>
+</tr>
+<tr>
+<td>devices</td>
+<td>デバイスツリーの情報</td>
+</tr>
+<tr>
+<td>firmware</td>
+<td>ファームウェアに関する情報</td>
+</tr>
+<tr>
+<td>fs</td>
+<td>ファイルシステムに関する情報</td>
+</tr>
+<tr>
+<td>kernel</td>
+<td>カーネルに関する情報と設定</td>
+</tr>
+<tr>
+<td>module</td>
+<td>カーネルモジュール（ドライバ）に関する情報</td>
+</tr>
+</tbody></table>
+<h2 id="システム状態の確認-proc"><a href="#システム状態の確認-proc" class="headerlink" title="システム状態の確認 /proc"></a>システム状態の確認 /proc</h2><p><a href="[url](https://docs.oracle.com/cd/E39368_01/admin/virtfs-files-directories.html)">OracleロゴOracle® Linux 6管理者ガイド</a></p>
+<table>
+<thead>
+<tr>
+<th>ディレクトリ名</th>
+<th>各プロセスの情報</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>/数字</td>
+<td>数字はプロセスIDCPUのバス情報</td>
+</tr>
+<tr>
+<td>/bus</td>
+<td>カーネル起動時の起動パラメータ情報</td>
+</tr>
+<tr>
+<td>/cmdline</td>
+<td>動作しているCPUの詳細情報</td>
+</tr>
+<tr>
+<td>/cpuinfo</td>
+<td>CPUの数分出力される</td>
+</tr>
+<tr>
+<td>/device-tree</td>
+<td>Devicetreeとして読み込まれている情報</td>
+</tr>
+<tr>
+<td>/interrupt</td>
+<td>割り込み情報</td>
+</tr>
+<tr>
+<td>/kmsg</td>
+<td>カーネルが出力しているログ情報</td>
+</tr>
+<tr>
+<td>/loadavg</td>
+<td>システムの負荷状態の情報</td>
+</tr>
+<tr>
+<td>/locks</td>
+<td>カーネルがロックしているプロセス情報</td>
+</tr>
+<tr>
+<td>/meminfo</td>
+<td>カーネルが認識している物理空間のメモリ情報</td>
+</tr>
+<tr>
+<td>/modules</td>
+<td>カーネルがロードしているドライバの情報</td>
+</tr>
+<tr>
+<td>/mount</td>
+<td>カーネルがマウントしているファイルシステムの情報</td>
+</tr>
+<tr>
+<td>/net</td>
+<td>ネットワークデバイス、プロトコルの情報</td>
+</tr>
+<tr>
+<td>/partitions</td>
+<td>パラメータ設定にも利用できる</td>
+</tr>
+<tr>
+<td>/stat</td>
+<td>SDカードなどのパーティション情報</td>
+</tr>
+<tr>
+<td>/swaps</td>
+<td>カーネル全体の統計情報</td>
+</tr>
+<tr>
+<td>/sys</td>
+<td>スワップファイルの利用状況システム状態の情報</td>
+</tr>
+</tbody></table>
 </div><script src="https://cdn.jsdelivr.net/lightgallery.js/1.0.1/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
         var options = {
             selector: '.gallery-item'
